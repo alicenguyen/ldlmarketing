@@ -20,9 +20,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="HomeActivity"/>		
-		<activity android:name="TwitterActivity"/>
-		<activity android:name="YoutubeActivity"/>
+        <activity android:name="HomeActivity" />
+        <activity android:name="FrameActivity" />
+        <activity android:name="GalleryActivity" />
+        <activity android:name="PressActivity" />
+        <activity android:name="TwitterActivity" />
+        <activity android:name="YoutubeActivity" />
     </application>
 
 </manifest>
