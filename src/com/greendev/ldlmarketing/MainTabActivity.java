@@ -19,11 +19,17 @@ public class MainTabActivity extends TabActivity {
 	}
 
 	private void setTabs() {
-		addTab("Home", R.drawable.tab_home, HomeActivity.class);
-		addTab("Search", R.drawable.tab_search, TwitterActivity.class);
+		addTab("LDL Home", R.drawable.tab_home, HomeActivity.class);
+		
+		// TODO-1  must change drawable files!
+		addTab("Frame", R.drawable.tab_home, FrameActivity.class);
+		addTab("Gallery", R.drawable.tab_home, GalleryActivity.class);
+		addTab("Press", R.drawable.tab_home, PressActivity.class);
+		// end TODO-1
+	
+		addTab("LDL Twitter", R.drawable.tab_search, TwitterActivity.class);
 
-		addTab("Home", R.drawable.tab_home, HomeActivity.class);
-		addTab("Search", R.drawable.tab_search, TwitterActivity.class);
+
 	}
 
 	private void addTab(String labelId, int drawableId, Class<?> c) {
