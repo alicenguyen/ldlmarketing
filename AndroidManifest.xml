@@ -28,6 +28,12 @@
         <activity android:name=".TwitterActivity" />
         <activity android:name=".YoutubeActivity" />
         <activity android:name=".PhotoActivity" />
+        <activity android:name=".AboutActivity" />
+        <activity android:name=".ClientDirectoryActivity" />
+        <activity android:name=".ContactActivity" />
+        <activity android:name=".FAQSActivity" />
+        <activity android:name=".PortfolioActivity" />
+        <activity android:name=".ServicesActivity" />
     </application>
 
 </manifest>

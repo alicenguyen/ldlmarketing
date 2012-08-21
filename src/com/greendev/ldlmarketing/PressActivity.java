@@ -10,6 +10,6 @@ public class PressActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		
 		// TODO
-		setContentView(R.layout.home_layout);
+		setContentView(R.layout.press_layout);
 	}
 }

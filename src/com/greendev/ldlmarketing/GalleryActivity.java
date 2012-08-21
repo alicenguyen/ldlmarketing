@@ -34,8 +34,7 @@ public class GalleryActivity extends Activity implements OnClickListener{
 			startActivity(c);
 			break;
 
-		}		
+		}
 	}
-	
-	
+
 }

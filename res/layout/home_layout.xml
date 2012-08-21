@@ -1,7 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-  android:layout_height="fill_parent" android:layout_width="fill_parent">
-  <TextView android:layout_height="wrap_content"
-    android:layout_width="wrap_content" android:text="Welcome"
-    android:layout_centerInParent="true" android:textSize="20sp"/>
-</RelativeLayout>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:text="LDL Advertising"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/button_about"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="About" />
+
+    <Button
+        android:id="@+id/button_clientdir"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Client Directory" />
+
+    <Button
+        android:id="@+id/button_portfolio"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Portfolio" />
+
+    <Button
+        android:id="@+id/button_services"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Services" />
+
+    <Button
+        android:id="@+id/button_faqs"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="FAQS" />
+
+    <Button
+        android:id="@+id/button_contactus"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Contact Us" />
+
+</LinearLayout>
