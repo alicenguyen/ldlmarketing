@@ -51,18 +51,22 @@ public final class R {
         public static final int button_services=0x7f090005;
         public static final int button_videos=0x7f090001;
         public static final int ic_launcher=0x7f090009;
-        public static final int menu_settings=0x7f09000b;
+        public static final int login_button=0x7f09000c;
+        public static final int menu_settings=0x7f09000d;
         public static final int textView1=0x7f090008;
         public static final int title=0x7f09000a;
+        public static final int tweet_button=0x7f09000b;
     }
     public static final class layout {
-        public static final int gallery_layout=0x7f030000;
-        public static final int home_layout=0x7f030001;
-        public static final int main=0x7f030002;
-        public static final int photo_layout=0x7f030003;
-        public static final int tab_indicator=0x7f030004;
-        public static final int twitter_layout=0x7f030005;
-        public static final int youtube_layout=0x7f030006;
+        public static final int frame_layout=0x7f030000;
+        public static final int gallery_layout=0x7f030001;
+        public static final int home_layout=0x7f030002;
+        public static final int main=0x7f030003;
+        public static final int photo_layout=0x7f030004;
+        public static final int press_layout=0x7f030005;
+        public static final int tab_indicator=0x7f030006;
+        public static final int twitter_layout=0x7f030007;
+        public static final int youtube_layout=0x7f030008;
     }
     public static final class menu {
         public static final int main=0x7f080000;

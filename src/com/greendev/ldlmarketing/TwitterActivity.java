@@ -27,11 +27,11 @@ public class TwitterActivity extends Activity {
     /** Name to store the users access token secret */
     private static final String PREF_ACCESS_TOKEN_SECRET = "accessTokenSecret";
     /** Consumer Key generated when you registered your app at https://dev.twitter.com/apps/ */
-    private static final String CONSUMER_KEY = "yourConsumerKey";
+    private static final String CONSUMER_KEY = "w8kfCAN2qUPDk6FLmGg";
     /** Consumer Secret generated when you registered your app at https://dev.twitter.com/apps/  */
-    private static final String CONSUMER_SECRET = "yourConsumerSecret"; // XXX Encode in your app
+    private static final String CONSUMER_SECRET = "9X1GNOsYuqXb9wc0BUZAdjF5wheCuiBtNQOm2HHeo14"; // XXX Encode in your app
     /** The url that Twitter will redirect to after a user log's in - this will be picked up by your app manifest and redirected into this activity */
-    private static final String CALLBACK_URL = "tweet-to-twitter-blundell-01-android:///";
+    private static final String CALLBACK_URL = "ldlmarketing-android:///";
     /** Preferences to store a logged in users credentials */
     private SharedPreferences mPrefs;
     /** Twitter4j object */
@@ -46,8 +46,8 @@ public class TwitterActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            Log.i(TAG, "Loading TweetToTwitterActivity");
-            setContentView(R.layout.main);
+            Log.i(TAG, "Loading TwitterActivity");
+            setContentView(R.layout.twitter_layout);
             
             // Create a new shared preference object to remember if the user has
             // already given us permission
