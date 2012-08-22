@@ -33,7 +33,7 @@ public class HomeActivity extends Activity implements OnClickListener {
 	}
 
 	public void onClick(View v) {
-		switch (v.getId()) {
+		/*switch (v.getId()) {
 		case R.id.button_about:
 			Intent i = new Intent(this, AboutActivity.class);
 			startActivity(i);
@@ -65,6 +65,7 @@ public class HomeActivity extends Activity implements OnClickListener {
 			break;
 
 		}
+		*/
 	}
 
 }
