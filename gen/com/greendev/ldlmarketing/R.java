@@ -50,10 +50,13 @@ public final class R {
         public static final int button_portfolio=0x7f090004;
         public static final int button_services=0x7f090005;
         public static final int button_videos=0x7f090001;
-        public static final int ic_launcher=0x7f090009;
-        public static final int menu_settings=0x7f09000b;
-        public static final int textView1=0x7f090008;
-        public static final int title=0x7f09000a;
+        public static final int ic_launcher=0x7f09000b;
+        public static final int menu_settings=0x7f09000e;
+        public static final int textView1=0x7f09000a;
+        public static final int title=0x7f09000c;
+        public static final int userVideoThumbImageView=0x7f090008;
+        public static final int userVideoTitleTextView=0x7f090009;
+        public static final int videosListView=0x7f09000d;
     }
     public static final class layout {
         public static final int about_layout=0x7f030000;
@@ -63,14 +66,15 @@ public final class R {
         public static final int frame_layout=0x7f030004;
         public static final int gallery_layout=0x7f030005;
         public static final int home_layout=0x7f030006;
-        public static final int main=0x7f030007;
-        public static final int photo_layout=0x7f030008;
-        public static final int portfolio_layout=0x7f030009;
-        public static final int press_layout=0x7f03000a;
-        public static final int services_layout=0x7f03000b;
-        public static final int tab_indicator=0x7f03000c;
-        public static final int twitter_layout=0x7f03000d;
-        public static final int youtube_layout=0x7f03000e;
+        public static final int list_item_user_video=0x7f030007;
+        public static final int main=0x7f030008;
+        public static final int photo_layout=0x7f030009;
+        public static final int portfolio_layout=0x7f03000a;
+        public static final int press_layout=0x7f03000b;
+        public static final int services_layout=0x7f03000c;
+        public static final int tab_indicator=0x7f03000d;
+        public static final int twitter_layout=0x7f03000e;
+        public static final int youtube_layout=0x7f03000f;
     }
     public static final class menu {
         public static final int main=0x7f080000;
