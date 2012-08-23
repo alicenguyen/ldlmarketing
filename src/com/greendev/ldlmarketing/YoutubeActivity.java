@@ -76,7 +76,6 @@ public class YoutubeActivity extends Activity implements VideoClickListener{
     
     // This is the interface method that is called when a video in the listview is clicked!
     // The interface is a contract between this activity and the listview
-    @Override
     public void onVideoClicked(Video video) {
         Intent intent = new Intent(Intent.ACTION_VIEW);
         intent.setData(Uri.parse(video.getUrl()));

@@ -66,7 +66,6 @@ public class VideosListView extends ListView implements android.widget.AdapterVi
     // When we receive a notification that a list item was pressed
     // we check to see if a video listener has been set
     // if it has we can then tell the listener 'hey a video has just been clicked' also passing the video
-    @Override
     public void onItemClick(AdapterView<?> adapter, View v, int position, long id) {
         if(videoClickListener != null){
             videoClickListener.onVideoClicked(videos.get(position));
