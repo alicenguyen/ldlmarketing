@@ -2,6 +2,8 @@ package com.greendev.ldlmarketing;
  
 
 import android.app.Activity;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -9,6 +11,8 @@ import android.view.View;
 
 import com.greendev.ldlmarketing.youtube.Library;
 import com.greendev.ldlmarketing.youtube.GetYouTubeUserVideosTask;
+import com.greendev.ldlmarketing.youtube.Video;
+import com.greendev.ldlmarketing.youtube.VideoClickListener;
 import com.greendev.ldlmarketing.youtube.VideosListView;
  
 /**
@@ -21,7 +25,7 @@ import com.greendev.ldlmarketing.youtube.VideosListView;
  * </br>
  * @author paul.blundell
  */
-public class YoutubeActivity extends Activity {
+public class YoutubeActivity extends Activity implements VideoClickListener{
     // A reference to our list that will hold the video details
     private VideosListView listView;
  
@@ -68,5 +72,14 @@ public class YoutubeActivity extends Activity {
         // because who cares if we get a callback once the activity has stopped? not me!
         responseHandler = null;
         super.onStop();
+    }
+    
+    // This is the interface method that is called when a video in the listview is clicked!
+    // The interface is a contract between this activity and the listview
+    @Override
+    public void onVideoClicked(Video video) {
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse(video.getUrl()));
+        startActivity(intent);
     }
 }
