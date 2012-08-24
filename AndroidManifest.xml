@@ -26,22 +26,13 @@
         <activity android:name=".FrameActivity" />
         <activity android:name=".GalleryActivity" />
         <activity android:name=".PressActivity" />
-        <activity
-            android:name=".TwitterActivity"
-            android:label="@string/app_name"
-            android:launchMode="singleInstance" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        <activity android:name=".TwitterActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-
-                <data android:scheme="tweet-to-twitter-blundell-01-android" />
+                <data android:scheme="ldlmarketing-oauth-twitter" android:host="callback"/>
             </intent-filter>
         </activity>
         <activity android:name=".YoutubeActivity" />

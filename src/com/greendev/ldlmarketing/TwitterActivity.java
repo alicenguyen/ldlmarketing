@@ -23,15 +23,20 @@ public class TwitterActivity extends Activity {
     private static final String TAG = "TwitterActivity";
 
     /** Name to store the users access token */
-    private static final String PREF_ACCESS_TOKEN = "accessToken";
+    private static final String PREF_ACCESS_TOKEN = "128267660-AAUpxcGcI00ok5KQzhsdVETvjbAp14uaMIZr4CHv";
     /** Name to store the users access token secret */
-    private static final String PREF_ACCESS_TOKEN_SECRET = "accessTokenSecret";
+    private static final String PREF_ACCESS_TOKEN_SECRET = "cHYIlpKYemVW4qZupLqOLEX3QI5eg25g3EwUZgTE5A";
     /** Consumer Key generated when you registered your app at https://dev.twitter.com/apps/ */
     private static final String CONSUMER_KEY = "w8kfCAN2qUPDk6FLmGg";
     /** Consumer Secret generated when you registered your app at https://dev.twitter.com/apps/  */
     private static final String CONSUMER_SECRET = "9X1GNOsYuqXb9wc0BUZAdjF5wheCuiBtNQOm2HHeo14"; // XXX Encode in your app
     /** The url that Twitter will redirect to after a user log's in - this will be picked up by your app manifest and redirected into this activity */
-    private static final String CALLBACK_URL = "ldlmarketing-android:///";
+    private static final String CALLBACK_URL = "ldlmarketing-oauth-twitter://callback";
+    
+    public static final String REQUEST_URL = "http://api.twitter.com/oauth/request_token";
+	public static final String ACCESS_URL = "http://api.twitter.com/oauth/access_token";
+	public static final String AUTHORIZE_URL = "http://api.twitter.com/oauth/authorize";
+			
     /** Preferences to store a logged in users credentials */
     private SharedPreferences mPrefs;
     /** Twitter4j object */
@@ -114,7 +119,7 @@ public class TwitterActivity extends Activity {
                     setContentView(twitterSite);
 
             } catch (TwitterException e) {
-                    Toast.makeText(this, "Twitter Login error, try again later", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Twitter Login error, try again later" + e.getMessage(), Toast.LENGTH_SHORT).show();
             }
     }
 
