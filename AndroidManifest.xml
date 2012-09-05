@@ -17,6 +17,9 @@
             android:name=".MainTabActivity"
             android:label="@string/title_activity_main"
             android:theme="@android:style/Theme.Light.NoTitleBar" >
+            <data
+                android:host="twitter"
+                android:scheme="ldlmarketing" />
         </activity>
         <activity
             android:name=".SplashScreenActivity"
@@ -32,8 +35,7 @@
             android:theme="@android:style/Theme.Light.NoTitleBar" />
         <activity
             android:name=".AboutActivity"
-            android:label="About LDL"/>
-        
+            android:label="About LDL" />
         <activity
             android:name=".FrameActivity"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
@@ -47,14 +49,12 @@
             android:name=".TwitterActivity"
             android:theme="@android:style/Theme.Light.NoTitleBar" >
             <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
 
                 <data
-                    android:host="callback"
-                    android:scheme="ldlmarketing-oauth-twitter" />
+                    android:host="twitter"
+                    android:scheme="ldlmarketing" />
             </intent-filter>
         </activity>
         <activity
@@ -63,10 +63,9 @@
         <activity
             android:name=".PhotoActivity"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
-
         <activity
             android:name=".ClientDirectoryActivity"
-            android:label="Client Directory"/>
+            android:label="Client Directory" />
         <activity
             android:name=".ContactActivity"
             android:label="Contact Us" />
