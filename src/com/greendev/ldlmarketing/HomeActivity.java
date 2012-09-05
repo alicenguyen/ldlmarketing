@@ -6,11 +6,12 @@ import android.view.View;
 import android.view.View.OnClickListener;
 
 public class HomeActivity extends Activity implements OnClickListener {
-
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.home_layout);
+		
 
 		View aboutButton = findViewById(R.id.button_about);
 		aboutButton.setOnClickListener(this);

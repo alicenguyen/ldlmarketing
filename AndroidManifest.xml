@@ -16,6 +16,8 @@
         <activity
             android:name=".MainTabActivity"
             android:label="@string/title_activity_main" >
+        </activity>
+        <activity android:name=".SplashScreenActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,13 +28,16 @@
         <activity android:name=".FrameActivity" />
         <activity android:name=".GalleryActivity" />
         <activity android:name=".PressActivity" />
-        <activity android:name=".TwitterActivity">
+        <activity android:name=".TwitterActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="ldlmarketing-oauth-twitter" android:host="callback"/>
+
+                <data
+                    android:host="callback"
+                    android:scheme="ldlmarketing-oauth-twitter" />
             </intent-filter>
         </activity>
         <activity android:name=".YoutubeActivity" />
