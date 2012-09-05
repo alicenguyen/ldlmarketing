@@ -9,17 +9,15 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:enabled="false"
         android:onClick="buttonTweet"
         android:text="Tweet" />
 
-    <Button
-        android:id="@+id/login_button"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/tv_result"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/tweet_button"
         android:layout_alignParentLeft="true"
-        android:onClick="buttonLogin"
-        android:text="Login" />
+        android:layout_centerVertical="true"
+        android:text="TextView" />
 
 </RelativeLayout>

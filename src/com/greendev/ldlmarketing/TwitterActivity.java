@@ -5,226 +5,216 @@ import twitter4j.TwitterException;
 import twitter4j.TwitterFactory;
 import twitter4j.auth.AccessToken;
 import twitter4j.auth.RequestToken;
+import twitter4j.internal.http.HttpResponseCode;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.SharedPreferences.Editor;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.webkit.WebView;
+import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.Toast;
+import android.widget.TextView;
 
 
-public class TwitterActivity extends Activity {
-	  
-    private static final String TAG = "TwitterActivity";
+public class TwitterActivity extends Activity implements OnClickListener {
+	private static final String SHARED_PREF_NAME = "LDLMARKETING_TWITTER_SHARED_PREF";
+	private static final String TWITTER_CONSUMER_KEY = "w8kfCAN2qUPDk6FLmGg";
+	private static final String TWITTER_CONSUMER_SECRET = "9X1GNOsYuqXb9wc0BUZAdjF5wheCuiBtNQOm2HHeo14";
+	private static Uri TWITTER_CALLBACK_URL = Uri.parse("ldlmarketing://twitter"); 
+	
+	private static final String SHARED_PREF_KEY_TWITTER_CONSUMER_KEY = "TWITTER_CONSUMER_KEY";
+	private static final String SHARED_PREF_KEY_TWITTER_CONSUMER_SECRET = "TWITTER_CONSUMER_SECRET";
 
-    /** Name to store the users access token */
-    private static final String PREF_ACCESS_TOKEN = "128267660-AAUpxcGcI00ok5KQzhsdVETvjbAp14uaMIZr4CHv";
-    /** Name to store the users access token secret */
-    private static final String PREF_ACCESS_TOKEN_SECRET = "cHYIlpKYemVW4qZupLqOLEX3QI5eg25g3EwUZgTE5A";
-    /** Consumer Key generated when you registered your app at https://dev.twitter.com/apps/ */
-    private static final String CONSUMER_KEY = "w8kfCAN2qUPDk6FLmGg";
-    /** Consumer Secret generated when you registered your app at https://dev.twitter.com/apps/  */
-    private static final String CONSUMER_SECRET = "9X1GNOsYuqXb9wc0BUZAdjF5wheCuiBtNQOm2HHeo14"; // XXX Encode in your app
-    /** The url that Twitter will redirect to after a user log's in - this will be picked up by your app manifest and redirected into this activity */
-    private static final String CALLBACK_URL = "ldlmarketing-oauth-twitter://callback";
-    
-    public static final String REQUEST_URL = "http://api.twitter.com/oauth/request_token";
-	public static final String ACCESS_URL = "http://api.twitter.com/oauth/access_token";
-	public static final String AUTHORIZE_URL = "http://api.twitter.com/oauth/authorize";
-			
-    /** Preferences to store a logged in users credentials */
-    private SharedPreferences mPrefs;
-    /** Twitter4j object */
-    private Twitter mTwitter;
-    /** The request token signifies the unique ID of the request you are sending to twitter  */
-    private RequestToken mReqToken;
+	private Button m_sendTweet;
+	private TextView m_tvResult;
+	private Twitter m_insTwitter; // Twitter instance 를 여러번 받아오기 귀찮아서 그냥 써버렸습니다.
+	private AccessToken m_insAccessToken; // access token
+	private RequestToken m_insRequestToken; // 저장된 access token 이 없는 경우 access
+											// token 을 얻어오기 위해 사용됩니다.
 
-    private Button mLoginButton;
-    private Button mTweetButton;
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.twitter_layout);
 
-    /** Called when the activity is first created. */
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            Log.i(TAG, "Loading TwitterActivity");
-            setContentView(R.layout.twitter_layout);
-            
-            // Create a new shared preference object to remember if the user has
-            // already given us permission
-            mPrefs = getSharedPreferences("twitterPrefs", MODE_PRIVATE);
-            Log.i(TAG, "Got Preferences");
-            
-            // Load the twitter4j helper
-            mTwitter = new TwitterFactory().getInstance();
-            Log.i(TAG, "Got Twitter4j");
-            
-            // Tell twitter4j that we want to use it with our app
-            mTwitter.setOAuthConsumer(CONSUMER_KEY, CONSUMER_SECRET);
-            Log.i(TAG, "Inflated Twitter4j");
-            
-            mLoginButton = (Button) findViewById(R.id.login_button);
-            mTweetButton = (Button) findViewById(R.id.tweet_button);
-    }
+		m_sendTweet = (Button) findViewById(R.id.tweet_button);
+		m_tvResult = (TextView) findViewById(R.id.tv_result);
 
-    /**
-     * Button clickables are declared in XML as this projects min SDK is 1.6</br> </br>
-     * Checks if the user has given this app permission to use twitter
-     * before</br> If so login and enable tweeting</br>
-     * Otherwise redirect to Twitter for permission
-     *
-     * @param v the clicked button
-     */
-    public void buttonLogin(View v) {
-            Log.i(TAG, "Login Pressed");
-            if (mPrefs.contains(PREF_ACCESS_TOKEN)) {
-                    Log.i(TAG, "Repeat User");
-                    loginAuthorisedUser();
-            } else {
-                    Log.i(TAG, "New User");
-                    loginNewUser();
-            }
-    }
+		m_sendTweet.setOnClickListener(this); // submit button 을 누르면
 
-    /**
-     * Button clickables are declared in XML as this projects min SDK is 1.6</br> </br>
-     *
-     * @param v the clicked button
-     */
-    public void buttonTweet(View v) {
-            Log.i(TAG, "Tweet Pressed");
-            tweetMessage();
-    }
+		m_tvResult.setText("Sending message"); // 이 message 를 전송하게 됩니다.
+	}
 
-    /**
-     * Create a request that is sent to Twitter asking 'can our app have permission to use Twitter for this user'</br>
-     * We are given back the {@link mReqToken}
-     * that is a unique indetifier to this request</br>
-     * The browser then pops up on the twitter website and the user logins in ( we never see this informaton
-     * )</br> Twitter then redirects us to {@link CALLBACK_URL} if the login was a success</br>
-     *
-     */
-    private void loginNewUser() {
-            try {
-                    Log.i(TAG, "Request App Authentication");
-                    mReqToken = mTwitter.getOAuthRequestToken(CALLBACK_URL);
+	public void onClick(View v) {
+		switch (v.getId()) {
+		case R.id.tweet_button: {
+			IOPTE_TWITTER_Submit(); // submit button 을 누르면...!!
+		}
+			break;
+		}
+	}
 
-                    Log.i(TAG, "Starting Webview to login to twitter");
-                    WebView twitterSite = new WebView(this);
-                    twitterSite.loadUrl(mReqToken.getAuthenticationURL());
-                    setContentView(twitterSite);
+	@Override
+	protected void onNewIntent(Intent intent) {
+		// WEB 에서 인증을 마치거나, 인증하지 않고 앱으로 돌아온 경우 이쪽으로 떨어지게 됩니다.
 
-            } catch (TwitterException e) {
-                    Toast.makeText(this, "Twitter Login error, try again later" + e.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-    }
+		super.onNewIntent(intent);
 
-    /**
-     * The user had previously given our app permission to use Twitter</br>
-     * Therefore we retrieve these credentials and fill out the Twitter4j helper
-     */
-    private void loginAuthorisedUser() {
-            String token = mPrefs.getString(PREF_ACCESS_TOKEN, null);
-            String secret = mPrefs.getString(PREF_ACCESS_TOKEN_SECRET, null);
+		Uri uri = intent.getData();
 
-            // Create the twitter access token from the credentials we got previously
-            AccessToken at = new AccessToken(token, secret);
+		if (null != uri
+				&& TWITTER_CALLBACK_URL.getScheme().equals(uri.getScheme()))
+		// 내가 보낸 URI Scheme 과 동일하면
+		{
+			String strOAuthVerifier = uri.getQueryParameter("oauth_verifier"); 
+			// twitter 인증 page에서 인증하지 않고 앱으로 이동 링크를 클릭해서 바로 돌아오면
+			// strOAuthVerifier == null 이므로 예외처리
+			if (null == strOAuthVerifier) {
+				return;
+			}
 
-            mTwitter.setOAuthAccessToken(at);
-            
-            Toast.makeText(this, "Welcome back", Toast.LENGTH_SHORT).show();
-            
-            enableTweetButton();
-    }
+			try {
+				// request token 과 oauth verifier 로 access token 을 얻어옵니다.
+				m_insAccessToken = m_insTwitter.getOAuthAccessToken(
+						m_insRequestToken, strOAuthVerifier);
 
-    /**
-     * Catch when Twitter redirects back to our {@link CALLBACK_URL}</br>
-     * We use onNewIntent as in our manifest we have singleInstance="true" if we did not the
-     * getOAuthAccessToken() call would fail
-     */
-    @Override
-    protected void onNewIntent(Intent intent) {
-            super.onNewIntent(intent);
-            Log.i(TAG, "New Intent Arrived");
-            dealWithTwitterResponse(intent);
-    }
+				// 얻어온 access token 은 Shared Preference 에 고이 모셔 둡니다.
+				Twitter_StoreAccessToken(m_insTwitter.verifyCredentials()
+						.getId(), m_insAccessToken);
 
-    @Override
-    protected void onResume() {
-            super.onResume();
-            Log.i(TAG, "Arrived at onResume");
-    }
-    
-    /**
-     * Twitter has sent us back into our app</br>
-     * Within the intent it set back we have a 'key' we can use to authenticate the user
-     *
-     * @param intent
-     */
-    private void dealWithTwitterResponse(Intent intent) {
-            Uri uri = intent.getData();
-            if (uri != null && uri.toString().startsWith(CALLBACK_URL)) { // If the user has just logged in
-                    String oauthVerifier = uri.getQueryParameter("oauth_verifier");
+				// access token 이 생겼으니 message 를 전송합니다.
+				IOPTE_TWITTER_UpdateStatus();
+			} catch (TwitterException te) {
+				// Log.e(m_gVar.getLogTag(), te.getMessage());
+			}
+		}
+	}
 
-                    authoriseNewUser(oauthVerifier);
-            }
-    }
+	public void IOPTE_TWITTER_Submit() {
+		Twitter_GetInstance();
 
-    /**
-     * Create an access token for this new user</br>
-     * Fill out the Twitter4j helper</br>
-     * And save these credentials so we can log the user straight in next time
-     *
-     * @param oauthVerifier
-     */
-    private void authoriseNewUser(String oauthVerifier) {
-            try {
-                    AccessToken at = mTwitter.getOAuthAccessToken(mReqToken, oauthVerifier);
-                    mTwitter.setOAuthAccessToken(at);
+		m_insAccessToken = Twitter_LoadAccessToken(0);
 
-                    saveAccessToken(at);
+		if (null != m_insAccessToken) {
+			// SharedPreferences 에 저장된 access token 이 있으면
+			// Twitter 객체에 access token 을 설정해 주고 바로 message 를 전송합니다.
+			m_insTwitter.setOAuthAccessToken(m_insAccessToken);
 
-                    // Set the content view back after we changed to a webview
-                    setContentView(R.layout.main);
-                    
-                    enableTweetButton();
-            } catch (TwitterException e) {
-                    Toast.makeText(this, "Twitter auth error x01, try again later", Toast.LENGTH_SHORT).show();
-            }
-    }
+			IOPTE_TWITTER_UpdateStatus();
+		} else {
+			// SharedPreferences 에 저장된 access token 이 없으면 인증 절차를 진행하게 됩니다.
+			try {
+				// request token 을 얻어옵니다.
+				m_insRequestToken = m_insTwitter
+						.getOAuthRequestToken(TWITTER_CALLBACK_URL.toString());
+			} catch (TwitterException te) {
+				te.printStackTrace();
+			}
 
-    /**
-     * Allow the user to Tweet
-     */
-    private void enableTweetButton() {
-            Log.i(TAG, "User logged in - allowing to tweet");
-            mLoginButton.setEnabled(false);
-            mTweetButton.setEnabled(true);
-    }
+			// WEB OAuth 인증을 진행하기 위해 Browser 를 호출합니다.
+			startActivity(new Intent(Intent.ACTION_VIEW,
+					Uri.parse(m_insRequestToken.getAuthorizationURL())));
+		}
+	}
 
-    /**
-     * Send a tweet on your timeline, with a Toast msg for success or failure
-     */
-    private void tweetMessage() {
-            try {
-                    mTwitter.updateStatus("Test - Tweeting with @Blundell_apps #AndroidDev Tutorial using #Twitter4j http://blog.blundell-apps.com/sending-a-tweet");
+	private void Twitter_GetInstance() {
+		if (null == m_insTwitter) {
+			m_insTwitter = new TwitterFactory().getInstance();
 
-                    Toast.makeText(this, "Tweet Successful!", Toast.LENGTH_SHORT).show();
-            } catch (TwitterException e) {
-                    Toast.makeText(this, "Tweet error, try again later", Toast.LENGTH_SHORT).show();
-            }
-    }
+			// twitter instance 에 앱의 key 를 등록 해 줍니다.
+			m_insTwitter.setOAuthConsumer(TWITTER_CONSUMER_KEY,
+					TWITTER_CONSUMER_SECRET);
+		}
+	}
 
-    private void saveAccessToken(AccessToken at) {
-            String token = at.getToken();
-            String secret = at.getTokenSecret();
-            Editor editor = mPrefs.edit();
-            editor.putString(PREF_ACCESS_TOKEN, token);
-            editor.putString(PREF_ACCESS_TOKEN_SECRET, secret);
-            editor.commit();
-    }
+	private void Twitter_StoreAccessToken(long a_lUseID,
+			AccessToken a_insAccessToken) {
+		String strToken = null;
+		String strTokenSecret = null;
+
+		strToken = a_insAccessToken.getToken();
+		strTokenSecret = a_insAccessToken.getTokenSecret();
+
+		StoreData(SHARED_PREF_KEY_TWITTER_CONSUMER_KEY, strToken);
+		StoreData(SHARED_PREF_KEY_TWITTER_CONSUMER_SECRET, strTokenSecret);
+	}
+
+	private AccessToken Twitter_LoadAccessToken(long a_lUseID) {
+		AccessToken insAccessToken = null;
+		String strToken = null;
+		String strTokenSecret = null;
+
+		strToken = LoadData(SHARED_PREF_KEY_TWITTER_CONSUMER_KEY);
+		strTokenSecret = LoadData(SHARED_PREF_KEY_TWITTER_CONSUMER_SECRET);
+
+		if (null != strToken && null != strTokenSecret && !"".equals(strToken)
+				&& !"".equals(strTokenSecret)) {
+			insAccessToken = new AccessToken(strToken, strTokenSecret);
+		} else {
+			// Log.v(m_strLogTag,
+			// "Twitter_LoadAccessToken() ## There's no saved strToken, strTokenSecret data");
+		}
+
+		return insAccessToken;
+	}
+
+	private boolean StoreData(String a_strKey, String a_strData) {
+		SharedPreferences insSharedPref = null;
+		SharedPreferences.Editor insSharedPrefEditor = null;
+
+		insSharedPref = getSharedPreferences(SHARED_PREF_NAME, MODE_PRIVATE);
+		insSharedPrefEditor = insSharedPref.edit();
+
+		insSharedPrefEditor.putString(a_strKey, a_strData);
+
+		return insSharedPrefEditor.commit();
+	}
+
+	private String LoadData(String a_strKey) {
+		SharedPreferences insSharedPref = null;
+
+		insSharedPref = getSharedPreferences(SHARED_PREF_NAME, MODE_PRIVATE);
+
+		return insSharedPref.getString(a_strKey, "");
+	}
+
+	private void IOPTE_TWITTER_UpdateStatus() {
+		String strContent = null;
+		String strTwitterID = null;
+
+		strContent = m_tvResult.getText().toString();
+		strTwitterID = "jasoncho0129"; // 저의 경우 특정인에게 메세지를 보낼 목적으로 만들어 보았기 때문에 이 부분이 필요합니다.
+
+		try {
+			// 특정 ID 에게 message 를 보내봅니다.
+			m_insTwitter.updateStatus("@" + strTwitterID + " " + strContent);
+
+			finish();
+		} catch (TwitterException te) {
+			if (HttpResponseCode.FORBIDDEN == te.getStatusCode()) {
+				String strError = null;
+
+				strError = te.getErrorMessage();
+
+				if (true == strError.contains("duplicate")) {
+					; // 동일한 message 로 update 를 하게되면 이쪽으로 떨어집니다.
+				} else if (true == strError.contains("140")) {
+					; // message 가 140 글자를 넘어가면 이쪽으로 떨어집니다.
+				} else {
+					; // 뭔지는 모르겠지만 status code 가 FORBIDDEN 으로 넘어오면 이쪽에서 처리를 해
+						// 주도록 합니다.
+						// 아직 이쪽으로 떨어지는 error 를 접해보지는 못했습니다. ^^;;
+				}
+
+				finish();
+			} else if (HttpResponseCode.UNAUTHORIZED == te.getStatusCode()) {
+				; // 인증 관련된 오류가 있으면 이쪽으로 떨어진다고 합니다.
+					// 아직 이쪽으로 떨어지는 경우를 접해보지는 못했습니다.
+				finish();
+			}
+
+			te.printStackTrace();
+		}
+	}
 }

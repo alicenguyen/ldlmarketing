@@ -16,6 +16,9 @@
         <activity
             android:name=".MainTabActivity"
             android:label="@string/title_activity_main" >
+                            <data
+                    android:host="twitter"
+                    android:scheme="ldlmarketing" />
         </activity>
         <activity android:name=".SplashScreenActivity" >
             <intent-filter>
@@ -30,14 +33,12 @@
         <activity android:name=".PressActivity" />
         <activity android:name=".TwitterActivity" >
             <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
 
                 <data
-                    android:host="callback"
-                    android:scheme="ldlmarketing-oauth-twitter" />
+                    android:host="twitter"
+                    android:scheme="ldlmarketing" />
             </intent-filter>
         </activity>
         <activity android:name=".YoutubeActivity" />
