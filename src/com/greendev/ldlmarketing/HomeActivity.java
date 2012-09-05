@@ -1,6 +1,7 @@
 package com.greendev.ldlmarketing;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -33,7 +34,7 @@ public class HomeActivity extends Activity implements OnClickListener {
 	}
 
 	public void onClick(View v) {
-		/*switch (v.getId()) {
+		switch (v.getId()) {
 		case R.id.button_about:
 			Intent i = new Intent(this, AboutActivity.class);
 			startActivity(i);
@@ -65,7 +66,7 @@ public class HomeActivity extends Activity implements OnClickListener {
 			break;
 
 		}
-		*/
+		
 	}
 
 }

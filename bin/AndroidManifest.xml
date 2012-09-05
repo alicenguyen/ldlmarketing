@@ -12,23 +12,40 @@
     <application
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@android:style/Theme.Light.NoTitleBar" >
+        android:theme="@android:style/Theme.Light" >
         <activity
             android:name=".MainTabActivity"
-            android:label="@string/title_activity_main" >
+            android:label="@string/title_activity_main"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
         </activity>
-        <activity android:name=".SplashScreenActivity" >
+        <activity
+            android:name=".SplashScreenActivity"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".HomeActivity" />
-        <activity android:name=".FrameActivity" />
-        <activity android:name=".GalleryActivity" />
-        <activity android:name=".PressActivity" />
-        <activity android:name=".TwitterActivity" >
+        <activity
+            android:name=".HomeActivity"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name=".AboutActivity"
+            android:label="About LDL"/>
+        
+        <activity
+            android:name=".FrameActivity"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name=".GalleryActivity"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name=".PressActivity"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name=".TwitterActivity"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
@@ -40,14 +57,28 @@
                     android:scheme="ldlmarketing-oauth-twitter" />
             </intent-filter>
         </activity>
-        <activity android:name=".YoutubeActivity" />
-        <activity android:name=".PhotoActivity" />
-        <activity android:name=".AboutActivity" />
-        <activity android:name=".ClientDirectoryActivity" />
-        <activity android:name=".ContactActivity" />
-        <activity android:name=".FAQSActivity" />
-        <activity android:name=".PortfolioActivity" />
-        <activity android:name=".ServicesActivity" />
+        <activity
+            android:name=".YoutubeActivity"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name=".PhotoActivity"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+
+        <activity
+            android:name=".ClientDirectoryActivity"
+            android:label="Client Directory"/>
+        <activity
+            android:name=".ContactActivity"
+            android:label="Contact Us" />
+        <activity
+            android:name=".FAQSActivity"
+            android:label="FAQs" />
+        <activity
+            android:name=".PortfolioActivity"
+            android:label="Portfolio" />
+        <activity
+            android:name=".ServicesActivity"
+            android:label="Services" />
     </application>
 
 </manifest>
