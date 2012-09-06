@@ -27,8 +27,7 @@ public class MainTabActivity extends TabActivity {
 			// temp R layer for now
 		addTab("Press", R.drawable.tab_gallery, PressActivity.class);
 		// end TODO-1
-	
-		addTab("LDL Twitter", R.drawable.tab_search, TwitterActivity.class);
+		addTab("LDL Twitter", R.drawable.twitter_bird_icon, TwitterActivity.class);
 
 
 	}

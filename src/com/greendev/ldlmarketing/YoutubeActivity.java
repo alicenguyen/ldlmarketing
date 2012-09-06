@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.view.View;
+import android.widget.MediaController;
+import android.widget.VideoView;
 
 import com.greendev.ldlmarketing.youtube.Library;
 import com.greendev.ldlmarketing.youtube.GetYouTubeUserVideosTask;
@@ -28,6 +30,9 @@ import com.greendev.ldlmarketing.youtube.VideosListView;
 public class YoutubeActivity extends Activity implements VideoClickListener{
     // A reference to our list that will hold the video details
     private VideosListView listView;
+    
+    // Saves the url of the clicked video.
+    private String url = "";
 
  
     @Override
@@ -69,8 +74,16 @@ public class YoutubeActivity extends Activity implements VideoClickListener{
     // The interface is a contract between this activity and the listview
     @Override
     public void onVideoClicked(Video video) {
-        Intent intent = new Intent(Intent.ACTION_VIEW);
-        intent.setData(Uri.parse(video.getUrl()));
-        startActivity(intent);
+//        Intent intent = new Intent(Intent.ACTION_VIEW);
+//        intent.setData(Uri.parse(video.getUrl()));
+//        System.out.println(""+video.getUrl());
+//        startActivity(intent);
+    	
+    	this.url = video.getUrl();
+    	Intent intent = new Intent(this, ViewYouTubeVideoActivity.class);
+    	intent.putExtra("videoUrl", url);
+    	startActivity(intent);
     }
+    
+
 }

@@ -41,6 +41,7 @@ public final class R {
         public static final int tab_search=0x7f02000e;
         public static final int tab_selected=0x7f02000f;
         public static final int tab_unselected=0x7f020010;
+        public static final int twitter_bird_icon=0x7f020011;
     }
     public static final class id {
         public static final int button_about=0x7f090002;
@@ -52,14 +53,15 @@ public final class R {
         public static final int button_services=0x7f090005;
         public static final int button_videos=0x7f090001;
         public static final int ic_launcher=0x7f09000b;
-        public static final int menu_settings=0x7f090010;
+        public static final int menu_settings=0x7f090011;
+        public static final int myvideoview=0x7f09000f;
         public static final int textView1=0x7f09000a;
         public static final int title=0x7f09000c;
         public static final int tv_result=0x7f09000e;
         public static final int tweet_button=0x7f09000d;
         public static final int userVideoThumbImageView=0x7f090008;
         public static final int userVideoTitleTextView=0x7f090009;
-        public static final int videosListView=0x7f09000f;
+        public static final int videosListView=0x7f090010;
     }
     public static final class layout {
         public static final int about_layout=0x7f030000;
@@ -78,7 +80,8 @@ public final class R {
         public static final int splash_layout=0x7f03000d;
         public static final int tab_indicator=0x7f03000e;
         public static final int twitter_layout=0x7f03000f;
-        public static final int youtube_layout=0x7f030010;
+        public static final int video_view_layout=0x7f030010;
+        public static final int youtube_layout=0x7f030011;
     }
     public static final class menu {
         public static final int main=0x7f080000;

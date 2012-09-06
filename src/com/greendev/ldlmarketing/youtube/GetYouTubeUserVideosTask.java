@@ -73,11 +73,15 @@ public class GetYouTubeUserVideosTask implements Runnable {
 				// The url link back to YouTube, this checks if it has a mobile url
 				// if it doesnt it gets the standard url
 				String url;
-				try {
-					url = jsonObject.getJSONObject("player").getString("mobile");
-				} catch (JSONException ignore) {
+				
+				/** testing url without m **/
+				//try {
+				//	url = jsonObject.getJSONObject("player").getString("mobile");
+				//} catch (JSONException ignore) {
 					url = jsonObject.getJSONObject("player").getString("default");
-				}
+				//}
+					
+					
 				// A url to the thumbnail image of the video
 				// We will use this later to get an image using a Custom ImageView
 				// Found here http://blog.blundell-apps.com/imageview-with-loading-spinner/
