@@ -13,9 +13,11 @@ public class GalleryActivity extends Activity implements OnClickListener{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.gallery_layout);
 		 
+		// Photos button
 		View photoButton = findViewById(R.id.button_photos);
 		photoButton.setOnClickListener(this);
 		
+		// Videos button
 		View videoButton = findViewById(R.id.button_videos);
 		videoButton.setOnClickListener(this);
 		

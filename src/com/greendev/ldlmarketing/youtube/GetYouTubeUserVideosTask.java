@@ -20,11 +20,14 @@ import android.os.Message;
 
 
 /**
+ * 
  * This is the task that will ask YouTube for a list of videos for a specified user</br>
  * This class implements Runnable meaning it will be ran on its own Thread</br>
  * Because it runs on it's own thread we need to pass in an object that is notified when it has finished
  *
- * @author paul.blundell
+ * @author Alice Nguyen
+ * @since August 2012
+ * Credit --  Paul Blundull http://blog.blundell-apps.com/click-item-in-a-listview-to-show-youtube-video/
  */
 public class GetYouTubeUserVideosTask implements Runnable {
 	// A reference to retrieve the data when this task finishes
@@ -49,7 +52,7 @@ public class GetYouTubeUserVideosTask implements Runnable {
 			// Get a httpclient to talk to the internet
 			HttpClient client = new DefaultHttpClient();
 			// Perform a GET request to YouTube for a JSON list of all the videos by a specific user
-			HttpUriRequest request = new HttpGet("https://gdata.youtube.com/feeds/api/videos?author="+username+"&v=2&alt=jsonc");
+			HttpUriRequest request = new HttpGet("http://gdata.youtube.com/feeds/api/videos?author="+username+"&v=2&alt=jsonc");
 			// Get the response that YouTube sends back
 			HttpResponse response = client.execute(request);
 			// Convert this response into a readable string

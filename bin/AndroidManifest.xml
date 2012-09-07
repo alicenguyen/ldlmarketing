@@ -41,7 +41,7 @@
             android:theme="@android:style/Theme.Light.NoTitleBar" />
         <activity
             android:name=".GalleryActivity"
-            android:theme="@android:style/Theme.Light.NoTitleBar" />
+            android:label="LDL Gallery" />
         <activity
             android:name=".PressActivity"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
@@ -78,8 +78,6 @@
         <activity
             android:name=".ServicesActivity"
             android:label="Services" />
-        <activity
-            android:name=".ViewYouTubeVideoActivity"/>
     </application>
 
 </manifest>

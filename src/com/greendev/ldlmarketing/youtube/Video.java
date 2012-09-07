@@ -4,7 +4,10 @@ import java.io.Serializable;
 
 /**
  * This is a representation of a users video off YouTube
- * @author paul.blundell
+ * 
+ * @author Alice Nguyen
+ * @since August 2012
+ * Credit --  Paul Blundull http://blog.blundell-apps.com/click-item-in-a-listview-to-show-youtube-video/
  */
 public class Video implements Serializable {
 	// The title of the video

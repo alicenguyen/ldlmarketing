@@ -21,8 +21,11 @@ import android.widget.ListView;
  * One example is we could switch out the adapter we are using, to something that displays scrolling images or whatever,
  * and our activity never need know!</br>
  * 
- * @author paul.blundell
+ * @author Alice Nguyen
+ * @since August 2012
+ * Credit --  Paul Blundull http://blog.blundell-apps.com/click-item-in-a-listview-to-show-youtube-video/
  */
+
 public class VideosListView extends ListView implements android.widget.AdapterView.OnItemClickListener{
 	
     private List<Video> videos;

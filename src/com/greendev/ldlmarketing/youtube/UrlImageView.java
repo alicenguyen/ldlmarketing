@@ -17,6 +17,14 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 
+/**
+ * Retrieves image thumbnail from youtube videos.
+ * 
+ * @author Alice Nguyen
+ * @since August 2012 Credit -- Paul Blundull
+ *        http://blog.blundell-apps.com/click
+ *        -item-in-a-listview-to-show-youtube-video/
+ */
 public class UrlImageView extends LinearLayout {
 
 	private Context mContext;
@@ -35,19 +43,22 @@ public class UrlImageView extends LinearLayout {
 	}
 
 	/**
-	 * First time loading of the LoaderImageView
-	 * Sets up the LayoutParams of the view, you can change these to
-	 * get the required effects you want
+	 * First time loading of the LoaderImageView Sets up the LayoutParams of the
+	 * view, you can change these to get the required effects you want
 	 */
 	private void init(final Context context) {
 		mContext = context;
 
 		mImage = new ImageView(mContext);
-		mImage.setLayoutParams(new LayoutParams(android.view.ViewGroup.LayoutParams.WRAP_CONTENT, android.view.ViewGroup.LayoutParams.WRAP_CONTENT));
+		mImage.setLayoutParams(new LayoutParams(
+				android.view.ViewGroup.LayoutParams.WRAP_CONTENT,
+				android.view.ViewGroup.LayoutParams.WRAP_CONTENT));
 		mImage.setVisibility(View.GONE);
-		
+
 		mSpinner = new ProgressBar(mContext);
-		mSpinner.setLayoutParams(new LayoutParams(android.view.ViewGroup.LayoutParams.WRAP_CONTENT, android.view.ViewGroup.LayoutParams.WRAP_CONTENT));
+		mSpinner.setLayoutParams(new LayoutParams(
+				android.view.ViewGroup.LayoutParams.WRAP_CONTENT,
+				android.view.ViewGroup.LayoutParams.WRAP_CONTENT));
 
 		mSpinner.setIndeterminate(true);
 
@@ -59,7 +70,8 @@ public class UrlImageView extends LinearLayout {
 	 * Set's the view's drawable, this uses the internet to retrieve the image
 	 * don't forget to add the correct permissions to your manifest
 	 * 
-	 * @param imageUrl the url of the image you wish to load
+	 * @param imageUrl
+	 *            the url of the image you wish to load
 	 */
 	public void setImageDrawable(final String imageUrl) {
 		mDrawable = null;
@@ -108,8 +120,11 @@ public class UrlImageView extends LinearLayout {
 	 * @throws IOException
 	 * @throws MalformedURLException
 	 */
-	private static Drawable getDrawableFromUrl(final String url) throws IOException, MalformedURLException {
-		return Drawable.createFromStream(((java.io.InputStream) new java.net.URL(url).getContent()), "name");
+	private static Drawable getDrawableFromUrl(final String url)
+			throws IOException, MalformedURLException {
+		return Drawable.createFromStream(
+				((java.io.InputStream) new java.net.URL(url).getContent()),
+				"name");
 	}
 
 }

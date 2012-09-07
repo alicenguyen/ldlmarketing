@@ -5,8 +5,10 @@ import java.util.List;
 
 /**
  * This is the 'library' of all the users videos
- * 
- * @author paul.blundell
+ *
+ * @author Alice Nguyen
+ * @since August 2012
+ * Credit --  Paul Blundull http://blog.blundell-apps.com/click-item-in-a-listview-to-show-youtube-video/
  */
 public class Library implements Serializable{
 	// The username of the owner of the library
