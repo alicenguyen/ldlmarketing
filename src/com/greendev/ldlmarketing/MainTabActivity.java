@@ -22,7 +22,7 @@ public class MainTabActivity extends TabActivity {
 		addTab("LDL Home", R.drawable.tab_home, HomeActivity.class);
 		
 		// TODO-1  must change drawable files!
-		addTab("Frame", R.drawable.tab_frame, FrameActivity.class);
+		addTab("LDL Cam", R.drawable.tab_ldlcam, LDLCamActivity.class);
 		addTab("Gallery", R.drawable.tab_gallery, GalleryActivity.class);
 			// temp R layer for now
 		addTab("Press", R.drawable.tab_gallery, PressActivity.class);

@@ -33,10 +33,10 @@ public final class R {
         public static final int search_selected=0x7f020006;
         public static final int splash=0x7f020007;
         public static final int tab_focus=0x7f020008;
-        public static final int tab_frame=0x7f020009;
-        public static final int tab_gallery=0x7f02000a;
-        public static final int tab_home=0x7f02000b;
-        public static final int tab_indicator=0x7f02000c;
+        public static final int tab_gallery=0x7f020009;
+        public static final int tab_home=0x7f02000a;
+        public static final int tab_indicator=0x7f02000b;
+        public static final int tab_ldlcam=0x7f02000c;
         public static final int tab_press=0x7f02000d;
         public static final int tab_search=0x7f02000e;
         public static final int tab_selected=0x7f02000f;
