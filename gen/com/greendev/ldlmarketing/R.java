@@ -44,24 +44,30 @@ public final class R {
         public static final int twitter_bird_icon=0x7f020011;
     }
     public static final class id {
-        public static final int button_about=0x7f090002;
-        public static final int button_clientdir=0x7f090003;
-        public static final int button_contactus=0x7f090007;
-        public static final int button_faqs=0x7f090006;
-        public static final int button_photos=0x7f090001;
-        public static final int button_portfolio=0x7f090004;
-        public static final int button_services=0x7f090005;
-        public static final int button_videos=0x7f090000;
-        public static final int ic_launcher=0x7f09000b;
-        public static final int menu_settings=0x7f090011;
-        public static final int myvideoview=0x7f09000f;
-        public static final int textView1=0x7f09000a;
-        public static final int title=0x7f09000c;
-        public static final int tv_result=0x7f09000e;
-        public static final int tweet_button=0x7f09000d;
-        public static final int userVideoThumbImageView=0x7f090008;
-        public static final int userVideoTitleTextView=0x7f090009;
-        public static final int videosListView=0x7f090010;
+        public static final int button1=0x7f090000;
+        public static final int button2=0x7f090001;
+        public static final int button3=0x7f090002;
+        public static final int button4=0x7f090003;
+        public static final int button5=0x7f090004;
+        public static final int button6=0x7f090005;
+        public static final int button_about=0x7f090008;
+        public static final int button_clientdir=0x7f090009;
+        public static final int button_contactus=0x7f09000d;
+        public static final int button_faqs=0x7f09000c;
+        public static final int button_photos=0x7f090007;
+        public static final int button_portfolio=0x7f09000a;
+        public static final int button_services=0x7f09000b;
+        public static final int button_videos=0x7f090006;
+        public static final int ic_launcher=0x7f090011;
+        public static final int menu_settings=0x7f090017;
+        public static final int myvideoview=0x7f090015;
+        public static final int textView1=0x7f090010;
+        public static final int title=0x7f090012;
+        public static final int tv_result=0x7f090014;
+        public static final int tweet_button=0x7f090013;
+        public static final int userVideoThumbImageView=0x7f09000e;
+        public static final int userVideoTitleTextView=0x7f09000f;
+        public static final int videosListView=0x7f090016;
     }
     public static final class layout {
         public static final int about_layout=0x7f030000;
