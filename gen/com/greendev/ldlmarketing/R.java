@@ -58,16 +58,22 @@ public final class R {
         public static final int button_portfolio=0x7f09000a;
         public static final int button_services=0x7f09000b;
         public static final int button_videos=0x7f090006;
-        public static final int ic_launcher=0x7f090011;
-        public static final int menu_settings=0x7f090017;
-        public static final int myvideoview=0x7f090015;
+        public static final int campaigns_button=0x7f090011;
+        public static final int digital_marketing_button=0x7f090016;
+        public static final int graphic_design_button=0x7f090013;
+        public static final int ic_launcher=0x7f090017;
+        public static final int menu_settings=0x7f09001d;
+        public static final int myvideoview=0x7f09001b;
+        public static final int press_button=0x7f090012;
         public static final int textView1=0x7f090010;
-        public static final int title=0x7f090012;
-        public static final int tv_result=0x7f090014;
-        public static final int tweet_button=0x7f090013;
+        public static final int title=0x7f090018;
+        public static final int tv_result=0x7f09001a;
+        public static final int tweet_button=0x7f090019;
         public static final int userVideoThumbImageView=0x7f09000e;
         public static final int userVideoTitleTextView=0x7f09000f;
-        public static final int videosListView=0x7f090016;
+        public static final int videosListView=0x7f09001c;
+        public static final int videos_button=0x7f090015;
+        public static final int websites_button=0x7f090014;
     }
     public static final class layout {
         public static final int about_layout=0x7f030000;
