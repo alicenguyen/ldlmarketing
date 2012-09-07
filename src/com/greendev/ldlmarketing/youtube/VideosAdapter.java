@@ -35,18 +35,22 @@ public class VideosAdapter extends BaseAdapter {
 		this.mInflater = LayoutInflater.from(context);
 	}
 
+	@Override
 	public int getCount() {
 		return videos.size();
 	}
 
+	@Override
 	public Object getItem(int position) {
 		return videos.get(position);
 	}
 
+	@Override
 	public long getItemId(int position) {
 		return position;
 	}
 
+	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		// If convertView wasn't null it means we have already set it to our list_item_user_video so no need to do it again
 		if(convertView == null){

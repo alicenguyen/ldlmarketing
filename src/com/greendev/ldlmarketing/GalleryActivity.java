@@ -24,6 +24,7 @@ public class GalleryActivity extends Activity implements OnClickListener{
 		
 	}
 
+	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.button_photos:

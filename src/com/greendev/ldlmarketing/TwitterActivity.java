@@ -46,6 +46,7 @@ public class TwitterActivity extends Activity implements OnClickListener {
 		m_tvResult.setText("Sending message"); // 이 message 를 전송하게 됩니다.
 	}
 
+	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.tweet_button: {

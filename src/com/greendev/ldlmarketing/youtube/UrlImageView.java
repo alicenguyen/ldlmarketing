@@ -96,6 +96,7 @@ public class UrlImageView extends LinearLayout {
 	 * Callback that is received once the image has been downloaded
 	 */
 	private final Handler imageLoadedHandler = new Handler(new Callback() {
+		@Override
 		public boolean handleMessage(Message msg) {
 			switch (msg.what) {
 			case RESULT_OK:

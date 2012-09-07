@@ -8,7 +8,6 @@ import com.greendev.ldlmarketing.R;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MotionEvent;
 
 /**
  * This is the splash screen activity for starting the app. 

@@ -13,6 +13,7 @@ public class ContactActivity extends Activity implements OnClickListener {
 		setContentView(R.layout.contactus_layout);
 	}
 
+	@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 

@@ -33,6 +33,7 @@ public class HomeActivity extends Activity implements OnClickListener {
 		contactUsButton.setOnClickListener(this);
 	}
 
+	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.button_about:

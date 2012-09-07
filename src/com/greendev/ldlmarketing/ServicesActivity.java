@@ -14,6 +14,7 @@ public class ServicesActivity extends Activity implements OnClickListener {
 		setContentView(R.layout.services_layout);
 	}
 
+	@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 

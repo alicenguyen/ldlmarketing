@@ -14,6 +14,7 @@ public class ClientDirectoryActivity extends Activity implements
 		setContentView(R.layout.clientdir_layout);
 	}
 
+	@Override
 	public void onClick(View arg0) {
 		// TODO Auto-generated method stub
 

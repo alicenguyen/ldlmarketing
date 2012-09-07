@@ -13,6 +13,7 @@ public class PortfolioActivity extends Activity implements OnClickListener {
 		setContentView(R.layout.portfolio_layout);
 	}
 
+	@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 
