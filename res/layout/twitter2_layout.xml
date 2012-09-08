@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/app_name"
+        android:textSize="15sp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:onClick="onClickAuthorize"
+        android:text="Authenticate"
+        android:textSize="20sp"
+        tools:ignore="HardcodedText" >
+    </Button>
+
+    <EditText
+        android:id="@+id/status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="What&apos;s up?"
+        android:textSize="40sp"
+        tools:ignore="HardcodedText" >
+
+    </EditText>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClickTweet"
+        android:text="Tweet"
+        android:textSize="40sp"
+        tools:ignore="HardcodedText" >
+
+    </Button>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClickGetStatus"
+        android:text="Get Status"
+        android:textSize="40sp"
+        tools:ignore="HardcodedText" >
+
+    </Button>
+
+</LinearLayout>

@@ -24,7 +24,7 @@ public class MainTabActivity extends TabActivity {
 		// TODO-1  must change drawable files!
 		addTab("LDL Cam", R.drawable.tab_ldlcam, LDLCamActivity.class);
 		addTab("Gallery", R.drawable.tab_gallery, GalleryActivity.class);
-		addTab("LDL Twitter", R.drawable.twitter_bird_icon, TwitterActivity.class);
+		addTab("LDL Twitter", R.drawable.twitter_bird_icon, TwitterActivity2.class);
 
 
 	}

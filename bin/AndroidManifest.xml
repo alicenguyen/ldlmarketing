@@ -56,6 +56,26 @@
                     android:scheme="ldlmarketing" />
             </intent-filter>
         </activity>
+        
+        <!-- Alice's Twitter implementation -->
+        <activity
+            android:name=".TwitterActivity2"
+            android:label="LDL Twitter" />
+        
+        <!--  Used for OAuth callback -->
+        <intent-filter>
+            <action
+                android:name="android.intent.action.VIEW" />
+            <category
+                android:name="android.intent.category.DEFAULT" />
+            <category
+                android:name="android.intent.category.BROWSABLE" />
+            <data
+                android:scheme="x-marakana-oauth-twitter"
+                android:host="callback" />
+        </intent-filter>
+            <!-- end of OAuth callback -->
+             
         <activity
             android:name=".YoutubeActivity"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
