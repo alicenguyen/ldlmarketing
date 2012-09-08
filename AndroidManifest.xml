@@ -71,7 +71,7 @@
             <category
                 android:name="android.intent.category.BROWSABLE" />
             <data
-                android:scheme="x-marakana-oauth-twitter"
+                android:scheme="myapp"
                 android:host="callback" />
         </intent-filter>
             <!-- end of OAuth callback -->

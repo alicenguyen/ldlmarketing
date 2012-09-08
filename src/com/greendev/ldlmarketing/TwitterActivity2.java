@@ -31,10 +31,10 @@ import android.widget.Toast;
  */
 
 public class TwitterActivity2 extends Activity {
-	private static final String TAG = "LDLMarketing";
+	private static final String TAG = "ldlmarketing";
 	private static final String OAUTH_KEY = "MVzKsfZg7p6IGgiSlgjA";
 	private static final String OAUTH_SECRET = "0ZaCLjkEWdiMXYZB0AUUcTAYtWGcvCa6cMitRncz0";
-	private static final String OAUTH_CALLBACK_SCHEME = "x-marakana-oauth-twitter";
+	private static final String OAUTH_CALLBACK_SCHEME = "myapp";
 	private static final String OAUTH_CALLBACK_URL = OAUTH_CALLBACK_SCHEME
 			+ "://callback";
 	private static final String TWITTER_USER = "amnguyen30@gmail.com";
