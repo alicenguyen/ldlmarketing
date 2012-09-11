@@ -1,4 +1,4 @@
-package com.greendev.ldlmarketing.youtube;
+package com.greendev.youtube;
 
 import android.content.res.Resources;
 import android.content.res.Resources.NotFoundException;

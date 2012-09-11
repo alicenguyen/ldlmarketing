@@ -1,4 +1,4 @@
-package com.greendev.ldlmarketing.youtube;
+package com.greendev.youtube;
 
 /**
  * Interface for click on item to play feature.

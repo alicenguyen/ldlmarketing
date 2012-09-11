@@ -7,11 +7,12 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.view.View;
-import com.greendev.ldlmarketing.youtube.Library;
-import com.greendev.ldlmarketing.youtube.GetYouTubeUserVideosTask;
-import com.greendev.ldlmarketing.youtube.Video;
-import com.greendev.ldlmarketing.youtube.VideoClickListener;
-import com.greendev.ldlmarketing.youtube.VideosListView;
+
+import com.greendev.youtube.GetYouTubeUserVideosTask;
+import com.greendev.youtube.Library;
+import com.greendev.youtube.Video;
+import com.greendev.youtube.VideoClickListener;
+import com.greendev.youtube.VideosListView;
 
 /**
  * The Activity can retrieve Videos for a specific username from YouTube It
