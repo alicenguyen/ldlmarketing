@@ -16,7 +16,7 @@ import android.os.Bundle;
  */
 
 public class SplashScreenActivity extends Activity {
-	protected int _splashTime = 5000; // time to display the splash screen in ms
+	protected int _splashTime = 3000; // time to display the splash screen in ms
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {

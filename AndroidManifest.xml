@@ -44,7 +44,7 @@
         <activity
             android:name=".PressActivity"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
-        <activity
+<!--         <activity
             android:name=".TwitterActivity"
             android:theme="@android:style/Theme.Light.NoTitleBar" >
             <intent-filter>
@@ -53,28 +53,30 @@
 
                 <data
                     android:host="twitter"
-                    android:scheme="ldlmarketing" />
-            </intent-filter>
-        </activity>
+                    android:scheme="ldlmarketing" /> 
+            </intent-filter> -->
+   <!--      </activity> -->
         
         <!-- Alice's Twitter implementation -->
-        <activity
-            android:name=".TwitterActivity2"
-            android:label="LDL Twitter" />
-        
-        <!--  Used for OAuth callback -->
-        <intent-filter>
-            <action
-                android:name="android.intent.action.VIEW" />
-            <category
-                android:name="android.intent.category.DEFAULT" />
-            <category
-                android:name="android.intent.category.BROWSABLE" />
-            <data
-                android:scheme="myapp"
-                android:host="callback" />
-        </intent-filter>
-            <!-- end of OAuth callback -->
+    <activity
+      android:name=".TwitterActivity2"
+      android:launchMode="singleInstance">
+
+
+      <!-- Used for OAuth callback -->
+      <intent-filter>
+        <action
+          android:name="android.intent.action.VIEW" />
+        <category
+          android:name="android.intent.category.DEFAULT" />
+        <category
+          android:name="android.intent.category.BROWSABLE" />
+        <data
+          android:scheme="twitter"
+          android:host="callback" />
+      </intent-filter>
+
+    </activity>
              
         <activity
             android:name=".YoutubeActivity"
