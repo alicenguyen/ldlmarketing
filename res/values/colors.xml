@@ -4,5 +4,8 @@
     <color name="tabMedium">#2B2B2B</color>
     <color name="tabDark">#000000</color>
     <color name="tabTransparent">#10ffffff</color>
+    <color name="pink">#EC4FD5</color>
+    <color name="white">#FFFFFF</color>
+    <color name="grey">#4F4F4F</color>
 
 </resources>

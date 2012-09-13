@@ -2,9 +2,11 @@ package com.greendev.ldlmarketing;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.TextView;
 
 public class HomeActivity extends Activity implements OnClickListener {
 	
@@ -13,7 +15,20 @@ public class HomeActivity extends Activity implements OnClickListener {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.home_layout);
 		
+		// Custom Font
+		Typeface font = Typeface.createFromAsset(getAssets(), "Eurosti.TTF"); 
+		
+		// Texts
+		TextView titleText1 = (TextView) findViewById(R.id.home_title1);  
+		titleText1.setTypeface(font); 
+		
+		TextView titleText2 = (TextView) findViewById(R.id.home_title2);  
+		titleText2.setTypeface(font); 
+		
+		
 
+
+		// Buttons
 		View aboutButton = findViewById(R.id.button_about);
 		aboutButton.setOnClickListener(this);
 

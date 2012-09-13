@@ -2,7 +2,6 @@ package com.greendev.ldlmarketing;
 import oauth.signpost.OAuth;
 import oauth.signpost.OAuthConsumer;
 import oauth.signpost.OAuthProvider;
-import oauth.signpost.basic.DefaultOAuthConsumer;
 import oauth.signpost.basic.DefaultOAuthProvider;
 import oauth.signpost.commonshttp.CommonsHttpOAuthConsumer;
 import oauth.signpost.exception.OAuthCommunicationException;
@@ -30,12 +29,12 @@ public class TwitterActivity2 extends Activity {
   private static final String OAUTH_SECRET = "pWEq73Iwctdr1djFF9JeNX7TZk0YvcINqe18g5qPs";
   private static final String OAUTH_CALLBACK_SCHEME = "twitter";
   private static final String OAUTH_CALLBACK_URL = OAUTH_CALLBACK_SCHEME
-      + "://callback"; 
+      + "://callback";     
   private static final String TWITTER_USER = "amnguyen30@gmail.com";
 
   private OAuthSignpostClient oauthClient;
   private OAuthConsumer mConsumer;
-  private OAuthProvider mProvider;
+  private OAuthProvider mProvider;  
   private Twitter twitter;
   SharedPreferences prefs;
 
