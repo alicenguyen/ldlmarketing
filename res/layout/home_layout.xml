@@ -109,7 +109,7 @@
             android:background="@drawable/grey_button1"
             android:gravity="left|center_vertical"
             android:paddingLeft="10dp"
-            android:text="FAQS"
+            android:text="FAQs"
             android:textColor="@color/white"
              android:textSize="20sp" 
             android:drawableRight="@drawable/navigation_next_item"/>

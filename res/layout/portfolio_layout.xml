@@ -2,67 +2,112 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:background="@drawable/dark_background"
     android:orientation="vertical" >
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:orientation="vertical" >
 
         <Button
             android:id="@+id/campaigns_button"
-            android:layout_width="255dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_width="290dp"
+            android:layout_height="50dp"
             android:layout_marginTop="20dp"
-            android:gravity="left|center"
-            android:text="Campaigns" />
+            android:background="@drawable/grey_button1"
+            android:drawableRight="@drawable/navigation_next_item"
+            android:gravity="left|center_vertical"
+            android:paddingLeft="10dp"
+            android:text="Campaigns"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="290dp"
+            android:layout_height="1dp"
+            android:background="@color/grey" />
 
         <Button
             android:id="@+id/press_button"
-            android:layout_width="255dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="-5dp"
-            android:gravity="left|center"
-            android:text="Press" />
+            android:layout_width="290dp"
+            android:layout_height="50dp"
+            android:background="@drawable/grey_button1"
+            android:drawableRight="@drawable/navigation_next_item"
+            android:gravity="left|center_vertical"
+            android:paddingLeft="10dp"
+            android:text="Press"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="290dp"
+            android:layout_height="1dp"
+            android:background="@color/grey" />
 
         <Button
             android:id="@+id/graphic_design_button"
-            android:layout_width="255dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="-5dp"
-            android:gravity="left|center"
-            android:text="Graphic Design/Layouts" />
+            android:layout_width="290dp"
+            android:layout_height="50dp"
+            android:background="@drawable/grey_button1"
+            android:drawableRight="@drawable/navigation_next_item"
+            android:gravity="left|center_vertical"
+            android:paddingLeft="10dp"
+            android:text="Graphic Design/Layouts"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="290dp"
+            android:layout_height="1dp"
+            android:background="@color/grey" />
 
         <Button
             android:id="@+id/websites_button"
-            android:layout_width="255dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="-5dp"
-            android:gravity="left|center"
-            android:text="Websites" />
+            android:layout_width="290dp"
+            android:layout_height="50dp"
+            android:background="@drawable/grey_button1"
+            android:drawableRight="@drawable/navigation_next_item"
+            android:gravity="left|center_vertical"
+            android:paddingLeft="10dp"
+            android:text="Websites"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="290dp"
+            android:layout_height="1dp"
+            android:background="@color/grey" />
 
         <Button
             android:id="@+id/videos_button"
-            android:layout_width="255dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="-5dp"
-            android:gravity="left|center"
-            android:text="Videos" />
+            android:layout_width="290dp"
+            android:layout_height="50dp"
+            android:background="@drawable/grey_button1"
+            android:drawableRight="@drawable/navigation_next_item"
+            android:gravity="left|center_vertical"
+            android:paddingLeft="10dp"
+            android:text="Videos"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="290dp"
+            android:layout_height="1dp"
+            android:background="@color/grey" />
 
         <Button
             android:id="@+id/digital_marketing_button"
-            android:layout_width="255dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="-5dp"
-            android:gravity="left|center_horizontal|fill_horizontal|center"
-            android:text="Digital Marketing" />
+            android:layout_width="290dp"
+            android:layout_height="50dp"
+            android:background="@drawable/grey_button1"
+            android:drawableRight="@drawable/navigation_next_item"
+            android:gravity="left|center_vertical"
+            android:paddingLeft="10dp"
+            android:text="Digital Marketing"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
     </LinearLayout>
 
 </LinearLayout>
