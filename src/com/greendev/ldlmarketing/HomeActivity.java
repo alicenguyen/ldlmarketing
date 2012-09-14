@@ -9,43 +9,46 @@ import android.view.View.OnClickListener;
 import android.widget.TextView;
 
 public class HomeActivity extends Activity implements OnClickListener {
-	
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.home_layout);
-		
-		// Custom Font
-		Typeface font = Typeface.createFromAsset(getAssets(), "Eurosti.TTF"); 
-		
-		// Texts
-		TextView titleText1 = (TextView) findViewById(R.id.home_title1);  
-		titleText1.setTypeface(font); 
-		
-		TextView titleText2 = (TextView) findViewById(R.id.home_title2);  
-		titleText2.setTypeface(font); 
-		
-		
 
+		// Custom Font
+		Typeface font = Typeface.createFromAsset(getAssets(), "Eurosti.TTF");
+
+		// Texts
+		TextView titleText1 = (TextView) findViewById(R.id.home_title1);
+		titleText1.setTypeface(font);
+
+		TextView titleText2 = (TextView) findViewById(R.id.home_title2);
+		titleText2.setTypeface(font);
 
 		// Buttons
 		View aboutButton = findViewById(R.id.button_about);
 		aboutButton.setOnClickListener(this);
+		((TextView) aboutButton).setTypeface(font);
 
 		View clientDirButton = findViewById(R.id.button_clientdir);
 		clientDirButton.setOnClickListener(this);
+		((TextView) clientDirButton).setTypeface(font);
 
 		View portfolioButton = findViewById(R.id.button_portfolio);
 		portfolioButton.setOnClickListener(this);
+		((TextView) portfolioButton).setTypeface(font);
 
 		View servicesButton = findViewById(R.id.button_services);
 		servicesButton.setOnClickListener(this);
+		((TextView) servicesButton).setTypeface(font);
 
 		View faqsButton = findViewById(R.id.button_faqs);
 		faqsButton.setOnClickListener(this);
+		((TextView) faqsButton).setTypeface(font);
 
 		View contactUsButton = findViewById(R.id.button_contactus);
 		contactUsButton.setOnClickListener(this);
+		((TextView) contactUsButton).setTypeface(font);
 	}
 
 	@Override
@@ -82,7 +85,7 @@ public class HomeActivity extends Activity implements OnClickListener {
 			break;
 
 		}
-		
+
 	}
 
 }

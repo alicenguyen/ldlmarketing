@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@drawable/black_background"
+    android:background="@drawable/dark_background"
     android:gravity="center|top"
     android:orientation="vertical" >
 
@@ -11,6 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:layout_marginTop="-10dp"
         android:text="LDL"
         android:textColor="@color/pink"
         android:textSize="110sp" />
@@ -30,62 +31,105 @@
         android:id="@+id/buttons_background"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical" >
+        android:orientation="vertical"
+        android:gravity="center" >
 
         <Button
             android:id="@+id/button_about"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/grey_square1"
+            android:layout_width="290dp"
+            android:layout_height="50dp"
+            android:background="@drawable/grey_button1"
             android:gravity="left|center_vertical"
+            android:paddingLeft="10dp"
             android:text="About"
             android:textColor="@color/white"
-            android:textSize="15sp" />
-        
+            android:textSize="20sp" 
+            android:drawableRight="@drawable/navigation_next_item"/>
+
         <TextView
-            android:layout_width="300dp"
+            android:layout_width="290dp"
             android:layout_height="1dp"
-            android:background="@color/grey"/>
+            android:background="@color/grey" />
 
         <Button
             android:id="@+id/button_clientdir"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-               android:background="@drawable/grey_square1"
-            android:text="Client Directory" >
-        </Button>
+            android:layout_width="290dp"
+            android:layout_height="50dp"
+            android:background="@drawable/grey_button1"
+            android:gravity="left|center_vertical"
+            android:paddingLeft="10dp"
+            android:text="Client Directory"
+            android:textColor="@color/white"
+             android:textSize="20sp" 
+            android:drawableRight="@drawable/navigation_next_item"/>
+
+        <TextView
+            android:layout_width="290dp"
+            android:layout_height="1dp"
+            android:background="@color/grey" />
 
         <Button
             android:id="@+id/button_portfolio"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-               android:background="@drawable/grey_square1"
-            android:text="Portfolio" >
-        </Button>
+            android:layout_width="290dp"
+            android:layout_height="50dp"
+            android:background="@drawable/grey_button1"
+            android:gravity="left|center_vertical"
+            android:paddingLeft="10dp"
+            android:text="Portfolio"
+            android:textColor="@color/white"
+             android:textSize="20sp" 
+            android:drawableRight="@drawable/navigation_next_item"/>
+
+        <TextView
+            android:layout_width="290dp"
+            android:layout_height="1dp"
+            android:background="@color/grey" />
 
         <Button
             android:id="@+id/button_services"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-               android:background="@drawable/grey_square1"
-            android:text="Services" >
-        </Button>
+            android:layout_width="290dp"
+            android:layout_height="50dp"
+            android:background="@drawable/grey_button1"
+            android:gravity="left|center_vertical"
+            android:paddingLeft="10dp"
+            android:text="Services"
+            android:textColor="@color/white"
+             android:textSize="20sp" 
+            android:drawableRight="@drawable/navigation_next_item"/>
+
+        <TextView
+            android:layout_width="290dp"
+            android:layout_height="1dp"
+            android:background="@color/grey" />
 
         <Button
             android:id="@+id/button_faqs"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-               android:background="@drawable/grey_square1"
-            android:text="FAQS" >
-        </Button>
+            android:layout_width="290dp"
+            android:layout_height="50dp"
+            android:background="@drawable/grey_button1"
+            android:gravity="left|center_vertical"
+            android:paddingLeft="10dp"
+            android:text="FAQS"
+            android:textColor="@color/white"
+             android:textSize="20sp" 
+            android:drawableRight="@drawable/navigation_next_item"/>
+
+        <TextView
+            android:layout_width="290dp"
+            android:layout_height="1dp"
+            android:background="@color/grey" />
 
         <Button
             android:id="@+id/button_contactus"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-               android:background="@drawable/grey_square1"
-            android:text="Contact Us" >
-        </Button>
+            android:layout_width="290dp"
+            android:layout_height="50dp"
+            android:background="@drawable/grey_button1"
+            android:gravity="left|center_vertical"
+            android:paddingLeft="10dp"
+            android:text="Contact Us"
+            android:textColor="@color/white"
+             android:textSize="20sp" 
+            android:drawableRight="@drawable/navigation_next_item"/>
     </LinearLayout>
 
 </LinearLayout>

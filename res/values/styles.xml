@@ -1,5 +1,13 @@
 <resources>
 
     <style name="AppTheme" parent="android:Theme.Light" />
+ <style name="LargeTitleTheme">
+        <item name="android:windowTitleSize">40dip</item>
+    </style>
+    
+ <style name="CustomTheme" parent="android:Theme">
+        <item name="android:windowTitleSize">35dip</item>
+        
+    </style>
 
 </resources>
