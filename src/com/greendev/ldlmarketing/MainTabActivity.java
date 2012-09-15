@@ -2,6 +2,7 @@ package com.greendev.ldlmarketing;
 
 import android.app.TabActivity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,6 +30,8 @@ public class MainTabActivity extends TabActivity {
 	private void addTab(String labelId, int drawableId, Class<?> c) {
 		TabHost tabHost = getTabHost();
 		Intent intent = new Intent(this, c);
+		
+		tabHost.getTabWidget().setBackgroundColor(Color.parseColor("#00000000")); 
 		TabHost.TabSpec spec = tabHost.newTabSpec("tab" + labelId);
 
 		View tabIndicator = LayoutInflater.from(this).inflate(
