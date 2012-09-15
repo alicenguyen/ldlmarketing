@@ -9,5 +9,7 @@
     <color name="grey">#ababab</color>
     <color name="transparent">#00000000</color>
     <color name="custom_theme_color">#ffffff</color>
+    	<color name="black">#1E1E1E</color>
+    	<color name="light_pink">#F49AED</color>
 
 </resources>

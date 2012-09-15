@@ -86,19 +86,22 @@
             android:theme="@android:style/Theme.Light.NoTitleBar" />
         <activity
             android:name=".ClientDirectoryActivity"
-            android:label="Client Directory" />
+            android:theme="@style/CustomTheme"  />
         <activity
             android:name=".ContactActivity"
-            android:label="Contact Us" />
+            android:label="Contact Us" 
+            android:theme="@style/CustomTheme"/>
         <activity
             android:name=".FAQSActivity"
-            android:label="FAQs" />
+            android:label="FAQs"
+            android:theme="@style/CustomTheme" />
         <activity
             android:name=".PortfolioActivity"
-            android:label="Portfolio" />
+             android:theme="@style/CustomTheme" />
         <activity
             android:name=".ServicesActivity"
-            android:label="Services" />
+            android:label="Services" 
+            android:theme="@style/CustomTheme"/>
     </application>
 
 </manifest>

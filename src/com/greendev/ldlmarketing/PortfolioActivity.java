@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
 
@@ -12,10 +13,16 @@ public class PortfolioActivity extends Activity implements OnClickListener {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.portfolio_layout);
-
 		// Custom Font
-		Typeface font = Typeface.createFromAsset(getAssets(), "Eurosti.TTF");
+		Typeface font = Typeface.createFromAsset(getAssets(), "Eurostib.TTF");
+
+		// Custom title bar
+		requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
+		setContentView(R.layout.portfolio_layout);
+		getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.title);
+		TextView title = (TextView) findViewById(R.id.title);
+		title.setTypeface(font);
+		title.setText("Portfolio");
 
 		// Buttons
 		View campaignsButton = findViewById(R.id.campaigns_button);
