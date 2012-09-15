@@ -8,5 +8,6 @@
     <color name="white">#FFFFFF</color>
     <color name="grey">#ababab</color>
     <color name="transparent">#00000000</color>
+    <color name="custom_theme_color">#ffffff</color>
 
 </resources>
