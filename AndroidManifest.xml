@@ -115,7 +115,7 @@
         </activity>
         <activity
             android:name=".ImageGridActivity"
-            android:theme="@style/AppTheme" >
+            android:theme="@style/CustomTheme" >
         </activity>
     </application>
 

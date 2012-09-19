@@ -20,9 +20,12 @@ package com.greendev.ldlmarketing;
 
 import com.greendev.image.Utils;
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
+import android.view.Window;
+import android.widget.TextView;
 
 /**
  * Simple FragmentActivity to hold the main {@link ImageGridFragment} and not much else.
@@ -36,6 +39,15 @@ public class ImageGridActivity extends FragmentActivity {
             Utils.enableStrictMode();
         }
         super.onCreate(savedInstanceState);
+        
+        Typeface font = Typeface.createFromAsset(getAssets(), "Eurostib.TTF");
+     // Custom title bar
+     		requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
+     		setContentView(R.layout.about_layout);
+     		getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.title);
+     		TextView title = (TextView) findViewById(R.id.title);
+     		title.setTypeface(font);
+     		title.setText("Graphic Designs");
 
         if (getSupportFragmentManager().findFragmentByTag(TAG) == null) {
             final FragmentTransaction ft = getSupportFragmentManager().beginTransaction();

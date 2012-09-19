@@ -21,43 +21,59 @@ package com.greendev.image;
  */
 public class Images {
 
-    /**
-     * This are PicasaWeb URLs and could potentially change. Ideally the PicasaWeb API should be
-     * used to fetch the URLs.
-     */
-    public final static String[] imageUrls = new String[] {
-    	"http://www.leungdeleonmarketing.com/wp-content/uploads/2011/12/Nisce-Ads-pool1.jpg",
-    	"http://www.leungdeleonmarketing.com/wp-content/uploads/2011/12/Sexy-Solutions-Summer-2012-Campaign.jpg",
-    	"http://www.leungdeleonmarketing.com/wp-content/uploads/2011/12/N2-Derm+-Campaign-1.jpg",
-    	"http://www.leungdeleonmarketing.com/wp-content/uploads/2011/12/Nisce-Campaign-1.jpg",
-    	"http://www.leungdeleonmarketing.com/wp-content/uploads/2011/12/Nisce-Campaign-2.jpg",
-    	"http://www.leungdeleonmarketing.com/wp-content/uploads/2011/12/Nisce-Campaign-3.jpg",
-    	"http://www.leungdeleonmarketing.com/wp-content/uploads/2011/12/Nisce-Campaign-4-e1329918279371.jpg",
-    	"http://www.leungdeleonmarketing.com/wp-content/uploads/2011/12/Nisce-Campaign-6.jpg",
-    	"http://www.leungdeleonmarketing.com/wp-content/uploads/2011/12/Nisce-Campaign-5.jpg",
-    	"http://www.leungdeleonmarketing.com/wp-content/uploads/2011/12/N2-Derm+-Banner-e1329918340784.jpg",
-     
-    	
-    };   
+	/**
+	 * This are PicasaWeb URLs and could potentially change. Ideally the
+	 * PicasaWeb API should be used to fetch the URLs.
+	 */
+	public final static String[] imageUrls = new String[] {
+			"http://www.leungdeleonmarketing.com/wp-content/uploads/2011/12/Nisce-Ads-pool1.jpg",
+			"http://www.leungdeleonmarketing.com/wp-content/uploads/2011/12/Sexy-Solutions-Summer-2012-Campaign.jpg",
+			"http://www.leungdeleonmarketing.com/wp-content/uploads/2011/12/N2-Derm+-Campaign-1.jpg",
+			"http://www.leungdeleonmarketing.com/wp-content/uploads/2011/12/Nisce-Campaign-1.jpg",
+			"http://www.leungdeleonmarketing.com/wp-content/uploads/2011/12/Nisce-Campaign-2.jpg",
+			"http://www.leungdeleonmarketing.com/wp-content/uploads/2011/12/Nisce-Campaign-3.jpg",
+			"http://www.leungdeleonmarketing.com/wp-content/uploads/2011/12/Nisce-Campaign-4-e1329918279371.jpg",
+			"http://www.leungdeleonmarketing.com/wp-content/uploads/2011/12/Nisce-Campaign-6.jpg",
+			"http://www.leungdeleonmarketing.com/wp-content/uploads/2011/12/Nisce-Campaign-5.jpg",
+			"http://www.leungdeleonmarketing.com/wp-content/uploads/2011/12/N2-Derm+-Banner-e1329918340784.jpg",
+			"http://www.leungdeleonmarketing.com/wp-content/uploads/2011/12/Nisce-Ads-pool1.jpg",
+			"http://www.leungdeleonmarketing.com/wp-content/uploads/2011/12/Sexy-Solutions-Summer-2012-Campaign.jpg",
+			"http://www.leungdeleonmarketing.com/wp-content/uploads/2011/12/N2-Derm+-Campaign-1.jpg",
+			"http://www.leungdeleonmarketing.com/wp-content/uploads/2011/12/Nisce-Campaign-1.jpg",
+			"http://www.leungdeleonmarketing.com/wp-content/uploads/2011/12/Nisce-Campaign-2.jpg",
+			"http://www.leungdeleonmarketing.com/wp-content/uploads/2011/12/Nisce-Campaign-3.jpg",
+			"http://www.leungdeleonmarketing.com/wp-content/uploads/2011/12/Nisce-Campaign-4-e1329918279371.jpg",
+			"http://www.leungdeleonmarketing.com/wp-content/uploads/2011/12/Nisce-Campaign-6.jpg",
+			"http://www.leungdeleonmarketing.com/wp-content/uploads/2011/12/Nisce-Campaign-5.jpg",
+			"http://www.leungdeleonmarketing.com/wp-content/uploads/2011/12/N2-Derm+-Banner-e1329918340784.jpg"
 
-    /**
-     * This are PicasaWeb thumbnail URLs and could potentially change. Ideally the PicasaWeb API
-     * should be used to fetch the URLs.
-     */
-    public final static String[] imageThumbUrls = new String[] {
-    	"http://www.leungdeleonmarketing.com/wp-content/uploads/2011/12/Nisce-Ads-pool1-150x150.jpg",
-    	"http://www.leungdeleonmarketing.com/wp-content/uploads/2011/12/Sexy-Solutions-Summer-2012-Campaign-150x150.jpg",
-    	"http://www.leungdeleonmarketing.com/wp-content/uploads/2011/12/N2-Derm+-Campaign-1-150x150.jpg",
-    	"http://www.leungdeleonmarketing.com/wp-content/uploads/2011/12/Nisce-Campaign-1-150x150.jpg",
-    	"http://www.leungdeleonmarketing.com/wp-content/uploads/2011/12/Nisce-Campaign-2-150x150.jpg",
-    	"http://www.leungdeleonmarketing.com/wp-content/uploads/2011/12/Nisce-Campaign-3-150x150.jpg",
-    	"http://www.leungdeleonmarketing.com/wp-content/uploads/2011/12/Nisce-Campaign-4-150x150.jpg",
-    	"http://www.leungdeleonmarketing.com/wp-content/uploads/2011/12/Nisce-Campaign-6-150x150.jpg",
-    	"http://www.leungdeleonmarketing.com/wp-content/uploads/2011/12/Nisce-Campaign-5-150x150.jpg",
-    	"http://www.leungdeleonmarketing.com/wp-content/uploads/2011/12/N2-Derm+-Banner-150x150.jpg"
-    	
-    	
-      
-        
-    };
+	};
+
+	/**
+	 * This are PicasaWeb thumbnail URLs and could potentially change. Ideally
+	 * the PicasaWeb API should be used to fetch the URLs.
+	 */
+	public final static String[] imageThumbUrls = new String[] {
+			"http://www.leungdeleonmarketing.com/wp-content/uploads/2011/12/Nisce-Ads-pool1-150x150.jpg",
+			"http://www.leungdeleonmarketing.com/wp-content/uploads/2011/12/Sexy-Solutions-Summer-2012-Campaign-150x150.jpg",
+			"http://www.leungdeleonmarketing.com/wp-content/uploads/2011/12/N2-Derm+-Campaign-1-150x150.jpg",
+			"http://www.leungdeleonmarketing.com/wp-content/uploads/2011/12/Nisce-Campaign-1-150x150.jpg",
+			"http://www.leungdeleonmarketing.com/wp-content/uploads/2011/12/Nisce-Campaign-2-150x150.jpg",
+			"http://www.leungdeleonmarketing.com/wp-content/uploads/2011/12/Nisce-Campaign-3-150x150.jpg",
+			"http://www.leungdeleonmarketing.com/wp-content/uploads/2011/12/Nisce-Campaign-4-150x150.jpg",
+			"http://www.leungdeleonmarketing.com/wp-content/uploads/2011/12/Nisce-Campaign-6-150x150.jpg",
+			"http://www.leungdeleonmarketing.com/wp-content/uploads/2011/12/Nisce-Campaign-5-150x150.jpg",
+			"http://www.leungdeleonmarketing.com/wp-content/uploads/2011/12/N2-Derm+-Banner-150x150.jpg",
+			"http://www.leungdeleonmarketing.com/wp-content/uploads/2011/12/Nisce-Ads-pool1-150x150.jpg",
+			"http://www.leungdeleonmarketing.com/wp-content/uploads/2011/12/Sexy-Solutions-Summer-2012-Campaign-150x150.jpg",
+			"http://www.leungdeleonmarketing.com/wp-content/uploads/2011/12/N2-Derm+-Campaign-1-150x150.jpg",
+			"http://www.leungdeleonmarketing.com/wp-content/uploads/2011/12/Nisce-Campaign-1-150x150.jpg",
+			"http://www.leungdeleonmarketing.com/wp-content/uploads/2011/12/Nisce-Campaign-2-150x150.jpg",
+			"http://www.leungdeleonmarketing.com/wp-content/uploads/2011/12/Nisce-Campaign-3-150x150.jpg",
+			"http://www.leungdeleonmarketing.com/wp-content/uploads/2011/12/Nisce-Campaign-4-150x150.jpg",
+			"http://www.leungdeleonmarketing.com/wp-content/uploads/2011/12/Nisce-Campaign-6-150x150.jpg",
+			"http://www.leungdeleonmarketing.com/wp-content/uploads/2011/12/Nisce-Campaign-5-150x150.jpg",
+			"http://www.leungdeleonmarketing.com/wp-content/uploads/2011/12/N2-Derm+-Banner-150x150.jpg"
+
+	};
 }
