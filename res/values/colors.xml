@@ -9,7 +9,11 @@
     <color name="grey">#ababab</color>
     <color name="transparent">#00000000</color>
     <color name="custom_theme_color">#ffffff</color>
-    	<color name="black">#1E1E1E</color>
-    	<color name="light_pink">#F49AED</color>
+    <color name="black">#424242</color>
+    <color name="light_pink">#F49AED</color>
+
+    <!-- image stuff -->
+    <color name="grid_state_pressed">#BB7dbcd3</color>
+    <color name="grid_state_focused">#777dbcd3</color>
 
 </resources>

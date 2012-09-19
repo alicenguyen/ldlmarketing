@@ -20,12 +20,13 @@
     <style name="LdlWhiteTheme" parent="@style/CustomTheme">
         <item name="android:background">@drawable/background_white</item>
     </style>
-    
-<!-- list stuff -->
+
+    <!-- list stuff for 'Client Directory' -->
     <style name="ListStyle">
         <item name="android:textColor">@color/black</item>
-        <item name="android:textSize">14sp</item>
+        <item name="android:textSize">17sp</item>
         <item name="android:background">@android:color/transparent</item>
+        <item name="android:layout_marginLeft">10dp</item>
     </style>
 
     <style name="ListItem">
@@ -36,6 +37,14 @@
         <item name="android:textColor">@color/black</item>
         <item name="android:textSize">16sp</item>
     </style>
-    <!--  -->
+
+    <!-- image stuff -->
+
+    <style name="AppTheme.FullScreen" parent="@android:style/Theme.Black.NoTitleBar.Fullscreen" />
+
+    <style name="PhotoGridLayout">
+        <item name="android:drawSelectorOnTop">true</item>
+        <item name="android:listSelector">@drawable/photogrid_list_selector</item> 
+    </style>
 
 </resources>

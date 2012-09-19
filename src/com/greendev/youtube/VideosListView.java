@@ -3,6 +3,7 @@ package com.greendev.youtube;
 import java.util.List;
 
 import android.content.Context;
+
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.AdapterView;
@@ -44,6 +45,7 @@ public class VideosListView extends ListView implements android.widget.AdapterVi
     }
  
     public void setVideos(List<Video> videos){
+ 
         this.videos = videos;
         VideosAdapter adapter = new VideosAdapter(getContext(), videos);
         setAdapter(adapter);

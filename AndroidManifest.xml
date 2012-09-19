@@ -1,13 +1,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.greendev.ldlmarketing"
     android:versionCode="1"
-    android:versionName="1.0" >  
+    android:versionName="1.0" >
 
     <uses-sdk
         android:minSdkVersion="8"
-        android:targetSdkVersion="15" />
+        android:targetSdkVersion="16" />
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:icon="@drawable/ic_launcher"
@@ -26,7 +28,8 @@
             android:theme="@android:style/Theme.Light.NoTitleBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
@@ -34,7 +37,7 @@
             android:theme="@android:style/Theme.Light.NoTitleBar" />
         <activity
             android:name=".AboutActivity"
-             android:theme="@style/CustomTheme"  />
+            android:theme="@style/CustomTheme" />
         <activity
             android:name=".LDLCamActivity"
             android:label="LDL Cam" />
@@ -44,7 +47,8 @@
         <activity
             android:name=".PressActivity"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
-<!--         <activity
+        <!--
+             <activity
             android:name=".TwitterActivity"
             android:theme="@android:style/Theme.Light.NoTitleBar" >
             <intent-filter>
@@ -54,54 +58,65 @@
                 <data
                     android:host="twitter"
                     android:scheme="ldlmarketing" /> 
-            </intent-filter> -->
-   <!--      </activity> -->
-        
+            </intent-filter>
+        -->
+        <!-- </activity> -->
+
+
         <!-- Alice's Twitter implementation -->
-    <activity
-      android:name=".TwitterActivity2"
-      android:launchMode="singleInstance">
+        <activity
+            android:name=".TwitterActivity2"
+            android:launchMode="singleInstance" >
 
+            <!-- Used for OAuth callback -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
 
-      <!-- Used for OAuth callback -->
-      <intent-filter>
-        <action
-          android:name="android.intent.action.VIEW" />
-        <category
-          android:name="android.intent.category.DEFAULT" />
-        <category
-          android:name="android.intent.category.BROWSABLE" />
-        <data
-          android:scheme="twitter"
-          android:host="callback" />
-      </intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
 
-    </activity>
-             
+                <data
+                    android:host="callback"
+                    android:scheme="twitter" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".YoutubeActivity"
-            android:theme="@android:style/Theme.Light.NoTitleBar" />
+            android:theme="@style/CustomTheme" />
         <activity
             android:name=".PhotoActivity"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
         <activity
             android:name=".ClientDirectoryActivity"
-            android:theme="@style/CustomTheme"  />
+            android:theme="@style/CustomTheme" />
         <activity
             android:name=".ContactActivity"
-            android:label="Contact Us" 
-            android:theme="@style/CustomTheme"/>
+            android:label="Contact Us"
+            android:theme="@style/CustomTheme" />
         <activity
             android:name=".FAQSActivity"
             android:label="FAQs"
             android:theme="@style/CustomTheme" />
         <activity
             android:name=".PortfolioActivity"
-             android:theme="@style/CustomTheme" />
+            android:theme="@style/CustomTheme" />
         <activity
             android:name=".ServicesActivity"
-            android:label="Services" 
-            android:theme="@style/CustomTheme"/>
+            android:label="Services"
+            android:theme="@style/CustomTheme" />
+        <activity
+            android:name=".ImageDetailActivity"
+            android:label="@string/app_name"
+            android:parentActivityName=".ImageGridActivity"
+            android:theme="@style/AppTheme.FullScreen" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.ImageGridActivity" />
+        </activity>
+        <activity
+            android:name=".ImageGridActivity"
+            android:theme="@style/AppTheme" >
+        </activity>
     </application>
 
 </manifest>

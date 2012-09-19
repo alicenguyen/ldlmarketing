@@ -115,10 +115,7 @@
     </LinearLayout>
        <!-- shadow tucked under title -->
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="5dp"
-        android:background="@drawable/nav_shadow" />
+   
     
 
 </RelativeLayout>

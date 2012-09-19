@@ -5,17 +5,20 @@
     android:gravity="center_vertical"
     android:orientation="horizontal" >
 
-    <com.greendev.ldlmarketing.youtube.UrlImageView
+    <!-- for youtube page -->
+
+    <com.greendev.youtube.UrlImageView
         android:id="@+id/userVideoThumbImageView"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:contentDescription="YouTube video thumbnail"
-        android:src="@drawable/ic_launcher" />
+        android:src="@drawable/ic_launcher"/>
 
     <TextView
         android:id="@+id/userVideoTitleTextView"
+        style="@style/ListStyle"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Video Title Not Found" />
- 
+
 </LinearLayout>
