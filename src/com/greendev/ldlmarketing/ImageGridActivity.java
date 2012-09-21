@@ -16,10 +16,8 @@
 
 package com.greendev.ldlmarketing;
 
-
-
-import com.greendev.image.Utils;
-
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -27,32 +25,54 @@ import android.support.v4.app.FragmentTransaction;
 import android.view.Window;
 import android.widget.TextView;
 
+import com.greendev.image.ImageDetailActivity;
+import com.greendev.image.ImageGridFragment;
+import com.greendev.image.Utils;
+import com.greendev.ldlmarketing.BuildConfig;
+import com.greendev.ldlmarketing.R;
+
 /**
- * Simple FragmentActivity to hold the main {@link ImageGridFragment} and not much else.
+ * Simple FragmentActivity to hold the main {@link ImageGridFragment} and not
+ * much else.
  */
 public class ImageGridActivity extends FragmentActivity {
-    private static final String TAG = "ImageGridActivity";
+	private static final String TAG = "ImageGridActivity";
+	private static String[] TYPE_URL;
+	private static String[] TYPE_URL_THUMB;
+	private static String TITLE;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        if (BuildConfig.DEBUG) {
-            Utils.enableStrictMode();
-        }
-        super.onCreate(savedInstanceState);
-        
-        Typeface font = Typeface.createFromAsset(getAssets(), "Eurostib.TTF");
-     // Custom title bar
-     		requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
-     		setContentView(R.layout.about_layout);
-     		getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.title);
-     		TextView title = (TextView) findViewById(R.id.title);
-     		title.setTypeface(font);
-     		title.setText("Graphic Designs");
+	protected void onCreate(Bundle savedInstanceState) {
+		/** get the intent called from an Activity **/
+		Intent intent = getIntent();
+		/** get the bundle from the intent **/
+		Bundle b = intent.getExtras();
+		/** retrieve the stringarray extra passed */
+		TYPE_URL = b.getStringArray("TYPE_URL");
+		TYPE_URL_THUMB = b.getStringArray("TYPE_URL_THUMB");
+		TITLE = b.getString("TITLE");
 
-        if (getSupportFragmentManager().findFragmentByTag(TAG) == null) {
-            final FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-            ft.add(android.R.id.content, new ImageGridFragment(), TAG);
-            ft.commit();
-        }
-    }
+		if (BuildConfig.DEBUG) {
+			Utils.enableStrictMode();
+		}
+		super.onCreate(savedInstanceState);
+
+		Typeface font = Typeface.createFromAsset(getAssets(), "Eurostib.TTF");
+		// Custom title bar
+		requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
+		setContentView(R.layout.about_layout);
+		getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.title);
+		TextView titleBar = (TextView) findViewById(R.id.title);
+		titleBar.setTypeface(font);
+		titleBar.setText(TITLE);
+
+		if (getSupportFragmentManager().findFragmentByTag(TAG) == null) {
+			final FragmentTransaction ft = getSupportFragmentManager()
+					.beginTransaction();
+			// ft.add(android.R.id.content, new ImageGridFragment(this,
+			// ImageDetailActivity.class, TYPE_URL, TYPE_URL_THUMB), TAG);
+			ft.add(android.R.id.content, new ImageGridFragment(this,
+					ImageDetailActivity.class, TYPE_URL, TYPE_URL_THUMB), TAG);
+			ft.commit();
+		}
+	}
 }

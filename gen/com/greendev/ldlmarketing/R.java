@@ -84,8 +84,9 @@ public final class R {
         public static final int tab_tweet=0x7f02002b;
     }
     public static final class id {
-        public static final int ListViewId=0x7f090027;
-        public static final int avatar=0x7f090023;
+        public static final int ListViewId=0x7f090028;
+        public static final int avatar=0x7f090024;
+        public static final int booth_designs_button=0x7f09001e;
         public static final int button_about=0x7f090008;
         public static final int button_clientdir=0x7f090009;
         public static final int button_contactus=0x7f09000d;
@@ -97,10 +98,10 @@ public final class R {
         public static final int buttons_background=0x7f090007;
         public static final int campaigns_button=0x7f090018;
         public static final int cd_list=0x7f090002;
-        public static final int clear_cache=0x7f09002d;
+        public static final int clear_cache=0x7f09002e;
         public static final int comment=0x7f090017;
         public static final int content=0x7f090000;
-        public static final int digital_marketing_button=0x7f09001d;
+        public static final int digital_marketing_button=0x7f09001c;
         public static final int from_album_button=0x7f090014;
         public static final int from_camera_button=0x7f090013;
         public static final int graphic_design_button=0x7f09001a;
@@ -108,27 +109,27 @@ public final class R {
         public static final int header=0x7f090001;
         public static final int home_title1=0x7f090005;
         public static final int home_title2=0x7f090006;
-        public static final int ic_launcher=0x7f09001f;
+        public static final int ic_launcher=0x7f090020;
         public static final int imageView=0x7f09000e;
-        public static final int label=0x7f09001e;
+        public static final int label=0x7f09001f;
         public static final int ldlcam_text1=0x7f090011;
         public static final int ldlcam_text2=0x7f090012;
-        public static final int menu_settings=0x7f09002c;
-        public static final int message=0x7f090025;
-        public static final int myvideoview=0x7f09002a;
+        public static final int menu_settings=0x7f09002d;
+        public static final int message=0x7f090026;
+        public static final int myvideoview=0x7f09002b;
+        public static final int packaging_button=0x7f09001d;
         public static final int pager=0x7f09000f;
         public static final int press_button=0x7f090019;
-        public static final int status=0x7f090026;
-        public static final int tabsLayout=0x7f090021;
-        public static final int tabsText=0x7f090022;
-        public static final int title=0x7f090020;
-        public static final int tv_result=0x7f090029;
-        public static final int tweet_button=0x7f090028;
+        public static final int status=0x7f090027;
+        public static final int tabsLayout=0x7f090022;
+        public static final int tabsText=0x7f090023;
+        public static final int title=0x7f090021;
+        public static final int tv_result=0x7f09002a;
+        public static final int tweet_button=0x7f090029;
         public static final int userVideoThumbImageView=0x7f090015;
         public static final int userVideoTitleTextView=0x7f090016;
-        public static final int username=0x7f090024;
-        public static final int videosListView=0x7f09002b;
-        public static final int videos_button=0x7f09001c;
+        public static final int username=0x7f090025;
+        public static final int videosListView=0x7f09002c;
         public static final int websites_button=0x7f09001b;
     }
     public static final class layout {

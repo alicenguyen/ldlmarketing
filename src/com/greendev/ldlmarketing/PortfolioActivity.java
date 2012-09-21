@@ -1,5 +1,7 @@
 package com.greendev.ldlmarketing;
 
+import com.greendev.image.Images;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -43,48 +45,64 @@ public class PortfolioActivity extends Activity implements OnClickListener {
 		websitesButton.setOnClickListener(this);
 		((TextView) websitesButton).setTypeface(font);
 
-		View videosButton = findViewById(R.id.videos_button);
-		videosButton.setOnClickListener(this);
-		((TextView) videosButton).setTypeface(font);
-
 		View dmButton = findViewById(R.id.digital_marketing_button);
 		dmButton.setOnClickListener(this);
 		((TextView) dmButton).setTypeface(font);
+
+		View packButton = findViewById(R.id.packaging_button);
+		packButton.setOnClickListener(this);
+		((TextView) packButton).setTypeface(font);
+
+		View boothButton = findViewById(R.id.booth_designs_button);
+		boothButton.setOnClickListener(this);
+		((TextView) boothButton).setTypeface(font);
 	}
 
 	@Override
 	public void onClick(View v) {
+		Intent i = new Intent(this, ImageGridActivity.class);
+		Bundle b = new Bundle();
+
 		switch (v.getId()) {
+		case R.id.campaigns_button:
+			b.putStringArray("TYPE_URL", Images.campaignsImageUrls);
+			b.putStringArray("TYPE_URL_THUMB", Images.campaignsThumbUrls);
+			b.putString("TITLE", "Campaigns");
+			break;
+		case R.id.press_button:
+			b.putStringArray("TYPE_URL", Images.pressImageUrls);
+			b.putStringArray("TYPE_URL_THUMB", Images.pressThumbUrls);
+			b.putString("TITLE", "Press");
+			break;
 		case R.id.graphic_design_button:
-			Intent i = new Intent(this, ImageGridActivity.class);
-			startActivity(i);
+			b.putStringArray("TYPE_URL", Images.graphicDesignsImageUrls);
+			b.putStringArray("TYPE_URL_THUMB", Images.graphicDesignsThumbUrls);
+			b.putString("TITLE", "Graphic Designs");
+			break;
+		case R.id.websites_button:
+			b.putStringArray("TYPE_URL", Images.websitesImageUrls);
+			b.putStringArray("TYPE_URL_THUMB", Images.websitesThumbUrls);
+			b.putString("TITLE", "Websites");
+			break;
+		case R.id.digital_marketing_button:
+			b.putStringArray("TYPE_URL", Images.digitalMarketingImageUrls);
+			b.putStringArray("TYPE_URL_THUMB", Images.digitalMarketingThumbUrls);
+			b.putString("TITLE", "Digital Marketing");
+			break;
+		case R.id.packaging_button:
+			b.putStringArray("TYPE_URL", Images.packagingImageUrls);
+			b.putStringArray("TYPE_URL_THUMB", Images.packagingThumbUrls);
+			b.putString("TITLE", "Packaging");
+			break;
+		case R.id.booth_designs_button:
+			b.putStringArray("TYPE_URL", Images.boothDesignsImageUrls);
+			b.putStringArray("TYPE_URL_THUMB", Images.boothDesignsThumbUrls);
+			b.putString("TITLE", "Booth Designs");
 			break;
 
-	/*	case R.id.button_clientdir:
-			Intent c = new Intent(this, ClientDirectoryActivity.class);
-			startActivity(c);
-			break;
-
-		case R.id.button_faqs:
-			Intent a = new Intent(this, FAQSActivity.class);
-			startActivity(a);
-			break;
-
-		case R.id.button_portfolio:
-			Intent b = new Intent(this, PortfolioActivity.class);
-			startActivity(b);
-			break;
-
-		case R.id.button_services:
-			Intent d = new Intent(this, ServicesActivity.class);
-			startActivity(d);
-			break;
-
-		case R.id.button_contactus:
-			Intent e = new Intent(this, ContactActivity.class);
-			startActivity(e);
-			break;*/
 		}
+		i.putExtras(b);
+		startActivity(i);
 
 	}
 

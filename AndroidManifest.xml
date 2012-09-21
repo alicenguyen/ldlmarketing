@@ -105,7 +105,7 @@
             android:label="Services"
             android:theme="@style/CustomTheme" />
         <activity
-            android:name=".ImageDetailActivity"
+            android:name="com.greendev.image.ImageDetailActivity"
             android:label="@string/app_name"
             android:parentActivityName=".ImageGridActivity"
             android:theme="@style/AppTheme.FullScreen" >
@@ -115,6 +115,12 @@
         </activity>
         <activity
             android:name=".ImageGridActivity"
+            android:theme="@style/CustomTheme" >
+        </activity>
+        
+
+        <activity
+            android:name=".CampaignsGridActivity"
             android:theme="@style/CustomTheme" >
         </activity>
     </application>

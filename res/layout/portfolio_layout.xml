@@ -2,9 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:gravity="top" 
     android:background="@drawable/background_black"
- >
+    android:gravity="top" >
 
     <LinearLayout
         android:id="@+id/content"
@@ -12,8 +11,8 @@
         android:layout_height="fill_parent"
         android:layout_below="@+id/header"
         android:layout_gravity="center"
-        android:orientation="vertical"
-        android:gravity="center" >
+        android:gravity="center"
+        android:orientation="vertical" >
 
         <Button
             android:id="@+id/campaigns_button"
@@ -85,23 +84,6 @@
             android:background="@color/grey" />
 
         <Button
-            android:id="@+id/videos_button"
-            android:layout_width="290dp"
-            android:layout_height="50dp"
-            android:background="@drawable/grey_button1"
-            android:drawableRight="@drawable/navigation_next_item"
-            android:gravity="left|center_vertical"
-            android:paddingLeft="10dp"
-            android:text="Videos"
-            android:textColor="@color/white"
-            android:textSize="20sp" />
-
-        <TextView
-            android:layout_width="290dp"
-            android:layout_height="1dp"
-            android:background="@color/grey" />
-
-        <Button
             android:id="@+id/digital_marketing_button"
             android:layout_width="290dp"
             android:layout_height="50dp"
@@ -112,10 +94,41 @@
             android:text="Digital Marketing"
             android:textColor="@color/white"
             android:textSize="20sp" />
-    </LinearLayout>
-       <!-- shadow tucked under title -->
+        <TextView
+            android:layout_width="290dp"
+            android:layout_height="1dp"
+            android:background="@color/grey" />
+        <Button
+            android:id="@+id/packaging_button"
+            android:layout_width="290dp"
+            android:layout_height="50dp"
+            android:background="@drawable/grey_button1"
+            android:drawableRight="@drawable/navigation_next_item"
+            android:gravity="left|center_vertical"
+            android:paddingLeft="10dp"
+            android:text="Packaging"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
 
-   
-    
+        <TextView
+            android:layout_width="290dp"
+            android:layout_height="1dp"
+            android:background="@color/grey" />
+
+        <Button
+            android:id="@+id/booth_designs_button"
+            android:layout_width="290dp"
+            android:layout_height="50dp"
+            android:background="@drawable/grey_button1"
+            android:drawableRight="@drawable/navigation_next_item"
+            android:gravity="left|center_vertical"
+            android:paddingLeft="10dp"
+            android:text="Booth Designs"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+
+    </LinearLayout>
+    <!-- shadow tucked under title -->
 
 </RelativeLayout>
