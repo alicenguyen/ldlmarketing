@@ -20,8 +20,8 @@
             android:label="@string/title_activity_main"
             android:theme="@android:style/Theme.Light.NoTitleBar" >
             <data
-                android:host="twitter"
-                android:scheme="ldlmarketing" />
+                    android:host="callback"
+                    android:scheme="twitter" />
         </activity>
         <activity
             android:name=".SplashScreenActivity"

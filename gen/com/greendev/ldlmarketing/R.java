@@ -118,11 +118,11 @@ public final class R {
         public static final int ldlcam_text2=0x7f090013;
         public static final int menu_settings=0x7f09002f;
         public static final int message=0x7f090028;
+        public static final int mobile_twitter=0x7f090029;
         public static final int myvideoview=0x7f09002d;
         public static final int packaging_button=0x7f09001f;
         public static final int pager=0x7f090010;
         public static final int press_button=0x7f09001b;
-        public static final int status=0x7f090029;
         public static final int tabsLayout=0x7f090024;
         public static final int tabsText=0x7f090025;
         public static final int title=0x7f090023;
