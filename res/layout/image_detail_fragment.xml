@@ -12,7 +12,7 @@
   distributed under the License is distributed on an "AS IS" BASIS,
   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   See the License for the specific language governing permissions and
-  limitations under the License.
+  limitations under the License.
 -->
 
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -30,5 +30,18 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:contentDescription="@string/imageview_description" />
+
+    <TextView
+        android:id="@+id/image_comment"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginBottom="20dip"
+        android:background="#70000000"
+        android:padding="12dip"
+        android:singleLine="true"
+        android:text="Sample Picture 1"
+        android:textColor="#ffffffff"
+        android:textSize="25sp" />
 
 </FrameLayout>

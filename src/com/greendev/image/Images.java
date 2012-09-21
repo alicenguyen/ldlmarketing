@@ -184,7 +184,8 @@ public class Images {
 		"http://www.leungdeleonmarketing.com/wp-content/uploads/2012/01/Scarlet-Teaser-e1329919901559.jpg",
 		"http://www.leungdeleonmarketing.com/wp-content/uploads/2012/01/Sexy-Solutions-Poster-e1329919915205.jpg",
 		"http://www.leungdeleonmarketing.com/wp-content/uploads/2012/01/Bench-Summer-2012-Exclusive-Coverage.jpg",
-		"http://www.leungdeleonmarketing.com/wp-content/uploads/2012/01/Bench-1M41M-TwitterCampaign.jpg",
+		"http://www.leungdeleonmarketing.com/wp-content/uploads/2012/01/Be" +
+		"nch-1M41M-TwitterCampaign.jpg",
 	};
 	
 	/**

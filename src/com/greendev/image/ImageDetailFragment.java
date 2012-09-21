@@ -22,7 +22,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.greendev.ldlmarketing.R;
 import com.greendev.ldlmarketing.R.id;
@@ -38,6 +40,11 @@ public class ImageDetailFragment extends Fragment {
     private String mImageUrl;
     private ImageView mImageView;
     private ImageFetcher mImageFetcher;
+    
+	boolean commentView;
+	TextView commentText;
+	ImageView imageArea;
+	FrameLayout image;
 
     /**
      * Factory method to generate a new instance of the fragment given an image number.
@@ -73,6 +80,7 @@ public class ImageDetailFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
+    	
         // Inflate and locate the main ImageView
         final View v = inflater.inflate(R.layout.image_detail_fragment, container, false);
         mImageView = (ImageView) v.findViewById(R.id.imageView);

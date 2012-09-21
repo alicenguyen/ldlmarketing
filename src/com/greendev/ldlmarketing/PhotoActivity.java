@@ -39,7 +39,7 @@ public class PhotoActivity extends Activity implements OnClickListener {
 				commentText.setVisibility(View.VISIBLE);
 			}
 		}
-			break;
+			break; 
 		}
 	}
 }
