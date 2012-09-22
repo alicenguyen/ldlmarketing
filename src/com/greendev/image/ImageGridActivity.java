@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.greendev.ldlmarketing;
+package com.greendev.image;
 
 import android.content.Context;
 import android.content.Intent;
@@ -25,11 +25,10 @@ import android.support.v4.app.FragmentTransaction;
 import android.view.Window;
 import android.widget.TextView;
 
-import com.greendev.image.ImageDetailActivity;
-import com.greendev.image.ImageGridFragment;
-import com.greendev.image.Utils;
 import com.greendev.ldlmarketing.BuildConfig;
 import com.greendev.ldlmarketing.R;
+import com.greendev.ldlmarketing.R.id;
+import com.greendev.ldlmarketing.R.layout;
 
 /**
  * Simple FragmentActivity to hold the main {@link ImageGridFragment} and not

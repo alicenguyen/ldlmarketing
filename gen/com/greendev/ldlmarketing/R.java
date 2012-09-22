@@ -82,6 +82,7 @@ public final class R {
         public static final int tab_selected=0x7f020029;
         public static final int tab_text_selector=0x7f02002a;
         public static final int tab_tweet=0x7f02002b;
+        public static final int video_icon=0x7f02002c;
     }
     public static final class id {
         public static final int ListViewId=0x7f09002a;
@@ -112,7 +113,7 @@ public final class R {
         public static final int home_title2=0x7f090006;
         public static final int ic_launcher=0x7f090022;
         public static final int imageView=0x7f09000e;
-        public static final int image_comment=0x7f09000f;
+        public static final int image_caption=0x7f09000f;
         public static final int label=0x7f090021;
         public static final int ldlcam_text1=0x7f090012;
         public static final int ldlcam_text2=0x7f090013;

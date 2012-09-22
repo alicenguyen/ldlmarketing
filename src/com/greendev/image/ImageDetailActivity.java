@@ -58,7 +58,8 @@ public class ImageDetailActivity extends FragmentActivity implements
 	private ImageFetcher mImageFetcher;
 	private ViewPager mPager;
 
-
+	TextView imageCaption;
+	private ImageDetailFragment fragment;
 
 	@TargetApi(11)
 	@Override
@@ -71,8 +72,6 @@ public class ImageDetailActivity extends FragmentActivity implements
 		Bundle b = intent.getExtras();
 		/** retrieve the stringarray extra passed */
 		URLS = b.getStringArray("urlsType");
-
-
 
 		if (BuildConfig.DEBUG) {
 			Utils.enableStrictMode();
@@ -97,7 +96,7 @@ public class ImageDetailActivity extends FragmentActivity implements
 		// we shouldn't divide by 2, but this will use more memory and require a
 		// larger memory
 		// cache.
-		final int longest = (height > width ? height : width) / 2;
+		final int longest = (height > width ? height : width) / 1;
 
 		ImageCache.ImageCacheParams cacheParams = new ImageCache.ImageCacheParams(
 				this, IMAGE_CACHE_DIR);
@@ -112,7 +111,7 @@ public class ImageDetailActivity extends FragmentActivity implements
 
 		// Set up ViewPager and backing adapter
 		mAdapter = new ImagePagerAdapter(getSupportFragmentManager(),
-				URLS.length); // ////////////////////////////
+				URLS.length);
 		mPager = (ViewPager) findViewById(R.id.pager);
 		mPager.setAdapter(mAdapter);
 		mPager.setPageMargin((int) getResources().getDimension(
@@ -154,6 +153,8 @@ public class ImageDetailActivity extends FragmentActivity implements
 		if (extraCurrentItem != -1) {
 			mPager.setCurrentItem(extraCurrentItem);
 		}
+		
+		imageCaption = (TextView)findViewById(R.id.image_caption);
 	}
 
 	@Override
@@ -225,7 +226,10 @@ public class ImageDetailActivity extends FragmentActivity implements
 
 		@Override
 		public Fragment getItem(int position) {
-			return ImageDetailFragment.newInstance(URLS[position]); // /////////////////////////////////
+
+			fragment = ImageDetailFragment
+					.newInstance(URLS[position], position);
+			return fragment;
 		}
 	}
 
@@ -239,10 +243,12 @@ public class ImageDetailActivity extends FragmentActivity implements
 		final int vis = mPager.getSystemUiVisibility();
 		if ((vis & View.SYSTEM_UI_FLAG_LOW_PROFILE) != 0) {
 			mPager.setSystemUiVisibility(View.SYSTEM_UI_FLAG_VISIBLE);
+
 		} else {
 			mPager.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LOW_PROFILE);
+
 		}
-
-
+		imageCaption.setText("hiiiiiiiiiiiiiii");
+		fragment.onClick(v);
 	}
 }

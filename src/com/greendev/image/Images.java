@@ -20,6 +20,9 @@ package com.greendev.image;
  * Some simple test data to use for this sample app.
  */
 public class Images {
+	public final static String[] testImageDescriptions = new String[] {
+		"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20",
+	};
 
 	/**
 	 * Campaigns images
@@ -73,6 +76,7 @@ public class Images {
 			"http://www.leungdeleonmarketing.com/wp-content/uploads/2011/12/Nisce-Campaign-6-150x150.jpg",
 			"http://www.leungdeleonmarketing.com/wp-content/uploads/2011/12/Nisce-Campaign-5-150x150.jpg",
 			"http://www.leungdeleonmarketing.com/wp-content/uploads/2011/12/N2-Derm+-Banner-150x150.jpg", };
+
 	/**
 	 * Press Thumbnails
 	 */

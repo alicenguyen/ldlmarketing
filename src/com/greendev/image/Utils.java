@@ -19,7 +19,6 @@ package com.greendev.image;
 
 
 
-import com.greendev.ldlmarketing.ImageGridActivity;
 
 import android.annotation.TargetApi;
 import android.os.Build;

@@ -72,7 +72,7 @@ public class ImageGridFragment extends Fragment implements AdapterView.OnItemCli
     private String[] typeUrlsThumbs;
 
 	/**
-	 * Empty constructor as per the Fragment documentation
+	 * Constructor as per the Fragment documentation
 	 */
 	public ImageGridFragment(Context cxt, Class<?> c, String[] typeUrls, String[] thumbs) {
 		this.context = cxt;
@@ -190,13 +190,14 @@ public class ImageGridFragment extends Fragment implements AdapterView.OnItemCli
 	@TargetApi(16)
 	@Override
 	public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
-	
+		/* transferring information to ImageDeatilActivity */
 		Bundle b = new Bundle(); 
 		b.putStringArray("urlsType", typeUrls);
+	
 		final Intent i = new Intent(context, ImageDetailActivity.class);
 		i.putExtras(b);
 		i.putExtra(ImageDetailActivity.EXTRA_IMAGE, (int) id);
-		/***/
+	
 		if (Utils.hasJellyBean()) {
 			// makeThumbnailScaleUpAnimation() looks kind of ugly here as the
 			// loading spinner may
