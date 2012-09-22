@@ -153,8 +153,8 @@ public class ImageDetailActivity extends FragmentActivity implements
 		if (extraCurrentItem != -1) {
 			mPager.setCurrentItem(extraCurrentItem);
 		}
-		
-		imageCaption = (TextView)findViewById(R.id.image_caption);
+
+		imageCaption = (TextView) findViewById(R.id.image_caption);
 	}
 
 	@Override
@@ -248,7 +248,5 @@ public class ImageDetailActivity extends FragmentActivity implements
 			mPager.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LOW_PROFILE);
 
 		}
-		imageCaption.setText("hiiiiiiiiiiiiiii");
-		fragment.onClick(v);
 	}
 }
