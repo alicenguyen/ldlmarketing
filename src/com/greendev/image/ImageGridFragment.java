@@ -70,15 +70,17 @@ public class ImageGridFragment extends Fragment implements AdapterView.OnItemCli
     Class<?> detailClass;
     private String[] typeUrls;
     private String[] typeUrlsThumbs;
+    private String[] captions;
 
 	/**
 	 * Constructor as per the Fragment documentation
 	 */
-	public ImageGridFragment(Context cxt, Class<?> c, String[] typeUrls, String[] thumbs) {
+	public ImageGridFragment(Context cxt, Class<?> c, String[] typeUrls, String[] thumbs, String[] captions) {
 		this.context = cxt;
 		this.detailClass = c;
 		this.typeUrls = typeUrls;
 		typeUrlsThumbs = thumbs;
+		this.captions = captions;
 	}
 
 	@Override
@@ -192,7 +194,8 @@ public class ImageGridFragment extends Fragment implements AdapterView.OnItemCli
 	public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
 		/* transferring information to ImageDeatilActivity */
 		Bundle b = new Bundle(); 
-		b.putStringArray("urlsType", typeUrls);
+		b.putStringArray("URLS_TYPE", typeUrls);
+		b.putStringArray("CAPTIONS", captions);
 	
 		final Intent i = new Intent(context, ImageDetailActivity.class);
 		i.putExtras(b);

@@ -39,8 +39,8 @@ public class ImageDetailFragment extends Fragment {
 	private String mImageUrl;
 	private ImageView mImageView;
 	private ImageFetcher mImageFetcher;
-	private TextView imageCaption;
-	private int position;
+	private TextView imageCaptionView;
+	private String captionStr;
 	private View v;
 
 	private boolean captionDisplay = true;
@@ -53,8 +53,8 @@ public class ImageDetailFragment extends Fragment {
 	 *            The image url to load
 	 * @return A new instance of ImageDetailFragment with imageNum extras
 	 */
-	public static ImageDetailFragment newInstance(String imageUrl, int position) {
-		final ImageDetailFragment f = new ImageDetailFragment(position);
+	public static ImageDetailFragment newInstance(String imageUrl, String captionStr) {
+		final ImageDetailFragment f = new ImageDetailFragment(captionStr);
 
 		final Bundle args = new Bundle();
 		args.putString(IMAGE_DATA_EXTRA, imageUrl);
@@ -66,8 +66,8 @@ public class ImageDetailFragment extends Fragment {
 	/**
 	 * Empty constructor as per the Fragment documentation
 	 */
-	public ImageDetailFragment(int position) {
-		this.position = position;
+	public ImageDetailFragment(String captionStr) {
+		this.captionStr = captionStr;
 	}
 
 	/**
@@ -94,7 +94,7 @@ public class ImageDetailFragment extends Fragment {
 		mImageView = (ImageView) v.findViewById(R.id.imageView);
 
 		/* image caption set up -- (1) */
-		imageCaption = (TextView) v.findViewById(R.id.image_caption);
+		imageCaptionView = (TextView) v.findViewById(R.id.image_caption);
 
 		return v;
 	}
@@ -112,8 +112,8 @@ public class ImageDetailFragment extends Fragment {
 			mImageFetcher.loadImage(mImageUrl, mImageView);
 
 			/* image description dialog -- (2) */
-			imageCaption.setText(Images.testImageDescriptions[position]);
-			imageCaption.setVisibility(1);
+			imageCaptionView.setText(captionStr);
+			imageCaptionView.setVisibility(1);
 
 		}
 
@@ -121,7 +121,7 @@ public class ImageDetailFragment extends Fragment {
 		if (OnClickListener.class.isInstance(getActivity())
 				&& Utils.hasHoneycomb()) {
 			mImageView.setOnClickListener((OnClickListener) getActivity());
-			imageCaption.setOnClickListener((OnClickListener) getActivity());
+			imageCaptionView.setOnClickListener((OnClickListener) getActivity());
 		}
 		setCaptionClick();
 	}
@@ -136,28 +136,23 @@ public class ImageDetailFragment extends Fragment {
 		}
 	}
 
-	public void onClick(View v) {
-
-		imageCaption.setText("hiiii");
-
-	}
-
 	/**
 	 * Caption display
 	 */
 	public void setCaptionClick() {
-		imageCaption.setOnClickListener(new View.OnClickListener() {
+		imageCaptionView.setOnClickListener(new View.OnClickListener() {
 
 			/*
-			 * Caption display control
+			 * Caption display control -- touching image or caption causes
+			 * caption to disappear
 			 */
 			@Override
 			public void onClick(View v) {
 				if (captionDisplay) {
-					imageCaption.setVisibility(View.GONE);
+					imageCaptionView.setVisibility(View.GONE);
 					captionDisplay = false;
 				} else {
-					imageCaption.setVisibility(View.VISIBLE);
+					imageCaptionView.setVisibility(View.VISIBLE);
 					captionDisplay = true;
 				}
 
@@ -172,10 +167,10 @@ public class ImageDetailFragment extends Fragment {
 			@Override
 			public void onClick(View v) {
 				if (captionDisplay) {
-					imageCaption.setVisibility(View.GONE);
+					imageCaptionView.setVisibility(View.GONE);
 					captionDisplay = false;
 				} else {
-					imageCaption.setVisibility(View.VISIBLE);
+					imageCaptionView.setVisibility(View.VISIBLE);
 					captionDisplay = true;
 				}
 			}

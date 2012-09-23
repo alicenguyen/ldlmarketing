@@ -68,36 +68,50 @@ public class PortfolioActivity extends Activity implements OnClickListener {
 		case R.id.campaigns_button:
 			b.putStringArray("TYPE_URL", Images.campaignsImageUrls);
 			b.putStringArray("TYPE_URL_THUMB", Images.campaignsThumbUrls);
+			// test
+			b.putStringArray("CAPTIONS", Images.testImageDescriptions);
 			b.putString("TITLE", "Campaigns");
 			break;
 		case R.id.press_button:
 			b.putStringArray("TYPE_URL", Images.pressImageUrls);
 			b.putStringArray("TYPE_URL_THUMB", Images.pressThumbUrls);
+			// test
+			b.putStringArray("CAPTIONS", Images.pressImageUrls);
 			b.putString("TITLE", "Press");
 			break;
 		case R.id.graphic_design_button:
 			b.putStringArray("TYPE_URL", Images.graphicDesignsImageUrls);
-			b.putStringArray("TYPE_URL_THUMB", Images.graphicDesignsThumbUrls);
+			b.putStringArray("TYPE_URL_THUMB", Images.graphicDesignsImageUrls);
+			// test
+			b.putStringArray("CAPTIONS", Images.testImageDescriptions);
 			b.putString("TITLE", "Graphic Designs");
 			break;
 		case R.id.websites_button:
 			b.putStringArray("TYPE_URL", Images.websitesImageUrls);
 			b.putStringArray("TYPE_URL_THUMB", Images.websitesThumbUrls);
+			// test
+			b.putStringArray("CAPTIONS", Images.websitesImageUrls);
 			b.putString("TITLE", "Websites");
 			break;
 		case R.id.digital_marketing_button:
 			b.putStringArray("TYPE_URL", Images.digitalMarketingImageUrls);
 			b.putStringArray("TYPE_URL_THUMB", Images.digitalMarketingThumbUrls);
+			// test
+			b.putStringArray("CAPTIONS", Images.digitalMarketingImageUrls);
 			b.putString("TITLE", "Digital Marketing");
 			break;
 		case R.id.packaging_button:
 			b.putStringArray("TYPE_URL", Images.packagingImageUrls);
 			b.putStringArray("TYPE_URL_THUMB", Images.packagingThumbUrls);
+			// test
+			b.putStringArray("CAPTIONS", Images.packagingImageUrls);
 			b.putString("TITLE", "Packaging");
 			break;
 		case R.id.booth_designs_button:
 			b.putStringArray("TYPE_URL", Images.boothDesignsImageUrls);
 			b.putStringArray("TYPE_URL_THUMB", Images.boothDesignsThumbUrls);
+			// test
+			b.putStringArray("CAPTIONS", Images.boothDesignsImageUrls);
 			b.putString("TITLE", "Booth Designs");
 			break;
 

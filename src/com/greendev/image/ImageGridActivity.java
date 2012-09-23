@@ -38,17 +38,20 @@ public class ImageGridActivity extends FragmentActivity {
 	private static final String TAG = "ImageGridActivity";
 	private static String[] TYPE_URL;
 	private static String[] TYPE_URL_THUMB;
+	private static String[] CAPTIONS;
 	private static String TITLE;
+	
 
 	protected void onCreate(Bundle savedInstanceState) {
-		/** get the intent called from an Activity **/
+		/** get the intent called from an Activity (eg. Portfolio.class) **/
 		Intent intent = getIntent();
 		/** get the bundle from the intent **/
 		Bundle b = intent.getExtras();
-		/** retrieve the stringarray extra passed */
+		/** retrieve the string array extra passed */
 		TYPE_URL = b.getStringArray("TYPE_URL");
 		TYPE_URL_THUMB = b.getStringArray("TYPE_URL_THUMB");
 		TITLE = b.getString("TITLE");
+		CAPTIONS = b.getStringArray("CAPTIONS");
 
 		if (BuildConfig.DEBUG) {
 			Utils.enableStrictMode();
@@ -70,7 +73,7 @@ public class ImageGridActivity extends FragmentActivity {
 			// ft.add(android.R.id.content, new ImageGridFragment(this,
 			// ImageDetailActivity.class, TYPE_URL, TYPE_URL_THUMB), TAG);
 			ft.add(android.R.id.content, new ImageGridFragment(this,
-					ImageDetailActivity.class, TYPE_URL, TYPE_URL_THUMB), TAG);
+					ImageDetailActivity.class, TYPE_URL, TYPE_URL_THUMB, CAPTIONS), TAG);
 			ft.commit();
 		}
 	}

@@ -231,47 +231,5 @@ public class Images {
 			"http://www.leungdeleonmarketing.com/wp-content/uploads/2012/03/N2-Derm-2.jpg",
 			"http://www.leungdeleonmarketing.com/wp-content/uploads/2012/03/N2-Derm-3.jpg",
 			"http://www.leungdeleonmarketing.com/wp-content/uploads/2012/03/N2-Derm-4.jpg", };
-	//
-	// /**
-	// *
-	// */
-	// public final static String[] ImageUrls = new String[] {
-	// "",
-	// "",
-	// "",
-	// };
-	// public final static String[] ThumbUrls = new String[] {
-	// "",
-	// "",
-	// "",
-	// };
-	//
-	// /**
-	// *
-	// */
-	// public final static String[] ImageUrls = new String[] {
-	// "",
-	// "",
-	// "",
-	// };
-	// public final static String[] ThumbUrls = new String[] {
-	// "",
-	// "",
-	// "",
-	// };
-	//
-	// /**
-	// *
-	// */
-	// public final static String[] ImageUrls = new String[] {
-	// "",
-	// "",
-	// "",
-	// };
-	// public final static String[] ThumbUrls = new String[] {
-	// "",
-	// "",
-	// "",
-	// };
-
+	
 }

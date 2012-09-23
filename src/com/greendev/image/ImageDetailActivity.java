@@ -53,6 +53,7 @@ public class ImageDetailActivity extends FragmentActivity implements
 	private static final String IMAGE_CACHE_DIR = "images";
 	public static final String EXTRA_IMAGE = "extra_image";
 	public static String[] URLS;
+	public static String[] CAPTIONS;
 
 	private ImagePagerAdapter mAdapter;
 	private ImageFetcher mImageFetcher;
@@ -71,7 +72,8 @@ public class ImageDetailActivity extends FragmentActivity implements
 		/** get the bundle from the intent **/
 		Bundle b = intent.getExtras();
 		/** retrieve the stringarray extra passed */
-		URLS = b.getStringArray("urlsType");
+		URLS = b.getStringArray("URLS_TYPE");
+		CAPTIONS = b.getStringArray("CAPTIONS");
 
 		if (BuildConfig.DEBUG) {
 			Utils.enableStrictMode();
@@ -228,7 +230,7 @@ public class ImageDetailActivity extends FragmentActivity implements
 		public Fragment getItem(int position) {
 
 			fragment = ImageDetailFragment
-					.newInstance(URLS[position], position);
+					.newInstance(URLS[position], CAPTIONS[position]);
 			return fragment;
 		}
 	}
