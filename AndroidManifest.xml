@@ -20,8 +20,8 @@
             android:label="@string/title_activity_main"
             android:theme="@android:style/Theme.Light.NoTitleBar" >
             <data
-                    android:host="callback"
-                    android:scheme="twitter" />
+                android:host="callback"
+                android:scheme="twitter" />
         </activity>
         <activity
             android:name=".SplashScreenActivity"
@@ -29,7 +29,7 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER" />  
             </intent-filter>
         </activity>
         <activity
@@ -42,8 +42,13 @@
             android:name=".LDLCamActivity"
             android:label="LDL Cam" />
         <activity
+            android:name=".LDLCam2Activity"
+            android:label="LDL Cam" 
+              android:theme="@android:style/Theme.Light.NoTitleBar"/>
+        <activity
             android:name=".GalleryActivity"
-            android:label="LDL Gallery" />
+            android:label="LDL Gallery"
+             />
         <activity
             android:name=".PressActivity"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
@@ -58,7 +63,7 @@
                 <data
                     android:host="twitter"
                     android:scheme="ldlmarketing" /> 
-            </intent-filter>
+            </intent-filter>
         -->
         <!-- </activity> -->
 
@@ -117,8 +122,6 @@
             android:name="com.greendev.image.ImageGridActivity"
             android:theme="@style/CustomTheme" >
         </activity>
-        
-
         <activity
             android:name=".CampaignsGridActivity"
             android:theme="@style/CustomTheme" >
