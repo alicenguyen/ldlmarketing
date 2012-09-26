@@ -47,7 +47,8 @@ public class Images {
 	 */
 	public final static String[] campaignsImageUrls = new String[] {
 
-			"http://www.leungdeleonmarketing.com/wp-content/uploads/2011/12/Nisce-Ads-pool1.jpg",
+			"http://www.leungdeleonmarketing.com/wp-content/uploads/2011/12/Nisce-Ads" +
+			".jpg",
 			"http://www.leungdeleonmarketing.com/wp-content/uploads/2011/12/Sexy-Solutions-Summer-2012-Campaign.jpg",
 			"http://www.leungdeleonmarketing.com/wp-content/uploads/2011/12/N2-Derm+-Campaign-1.jpg",
 			"http://www.leungdeleonmarketing.com/wp-content/uploads/2011/12/Nisce-Campaign-1.jpg",

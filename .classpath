@@ -9,5 +9,6 @@
 	<classpathentry kind="lib" path="libs/signpost-core-1.2.1.2.jar"/>
 	<classpathentry kind="lib" path="libs/jtwitter.jar"/>
 	<classpathentry kind="lib" path="json_simple-1.1.jar"/>
+	<classpathentry kind="lib" path="flickrapi-1.2.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

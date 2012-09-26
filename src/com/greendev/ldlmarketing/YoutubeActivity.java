@@ -63,7 +63,8 @@ public class YoutubeActivity extends Activity implements VideoClickListener {
 		
 		listView = (VideosListView) findViewById(R.id.videosListView);
 		
-
+		
+		// getting youtube videos
 		new Thread(
 				new GetYouTubeUserVideosTask(responseHandler, "LDLmarketing"))
 				.start();

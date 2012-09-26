@@ -56,7 +56,7 @@ public class LDLCamActivity extends Activity implements OnClickListener{
     	super.onActivityResult(requestCode, resultCode, data);
     	
 		if (requestCode == RESULT_LOAD_IMAGE && resultCode == RESULT_OK && null != data) {
-			Uri selectedImage = data.getData();
+			Uri selectedImage = data.getData(); 
 			String[] filePathColumn = { MediaStore.Images.Media.DATA };
 
 			Cursor cursor = getContentResolver().query(selectedImage,
