@@ -1,12 +1,12 @@
 package com.greendev.flickr;
 
 public class FlickrPhoto {
-	String id;
-	String owner;
-	String secret;
-	String server;
-	String title;
-	String farm;
+	private String id;
+	private String owner;
+	private String secret;
+	private String server;
+	private String title;
+	private String farm;
 
 	public FlickrPhoto(String _id, String _secret, String _server,
 			String _title, String _farm) {
@@ -26,6 +26,10 @@ public class FlickrPhoto {
 	public String makeThumbURL() {
 		return "http://farm" + farm + ".static.flickr.com/" + server + "/" + id
 				+ "_" + secret + "_q.jpg";
+	}
+	
+	public String getTitle() {
+		return title;
 	}
 
 }

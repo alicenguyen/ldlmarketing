@@ -40,7 +40,9 @@ public class ImageGridActivity extends FragmentActivity {
 	private static String[] TYPE_URL_THUMB;
 	private static String[] CAPTIONS;
 	private static String TITLE;
-	
+	private String key;
+	private String[] aSetofImages;
+	private String[] aSetofThumbs;
 
 	protected void onCreate(Bundle savedInstanceState) {
 		/** get the intent called from an Activity (eg. Portfolio.class) **/
@@ -52,6 +54,13 @@ public class ImageGridActivity extends FragmentActivity {
 		TYPE_URL_THUMB = b.getStringArray("TYPE_URL_THUMB");
 		TITLE = b.getString("TITLE");
 		CAPTIONS = b.getStringArray("CAPTIONS");
+		
+		// PhotoActivityGridFragment 
+		key = b.getString("key");
+		if(key == null) key = "hi";
+
+		
+		
 
 		if (BuildConfig.DEBUG) {
 			Utils.enableStrictMode();
@@ -72,8 +81,17 @@ public class ImageGridActivity extends FragmentActivity {
 					.beginTransaction();
 			// ft.add(android.R.id.content, new ImageGridFragment(this,
 			// ImageDetailActivity.class, TYPE_URL, TYPE_URL_THUMB), TAG);
-			ft.add(android.R.id.content, new ImageGridFragment(this,
-					ImageDetailActivity.class, TYPE_URL, TYPE_URL_THUMB, CAPTIONS), TAG);
+			
+			// If calling this activity for the Gallery images then use PhotoActivityGridFragment
+			if (key.equals("PhotoActivityGridFragment")) {
+				ft.add(android.R.id.content, new PhotoActivityGridFragment(this,
+						ImageGridActivity.class, TYPE_URL, TYPE_URL_THUMB,
+						CAPTIONS), TAG);
+			} else {
+				ft.add(android.R.id.content, new ImageGridFragment(this,
+						ImageDetailActivity.class, TYPE_URL, TYPE_URL_THUMB,
+						CAPTIONS), TAG);
+			}
 			ft.commit();
 		}
 	}

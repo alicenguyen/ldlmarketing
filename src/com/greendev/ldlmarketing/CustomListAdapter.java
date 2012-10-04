@@ -1,5 +1,7 @@
 package com.greendev.ldlmarketing;
 
+import java.util.List;
+
 import android.app.Activity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,7 +13,13 @@ public class CustomListAdapter extends ArrayAdapter<String>
 {
 	private final Activity context;
 	
-	public CustomListAdapter(Activity context, String [] names) 
+	public CustomListAdapter(Activity context, List<String> names) 
+	{
+		super(context, R.layout.rowlayout, names);
+		this.context = context;
+	}
+	
+	public CustomListAdapter(Activity context, String[] names) 
 	{
 		super(context, R.layout.rowlayout, names);
 		this.context = context;

@@ -1,22 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/background"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:background="@drawable/sample1"
-    android:gravity="center_horizontal"
-    android:orientation="vertical" >
+<RelativeLayout 
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" 
+	android:layout_height="fill_parent"
+	android:gravity="top">
+
+<!-- 	<ListView 
+		style="@style/ListStyle"
+		android:id="@+id/content" 
+		android:layout_height="fill_parent" 
+		android:layout_width="fill_parent"
+		android:cacheColorHint="#00000000"
+		android:fadingEdge="none"
+		/> -->
+		<Button android:id="@+id/button"
+		    android:layout_width="wrap_content"
+		     android:layout_height="wrap_content"
+		     android:text="press me"/>
+	
+	<LinearLayout 
+		android:layout_height="10dp" 
+		android:layout_width="fill_parent" 
+		android:background="@drawable/nav_shadow"/>
 
 
-        <TextView
-            android:id="@+id/comment"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
-            android:background="#70000000"
-            android:singleLine="true"
-            android:text="Sample Picture 1"
-            android:textColor="#FFFFFF"
-            android:textSize="25sp" />
 </RelativeLayout>

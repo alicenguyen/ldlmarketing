@@ -19,6 +19,7 @@ import android.os.Message;
 import android.util.Log;
 
 public class FetchSetsTask implements Runnable {
+	private final String API_KEY = "77c86c69fb169a5a42d8eb462c2c8232";
 	private final Handler replyTo;
 	// A reference to retrieve the data when this task finishes
 	public static final String LIBRARY = "Library";
@@ -32,7 +33,9 @@ public class FetchSetsTask implements Runnable {
 	public void run() {
 		HttpClient httpclient = new DefaultHttpClient();
 		HttpGet httpget = new HttpGet(
-				"http://api.flickr.com/services/rest/?method=flickr.photosets.getList&api_key=4409059966d7ae8599d00460266641c1&user_id=87656684%40N07&format=json&nojsoncallback=1");
+				"http://api.flickr.com/services/rest/?method=flickr.photosets.getList&api_key="
+						+ API_KEY
+						+ "&user_id=87656684%40N07&format=json&nojsoncallback=1");
 		HttpResponse response;
 		try {
 			response = httpclient.execute(httpget);
@@ -63,8 +66,8 @@ public class FetchSetsTask implements Runnable {
 					// Get the sets' names.
 					JSONObject titledata = photodata.getJSONObject("title");
 					sets[i] = new FlickrSet(photodata.getString("id"),
-							titledata.getString("_content"));					
-				
+							titledata.getString("_content"));
+
 					Log.i(TAG, "id = " + sets[i].getId());
 					Log.i(TAG, "name = " + sets[i].getName());
 
@@ -76,8 +79,9 @@ public class FetchSetsTask implements Runnable {
 				// Pack the library into the bundle to sent back to the Activity
 				Bundle data = new Bundle();
 				data.putSerializable(LIBRARY, lib);
-				
-				// Send the Bundle of data (our Library) back to the handler (our Activity)
+
+				// Send the Bundle of data (our Library) back to the handler
+				// (our Activity)
 				Message msg = Message.obtain();
 				msg.setData(data);
 				replyTo.sendMessage(msg);

@@ -12,7 +12,7 @@ import android.widget.ImageView;
 import android.widget.TabHost;
 import android.widget.TextView;
 
-public class MainTabActivity extends TabActivity {
+public class MainTabActivity extends TabActivity { 
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {

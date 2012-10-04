@@ -90,7 +90,7 @@
             android:theme="@style/CustomTheme" />
         <activity
             android:name=".PhotoActivity"
-            android:theme="@android:style/Theme.Light.NoTitleBar" />
+            android:theme="@style/CustomTheme" />
         <activity
             android:name=".ClientDirectoryActivity"
             android:theme="@style/CustomTheme" />

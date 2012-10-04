@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.Random;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -15,11 +16,22 @@ import org.json.JSONObject;
 
 import android.util.Log;
 
+/**
+ *  FlickrSet is composed of FlickrPhotos.  FlickrSet is first constructred with 
+ *  set id and the content (set name). The object then has to call getPhotos()
+ *  to load the images of the set from Flickr.
+ *  
+ * @author Alice Nguyen
+ * @since 9/25/2012
+ *
+ */
 public class FlickrSet {
-	String id;
-	String name;
-	FlickrPhoto[] photos;
-	String[] URL;
+	private final String API_KEY = "77c86c69fb169a5a42d8eb462c2c8232";
+	
+	private String id;
+	private String name;
+	private FlickrPhoto[] photos;
+	private String[] URL;
 
 	public FlickrSet(String _id, String _content) {
 		id = _id;
@@ -34,16 +46,19 @@ public class FlickrSet {
 		return name;
 	}
 
-//	public String[] getURL() {
-//		return URL;
-//	}
+	// public String[] getURL() {
+	// return URL;
+	// }
 
 	public FlickrPhoto[] getPhotos() {
 		// Getting pictures in set
 		HttpClient httpclient = new DefaultHttpClient();
 		HttpGet httpget = new HttpGet(
-				"http://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=1dc263ed8c964801657b49ee9ab48354&photoset_id="
-						+ id + "&format=json&nojsoncallback=1");
+				"http://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key="
+						+ API_KEY
+						+ "&photoset_id="
+						+ id
+						+ "&format=json&nojsoncallback=1");
 		HttpResponse response;
 		try {
 			response = httpclient.execute(httpget);
@@ -81,7 +96,7 @@ public class FlickrSet {
 							photodata.getString("title"),
 							photodata.getString("farm"));
 
-//					URL[i] = photos[i].makeURL();
+					// URL[i] = photos[i].makeURL();
 
 				}
 				inputstream.close();
@@ -102,13 +117,40 @@ public class FlickrSet {
 			e.printStackTrace();
 			Log.e("PhotoSet", "error");
 		}
-		
-		return photos;
 
+		return photos;
 	}
-	
-	public int getPhotoCount(){
+
+	public int getPhotoCount() {
 		return photos.length;
 	}
+	
+	public String getRandomThumbUrl(){
+		if(photos == null)
+			return null;
+		Random rand = new Random();
+		int randomInt = rand.nextInt(getPhotoCount());
+		return photos[randomInt].makeThumbURL();
+	}
+	
+	public String[] getPhotoSetUrl() {
+		if(photos == null) return null;
+		String[] result = new String[getPhotoCount()];
+		for(int i = 0; i < getPhotoCount(); i++) {
+			result[i] = photos[i].makeURL();
+		}
+		return result;
+	}
+	
+	public String[] getPhotoSetThumbUrl() {
+		if(photos == null) return null;
+		String[] result = new String[getPhotoCount()];
+		for(int i = 0; i < getPhotoCount(); i++) {
+			result[i] = photos[i].makeThumbURL();
+		}
+		return result;
+	}
+	
+	
 
 }

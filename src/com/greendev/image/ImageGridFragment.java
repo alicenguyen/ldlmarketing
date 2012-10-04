@@ -192,7 +192,7 @@ public class ImageGridFragment extends Fragment implements AdapterView.OnItemCli
 	@TargetApi(16)
 	@Override
 	public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
-		/* transferring information to ImageDeatilActivity */
+		/* transferring information to ImageDetailActivity */
 		Bundle b = new Bundle(); 
 		b.putStringArray("URLS_TYPE", typeUrls);
 		b.putStringArray("CAPTIONS", captions);
@@ -293,6 +293,10 @@ public class ImageGridFragment extends Fragment implements AdapterView.OnItemCli
 			return true;
 		}
 
+		/*
+		 * Displays the thumbnails
+		 * 
+		 */
 		@Override
 		public View getView(int position, View convertView, ViewGroup container) {
 			// First check if this is the top row

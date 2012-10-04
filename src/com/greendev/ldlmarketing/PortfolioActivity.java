@@ -22,13 +22,13 @@ import com.greendev.image.Images;
 
 public class PortfolioActivity extends Activity implements OnClickListener {
 
-	public String[] campImgs, campThumbs;
-	public String[] pressImgs, pressThumbs;
-	public String[] gdImgs, gdThumbs;
-	public String[] webImgs, webThumbs;
-	public String[] dmImgs, dmThumbs;
-	public String[] packImgs, packThumbs;
-	public String[] boothImgs, boothThumbs;
+	public String[] campImgs, campThumbs, campDesc;
+	public String[] pressImgs, pressThumbs, pressDesc;
+	public String[] gdImgs, gdThumbs, gdDesc;
+	public String[] webImgs, webThumbs, webDesc;
+	public String[] dmImgs, dmThumbs, dmDesc;
+	public String[] packImgs, packThumbs, packDesc;
+	public String[] boothImgs, boothThumbs, boothDesc;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -101,9 +101,11 @@ public class PortfolioActivity extends Activity implements OnClickListener {
 				// Get photo URLs
 				campImgs = new String[setPhotos.length];
 				campThumbs = new String[setPhotos.length];
+				campDesc = new String[setPhotos.length];
 				for (int j = 0; j < setPhotos.length; j++) {
 					campImgs[j] = setPhotos[j].makeURL();
 					campThumbs[j] = setPhotos[j].makeThumbURL();
+					campDesc[j] = setPhotos[j].getTitle();
 					
 				}
 			} else if (fSets[i].getName().equals("press")) {
@@ -112,9 +114,11 @@ public class PortfolioActivity extends Activity implements OnClickListener {
 				// Get photo URLs
 				pressImgs = new String[setPhotos.length];
 				pressThumbs = new String[setPhotos.length];
+				pressDesc = new String[setPhotos.length];
 				for (int j = 0; j < setPhotos.length; j++) {
 					pressImgs[j] = setPhotos[j].makeURL();
 					pressThumbs[j] = setPhotos[j].makeThumbURL();
+					pressDesc[j] = setPhotos[j].getTitle();
 				}
 			} else if (fSets[i].getName().equals("graphic designs")) {
 				// Get photos from Flickr
@@ -122,9 +126,11 @@ public class PortfolioActivity extends Activity implements OnClickListener {
 				// Get photo URLs
 				gdImgs = new String[setPhotos.length];
 				gdThumbs = new String[setPhotos.length];
+				gdDesc = new String[setPhotos.length];
 				for (int j = 0; j < setPhotos.length; j++) {
 					gdImgs[j] = setPhotos[j].makeURL();
 					gdThumbs[j] = setPhotos[j].makeThumbURL();
+					gdDesc[j] = setPhotos[j].getTitle();
 				}
 
 			} else if (fSets[i].getName().equals("websites")) {
@@ -133,9 +139,11 @@ public class PortfolioActivity extends Activity implements OnClickListener {
 				// Get photo URLs
 				webImgs = new String[setPhotos.length];
 				webThumbs = new String[setPhotos.length];
+				webDesc = new String[setPhotos.length];
 				for (int j = 0; j < setPhotos.length; j++) {
 					webImgs[j] = setPhotos[j].makeURL();
 					webThumbs[j] = setPhotos[j].makeThumbURL();
+					webDesc[j] = setPhotos[j].getTitle();
 				}
 			} else if (fSets[i].getName().equals("digital marketing")) {
 				// Get photos from Flickr
@@ -143,9 +151,11 @@ public class PortfolioActivity extends Activity implements OnClickListener {
 				// Get photo URLs
 				dmImgs = new String[setPhotos.length];
 				dmThumbs = new String[setPhotos.length];
+				dmDesc = new String[setPhotos.length];
 				for (int j = 0; j < setPhotos.length; j++) {
 					dmImgs[j] = setPhotos[j].makeURL();
 					dmThumbs[j] = setPhotos[j].makeThumbURL();
+					dmDesc[j] = setPhotos[j].getTitle();
 				}
 
 			} else if (fSets[i].getName().equals("packaging")) {
@@ -154,9 +164,11 @@ public class PortfolioActivity extends Activity implements OnClickListener {
 				// Get photo URLs
 				packImgs = new String[setPhotos.length];
 				packThumbs = new String[setPhotos.length];
+				packDesc = new String[setPhotos.length];
 				for (int j = 0; j < setPhotos.length; j++) {
 					packImgs[j] = setPhotos[j].makeURL();
 					packThumbs[j] = setPhotos[j].makeThumbURL();
+					packDesc[j] = setPhotos[j].getTitle();
 				}
 
 			} else if (fSets[i].getName().equals("booth designs")) {
@@ -165,9 +177,11 @@ public class PortfolioActivity extends Activity implements OnClickListener {
 				// Get photo URLs
 				boothImgs = new String[setPhotos.length];
 				boothThumbs = new String[setPhotos.length];
+				boothDesc = new String[setPhotos.length];
 				for (int j = 0; j < setPhotos.length; j++) {
 					boothImgs[j] = setPhotos[j].makeURL();
 					boothThumbs[j] = setPhotos[j].makeThumbURL();
+					boothDesc[j] = setPhotos[j].getTitle();
 				}
 
 			} else {
@@ -187,49 +201,49 @@ public class PortfolioActivity extends Activity implements OnClickListener {
 			b.putStringArray("TYPE_URL", campImgs);
 			b.putStringArray("TYPE_URL_THUMB", campThumbs);
 			// test
-			b.putStringArray("CAPTIONS", Images.testImageDescriptions);
+			b.putStringArray("CAPTIONS", campDesc);
 			b.putString("TITLE", "Campaigns");
 			break;
 		case R.id.press_button:
 			b.putStringArray("TYPE_URL", pressImgs);
 			b.putStringArray("TYPE_URL_THUMB", pressThumbs);
 			// test
-			b.putStringArray("CAPTIONS", Images.pressImageUrls);
+			b.putStringArray("CAPTIONS", pressDesc);
 			b.putString("TITLE", "Press");
 			break;
 		case R.id.graphic_design_button:
 			b.putStringArray("TYPE_URL", gdImgs);
 			b.putStringArray("TYPE_URL_THUMB", gdThumbs);
 			// test
-			b.putStringArray("CAPTIONS", Images.testImageDescriptions);
+			b.putStringArray("CAPTIONS", gdDesc);
 			b.putString("TITLE", "Graphic Designs");
 			break;
 		case R.id.websites_button:
 			b.putStringArray("TYPE_URL", webImgs);
 			b.putStringArray("TYPE_URL_THUMB", webThumbs);
 			// test
-			b.putStringArray("CAPTIONS", Images.websitesImageUrls);
+			b.putStringArray("CAPTIONS", webDesc);
 			b.putString("TITLE", "Websites");
 			break;
 		case R.id.digital_marketing_button:
 			b.putStringArray("TYPE_URL", dmImgs);
 			b.putStringArray("TYPE_URL_THUMB", dmThumbs);
 			// test
-			b.putStringArray("CAPTIONS", Images.digitalMarketingImageUrls);
+			b.putStringArray("CAPTIONS", dmDesc);
 			b.putString("TITLE", "Digital Marketing");
 			break;
 		case R.id.packaging_button:
 			b.putStringArray("TYPE_URL", packImgs);
 			b.putStringArray("TYPE_URL_THUMB", packThumbs);
 			// test
-			b.putStringArray("CAPTIONS", Images.packagingImageUrls);
+			b.putStringArray("CAPTIONS", packDesc);
 			b.putString("TITLE", "Packaging");
 			break;
 		case R.id.booth_designs_button:
 			b.putStringArray("TYPE_URL", boothImgs);
 			b.putStringArray("TYPE_URL_THUMB", boothThumbs);
 			// test
-			b.putStringArray("CAPTIONS", Images.boothDesignsImageUrls);
+			b.putStringArray("CAPTIONS", boothDesc);
 			b.putString("TITLE", "Booth Designs");
 			break;
 
