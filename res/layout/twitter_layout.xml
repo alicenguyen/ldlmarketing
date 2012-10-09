@@ -9,7 +9,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:onClick="buttonTweet"
         android:text="Tweet" />
 
     <TextView

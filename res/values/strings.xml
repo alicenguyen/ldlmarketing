@@ -10,5 +10,13 @@
     <string name="clear_cache_complete_toast">Caches have been cleared</string>
     <string name="imageview_description">Image Thumbnail</string>
     <string name="no_network_connection_toast">No network connection found</string>
+    
+    <!-- FAQ Strings -->
+    <string name="faq_q1">What is a retainer agreement?</string>
+    <string name="faq_a1">Under a retainer agreement a certain fee will be paid by the client to avail and  maintain the services of LDL. A minimum contract period of 6 months shall be enforced in this agreement.</string>
+    <string name="faq_q2">What are the benefits of having a retainer agreement with LDL? </string>
+    <string name="faq_a2">Clients will enjoy discounted rates under the retainer agreement. You can be assured that 2 or more executives will be working on your project.</string>
+    <string name="faq_q3">Is it possible to contract LDL on a per project basis? </string>
+    <string name="faq_a3">Yes, it is possible to contract LDL on a per project basis but the client will reap more benefits under the retainer agreement.</string>
 
 </resources>
