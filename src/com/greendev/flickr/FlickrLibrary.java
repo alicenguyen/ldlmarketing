@@ -31,7 +31,7 @@ public class FlickrLibrary implements Serializable {
 	/*
 	 * Return all Sets
 	 */
-	public FlickrSet[] getSets() {
+	public FlickrSet[] fetchSets() {
 		return set;
 	}
 

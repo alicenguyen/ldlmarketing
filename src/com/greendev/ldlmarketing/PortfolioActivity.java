@@ -92,12 +92,12 @@ public class PortfolioActivity extends Activity implements OnClickListener {
 		// Get library from the responseHandler that was generated above.
 		FlickrLibrary lib = (FlickrLibrary) msg.getData().get(
 				FetchSetsTask.LIBRARY);
-		FlickrSet[] fSets = lib.getSets();
+		FlickrSet[] fSets = lib.fetchSets();
 		for(int i = 0; i < fSets.length; i++) {
 			// Campaigns
 			if (fSets[i].getName().equals("campaigns")) {
 				// Get photos from Flickr
-				FlickrPhoto[] setPhotos = fSets[i].getPhotos();
+				FlickrPhoto[] setPhotos = fSets[i].fetchPhotos();
 				// Get photo URLs
 				campImgs = new String[setPhotos.length];
 				campThumbs = new String[setPhotos.length];
@@ -110,7 +110,7 @@ public class PortfolioActivity extends Activity implements OnClickListener {
 				}
 			} else if (fSets[i].getName().equals("press")) {
 				// Get photos from Flickr
-				FlickrPhoto[] setPhotos = fSets[i].getPhotos();
+				FlickrPhoto[] setPhotos = fSets[i].fetchPhotos();
 				// Get photo URLs
 				pressImgs = new String[setPhotos.length];
 				pressThumbs = new String[setPhotos.length];
@@ -122,7 +122,7 @@ public class PortfolioActivity extends Activity implements OnClickListener {
 				}
 			} else if (fSets[i].getName().equals("graphic designs")) {
 				// Get photos from Flickr
-				FlickrPhoto[] setPhotos = fSets[i].getPhotos();
+				FlickrPhoto[] setPhotos = fSets[i].fetchPhotos();
 				// Get photo URLs
 				gdImgs = new String[setPhotos.length];
 				gdThumbs = new String[setPhotos.length];
@@ -135,7 +135,7 @@ public class PortfolioActivity extends Activity implements OnClickListener {
 
 			} else if (fSets[i].getName().equals("websites")) {
 				// Get photos from Flickr
-				FlickrPhoto[] setPhotos = fSets[i].getPhotos();
+				FlickrPhoto[] setPhotos = fSets[i].fetchPhotos();
 				// Get photo URLs
 				webImgs = new String[setPhotos.length];
 				webThumbs = new String[setPhotos.length];
@@ -147,7 +147,7 @@ public class PortfolioActivity extends Activity implements OnClickListener {
 				}
 			} else if (fSets[i].getName().equals("digital marketing")) {
 				// Get photos from Flickr
-				FlickrPhoto[] setPhotos = fSets[i].getPhotos();
+				FlickrPhoto[] setPhotos = fSets[i].fetchPhotos();
 				// Get photo URLs
 				dmImgs = new String[setPhotos.length];
 				dmThumbs = new String[setPhotos.length];
@@ -160,7 +160,7 @@ public class PortfolioActivity extends Activity implements OnClickListener {
 
 			} else if (fSets[i].getName().equals("packaging")) {
 				// Get photos from Flickr
-				FlickrPhoto[] setPhotos = fSets[i].getPhotos();
+				FlickrPhoto[] setPhotos = fSets[i].fetchPhotos();
 				// Get photo URLs
 				packImgs = new String[setPhotos.length];
 				packThumbs = new String[setPhotos.length];
@@ -173,7 +173,7 @@ public class PortfolioActivity extends Activity implements OnClickListener {
 
 			} else if (fSets[i].getName().equals("booth designs")) {
 				// Get photos from Flickr
-				FlickrPhoto[] setPhotos = fSets[i].getPhotos();
+				FlickrPhoto[] setPhotos = fSets[i].fetchPhotos();
 				// Get photo URLs
 				boothImgs = new String[setPhotos.length];
 				boothThumbs = new String[setPhotos.length];

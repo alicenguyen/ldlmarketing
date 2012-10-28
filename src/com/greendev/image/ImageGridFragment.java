@@ -65,7 +65,7 @@ public class ImageGridFragment extends Fragment implements AdapterView.OnItemCli
     private int mImageThumbSize;
     private int mImageThumbSpacing;
     private ImageAdapter mAdapter;
-    private ImageWorker mImageFetcher; 
+    protected ImageWorker mImageFetcher; 
     private Context context;
     Class<?> detailClass;
     private String[] typeUrls;
@@ -81,6 +81,12 @@ public class ImageGridFragment extends Fragment implements AdapterView.OnItemCli
 		this.typeUrls = typeUrls;
 		typeUrlsThumbs = thumbs;
 		this.captions = captions;
+	}
+	
+	public ImageGridFragment(Context cxt, Class<?> c,  String[] thumbs) {
+		this.context = cxt;
+		this.detailClass = c;
+		typeUrlsThumbs = thumbs;
 	}
 
 	@Override
@@ -237,7 +243,7 @@ public class ImageGridFragment extends Fragment implements AdapterView.OnItemCli
 	 * empty views as we use a transparent ActionBar and don't want the real top
 	 * row of images to start off covered by it.
 	 */
-	private class ImageAdapter extends BaseAdapter {
+	protected class ImageAdapter extends BaseAdapter {
 
 		private final Context mContext;
 		private int mItemHeight = 0;

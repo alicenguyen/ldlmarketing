@@ -1,15 +1,25 @@
 package com.greendev.image;
 
+import com.greendev.image.ImageCache.ImageCacheParams;
+import com.greendev.image.ImageGridFragment.ImageAdapter;
 import com.greendev.ldlmarketing.R;
 
 import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
+import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.ViewGroup.LayoutParams;
+import android.widget.AbsListView;
 import android.widget.AdapterView;
+import android.widget.BaseAdapter;
+import android.widget.GridView;
+import android.widget.ImageView;
 
 public class PhotoActivityGridFragment extends ImageGridFragment {
 	String[] setUrls;
@@ -21,50 +31,55 @@ public class PhotoActivityGridFragment extends ImageGridFragment {
 	String[][] setsOfThumbs;
 	int position;
 	
-	public PhotoActivityGridFragment(Context cxt, Class<?> c,
+	/* Array Objects of sets attributes */
+	Object[] setImgs;
+	Object[] setThumbs;
+	Object[] setDesc;
+	
+	
+/*	public PhotoActivityGridFragment(Context cxt, Class<?> c,
 			String[] setUrls, String[] setThumbs, String[] captions) {
 		super(cxt, c, setUrls, setThumbs, captions);
 		this.setUrls = setUrls;
 		this.captions = captions;
 		this.context = cxt;
-		
-
-		
-		
+	
+	}*/
+	
+	public PhotoActivityGridFragment(Context cxt, Class<?> c, String[] thumbs, 
+			Object[] setImgs, Object[] setThumbs, Object[] setDesc) {
+		super(cxt, c, thumbs);
+			
+		this.setImgs = setImgs;
+		this.setThumbs = setThumbs;
+		this.setDesc = setDesc;
 	}
+	
+	
+	
 	
 	@Override
 	public void onItemClick(AdapterView<?> parent, View v, int position, long id){
 		/* transferring information to ImageDeatilActivity */
 		Bundle b = new Bundle(); 
-		b.putStringArray("TYPE_URL", setUrls);
-		b.putStringArray("TYPE_URL_THUMB", setUrls);
-		b.putStringArray("CAPTIONS", captions);
+		b.putStringArray("TYPE_URL", ((String[])setImgs[position]));
+		b.putStringArray("TYPE_URL_THUMB", ((String[])setThumbs[position]));
+		b.putStringArray("CAPTIONS", ((String[])setDesc[position]));
 		b.putString("TITLE", "Test");
-		// additional extras
 
-	
+		/* Loops back to ImageGrid */
 		final Intent i = new Intent(context, ImageGridActivity.class);
 		i.putExtras(b);
-		//i.putExtra(ImageDetailActivity.EXTRA_IMAGE, (int) id);
-//	
-//		if (Utils.hasJellyBean()) {
-//			// makeThumbnailScaleUpAnimation() looks kind of ugly here as the
-//			// loading spinner may
-//			// show plus the thumbnail image in GridView is cropped. so using
-//			// makeScaleUpAnimation() instead.
-//			ActivityOptions options = ActivityOptions.makeScaleUpAnimation(v,
-//					0, 0, v.getWidth(), v.getHeight());
-//			context.startActivity(i, options.toBundle());
-//		} else {
-//			startActivity(i);
-//		}
+
 		startActivity(i);
 	}
 
-	@Override
-	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-		inflater.inflate(R.menu.main_menu, menu);
-	}
+
+	
+	
+	
+	
+	
+	
 
 }

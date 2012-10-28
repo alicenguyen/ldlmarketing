@@ -50,7 +50,7 @@ public class FlickrSet {
 	// return URL;
 	// }
 
-	public FlickrPhoto[] getPhotos() {
+	public FlickrPhoto[] fetchPhotos() {
 		// Getting pictures in set
 		HttpClient httpclient = new DefaultHttpClient();
 		HttpGet httpget = new HttpGet(
