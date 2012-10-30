@@ -1,5 +1,7 @@
 package com.greendev.ldlmarketing;
 
+import com.greendev.camera.LDLCamActivity;
+
 import android.app.TabActivity;
 import android.content.Intent;
 import android.graphics.Color;

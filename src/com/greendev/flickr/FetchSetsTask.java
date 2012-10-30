@@ -32,10 +32,14 @@ public class FetchSetsTask implements Runnable {
 
 	public void run() {
 		HttpClient httpclient = new DefaultHttpClient();
+//		HttpGet httpget = new HttpGet(
+//				"http://api.flickr.com/services/rest/?method=flickr.photosets.getList&api_key="
+//						+ API_KEY
+//						+ "&user_id=87656684%40N07&format=json&nojsoncallback=1");
 		HttpGet httpget = new HttpGet(
 				"http://api.flickr.com/services/rest/?method=flickr.photosets.getList&api_key="
 						+ API_KEY
-						+ "&user_id=87656684%40N07&format=json&nojsoncallback=1");
+						+ "&user_id=88561829@N06&format=json&nojsoncallback=1");
 		HttpResponse response;
 		try {
 			response = httpclient.execute(httpget);

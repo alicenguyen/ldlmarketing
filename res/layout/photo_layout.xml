@@ -13,10 +13,7 @@
 		android:cacheColorHint="#00000000"
 		android:fadingEdge="none"
 		/> -->
-		<Button android:id="@+id/button"
-		    android:layout_width="wrap_content"
-		     android:layout_height="wrap_content"
-		     android:text="press me"/>
+
 	
 	<LinearLayout 
 		android:layout_height="10dp" 

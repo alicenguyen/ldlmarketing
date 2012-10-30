@@ -40,8 +40,6 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-
-
 import com.greendev.image.ImageCache.ImageCacheParams;
 import com.greendev.ldlmarketing.BuildConfig;
 import com.greendev.ldlmarketing.R;
@@ -51,39 +49,43 @@ import com.greendev.ldlmarketing.R.id;
 import com.greendev.ldlmarketing.R.layout;
 import com.greendev.ldlmarketing.R.menu;
 import com.greendev.ldlmarketing.R.string;
+
 /**
- * The main fragment that powers the ImageGridActivity screen. Fairly straight forward GridView
- * implementation with the key addition being the ImageWorker class w/ImageCache to load children
- * asynchronously, keeping the UI nice and smooth and caching thumbnails for quick retrieval. The
- * cache is retained over configuration changes like orientation change so the images are populated
+ * The main fragment that powers the ImageGridActivity screen. Fairly straight
+ * forward GridView implementation with the key addition being the ImageWorker
+ * class w/ImageCache to load children asynchronously, keeping the UI nice and
+ * smooth and caching thumbnails for quick retrieval. The cache is retained over
+ * configuration changes like orientation change so the images are populated
  * quickly if, for example, the user rotates the device.
  */
-public class ImageGridFragment extends Fragment implements AdapterView.OnItemClickListener {
-    private static final String TAG = "ImageGridFragment";
-    private static final String IMAGE_CACHE_DIR = "thumbs";
+public class ImageGridFragment extends Fragment implements
+		AdapterView.OnItemClickListener {
+	private static final String TAG = "ImageGridFragment";
+	private static final String IMAGE_CACHE_DIR = "thumbs";
 
-    private int mImageThumbSize;
-    private int mImageThumbSpacing;
-    private ImageAdapter mAdapter;
-    protected ImageWorker mImageFetcher; 
-    private Context context;
-    Class<?> detailClass;
-    private String[] typeUrls;
-    private String[] typeUrlsThumbs;
-    private String[] captions;
+	private int mImageThumbSize;
+	private int mImageThumbSpacing;
+	private ImageAdapter mAdapter;
+	protected ImageWorker mImageFetcher;
+	private Context context;
+	Class<?> detailClass;
+	private String[] typeUrls;
+	private String[] typeUrlsThumbs;
+	private String[] captions;
 
 	/**
 	 * Constructor as per the Fragment documentation
 	 */
-	public ImageGridFragment(Context cxt, Class<?> c, String[] typeUrls, String[] thumbs, String[] captions) {
+	public ImageGridFragment(Context cxt, Class<?> c, String[] typeUrls,
+			String[] thumbs, String[] captions) {
 		this.context = cxt;
 		this.detailClass = c;
 		this.typeUrls = typeUrls;
 		typeUrlsThumbs = thumbs;
 		this.captions = captions;
 	}
-	
-	public ImageGridFragment(Context cxt, Class<?> c,  String[] thumbs) {
+
+	public ImageGridFragment(Context cxt, Class<?> c, String[] thumbs) {
 		this.context = cxt;
 		this.detailClass = c;
 		typeUrlsThumbs = thumbs;
@@ -101,6 +103,7 @@ public class ImageGridFragment extends Fragment implements AdapterView.OnItemCli
 
 		mAdapter = new ImageAdapter(context);
 
+
 		ImageCacheParams cacheParams = new ImageCacheParams(context,
 				IMAGE_CACHE_DIR);
 
@@ -111,14 +114,17 @@ public class ImageGridFragment extends Fragment implements AdapterView.OnItemCli
 		// children asynchronously
 		mImageFetcher = new ImageFetcher(context, mImageThumbSize);
 		mImageFetcher.setLoadingImage(R.drawable.empty_photo);
-		mImageFetcher.addImageCache(((FragmentActivity) context).getSupportFragmentManager(),
+		mImageFetcher.addImageCache(
+				((FragmentActivity) context).getSupportFragmentManager(),
 				cacheParams);
+
+
 	}
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-
+		
 		final View v = inflater.inflate(R.layout.image_grid_fragment,
 				container, false);
 		final GridView mGridView = (GridView) v.findViewById(R.id.gridView);
@@ -171,7 +177,7 @@ public class ImageGridFragment extends Fragment implements AdapterView.OnItemCli
 						}
 					}
 				});
-
+		
 		return v;
 	}
 
@@ -198,15 +204,16 @@ public class ImageGridFragment extends Fragment implements AdapterView.OnItemCli
 	@TargetApi(16)
 	@Override
 	public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
+
 		/* transferring information to ImageDetailActivity */
-		Bundle b = new Bundle(); 
+		Bundle b = new Bundle();
 		b.putStringArray("URLS_TYPE", typeUrls);
 		b.putStringArray("CAPTIONS", captions);
-	
+
 		final Intent i = new Intent(context, ImageDetailActivity.class);
 		i.putExtras(b);
 		i.putExtra(ImageDetailActivity.EXTRA_IMAGE, (int) id);
-	
+
 		if (Utils.hasJellyBean()) {
 			// makeThumbnailScaleUpAnimation() looks kind of ugly here as the
 			// loading spinner may
@@ -267,14 +274,15 @@ public class ImageGridFragment extends Fragment implements AdapterView.OnItemCli
 
 		@Override
 		public int getCount() {
+			Log.i("getCOunt() is: ", typeUrlsThumbs.length + " ");
 			// Size + number of columns for top empty row
 			return typeUrlsThumbs.length + mNumColumns;
 		}
 
 		@Override
 		public Object getItem(int position) {
-			return position < mNumColumns ? null
-					: typeUrlsThumbs[position - mNumColumns];
+			return position < mNumColumns ? null : typeUrlsThumbs[position
+					- mNumColumns];
 		}
 
 		@Override
@@ -301,7 +309,6 @@ public class ImageGridFragment extends Fragment implements AdapterView.OnItemCli
 
 		/*
 		 * Displays the thumbnails
-		 * 
 		 */
 		@Override
 		public View getView(int position, View convertView, ViewGroup container) {
@@ -335,8 +342,9 @@ public class ImageGridFragment extends Fragment implements AdapterView.OnItemCli
 			// Finally load the image asynchronously into the ImageView, this
 			// also takes care of
 			// setting a placeholder image while the background thread runs
-			mImageFetcher.loadImage(typeUrlsThumbs[position
-					- mNumColumns], imageView);
+			mImageFetcher.loadImage(typeUrlsThumbs[position - mNumColumns],
+					imageView);
+
 			return imageView;
 		}
 

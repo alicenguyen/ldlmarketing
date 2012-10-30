@@ -26,6 +26,9 @@ import com.greendev.flickr.FlickrSet;
 import com.greendev.flickr.MyParcelableObjectArray;
 import com.greendev.image.ImageGridActivity;
 
+/*
+ * This class is currently not useful!
+ */
 public class PhotoActivity extends Activity implements OnClickListener {
 
 	boolean commentView;
@@ -44,6 +47,8 @@ public class PhotoActivity extends Activity implements OnClickListener {
 	Object[] setOfSetImgs;
 	Object[] setOfSetDescs;
 	Object[] setOfSetThumbs;
+	
+	
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -59,11 +64,12 @@ public class PhotoActivity extends Activity implements OnClickListener {
 				.setText("Testing Flickr Galleries");
 
 		// listView = (ListView) findViewById(R.id.content);
-		button = findViewById(R.id.button);
-		button.setOnClickListener(this);
+//		button = findViewById(R.id.button);
+//		button.setOnClickListener(this);
 
 		// Start fetching sets from Flickr
 		new Thread(new FetchSetsTask(responseHandler)).start();
+	
 
 	}
 
@@ -74,6 +80,10 @@ public class PhotoActivity extends Activity implements OnClickListener {
 		@Override
 		public void handleMessage(Message msg) {
 			createURLSets(msg);
+			startIntent();
+			
+
+		
 		};
 	};
 
@@ -83,7 +93,20 @@ public class PhotoActivity extends Activity implements OnClickListener {
 				FetchSetsTask.LIBRARY);
 
 		// Get sets from library
-		FlickrSet[] fSets = lib.fetchSets();
+		FlickrSet[] fSetsAll = lib.fetchSets();
+		List<FlickrSet> list = new ArrayList<FlickrSet>();
+		
+		
+	
+		/* get the number of non-portfolio albums */
+		for(int i = 0; i < fSetsAll.length; i++) {
+			String setName = fSetsAll[i].getName();
+			if (!isPortfolioSet(setName)) {
+				list.add(fSetsAll[i]);
+			}
+		}
+		
+		FlickrSet[] fSets = list.toArray(new FlickrSet[list.size()]);
 
 		setOfSetImgs = new Object[fSets.length];
 		setOfSetDescs = new Object[fSets.length];
@@ -125,6 +148,9 @@ public class PhotoActivity extends Activity implements OnClickListener {
 				setOfSetThumbs[i] = aSetOfThumbs;
 			}
 		}
+		
+Log.i("PhotoActivity->setThumbUrls: ", setsThumbUrls.length+"");
+Log.i("PhotoActivity->setNames: ", setNames.length+"");
 
 	}
 
@@ -140,40 +166,72 @@ public class PhotoActivity extends Activity implements OnClickListener {
 				|| setName.equals("packaging")
 				|| setName.equals("booth designs");
 	}
+	
+	public void startIntent() {
+		
+		Intent intent = new Intent(this, ImageGridActivity.class);
+		Bundle b = new Bundle();
 
-	@Override
+		// Object[] setsOfImages = listOfSetImgs.toArray(new
+		// Object[listOfSetImgs.size()]);
+		// b.putParcelableArray("arrayOfSets", (Parcelable[]) setsOfImages);
+		// Log.i("PhotoActivity onClick", setsOfImages[0]);
+
+		// b.putStringArray("TYPE_URL", setsThumbUrls);
+		b.putStringArray("TYPE_URL_THUMB", setsThumbUrls);
+		b.putStringArray("CAPTIONS", setsThumbUrls);
+		b.putString("key", "PhotoActivityGridFragment");
+		b.putString("TITLE", "PhotoActivity");
+
+		b.putParcelable("SET_IMGS", new MyParcelableObjectArray(this,
+				setOfSetImgs));
+		b.putParcelable("SET_THUMBS", new MyParcelableObjectArray(this,
+				setOfSetDescs));
+		b.putParcelable("SET_DESCS", new MyParcelableObjectArray(this,
+				setOfSetThumbs));
+
+		// test
+		
+
+		// additional
+		intent.putExtras(b);
+		startActivity(intent);
+	}
+
+//	@Override
 	public void onClick(View v) {
-		switch (v.getId()) {
-		case R.id.button:
-			// listView.setAdapter(new CustomListAdapter(this, setNames));
-			Intent intent = new Intent(this, ImageGridActivity.class);
-			Bundle b = new Bundle();
-
-			// Object[] setsOfImages = listOfSetImgs.toArray(new
-			// Object[listOfSetImgs.size()]);
-			// b.putParcelableArray("arrayOfSets", (Parcelable[]) setsOfImages);
-			// Log.i("PhotoActivity onClick", setsOfImages[0]);
-
-			// b.putStringArray("TYPE_URL", setsThumbUrls);
-			b.putStringArray("TYPE_URL_THUMB", setsThumbUrls);
-			b.putString("key", "PhotoActivityGridFragment");
-
-			b.putParcelable("SET_IMGS", new MyParcelableObjectArray(this,
-					setOfSetImgs));
-			b.putParcelable("SET_THUMBS", new MyParcelableObjectArray(this,
-					setOfSetDescs));
-			b.putParcelable("SET_DESCS", new MyParcelableObjectArray(this,
-					setOfSetThumbs));
-
-			// test
-			b.putStringArray("CAPTIONS", setsThumbUrls);
-			b.putString("TITLE", "PhotoActivity");
-
-			// additional
-			intent.putExtras(b);
-			startActivity(intent);
-			break;
-		}
+//		switch (v.getId()) {
+//		case R.id.button:
+//			// listView.setAdapter(new CustomListAdapter(this, setNames));
+//			Intent intent = new Intent(this, ImageGridActivity.class);
+//			Bundle b = new Bundle();
+//
+//			// Object[] setsOfImages = listOfSetImgs.toArray(new
+//			// Object[listOfSetImgs.size()]);
+//			// b.putParcelableArray("arrayOfSets", (Parcelable[]) setsOfImages);
+//			// Log.i("PhotoActivity onClick", setsOfImages[0]);
+//
+//			// b.putStringArray("TYPE_URL", setsThumbUrls);
+//			b.putStringArray("TYPE_URL_THUMB", setsThumbUrls);
+//			b.putStringArray("CAPTIONS", setsThumbUrls);
+//			b.putString("key", "PhotoActivityGridFragment");
+//			b.putString("TITLE", "PhotoActivity");
+//
+//			b.putParcelable("SET_IMGS", new MyParcelableObjectArray(this,
+//					setOfSetImgs));
+//			b.putParcelable("SET_THUMBS", new MyParcelableObjectArray(this,
+//					setOfSetDescs));
+//			b.putParcelable("SET_DESCS", new MyParcelableObjectArray(this,
+//					setOfSetThumbs));
+//
+//			// test
+//			
+//
+//			// additional
+//			intent.putExtras(b);
+//			startActivity(intent);
+//			break;
+//		}
 	}
 
 }

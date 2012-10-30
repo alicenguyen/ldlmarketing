@@ -56,16 +56,15 @@ public class ImageGridActivity extends FragmentActivity {
 		 * PhotoActivity)
 		 **/
 		Intent intent = getIntent();
+		Log.i("Intent from: ", intent.toString());
 		/** get the bundle from the intent **/
 		Bundle b = intent.getExtras();
-
-
+	
 
 		// PhotoActivityGridFragment
 		key = b.getString("key");
 		if (key == null)
 			key = "hi";
-		// imageSets = b.getParcelableArray("arrayOfSets");
 
 		TITLE = b.getString("TITLE");
 
@@ -115,6 +114,13 @@ public class ImageGridActivity extends FragmentActivity {
 				}
 				else setDescs = Images.campaignsThumbUrls;
 				
+				
+				/* test */
+				String[] test = (String[])setDescs[0];
+				for(int i = 0; i < test.length; i++){
+				Log.i("ImageGridActivity1: ", test[i].toString());
+				}
+				
 				ft.add(android.R.id.content, new PhotoActivityGridFragment(
 						this, ImageGridActivity.class, TYPE_URL_THUMB, setImgs,
 						setThumbs, setDescs), TAG);
@@ -124,6 +130,9 @@ public class ImageGridActivity extends FragmentActivity {
 				TYPE_URL_THUMB = b.getStringArray("TYPE_URL_THUMB");
 			
 				CAPTIONS = b.getStringArray("CAPTIONS");
+				
+				/* test */
+				Log.i("object2: ", TYPE_URL[0].toString());
 				
 				ft.add(android.R.id.content, new ImageGridFragment(this,
 						ImageDetailActivity.class, TYPE_URL, TYPE_URL_THUMB,
