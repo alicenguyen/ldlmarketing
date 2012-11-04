@@ -1,5 +1,6 @@
-package com.greendev.camera;
+package com.greendev.ldlmarketing;
 
+import com.greendev.camera.LDLCam2Activity;
 import com.greendev.ldlmarketing.R;
 import com.greendev.ldlmarketing.R.id;
 import com.greendev.ldlmarketing.R.layout;

@@ -1,6 +1,5 @@
 package com.greendev.ldlmarketing;
 
-import com.greendev.camera.LDLCamActivity;
 
 import android.app.TabActivity;
 import android.content.Intent;
@@ -13,6 +12,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TabHost;
 import android.widget.TextView;
+
+import com.greendev.camera.*;
 
 public class MainTabActivity extends TabActivity { 
 
