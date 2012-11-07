@@ -1,17 +1,20 @@
-package com.greendev.ldlmarketing;
-
+package com.greendev.camera;
 
 import android.app.TabActivity;
 import android.content.Intent;
+import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TabHost;
 import android.widget.TextView;
 
+import com.greendev.ldlmarketing.R;
 
-public class MainTabActivity extends TabActivity { 
+public class PhotoEditTab  extends TabActivity { 
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -21,11 +24,12 @@ public class MainTabActivity extends TabActivity {
 	}
 
 	private void setTabs() {
+		/*
 		addTab("", R.drawable.tab_home, HomeActivity.class);
 		addTab("", R.drawable.tab_ldlcam, LDLCamActivity.class);
 		addTab("", R.drawable.tab_gallery, GalleryActivity.class);
 		addTab("", R.drawable.tab_tweet, TwitterActivity2.class);
-
+*/
 	}
 
 	private void addTab(String labelId, int drawableId, Class<?> c) {

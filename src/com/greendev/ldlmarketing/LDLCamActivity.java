@@ -21,7 +21,6 @@ import android.widget.TextView;
 
 public class LDLCamActivity extends Activity implements OnClickListener {
 	private static int RESULT_LOAD_IMAGE = 1;
-	private static final int CAMERA_REQUEST = 666;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -42,12 +41,7 @@ public class LDLCamActivity extends Activity implements OnClickListener {
 		pickButton.setOnClickListener(this);
 		
 		Button cameraButton = (Button) findViewById(R.id.from_camera_button);
-		cameraButton.setOnClickListener(new View.OnClickListener() {            
-            public void onClick(View v) {
-                Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE); 
-                startActivityForResult(cameraIntent, CAMERA_REQUEST); 
-            }
-        });
+		cameraButton.setOnClickListener(this);
 	}
 
 	@Override
@@ -64,6 +58,12 @@ public class LDLCamActivity extends Activity implements OnClickListener {
 
 			startActivityForResult(i, RESULT_LOAD_IMAGE);
 			break;
+			
+		case R.id.from_camera_button:
+			Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE); 
+            startActivityForResult(cameraIntent, RESULT_LOAD_IMAGE); 
+            
+            break;
 		}
 	}
 

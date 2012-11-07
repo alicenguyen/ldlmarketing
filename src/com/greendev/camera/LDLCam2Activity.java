@@ -1,8 +1,6 @@
 package com.greendev.camera;
 
 import com.greendev.ldlmarketing.R;
-import com.greendev.ldlmarketing.R.id;
-import com.greendev.ldlmarketing.R.layout;
 
 import android.app.Activity;
 import android.content.Intent;
