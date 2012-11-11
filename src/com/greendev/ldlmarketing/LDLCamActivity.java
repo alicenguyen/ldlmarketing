@@ -1,5 +1,6 @@
 package com.greendev.ldlmarketing;
 
+import com.aviary.android.feather.FeatherActivity;
 import com.greendev.camera.LDLCam2Activity;
 import com.greendev.ldlmarketing.R;
 import com.greendev.ldlmarketing.R.id;
@@ -84,9 +85,29 @@ public class LDLCamActivity extends Activity implements OnClickListener {
 			String picturePath = cursor.getString(columnIndex);
 			cursor.close();
 
-			Intent i = new Intent(this, LDLCam2Activity.class);
+			/*Intent i = new Intent(this, LDLCam2Activity.class);
 			i.putExtra("PIC_PATH", picturePath);
-			startActivity(i);
+			startActivity(i);*/
+			
+			// Create the intent needed to start feather
+			Intent newIntent = new Intent( this, FeatherActivity.class );
+			// set the source image uri
+			newIntent.setData( selectedImage );
+			// pass the required api key ( http://developers.aviary.com/ )
+			newIntent.putExtra( "API_KEY", "68bceceb1" );
+			// pass the uri of the destination image file (optional)
+			// This will be the same uri you will receive in the onActivityResult
+			//newIntent.putExtra( "output", Uri.parse( "file://" + mOutputFile.getAbsolutePath() ) );
+			// format of the destination image (optional)
+			//newIntent.putExtra( "output-format", Bitmap.CompressFormat.JPEG.name() );
+			// output format quality (optional)
+			newIntent.putExtra( "output-quality", 85 );
+			// you can force feather to display only a certain tools
+			// newIntent.putExtra( "tools-list", new String[]{"ADJUST", "BRIGHTNESS" } );
+
+			// enable fast rendering preview
+			newIntent.putExtra( "effect-enable-fast-preview", true );
+			startActivity(newIntent);
 
 		}
 

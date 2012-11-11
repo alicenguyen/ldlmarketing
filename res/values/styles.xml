@@ -20,6 +20,8 @@
     <style name="LdlWhiteTheme" parent="@style/CustomTheme">
         <item name="android:background">@drawable/background_white</item>
     </style>
+    
+    <style name="FeatherDefaultTheme.Custom" parent="FeatherDefaultTheme" />
 
     <!-- list stuff for 'Client Directory' -->
     <style name="ListStyle">
