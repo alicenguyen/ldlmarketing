@@ -21,7 +21,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class LDLCamActivity extends Activity implements OnClickListener {
-	private static int RESULT_LOAD_IMAGE = 1;
+	private static final int RESULT_LOAD_IMAGE = 1;
+	private static final int RESULT_CAMERA_IMAGE = 666;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -62,7 +63,7 @@ public class LDLCamActivity extends Activity implements OnClickListener {
 			
 		case R.id.from_camera_button:
 			Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE); 
-            startActivityForResult(cameraIntent, RESULT_LOAD_IMAGE); 
+            startActivityForResult(cameraIntent, RESULT_CAMERA_IMAGE); 
             
             break;
 		}
@@ -72,7 +73,62 @@ public class LDLCamActivity extends Activity implements OnClickListener {
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
 
-		if (requestCode == RESULT_LOAD_IMAGE && resultCode == RESULT_OK
+		if(resultCode == RESULT_OK && null != data){
+			switch(requestCode){
+				case RESULT_LOAD_IMAGE:
+					Uri selectedImage = data.getData();
+										
+					// Create the intent needed to start feather
+					Intent newIntent = new Intent( this, FeatherActivity.class );
+					// set the source image uri
+					newIntent.setData( selectedImage );
+					// pass the required api key ( http://developers.aviary.com/ )
+					newIntent.putExtra( "API_KEY", "68bceceb1" );
+					// pass the uri of the destination image file (optional)
+					// This will be the same uri you will receive in the onActivityResult
+					//newIntent.putExtra( "output", Uri.parse( "file://" + mOutputFile.getAbsolutePath() ) );
+					// format of the destination image (optional)
+					//newIntent.putExtra( "output-format", Bitmap.CompressFormat.JPEG.name() );
+					// output format quality (optional)
+					newIntent.putExtra( "output-quality", 85 );
+					// you can force feather to display only a certain tools
+					// newIntent.putExtra( "tools-list", new String[]{"ADJUST", "BRIGHTNESS" } );
+
+					// enable fast rendering preview
+					newIntent.putExtra( "effect-enable-fast-preview", true );
+					newIntent.putExtra( "hide-exit-unsave-confirmation", true );
+					startActivity(newIntent);
+					break;
+					
+				case RESULT_CAMERA_IMAGE:
+					Uri cameraImage = data.getData();
+					
+					// Create the intent needed to start feather
+					Intent cameraIntent = new Intent( this, FeatherActivity.class );
+					// set the source image uri
+					cameraIntent.setData( cameraImage );
+					// pass the required api key ( http://developers.aviary.com/ )
+					cameraIntent.putExtra( "API_KEY", "68bceceb1" );
+					// pass the uri of the destination image file (optional)
+					// This will be the same uri you will receive in the onActivityResult
+					//newIntent.putExtra( "output", Uri.parse( "file://" + mOutputFile.getAbsolutePath() ) );
+					// format of the destination image (optional)
+					//newIntent.putExtra( "output-format", Bitmap.CompressFormat.JPEG.name() );
+					// output format quality (optional)
+					cameraIntent.putExtra( "output-quality", 85 );
+					// you can force feather to display only a certain tools
+					// newIntent.putExtra( "tools-list", new String[]{"ADJUST", "BRIGHTNESS" } );
+
+					// enable fast rendering preview
+					cameraIntent.putExtra( "effect-enable-fast-preview", true );
+					cameraIntent.putExtra( "hide-exit-unsave-confirmation", true );
+					startActivity(cameraIntent);
+					break;
+			
+			}
+		}
+		
+		/*if (requestCode == RESULT_LOAD_IMAGE && resultCode == RESULT_OK
 				&& null != data) {
 			Uri selectedImage = data.getData();
 			String[] filePathColumn = { MediaStore.Images.Media.DATA };
@@ -87,7 +143,7 @@ public class LDLCamActivity extends Activity implements OnClickListener {
 
 			/*Intent i = new Intent(this, LDLCam2Activity.class);
 			i.putExtra("PIC_PATH", picturePath);
-			startActivity(i);*/
+			startActivity(i);
 			
 			// Create the intent needed to start feather
 			Intent newIntent = new Intent( this, FeatherActivity.class );
@@ -107,9 +163,50 @@ public class LDLCamActivity extends Activity implements OnClickListener {
 
 			// enable fast rendering preview
 			newIntent.putExtra( "effect-enable-fast-preview", true );
+			newIntent.putExtra( "hide-exit-unsave-confirmation", true );
 			startActivity(newIntent);
 
 		}
+		
+		if (requestCode == RESULT_CAMERA_IMAGE && resultCode == RESULT_OK
+				&& null != data) {
+			Uri selectedImage = data.getData();
+			String[] filePathColumn = { MediaStore.Images.Media.DATA };
+
+			Cursor cursor = getContentResolver().query(selectedImage,
+					filePathColumn, null, null, null);
+			cursor.moveToFirst();
+
+			int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
+			String picturePath = cursor.getString(columnIndex);
+			cursor.close();
+
+			Intent i = new Intent(this, LDLCam2Activity.class);
+			i.putExtra("PIC_PATH", picturePath);
+			startActivity(i);
+			
+			// Create the intent needed to start feather
+			Intent newIntent = new Intent( this, FeatherActivity.class );
+			// set the source image uri
+			newIntent.setData( selectedImage );
+			// pass the required api key ( http://developers.aviary.com/ )
+			newIntent.putExtra( "API_KEY", "68bceceb1" );
+			// pass the uri of the destination image file (optional)
+			// This will be the same uri you will receive in the onActivityResult
+			//newIntent.putExtra( "output", Uri.parse( "file://" + mOutputFile.getAbsolutePath() ) );
+			// format of the destination image (optional)
+			//newIntent.putExtra( "output-format", Bitmap.CompressFormat.JPEG.name() );
+			// output format quality (optional)
+			newIntent.putExtra( "output-quality", 85 );
+			// you can force feather to display only a certain tools
+			// newIntent.putExtra( "tools-list", new String[]{"ADJUST", "BRIGHTNESS" } );
+
+			// enable fast rendering preview
+			newIntent.putExtra( "effect-enable-fast-preview", true );
+			newIntent.putExtra( "hide-exit-unsave-confirmation", true );
+			startActivity(newIntent);
+				
+		}*/
 
 	}
 
