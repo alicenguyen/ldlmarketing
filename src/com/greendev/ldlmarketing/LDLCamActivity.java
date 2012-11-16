@@ -1,13 +1,10 @@
 package com.greendev.ldlmarketing;
 
 import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
 import com.aviary.android.feather.FeatherActivity;
 import com.greendev.ldlmarketing.R;
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.net.Uri;
@@ -67,8 +64,8 @@ public class LDLCamActivity extends Activity implements OnClickListener {
 			File path = getFilesDir();
 			File file = new File(path, "test_picture.jpg");
 			Uri uri = Uri.fromFile(file);
-			cameraIntent.putExtra(android.provider.MediaStore.EXTRA_OUTPUT,
-					uri);
+			cameraIntent
+					.putExtra(android.provider.MediaStore.EXTRA_OUTPUT, uri);
 
 			startActivityForResult(cameraIntent, RESULT_CAMERA_IMAGE);
 
@@ -85,37 +82,12 @@ public class LDLCamActivity extends Activity implements OnClickListener {
 			case RESULT_LOAD_IMAGE:
 				if (data != null) {
 					Uri selectedImage = data.getData();
-
-					// Create the intent needed to start feather
-					Intent newIntent = new Intent(this, FeatherActivity.class);
-					// set the source image uri
-					newIntent.setData(selectedImage);
-					// pass the required api key ( http://developers.aviary.com/
-					// )
-					newIntent.putExtra("API_KEY", "68bceceb1");
-					// pass the uri of the destination image file (optional)
-					// This will be the same uri you will receive in the
-					// onActivityResult
-					// newIntent.putExtra( "output", Uri.parse( "file://" +
-					// mOutputFile.getAbsolutePath() ) );
-					// format of the destination image (optional)
-					// newIntent.putExtra( "output-format",
-					// Bitmap.CompressFormat.JPEG.name() );
-					// output format quality (optional)
-					newIntent.putExtra("output-quality", 85);
-					// you can force feather to display only a certain tools
-					// newIntent.putExtra( "tools-list", new String[]{"ADJUST",
-					// "BRIGHTNESS" } );
-
-					// enable fast rendering preview
-					newIntent.putExtra("effect-enable-fast-preview", true);
-					newIntent.putExtra("hide-exit-unsave-confirmation", true);
-					startActivity(newIntent);
+					photoEditor(selectedImage);
 				}
 				break;
 
 			case RESULT_CAMERA_IMAGE:
-				
+
 				Uri cameraImage = null;
 				if (data != null) {
 					cameraImage = data.getData();
@@ -125,30 +97,8 @@ public class LDLCamActivity extends Activity implements OnClickListener {
 					File file = new File(path, "test_picture.jpg");
 					cameraImage = Uri.fromFile(file);
 				}
-				// Create the intent needed to start feather
-				Intent cameraIntent = new Intent(this, FeatherActivity.class);
-				// set the source image uri
-				cameraIntent.setData(cameraImage);
-				// pass the required api key ( http://developers.aviary.com/ )
-				cameraIntent.putExtra("API_KEY", "68bceceb1");
-				// pass the uri of the destination image file (optional)
-				// This will be the same uri you will receive in the
-				// onActivityResult
-				// newIntent.putExtra( "output", Uri.parse( "file://" +
-				// mOutputFile.getAbsolutePath() ) );
-				// format of the destination image (optional)
-				// newIntent.putExtra( "output-format",
-				// Bitmap.CompressFormat.JPEG.name() );
-				// output format quality (optional)
-				cameraIntent.putExtra("output-quality", 85);
-				// you can force feather to display only a certain tools
-				// newIntent.putExtra( "tools-list", new String[]{"ADJUST",
-				// "BRIGHTNESS" } );
-
-				// enable fast rendering preview
-				cameraIntent.putExtra("effect-enable-fast-preview", true);
-				cameraIntent.putExtra("hide-exit-unsave-confirmation", true);
-				startActivity(cameraIntent);
+				
+				photoEditor(cameraImage);
 				break;
 
 			default:
@@ -156,74 +106,33 @@ public class LDLCamActivity extends Activity implements OnClickListener {
 
 			}
 		}
+	}
 
-		/*
-		 * if (requestCode == RESULT_LOAD_IMAGE && resultCode == RESULT_OK &&
-		 * null != data) { Uri selectedImage = data.getData(); String[]
-		 * filePathColumn = { MediaStore.Images.Media.DATA };
-		 * 
-		 * Cursor cursor = getContentResolver().query(selectedImage,
-		 * filePathColumn, null, null, null); cursor.moveToFirst();
-		 * 
-		 * int columnIndex = cursor.getColumnIndex(filePathColumn[0]); String
-		 * picturePath = cursor.getString(columnIndex); cursor.close();
-		 * 
-		 * /*Intent i = new Intent(this, LDLCam2Activity.class);
-		 * i.putExtra("PIC_PATH", picturePath); startActivity(i);
-		 * 
-		 * // Create the intent needed to start feather Intent newIntent = new
-		 * Intent( this, FeatherActivity.class ); // set the source image uri
-		 * newIntent.setData( selectedImage ); // pass the required api key (
-		 * http://developers.aviary.com/ ) newIntent.putExtra( "API_KEY",
-		 * "68bceceb1" ); // pass the uri of the destination image file
-		 * (optional) // This will be the same uri you will receive in the
-		 * onActivityResult //newIntent.putExtra( "output", Uri.parse( "file://"
-		 * + mOutputFile.getAbsolutePath() ) ); // format of the destination
-		 * image (optional) //newIntent.putExtra( "output-format",
-		 * Bitmap.CompressFormat.JPEG.name() ); // output format quality
-		 * (optional) newIntent.putExtra( "output-quality", 85 ); // you can
-		 * force feather to display only a certain tools // newIntent.putExtra(
-		 * "tools-list", new String[]{"ADJUST", "BRIGHTNESS" } );
-		 * 
-		 * // enable fast rendering preview newIntent.putExtra(
-		 * "effect-enable-fast-preview", true ); newIntent.putExtra(
-		 * "hide-exit-unsave-confirmation", true ); startActivity(newIntent);
-		 * 
-		 * }
-		 * 
-		 * if (requestCode == RESULT_CAMERA_IMAGE && resultCode == RESULT_OK &&
-		 * null != data) { Uri selectedImage = data.getData(); String[]
-		 * filePathColumn = { MediaStore.Images.Media.DATA };
-		 * 
-		 * Cursor cursor = getContentResolver().query(selectedImage,
-		 * filePathColumn, null, null, null); cursor.moveToFirst();
-		 * 
-		 * int columnIndex = cursor.getColumnIndex(filePathColumn[0]); String
-		 * picturePath = cursor.getString(columnIndex); cursor.close();
-		 * 
-		 * Intent i = new Intent(this, LDLCam2Activity.class);
-		 * i.putExtra("PIC_PATH", picturePath); startActivity(i);
-		 * 
-		 * // Create the intent needed to start feather Intent newIntent = new
-		 * Intent( this, FeatherActivity.class ); // set the source image uri
-		 * newIntent.setData( selectedImage ); // pass the required api key (
-		 * http://developers.aviary.com/ ) newIntent.putExtra( "API_KEY",
-		 * "68bceceb1" ); // pass the uri of the destination image file
-		 * (optional) // This will be the same uri you will receive in the
-		 * onActivityResult //newIntent.putExtra( "output", Uri.parse( "file://"
-		 * + mOutputFile.getAbsolutePath() ) ); // format of the destination
-		 * image (optional) //newIntent.putExtra( "output-format",
-		 * Bitmap.CompressFormat.JPEG.name() ); // output format quality
-		 * (optional) newIntent.putExtra( "output-quality", 85 ); // you can
-		 * force feather to display only a certain tools // newIntent.putExtra(
-		 * "tools-list", new String[]{"ADJUST", "BRIGHTNESS" } );
-		 * 
-		 * // enable fast rendering preview newIntent.putExtra(
-		 * "effect-enable-fast-preview", true ); newIntent.putExtra(
-		 * "hide-exit-unsave-confirmation", true ); startActivity(newIntent);
-		 * 
-		 * }
-		 */
+	private void photoEditor(Uri photo) {
+
+		Intent i = new Intent(this, FeatherActivity.class);
+		// set the source image uri
+		i.setData(photo);
+		// pass the required api key ( http://developers.aviary.com/ )
+		i.putExtra("API_KEY", "68bceceb1");
+		// pass the uri of the destination image file (optional)
+		// This will be the same uri you will receive in the
+		// onActivityResult
+		// newIntent.putExtra( "output", Uri.parse( "file://" +
+		// mOutputFile.getAbsolutePath() ) );
+		// format of the destination image (optional)
+		// newIntent.putExtra( "output-format",
+		// Bitmap.CompressFormat.JPEG.name() );
+		// output format quality (optional)
+		i.putExtra("output-quality", 85);
+		// you can force feather to display only a certain tools
+		// newIntent.putExtra( "tools-list", new String[]{"ADJUST",
+		// "BRIGHTNESS" } );
+
+		// enable fast rendering preview
+		i.putExtra("effect-enable-fast-preview", true);
+		i.putExtra("hide-exit-unsave-confirmation", true);
+		startActivity(i);
 
 	}
 
