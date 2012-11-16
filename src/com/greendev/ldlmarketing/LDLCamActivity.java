@@ -50,9 +50,7 @@ public class LDLCamActivity extends Activity implements OnClickListener {
 	public void onClick(View v) {
 		switch (v.getId()) {
 
-		// case R.id.take_picture_button:
-		// Intent i = new Intent(Intent.Action_)
-
+		// from gallery button
 		case R.id.pick_image_button:
 			Intent i = new Intent(
 					Intent.ACTION_PICK,
@@ -61,26 +59,18 @@ public class LDLCamActivity extends Activity implements OnClickListener {
 			startActivityForResult(i, RESULT_LOAD_IMAGE);
 			break;
 
+		// from camera button
 		case R.id.from_camera_button:
 			Intent cameraIntent = new Intent(
 					android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
-			try {
-				FileOutputStream fos = openFileOutput("test_picture.jpg",
-						Context.MODE_WORLD_WRITEABLE);
 
-				fos.close();
+			File path = getFilesDir();
+			File file = new File(path, "test_picture.jpg");
+			Uri uri = Uri.fromFile(file);
+			cameraIntent.putExtra(android.provider.MediaStore.EXTRA_OUTPUT,
+					uri);
 
-				File path = getFilesDir();
-				File file = new File(path, "test_picture.jpg");
-				Uri uri = Uri.fromFile(file);
-				cameraIntent.putExtra(android.provider.MediaStore.EXTRA_OUTPUT,
-						uri);
-
-				startActivityForResult(cameraIntent, RESULT_CAMERA_IMAGE);
-			} catch (IOException ie) {
-
-			}
-			// startActivityForResult(cameraIntent, RESULT_CAMERA_IMAGE);
+			startActivityForResult(cameraIntent, RESULT_CAMERA_IMAGE);
 
 			break;
 		}
@@ -125,11 +115,16 @@ public class LDLCamActivity extends Activity implements OnClickListener {
 				break;
 
 			case RESULT_CAMERA_IMAGE:
-				File path = getFilesDir();
-				// 고유영역에 있는 test_picture.jpg 파일의 객체를 얻는다.
-				File file = new File(path, "test_picture.jpg");
-				Uri cameraImage = Uri.fromFile(file);
+				
+				Uri cameraImage = null;
+				if (data != null) {
+					cameraImage = data.getData();
+				} else {
+					File path = getFilesDir();
 
+					File file = new File(path, "test_picture.jpg");
+					cameraImage = Uri.fromFile(file);
+				}
 				// Create the intent needed to start feather
 				Intent cameraIntent = new Intent(this, FeatherActivity.class);
 				// set the source image uri
