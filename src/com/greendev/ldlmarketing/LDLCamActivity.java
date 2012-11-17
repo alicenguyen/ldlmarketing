@@ -124,14 +124,13 @@ public class LDLCamActivity extends Activity implements OnClickListener {
 		// newIntent.putExtra( "output-format",
 		// Bitmap.CompressFormat.JPEG.name() );
 		// output format quality (optional)
-		i.putExtra("output-quality", 85);
+		i.putExtra("output-quality", 100);
 		// you can force feather to display only a certain tools
-		// newIntent.putExtra( "tools-list", new String[]{"ADJUST",
-		// "BRIGHTNESS" } );
+		// newIntent.putExtra( "tools-list", new String[]{"ADJUST", "BRIGHTNESS" } );
 
 		// enable fast rendering preview
 		i.putExtra("effect-enable-fast-preview", true);
-		i.putExtra("hide-exit-unsave-confirmation", true);
+		i.putExtra("hide-exit-unsave-confirmation", false);
 		startActivity(i);
 
 	}
