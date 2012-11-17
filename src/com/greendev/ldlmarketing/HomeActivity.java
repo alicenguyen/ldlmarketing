@@ -1,12 +1,17 @@
 package com.greendev.ldlmarketing;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class HomeActivity extends Activity implements OnClickListener {
 
@@ -53,6 +58,13 @@ public class HomeActivity extends Activity implements OnClickListener {
 
 	@Override
 	public void onClick(View v) {
+
+		Context context = getApplicationContext();
+		CharSequence text = "Oops! We need internet connection to access this page!";
+		int duration = Toast.LENGTH_LONG;
+
+		Toast toast = Toast.makeText(context, text, duration);
+
 		switch (v.getId()) {
 		case R.id.button_about:
 			Intent i = new Intent(this, AboutActivity.class);
@@ -70,8 +82,13 @@ public class HomeActivity extends Activity implements OnClickListener {
 			break;
 
 		case R.id.button_portfolio:
-			Intent b = new Intent(this, PortfolioActivity.class);
-			startActivity(b);
+			if (!isNetworkAvailable()) {
+				toast.show();
+			} else {
+
+				Intent b = new Intent(this, PortfolioActivity.class);
+				startActivity(b);
+			}
 			break;
 
 		case R.id.button_services:
@@ -86,6 +103,17 @@ public class HomeActivity extends Activity implements OnClickListener {
 
 		}
 
+	}
+
+	/*
+	 * Checks for internet connection
+	 */
+	private boolean isNetworkAvailable() {
+		ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+		NetworkInfo activeNetworkInfo = connectivityManager
+				.getActiveNetworkInfo();
+		return activeNetworkInfo != null
+				&& activeNetworkInfo.isConnectedOrConnecting();
 	}
 
 }

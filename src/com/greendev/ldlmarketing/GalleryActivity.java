@@ -11,7 +11,10 @@ import com.greendev.flickr.MyParcelableObjectArray;
 import com.greendev.image.ImageGridActivity;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -22,8 +25,9 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
-public class GalleryActivity extends Activity implements OnClickListener{
+public class GalleryActivity extends Activity implements OnClickListener {
 
 	boolean commentView;
 	TextView commentText;
@@ -41,24 +45,24 @@ public class GalleryActivity extends Activity implements OnClickListener{
 	Object[] setOfSetImgs;
 	Object[] setOfSetDescs;
 	Object[] setOfSetThumbs;
-	
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.gallery_layout);
-		 
+
 		// Photos button
 		View photoButton = findViewById(R.id.button_photos);
 		photoButton.setOnClickListener(this);
-		
+
 		// Videos button
 		View videoButton = findViewById(R.id.button_videos);
 		videoButton.setOnClickListener(this);
-		
+
 		// Start fetching sets from Flickr
 		new Thread(new FetchSetsTask(responseHandler)).start();
 	}
-	
+
 	Handler response = new Handler() {
 	};
 
@@ -70,7 +74,6 @@ public class GalleryActivity extends Activity implements OnClickListener{
 		};
 	};
 
-	
 	public void createURLSets(Message msg) {
 		// Get library from the responseHandler
 		FlickrLibrary lib = (FlickrLibrary) msg.getData().get(
@@ -79,17 +82,15 @@ public class GalleryActivity extends Activity implements OnClickListener{
 		// Get sets from library
 		FlickrSet[] fSetsAll = lib.fetchSets();
 		List<FlickrSet> list = new ArrayList<FlickrSet>();
-		
-		
-	
+
 		/* get the number of non-portfolio albums */
-		for(int i = 0; i < fSetsAll.length; i++) {
+		for (int i = 0; i < fSetsAll.length; i++) {
 			String setName = fSetsAll[i].getName();
 			if (!isPortfolioSet(setName)) {
 				list.add(fSetsAll[i]);
 			}
 		}
-		
+
 		FlickrSet[] fSets = list.toArray(new FlickrSet[list.size()]);
 
 		setOfSetImgs = new Object[fSets.length];
@@ -132,9 +133,9 @@ public class GalleryActivity extends Activity implements OnClickListener{
 				setOfSetThumbs[i] = aSetOfThumbs;
 			}
 		}
-		
-Log.i("PhotoActivity->setThumbUrls: ", setsThumbUrls.length+"");
-Log.i("PhotoActivity->setNames: ", setNames.length+"");
+
+		Log.i("PhotoActivity->setThumbUrls: ", setsThumbUrls.length + "");
+		Log.i("PhotoActivity->setNames: ", setNames.length + "");
 
 	}
 
@@ -150,22 +151,20 @@ Log.i("PhotoActivity->setNames: ", setNames.length+"");
 				|| setName.equals("packaging")
 				|| setName.equals("booth designs");
 	}
-	
 
-	
 	@Override
 	public void onClick(View v) {
+		Context context = getApplicationContext();
+		CharSequence text = "Oops! We need internet connection to access this page!";
+		int duration = Toast.LENGTH_LONG;
+		Toast toast = Toast.makeText(context, text, duration);
+
 		switch (v.getId()) {
 		case R.id.button_photos:
+			if(isNetworkAvailable()){
 			Intent intent = new Intent(this, ImageGridActivity.class);
 			Bundle b = new Bundle();
 
-			// Object[] setsOfImages = listOfSetImgs.toArray(new
-			// Object[listOfSetImgs.size()]);
-			// b.putParcelableArray("arrayOfSets", (Parcelable[]) setsOfImages);
-			// Log.i("PhotoActivity onClick", setsOfImages[0]);
-
-			// b.putStringArray("TYPE_URL", setsThumbUrls);
 			b.putStringArray("TYPE_URL_THUMB", setsThumbUrls);
 			b.putStringArray("CAPTIONS", setsThumbUrls);
 			b.putString("key", "PhotoActivityGridFragment");
@@ -178,20 +177,30 @@ Log.i("PhotoActivity->setNames: ", setNames.length+"");
 			b.putParcelable("SET_DESCS", new MyParcelableObjectArray(this,
 					setOfSetThumbs));
 
-			// test
-			
-
-			// additional
 			intent.putExtras(b);
 			startActivity(intent);
+			} else toast.show();
+				
 			break;
 
 		case R.id.button_videos:
+			if(isNetworkAvailable()){
 			Intent c = new Intent(this, YoutubeActivity.class);
-			startActivity(c);
+			startActivity(c);} else toast.show();
 			break;
 
 		}
+	}
+
+	/*
+	 * Checks for internet connection
+	 */
+	private boolean isNetworkAvailable() {
+		ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+		NetworkInfo activeNetworkInfo = connectivityManager
+				.getActiveNetworkInfo();
+		return activeNetworkInfo != null
+				&& activeNetworkInfo.isConnectedOrConnecting();
 	}
 
 }

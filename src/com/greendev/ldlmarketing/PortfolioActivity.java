@@ -171,7 +171,7 @@ public class PortfolioActivity extends Activity implements OnClickListener {
 					packDesc[j] = setPhotos[j].getTitle();
 				}
 
-			} else if (fSets[i].getName().equals("booth designs")) {
+			} else if (fSets[i].getName().equals("booth")) {
 				// Get photos from Flickr
 				FlickrPhoto[] setPhotos = fSets[i].fetchPhotos();
 				// Get photo URLs

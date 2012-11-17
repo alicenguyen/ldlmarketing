@@ -11,6 +11,10 @@
     <string name="imageview_description">Image Thumbnail</string>
     <string name="no_network_connection_toast">No network connection found</string>
     
+    <!-- About Strings -->
+    <string name="about_s1" >LDL Advertising is a Manila-based end to end full service boutique advertising agency that specializes in Brand Development, Campaigns, Digital Marketing, Event Conceptualization and Management, and Public Relations.</string>
+
+    
     <!-- FAQ Strings -->
     <string name="faq_q1">What is a retainer agreement?</string>
     <string name="faq_a1">Under a retainer agreement a certain fee will be paid by the client to avail and  maintain the services of LDL. A minimum contract period of 6 months shall be enforced in this agreement.</string>
