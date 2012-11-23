@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:orientation="vertical" >
+
+        <!-- profile pic -->
+
+        <ImageView
+            android:id="@+id/bio_pic3"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:paddingLeft="5dp"
+            android:src="@drawable/biopic3" />
+
+        <!-- name -->
+
+        <TextView
+            android:id="@+id/bio_name3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/bio_pic3"
+            android:paddingTop="120dp"
+            android:text="Noelle Hilario" />
+
+        <!-- position -->
+
+        <TextView
+            android:id="@+id/position3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/bio_name3"
+            android:layout_below="@id/bio_name3"
+            android:text="Art Director" />
+    </RelativeLayout>
+
+    <!-- pink line -->
+
+    <ImageView
+        android:layout_width="325dp"
+        android:layout_height="1dp"
+        android:layout_gravity="center"
+        android:background="@color/pink" />
+
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <!-- bio -->
+
+        <TextView
+            android:id="@+id/about_line3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:gravity="left"
+            android:maxLines="50"
+            android:padding="15dp"
+            android:scrollbars="vertical"
+            android:text="@string/about_s3"
+            android:textColor="@color/darkgrey" />
+    </ScrollView>
+
+</LinearLayout>
