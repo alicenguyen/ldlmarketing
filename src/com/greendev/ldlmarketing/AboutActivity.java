@@ -10,7 +10,6 @@ import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.TextView;
 
@@ -51,7 +50,6 @@ public class AboutActivity extends Activity {
 	}
 
 	private class PageAdapter extends PagerAdapter {
-		TextView txt;
 		TextView name;
 		TextView pos;
 
