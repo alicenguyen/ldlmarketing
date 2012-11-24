@@ -77,7 +77,7 @@ public class HomeActivity extends Activity implements OnClickListener {
 			break;
 
 		case R.id.button_faqs:
-			Intent a = new Intent(this, FAQSActivity.class);
+			Intent a = new Intent(this, FAQActivity.class);
 			startActivity(a);
 			break;
 

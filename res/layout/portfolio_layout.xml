@@ -94,10 +94,12 @@
             android:text="Digital Marketing"
             android:textColor="@color/white"
             android:textSize="20sp" />
+
         <TextView
             android:layout_width="290dp"
             android:layout_height="1dp"
             android:background="@color/grey" />
+
         <Button
             android:id="@+id/packaging_button"
             android:layout_width="290dp"
@@ -126,8 +128,6 @@
             android:text="Booth Designs"
             android:textColor="@color/white"
             android:textSize="20sp" />
-
-
     </LinearLayout>
     <!-- shadow tucked under title -->
 
