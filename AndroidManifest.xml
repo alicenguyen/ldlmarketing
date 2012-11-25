@@ -45,7 +45,7 @@
             android:name=".LDLCamActivity"
             android:label="LDL Cam" />
         <activity
-            android:name=".LDLCam2Activity"
+            android:name=".FrameActivity"
             android:label="LDL Cam"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
         <activity
