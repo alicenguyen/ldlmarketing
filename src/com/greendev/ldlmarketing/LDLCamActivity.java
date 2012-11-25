@@ -5,7 +5,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 import com.aviary.android.feather.FeatherActivity;
-import com.greendev.camera.FrameActivity;
 import com.greendev.ldlmarketing.R;
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -25,6 +24,7 @@ public class LDLCamActivity extends Activity implements OnClickListener {
 	private static final int RESULT_FRAME_IMAGE = 3;
 	protected String _path;
 	protected String _output;
+	protected File outFile;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -113,17 +113,10 @@ public class LDLCamActivity extends Activity implements OnClickListener {
 				break;
 				
 			case RESULT_FRAME_IMAGE:
-				Uri frameImage = null;
-				if (data != null) {
-					frameImage = data.getData();
-				} else {
-					File path = getFilesDir();
 
-					File file = new File(path, _output);
-					frameImage = Uri.fromFile(file);
-				}
-				
 				Intent j = new Intent(this, FrameActivity.class);
+				j.setData(Uri.parse(outFile.getAbsolutePath()));
+				startActivity(j);
 				
 				break;
 
@@ -133,11 +126,10 @@ public class LDLCamActivity extends Activity implements OnClickListener {
 		}
 	}
 
-	@SuppressLint("WorldWriteableFiles")
 	private void photoEditor(Uri photo) {
 
-		//File path = getFilesDir();
-		//File outFile = new File(path, _output);
+		File path = getFilesDir();
+		outFile = new File(path, _output);
 
 		Intent i = new Intent(this, FeatherActivity.class);
 		// set the source image uri
@@ -147,7 +139,7 @@ public class LDLCamActivity extends Activity implements OnClickListener {
 		// pass the uri of the destination image file (optional)
 		// This will be the same uri you will receive in the
 		// onActivityResult
-		//i.putExtra("output", Uri.parse(outFile.getAbsolutePath()));
+		i.putExtra("output", Uri.parse(outFile.getAbsolutePath()));
 		// format of the destination image (optional)
 		// newIntent.putExtra( "output-format",
 		// Bitmap.CompressFormat.JPEG.name() );

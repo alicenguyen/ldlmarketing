@@ -46,8 +46,11 @@
             android:label="LDL Cam" />
         <activity
             android:name=".FrameActivity"
-            android:label="LDL Cam"
-            android:theme="@android:style/Theme.Light.NoTitleBar" />
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
+            <intent-filter>
+                <data android:scheme="ldlmarketing" android:host="path"/>
+            </intent-filter>
+        </activity>
         <activity
             android:name="com.aviary.android.feather.FeatherActivity"
             android:configChanges="orientation|keyboardHidden"
@@ -86,8 +89,7 @@
                 <data
                     android:host="twitter"
                     android:scheme="ldlmarketing" /> 
-            </intent-filter>
-        -->
+            </intent-filter>        -->
         <!-- </activity> -->
 
 
