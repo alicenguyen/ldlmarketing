@@ -36,8 +36,6 @@ public class FetchPhotosTask implements Runnable {
 
 	public void run() {
 		HttpClient httpclient = new DefaultHttpClient();
-//		HttpGet httpget = new HttpGet(
-//				"http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=4409059966d7ae8599d00460266641c1&user_id=87656684%40N07&format=json&nojsoncallback=1");  
 		HttpGet httpget = new HttpGet(
 				"http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=4409059966d7ae8599d00460266641c1&user_id=88561829@N06&format=json&nojsoncallback=1");  
 		HttpResponse response;

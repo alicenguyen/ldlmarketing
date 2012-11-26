@@ -1,6 +1,7 @@
 package com.greendev.flickr;
 
 import java.io.BufferedReader;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -14,25 +15,29 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import android.net.http.AndroidHttpClient;
+import android.os.AsyncTask;
 import android.util.Log;
 
 /**
- *  FlickrSet is composed of FlickrPhotos.  FlickrSet is first constructred with 
- *  set id and the content (set name). The object then has to call getPhotos()
- *  to load the images of the set from Flickr.
- *  
+ * FlickrSet is composed of FlickrPhotos. FlickrSet is first constructred with
+ * set id and the content (set name). The object then has to call getPhotos() to
+ * load the images of the set from Flickr.
+ * 
  * @author Alice Nguyen
  * @since 9/25/2012
- *
+ * 
  */
 public class FlickrSet {
 	private final String API_KEY = "77c86c69fb169a5a42d8eb462c2c8232";
-	
+	private final String TAG = "FlickrSet()";
 	private String id;
 	private String name;
 	private FlickrPhoto[] photos;
 	private String[] URL;
 
+
+	
 	public FlickrSet(String _id, String _content) {
 		id = _id;
 		name = _content;
@@ -51,18 +56,36 @@ public class FlickrSet {
 	// }
 
 	public FlickrPhoto[] fetchPhotos() {
-		// Getting pictures in set
-		HttpClient httpclient = new DefaultHttpClient();
-		HttpGet httpget = new HttpGet(
-				"http://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key="
-						+ API_KEY
-						+ "&photoset_id="
-						+ id
-						+ "&format=json&nojsoncallback=1");
-		HttpResponse response;
+		HttpClient httpclient = null;
+		HttpGet httpget = null;
 		try {
-			response = httpclient.execute(httpget);
-			HttpEntity entity = response.getEntity();
+			// Getting pictures in set
+			httpclient = new DefaultHttpClient();
+			httpget = new HttpGet(
+					"http://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key="
+							+ API_KEY
+							+ "&photoset_id="
+							+ id
+							+ "&format=json&nojsoncallback=1");
+		} catch (Exception e) {
+			Log.e(TAG, "HttpClient and HttpGet error " + e.toString());
+		}
+		HttpResponse response = null;
+		HttpEntity entity = null;
+		try {
+
+			try {
+				response = httpclient.execute(httpget);	
+			} catch (Exception e) {
+				Log.e(TAG, "HttpResponse error " + e.toString()); // error
+			}
+			
+			try {
+				entity = response.getEntity();
+			} catch (Exception e) {
+				Log.e(TAG, "HttpEntity error " + e.toString()); // error
+			}
+			
 			if (entity != null) {
 				InputStream inputstream = entity.getContent();
 				BufferedReader bufferedreader = new BufferedReader(
@@ -74,31 +97,35 @@ public class FlickrSet {
 						stringbuilder.append(currentline + "\n");
 					}
 				} catch (IOException e) {
+					Log.i(TAG, "IO Exception ");
 					e.printStackTrace();
 				}
 				String result = stringbuilder.toString();
+				JSONObject thephotosdata = new JSONObject();
+				JSONArray thephotodata = new JSONArray();
 
-				JSONObject thedata = new JSONObject(result);
-				JSONObject thephotosdata = thedata.getJSONObject("photoset");
-				JSONArray thephotodata = thephotosdata.getJSONArray("photo");
+				try {
+					JSONObject thedata = new JSONObject(result);
+					thephotosdata = thedata.getJSONObject("photoset");
+					thephotodata = thephotosdata.getJSONArray("photo");
+					// Create an array to store FlickrPhotos in
+					photos = new FlickrPhoto[thephotodata.length()];
 
-				// Create an array to store FlickrPhotos in
-				photos = new FlickrPhoto[thephotodata.length()];
+					// Create an array for storing urls
+					URL = new String[thephotodata.length()];
 
-				// Create an array for storing urls
-				URL = new String[thephotodata.length()];
-
-				for (int i = 0; i < thephotodata.length(); i++) {
-					JSONObject photodata = thephotodata.getJSONObject(i);
-					photos[i] = new FlickrPhoto(photodata.getString("id"),
-							photodata.getString("secret"),
-							photodata.getString("server"),
-							photodata.getString("title"),
-							photodata.getString("farm"));
-
-					// URL[i] = photos[i].makeURL();
-
+					for (int i = 0; i < thephotodata.length(); i++) {
+						JSONObject photodata = thephotodata.getJSONObject(i);
+						photos[i] = new FlickrPhoto(photodata.getString("id"),
+								photodata.getString("secret"),
+								photodata.getString("server"),
+								photodata.getString("title"),
+								photodata.getString("farm"));
+					}
+				} catch (Exception e) {
+					Log.e(TAG, "Error in JSONObject retrieval " + e.toString());
 				}
+
 				inputstream.close();
 
 				/*
@@ -115,7 +142,7 @@ public class FlickrSet {
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-			Log.e("PhotoSet", "error");
+			Log.e(TAG, "fetchPhoto() error");
 		}
 
 		return photos;
@@ -124,33 +151,34 @@ public class FlickrSet {
 	public int getPhotoCount() {
 		return photos.length;
 	}
-	
-	public String getRandomThumbUrl(){
-		if(photos == null)
+
+	public String getRandomThumbUrl() {
+		if (photos == null)
 			return null;
 		Random rand = new Random();
 		int randomInt = rand.nextInt(getPhotoCount());
 		return photos[randomInt].makeThumbURL();
 	}
-	
+
 	public String[] getPhotoSetUrl() {
-		if(photos == null) return null;
+		if (photos == null)
+			return null;
 		String[] result = new String[getPhotoCount()];
-		for(int i = 0; i < getPhotoCount(); i++) {
+		for (int i = 0; i < getPhotoCount(); i++) {
 			result[i] = photos[i].makeURL();
 		}
 		return result;
 	}
-	
+
 	public String[] getPhotoSetThumbUrl() {
-		if(photos == null) return null;
+		if (photos == null)
+			return null;
 		String[] result = new String[getPhotoCount()];
-		for(int i = 0; i < getPhotoCount(); i++) {
+		for (int i = 0; i < getPhotoCount(); i++) {
 			result[i] = photos[i].makeThumbURL();
 		}
 		return result;
 	}
-	
 	
 
 }

@@ -17,6 +17,7 @@
 package com.greendev.image;
 
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;

@@ -12,7 +12,12 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ * 
+ * KNOWN BUGS:
+ *  - (fixed) thread issue which prevents android api 11 or above to crash. Inserted
+ *    StrictMode configurations
  */
+
 
 package com.greendev.image;
 
@@ -20,6 +25,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
@@ -51,6 +57,10 @@ public class ImageGridActivity extends FragmentActivity {
 	private Object[] setDescs;
 
 	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		StrictMode.ThreadPolicy policy = new StrictMode.
+				ThreadPolicy.Builder().permitAll().build();
+				StrictMode.setThreadPolicy(policy);
 		/**
 		 * get the intent called from an Activity (eg. Portfolio.class or
 		 * PhotoActivity)
@@ -71,16 +81,16 @@ public class ImageGridActivity extends FragmentActivity {
 		if (BuildConfig.DEBUG) {
 			Utils.enableStrictMode();
 		}
-		super.onCreate(savedInstanceState);
+	
 		Typeface font = Typeface.createFromAsset(getAssets(), "Eurostib.TTF");
 
 		/* Custom title bar */
-		requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
-		setContentView(R.layout.about_layout);
-		getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.title);
-		TextView titleBar = (TextView) findViewById(R.id.title);
-		titleBar.setTypeface(font);
-		titleBar.setText(TITLE);
+//		requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
+//		setContentView(R.layout.about_layout);
+//		getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.title);
+//		TextView titleBar = (TextView) findViewById(R.id.title);
+//		titleBar.setTypeface(font);
+//		titleBar.setText(TITLE);
 
 		if (getSupportFragmentManager().findFragmentByTag(TAG) == null) {
 			final FragmentTransaction ft = getSupportFragmentManager()

@@ -1,27 +1,31 @@
 package com.greendev.ldlmarketing;
 
+/**
+ * Known Bugs:
+ *    - (FIXED) NetworkOnMainThreadException throw when thread isn't handled.
+ */
+
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.os.StrictMode;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.Window;
 import android.widget.TextView;
 
 import com.greendev.flickr.FetchSetsTask;
 import com.greendev.flickr.FlickrLibrary;
 import com.greendev.flickr.FlickrPhoto;
-import com.greendev.flickr.FetchPhotosTask;
 import com.greendev.flickr.FlickrSet;
 import com.greendev.image.ImageGridActivity;
-import com.greendev.image.Images;
 
 public class PortfolioActivity extends Activity implements OnClickListener {
 
+	private final String log_tag = "PortfolioActivity";
 	public String[] campImgs, campThumbs, campDesc;
 	public String[] pressImgs, pressThumbs, pressDesc;
 	public String[] gdImgs, gdThumbs, gdDesc;
@@ -37,13 +41,8 @@ public class PortfolioActivity extends Activity implements OnClickListener {
 		Typeface fontb = Typeface.createFromAsset(getAssets(), "Eurostib.TTF");
 		Typeface font = Typeface.createFromAsset(getAssets(), "Eurosti.TTF");
 
-		// Custom title bar
-		requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
 		setContentView(R.layout.portfolio_layout);
-		getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.title);
-		TextView title = (TextView) findViewById(R.id.title);
-		title.setTypeface(fontb);
-		title.setText("Portfolio");
+
 
 		// Buttons
 		View campaignsButton = findViewById(R.id.campaigns_button);
@@ -73,18 +72,27 @@ public class PortfolioActivity extends Activity implements OnClickListener {
 		View boothButton = findViewById(R.id.booth_designs_button);
 		boothButton.setOnClickListener(this);
 		((TextView) boothButton).setTypeface(font);
+		
+		/* Handles thread issue */
+		StrictMode.ThreadPolicy policy = new StrictMode.
+				ThreadPolicy.Builder().permitAll().build();
+				StrictMode.setThreadPolicy(policy);
 
 		// Start fetching sets from Flickr
 		new Thread(new FetchSetsTask(responseHandler)).start();
-	}
-
+	}   
+    
 	Handler response = new Handler() {
 	};
 
 	Handler responseHandler = new Handler() {
 		@Override
 		public void handleMessage(Message msg) {
-			createURLSets(msg);
+			try{
+				 createURLSets(msg);
+			} catch(Exception e) {
+				Log.e(log_tag, "error in creatingURLSets() " + e.toString());
+			}
 		};
 	};
 
@@ -106,7 +114,6 @@ public class PortfolioActivity extends Activity implements OnClickListener {
 					campImgs[j] = setPhotos[j].makeURL();
 					campThumbs[j] = setPhotos[j].makeThumbURL();
 					campDesc[j] = setPhotos[j].getTitle();
-					
 				}
 			} else if (fSets[i].getName().equals("press")) {
 				// Get photos from Flickr
@@ -188,8 +195,7 @@ public class PortfolioActivity extends Activity implements OnClickListener {
 				continue;
 			}
 		}
-
-	}
+	} 
 
 	@Override
 	public void onClick(View v) {
@@ -250,7 +256,5 @@ public class PortfolioActivity extends Activity implements OnClickListener {
 		}
 		i.putExtras(b);
 		startActivity(i);
-
 	}
-
 }

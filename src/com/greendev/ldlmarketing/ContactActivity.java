@@ -1,8 +1,10 @@
 package com.greendev.ldlmarketing;
 
 import android.app.Activity;
+import android.content.Context;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
 import android.view.View.OnClickListener;
@@ -16,13 +18,17 @@ public class ContactActivity extends Activity implements OnClickListener {
 		// Custom Font
 		Typeface font = Typeface.createFromAsset(getAssets(), "Eurostib.TTF");
 
-		// Custom title bar
-		requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
-		setContentView(R.layout.contactus_layout);
-		getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.title);
-		TextView title = (TextView) findViewById(R.id.title);
+		// customizing font in action bar
+		this.getActionBar().setDisplayShowCustomEnabled(true);
+		this.getActionBar().setDisplayShowTitleEnabled(false);
+		LayoutInflater inflator = (LayoutInflater)this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+		View v = inflator.inflate(R.layout.title, null);
+		TextView title = ((TextView)v.findViewById(R.id.title));
+		title.setText(this.getTitle());
 		title.setTypeface(font);
-		title.setText("Contact Us");
+
+		setContentView(R.layout.contactus_layout);
+
 	}
 
 	@Override

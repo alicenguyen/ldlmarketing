@@ -13,12 +13,15 @@ import com.greendev.image.ImageGridActivity;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.os.StrictMode;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
@@ -49,8 +52,12 @@ public class GalleryActivity extends Activity implements OnClickListener {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		StrictMode.ThreadPolicy policy = new StrictMode.
+				ThreadPolicy.Builder().permitAll().build();
+				StrictMode.setThreadPolicy(policy);
+				
 		setContentView(R.layout.gallery_layout);
-
+		
 		// Photos button
 		View photoButton = findViewById(R.id.button_photos);
 		photoButton.setOnClickListener(this);

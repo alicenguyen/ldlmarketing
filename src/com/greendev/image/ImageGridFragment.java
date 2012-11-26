@@ -21,6 +21,7 @@ import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
@@ -94,7 +95,8 @@ public class ImageGridFragment extends Fragment implements
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setHasOptionsMenu(true);
+				
+		setHasOptionsMenu(true); // true
 
 		mImageThumbSize = getResources().getDimensionPixelSize(
 				R.dimen.image_thumbnail_size);
@@ -117,13 +119,12 @@ public class ImageGridFragment extends Fragment implements
 		mImageFetcher.addImageCache(
 				((FragmentActivity) context).getSupportFragmentManager(),
 				cacheParams);
-
-
 	}
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
+		
 		
 		final View v = inflater.inflate(R.layout.image_grid_fragment,
 				container, false);
@@ -227,10 +228,10 @@ public class ImageGridFragment extends Fragment implements
 		}
 	}
 
-	@Override
-	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-		inflater.inflate(R.menu.main_menu, menu);
-	}
+//	@Override
+//	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+//		inflater.inflate(R.menu.main_menu, menu);
+//	}
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
@@ -263,13 +264,16 @@ public class ImageGridFragment extends Fragment implements
 			mContext = context;
 			mImageViewLayoutParams = new GridView.LayoutParams(
 					LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
+			/**
+			 * weird bug when below.  creates a white gap above the grid. size of action bar probs. 
+			 */
 			// Calculate ActionBar height
-			TypedValue tv = new TypedValue();
+			/*TypedValue tv = new TypedValue();
 			if (context.getTheme().resolveAttribute(
 					android.R.attr.actionBarSize, tv, true)) {
 				mActionBarHeight = TypedValue.complexToDimensionPixelSize(
 						tv.data, context.getResources().getDisplayMetrics());
-			}
+			}*/
 		}
 
 		@Override

@@ -21,6 +21,7 @@ import android.app.ActionBar;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
@@ -65,8 +66,13 @@ public class ImageDetailActivity extends FragmentActivity implements
 	@TargetApi(11)
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		
+				
+	
 		// / Bundle from ImageGridFragmenton
 		// ItemClick(AdapterView<?> parent, View v, int position, long id)
+				
 		/** get the intent **/
 		Intent intent = getIntent();
 		/** get the bundle from the intent **/
@@ -78,7 +84,7 @@ public class ImageDetailActivity extends FragmentActivity implements
 		if (BuildConfig.DEBUG) {
 			Utils.enableStrictMode();
 		}
-		super.onCreate(savedInstanceState);
+	
 		setContentView(R.layout.image_detail_pager);
 
 		// Fetch screen height and width, to use as our max size when loading
@@ -122,16 +128,20 @@ public class ImageDetailActivity extends FragmentActivity implements
 
 		// Set up activity to go full screen
 		getWindow().addFlags(LayoutParams.FLAG_FULLSCREEN);
-
+		
+		
+		/******
+		 * weird bug below if runs on note 2.  
+		 */
 		// Enable some additional newer visibility and ActionBar features to
 		// create a more
 		// immersive photo viewing experience
-		if (Utils.hasHoneycomb()) {
+		/*if (Utils.hasHoneycomb()) {
 			final ActionBar actionBar = getActionBar();
 
 			// Hide title text and set home as up
 			actionBar.setDisplayShowTitleEnabled(false);
-			actionBar.setDisplayHomeAsUpEnabled(true);
+			actionBar.setDisplayHomeAsUpEnabled(false); // true
 
 			// Hide and show the ActionBar as the visibility changes
 			mPager.setOnSystemUiVisibilityChangeListener(new View.OnSystemUiVisibilityChangeListener() {
@@ -148,7 +158,7 @@ public class ImageDetailActivity extends FragmentActivity implements
 			// Start low profile mode and hide ActionBar
 			mPager.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LOW_PROFILE);
 			actionBar.hide();
-		}
+		}*/
 
 		// Set the current item based on the extra passed in to this activity
 		final int extraCurrentItem = getIntent().getIntExtra(EXTRA_IMAGE, -1);

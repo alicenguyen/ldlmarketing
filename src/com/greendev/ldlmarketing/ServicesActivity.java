@@ -18,12 +18,9 @@ public class ServicesActivity extends Activity implements OnClickListener {
 		Typeface font = Typeface.createFromAsset(getAssets(), "Eurostib.TTF");
 
 		// Custom title bar
-		requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
+	
 		setContentView(R.layout.services_layout);
-		getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.title);
-		TextView title = (TextView) findViewById(R.id.title);
-		title.setTypeface(font);
-		title.setText("Services");
+
 	}
 
 	@Override

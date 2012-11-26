@@ -5,12 +5,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.os.Parcelable;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
@@ -51,19 +54,18 @@ public class PhotoActivity extends Activity implements OnClickListener {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
-		// Title stuff
-		requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
 		setContentView(R.layout.photo_layout);
+		
+		// customizing font in action bar
+		Typeface font = Typeface.createFromAsset(getAssets(), "Eurosti.TTF");
+		this.getActionBar().setDisplayShowCustomEnabled(true);
+		this.getActionBar().setDisplayShowTitleEnabled(false);
+		LayoutInflater inflator = (LayoutInflater)this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+		View v = inflator.inflate(R.layout.title, null);
+		TextView title = ((TextView)v.findViewById(R.id.title));
+		title.setText(this.getTitle());
+		title.setTypeface(font);
 
-		// setContentView(R.layout.portfolio_layout);
-		getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.title);
-		((TextView) findViewById(R.id.title))
-				.setText("Testing Flickr Galleries");
-
-		// listView = (ListView) findViewById(R.id.content);
-		// button = findViewById(R.id.button);
-		// button.setOnClickListener(this);
 
 		// Start fetching sets from Flickr
 		new Thread(new FetchSetsTask(responseHandler)).start();

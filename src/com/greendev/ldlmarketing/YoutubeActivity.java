@@ -25,14 +25,13 @@ import com.greendev.youtube.VideoClickListener;
 import com.greendev.youtube.VideosListView;
 
 /**
- * The Activity can retrieve Videos for a specific username from YouTube It
- * then displays them into a list including the Thumbnail preview and the
- * title There is a reference to each video on YouTube. Note orientation change isn't
+ * The Activity can retrieve Videos for a specific username from YouTube It then
+ * displays them into a list including the Thumbnail preview and the title There
+ * is a reference to each video on YouTube. Note orientation change isn't
  * covered yet, you will want to override onSaveInstanceState() and
  * onRestoreInstanceState() when you come to this </br>
  * 
- * @author Alice Nguyen
- * Credit --  paul.blundell
+ * @author Alice Nguyen Credit -- paul.blundell
  */
 public class YoutubeActivity extends Activity implements VideoClickListener {
 	// A reference to our list that will hold the video details
@@ -46,24 +45,24 @@ public class YoutubeActivity extends Activity implements VideoClickListener {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-	
-		
+
 		// Custom Font
 		Typeface fontB = Typeface.createFromAsset(getAssets(), "Eurostib.TTF");
-		 font = Typeface.createFromAsset(getAssets(), "Eurostib.TTF");
+		font = Typeface.createFromAsset(getAssets(), "Eurostib.TTF");
 
-		// Custom title bar
-		requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
 		setContentView(R.layout.youtube_layout);
-		getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.title);
-		TextView title = (TextView) findViewById(R.id.title);
-		title.setTypeface(fontB);
-		title.setText("LDL Videos");
-		
-		
+		// customizing font in action bar
+		this.getActionBar().setDisplayShowCustomEnabled(true);
+		this.getActionBar().setDisplayShowTitleEnabled(false);
+		LayoutInflater inflator = (LayoutInflater) this
+				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+		View v = inflator.inflate(R.layout.title, null);
+		TextView title = ((TextView) v.findViewById(R.id.title));
+		title.setText(this.getTitle());
+		title.setTypeface(font);
+
 		listView = (VideosListView) findViewById(R.id.videosListView);
-		
-		
+
 		// getting youtube videos
 		new Thread(
 				new GetYouTubeUserVideosTask(responseHandler, "LDLmarketing"))
@@ -76,7 +75,6 @@ public class YoutubeActivity extends Activity implements VideoClickListener {
 		// intent to view it
 		listView.setOnVideoClickListener(this);
 
-	
 	}
 
 	public void getUserYouTubeFeed(View v) {
@@ -114,7 +112,7 @@ public class YoutubeActivity extends Activity implements VideoClickListener {
 	public void onVideoClicked(Video video) {
 		Intent intent = new Intent(Intent.ACTION_VIEW);
 		intent.setData(Uri.parse(video.getUrl()));
-	
+
 		startActivity(intent);
 
 		this.url = video.getUrl();
@@ -127,7 +125,5 @@ public class YoutubeActivity extends Activity implements VideoClickListener {
 		// Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
 		// startActivity(i);
 	}
-	
-	
 
 }

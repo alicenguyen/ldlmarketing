@@ -12,10 +12,12 @@
     <color name="custom_theme_color">#ffffff</color>
     <color name="black">#424242</color>
     <color name="light_pink">#F49AED</color>
-    <color name="darkgrey">#231F20</color>
+    <color name="darkgrey">#4F4F4F</color>
 
     <!-- image stuff -->
     <color name="grid_state_pressed">#BB7dbcd3</color>
     <color name="grid_state_focused">#777dbcd3</color>
+    
+      <color name="pressed_ldltheme">#CCec4fd4</color>
 
 </resources>

@@ -24,7 +24,7 @@ public class FetchSetsTask implements Runnable {
 	// A reference to retrieve the data when this task finishes
 	public static final String LIBRARY = "Library";
 
-	private static final String TAG = "SetIDs";
+	private static final String TAG = "FetchSetsTask()";
 
 	public FetchSetsTask(Handler replyTo) {
 		this.replyTo = replyTo;
@@ -32,10 +32,6 @@ public class FetchSetsTask implements Runnable {
 
 	public void run() {
 		HttpClient httpclient = new DefaultHttpClient();
-//		HttpGet httpget = new HttpGet(
-//				"http://api.flickr.com/services/rest/?method=flickr.photosets.getList&api_key="
-//						+ API_KEY
-//						+ "&user_id=87656684%40N07&format=json&nojsoncallback=1");
 		HttpGet httpget = new HttpGet(
 				"http://api.flickr.com/services/rest/?method=flickr.photosets.getList&api_key="
 						+ API_KEY
@@ -78,18 +74,23 @@ public class FetchSetsTask implements Runnable {
 				}
 				inputstream.close();
 
-				// Create a FlickrLibrary to hold our photos
-				FlickrLibrary lib = new FlickrLibrary(sets);
-				// Pack the library into the bundle to sent back to the Activity
-				Bundle data = new Bundle();
-				data.putSerializable(LIBRARY, lib);
-
-				// Send the Bundle of data (our Library) back to the handler
-				// (our Activity)
-				Message msg = Message.obtain();
-				msg.setData(data);
-				replyTo.sendMessage(msg);
-
+				try {
+					// Create a FlickrLibrary to hold our photos
+					FlickrLibrary lib = new FlickrLibrary(sets);
+					// Pack the library into the bundle to sent back to the
+					// Activity
+					Bundle data = new Bundle();
+					data.putSerializable(LIBRARY, lib);
+					// Send the Bundle of data (our Library) back to the handler
+					// (our Activity)
+					Message msg = Message.obtain();
+					msg.setData(data);
+					replyTo.sendMessage(msg);
+				} catch (Exception e) {
+					Log.e(TAG,
+							"Error in creating FlickrLibrary, packing/serializing/sending Bundle "
+									+ e.toString());
+				}
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

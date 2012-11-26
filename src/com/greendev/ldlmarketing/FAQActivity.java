@@ -1,12 +1,16 @@
 package com.greendev.ldlmarketing;
 
+
+
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,15 +27,19 @@ public class FAQActivity extends Activity implements OnClickListener {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		// Custom Font
-		Typeface font = Typeface.createFromAsset(getAssets(), "Eurostib.TTF");
-
-		// Custom title bar
-		requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
+		Typeface font = Typeface.createFromAsset(getAssets(), "Eurosti.TTF");
 		setContentView(R.layout.faq_layout);
-		getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.title);
-		TextView title = (TextView) findViewById(R.id.title);
+		
+		// customizing font in action bar
+		this.getActionBar().setDisplayShowCustomEnabled(true);
+		this.getActionBar().setDisplayShowTitleEnabled(false);
+		LayoutInflater inflator = (LayoutInflater)this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+		View v = inflator.inflate(R.layout.title, null);
+		TextView title = ((TextView)v.findViewById(R.id.title));
+		title.setText(this.getTitle());
 		title.setTypeface(font);
-		title.setText("FAQ");
+		//assign the view to the actionbar
+		this.getActionBar().setCustomView(v);
 
 		TextView q1 = (TextView) findViewById(R.id.faq1);
 		q1.setOnClickListener(this);
@@ -49,6 +57,20 @@ public class FAQActivity extends Activity implements OnClickListener {
 		flag3 = true;
 
 	}
+	
+//	@Override 
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//        switch (item.getItemId()) {
+//            case android.R.id.home:
+//                // Navigate "up" the demo structure to the launchpad activity.
+//                // See http://developer.android.com/design/patterns/navigation.html for more.
+//                NavUtils.navigateUpTo(this, new Intent(this, HomeActivity.class));
+//                return true;
+//        }
+//
+//        return super.onOptionsItemSelected(item);
+//    }
+    
 
 	@Override
 	public void onClick(View v) {
