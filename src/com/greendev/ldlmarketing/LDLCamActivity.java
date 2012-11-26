@@ -1,10 +1,14 @@
 package com.greendev.ldlmarketing;
 
 import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
 import com.aviary.android.feather.FeatherActivity;
 import com.greendev.ldlmarketing.R;
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.net.Uri;
@@ -16,8 +20,11 @@ import android.widget.TextView;
 
 public class LDLCamActivity extends Activity implements OnClickListener {
 	private static final int RESULT_LOAD_IMAGE = 1;
-	private static final int RESULT_CAMERA_IMAGE = 666;
+	private static final int RESULT_CAMERA_IMAGE = 2;
+	private static final int RESULT_FRAME_IMAGE = 3;
 	protected String _path;
+	protected String _output;
+	protected File outFile;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -25,6 +32,7 @@ public class LDLCamActivity extends Activity implements OnClickListener {
 		setContentView(R.layout.ldlcam_layout);
 
 		_path = "temp.jpg";
+		_output = "output.jpg";
 		// Custom Font
 		Typeface font = Typeface.createFromAsset(getAssets(), "Eurosti.TTF");
 
@@ -49,26 +57,28 @@ public class LDLCamActivity extends Activity implements OnClickListener {
 
 		// from gallery button
 		case R.id.pick_image_button:
-			Intent i = new Intent(
-					Intent.ACTION_PICK,
+			Intent photoIntent = new Intent(Intent.ACTION_PICK, 
 					android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
 
-			startActivityForResult(i, RESULT_LOAD_IMAGE);
+			startActivityForResult(photoIntent, RESULT_LOAD_IMAGE);
 			break;
 
 		// from camera button
 		case R.id.from_camera_button:
-			Intent cameraIntent = new Intent(
-					android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+			Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+			try {
+				FileOutputStream fos = openFileOutput(_path, Context.MODE_WORLD_WRITEABLE);
 
-			File path = getFilesDir();
-			File file = new File(path, "test_picture.jpg");
-			Uri uri = Uri.fromFile(file);
-			cameraIntent
-					.putExtra(android.provider.MediaStore.EXTRA_OUTPUT, uri);
+				fos.close();
+				File path = getFilesDir();
+				File file = new File(path, _path);
+				Uri uri = Uri.fromFile(file);
+				cameraIntent.putExtra(android.provider.MediaStore.EXTRA_OUTPUT,	uri);
 
-			startActivityForResult(cameraIntent, RESULT_CAMERA_IMAGE);
+				startActivityForResult(cameraIntent, RESULT_CAMERA_IMAGE);
+			} catch (IOException ie) {
 
+			}
 			break;
 		}
 	}
@@ -79,6 +89,7 @@ public class LDLCamActivity extends Activity implements OnClickListener {
 
 		if (resultCode == RESULT_OK) {
 			switch (requestCode) {
+
 			case RESULT_LOAD_IMAGE:
 				if (data != null) {
 					Uri selectedImage = data.getData();
@@ -94,21 +105,31 @@ public class LDLCamActivity extends Activity implements OnClickListener {
 				} else {
 					File path = getFilesDir();
 
-					File file = new File(path, "test_picture.jpg");
+					File file = new File(path, _path);
 					cameraImage = Uri.fromFile(file);
 				}
-				
+
 				photoEditor(cameraImage);
+				break;
+				
+			case RESULT_FRAME_IMAGE:
+
+				Intent j = new Intent(this, FrameActivity.class);
+				j.setData(Uri.parse(outFile.getAbsolutePath()));
+				startActivity(j);
+				
 				break;
 
 			default:
 				break;
-
 			}
 		}
 	}
 
 	private void photoEditor(Uri photo) {
+
+		File path = getFilesDir();
+		outFile = new File(path, _output);
 
 		Intent i = new Intent(this, FeatherActivity.class);
 		// set the source image uri
@@ -118,21 +139,22 @@ public class LDLCamActivity extends Activity implements OnClickListener {
 		// pass the uri of the destination image file (optional)
 		// This will be the same uri you will receive in the
 		// onActivityResult
-		// newIntent.putExtra( "output", Uri.parse( "file://" +
-		// mOutputFile.getAbsolutePath() ) );
+		i.putExtra("output", Uri.parse(outFile.getAbsolutePath()));
 		// format of the destination image (optional)
 		// newIntent.putExtra( "output-format",
 		// Bitmap.CompressFormat.JPEG.name() );
 		// output format quality (optional)
-		i.putExtra("output-quality", 100);
+		i.putExtra("output-quality", 85);
 		// you can force feather to display only a certain tools
-		// newIntent.putExtra( "tools-list", new String[]{"ADJUST", "BRIGHTNESS" } );
+		// newIntent.putExtra( "tools-list", new String[]{"ADJUST",
+		// "BRIGHTNESS"
+		// } );
 
 		// enable fast rendering preview
 		i.putExtra("effect-enable-fast-preview", true);
-		i.putExtra("hide-exit-unsave-confirmation", false);
-		startActivity(i);
-
+		// i.putExtra("hide-exit-unsave-confirmation", false);
+		startActivityForResult(i, RESULT_FRAME_IMAGE);
+		
 	}
 
 }

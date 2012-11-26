@@ -1,6 +1,5 @@
 package com.greendev.ldlmarketing;
 
-
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
@@ -12,11 +11,8 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
-
 import com.viewpagerindicator.LinePageIndicator;
 import com.viewpagerindicator.PageIndicator;
-
-
 
 @SuppressLint("ResourceAsColor")
 public class AboutActivity extends Activity {
@@ -29,22 +25,24 @@ public class AboutActivity extends Activity {
 		// Custom Font
 		font = Typeface.createFromAsset(getAssets(), "Eurosti.TTF");
 		setContentView(R.layout.about_layout);
-		
+
 		// customizing font in action bar
-		this.getActionBar().setDisplayShowCustomEnabled(true);		// shows customized action bar
-		this.getActionBar().setDisplayShowTitleEnabled(false);		// hides default title
-		//this.getActionBar().setIcon(null);		// hides icon
-		LayoutInflater inflator = (LayoutInflater)this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+		this.getActionBar().setDisplayShowCustomEnabled(true); // shows
+																// customized
+																// action bar
+		this.getActionBar().setDisplayShowTitleEnabled(false); // hides default
+																// title
+		// this.getActionBar().setIcon(null); // hides icon
+		LayoutInflater inflator = (LayoutInflater) this
+				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		View v = inflator.inflate(R.layout.title, null);
-		TextView title = ((TextView)v.findViewById(R.id.title));
+		TextView title = ((TextView) v.findViewById(R.id.title));
 		title.setText(this.getTitle());
 		title.setTypeface(font);
-		
-		
-		//assign the view to the actionbar
+
+		// assign the view to the actionbar
 		this.getActionBar().setCustomView(v);
 
-			
 		// page viewer
 		PageAdapter adapter = new PageAdapter();
 		ViewPager myPager = (ViewPager) findViewById(R.id.myfivepanelpager);
@@ -60,7 +58,6 @@ public class AboutActivity extends Activity {
 	}
 
 	private class PageAdapter extends PagerAdapter {
-		TextView txt;
 		TextView name;
 		TextView pos;
 
@@ -112,7 +109,7 @@ public class AboutActivity extends Activity {
 				bio = (TextView) view.findViewById(R.id.about_line0);
 				break;
 			}
-			//bio.setTypeface(font);
+			// bio.setTypeface(font);
 			bio.setTextColor(R.color.darkgrey);
 			// bio.setTextSize(50);
 

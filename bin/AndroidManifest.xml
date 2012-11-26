@@ -52,9 +52,12 @@
             android:name=".LDLCamActivity"
             android:label="LDL Cam" />
         <activity
-            android:name=".LDLCam2Activity"
-            android:label="LDL Cam"
-            android:theme="@android:style/Theme.Light.NoTitleBar" />
+            android:name=".FrameActivity"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
+            <intent-filter>
+                <data android:scheme="ldlmarketing" android:host="path"/>
+            </intent-filter>
+        </activity>
         <activity
             android:name="com.aviary.android.feather.FeatherActivity"
             android:configChanges="orientation|keyboardHidden"
@@ -90,6 +93,8 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".HomeActivity" />
         </activity>
+
+           <!--  android:theme="@android:style/Theme.Light.NoTitleBar" /> -->
 
         <!-- Alice's Twitter implementation -->
         <activity

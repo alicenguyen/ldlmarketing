@@ -21,6 +21,5 @@
         android:layout_weight="0"
         android:text="Load Picture" >
     </Button> --> 
- 
-
+ 
 </LinearLayout>
