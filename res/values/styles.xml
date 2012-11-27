@@ -29,8 +29,7 @@
         <item name="android:windowBackground">@color/custom_theme_color</item>
         <item name="android:colorBackground">@color/custom_theme_color</item>
         <item name="android:textColor">@color/darkgrey</item>
-    </style>
-    -->
+    </style>    -->
 
     <style name="WindowTitleBackground">
         <item name="android:background">@android:color/transparent</item>
@@ -87,7 +86,7 @@
         <item name="android:backgroundStacked">@drawable/ab_stacked_solid_ldltheme</item>
         <item name="android:backgroundSplit">@drawable/ab_bottom_solid_ldltheme</item>
         <item name="android:progressBarStyle">@style/ldltheme_ProgressBar</item>
-    </style>
+    </style>
     -->
 
     <style name="ldltheme_transparent_ActionBar" parent="@android:style/Widget.Holo.Light.ActionBar">
@@ -188,5 +187,16 @@
         <item name="android:textColor">@color/white</item>
         <item name="android:textSize">20sp</item>
     </style>
+    
+<!--     Services
+    <style name="Services">
+        <item> name=""</item>
+        <item> name=""</item>
+        <item> name=""</item>
+        <item> name=""</item>
+        <item> name=""</item>
+        <item> name=""</item>
+        <item> name=""</item>
+    </style> -->
 
 </resources>
