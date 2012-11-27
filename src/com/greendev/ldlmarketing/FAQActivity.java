@@ -44,17 +44,20 @@ public class FAQActivity extends Activity implements OnClickListener {
 		TextView q1 = (TextView) findViewById(R.id.faq1);
 		q1.setOnClickListener(this);
 		a1 = (TextView) findViewById(R.id.a1);
-		flag1 = true;
+		a1.setVisibility(View.GONE);
+		flag1 = false;
 
 		TextView q2 = (TextView) findViewById(R.id.faq2);
 		q2.setOnClickListener(this);
 		a2 = (TextView) findViewById(R.id.a2);
-		flag2 = true;
+		a2.setVisibility(View.GONE);
+		flag2 = false;
 
 		TextView q3 = (TextView) findViewById(R.id.faq3);
 		q3.setOnClickListener(this);
 		a3 = (TextView) findViewById(R.id.a3);
-		flag3 = true;
+		a3.setVisibility(View.GONE);
+		flag3 = false;
 
 	}
 	
