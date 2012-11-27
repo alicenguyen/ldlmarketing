@@ -136,6 +136,10 @@ public class LDLCamActivity extends Activity implements OnClickListener {
 
 		File path = getFilesDir();
 		outFile = new File(path, _output);
+		
+		if(outFile != null){
+			outFile.delete();
+		}
 
 		Intent i = new Intent(this, FeatherActivity.class);
 		// set the source image uri
@@ -161,6 +165,13 @@ public class LDLCamActivity extends Activity implements OnClickListener {
 		// i.putExtra("hide-exit-unsave-confirmation", false);
 		startActivityForResult(i, RESULT_FRAME_IMAGE);
 		
+	}
+	
+	public void onDestory(){
+		super.onDestroy();
+		if(outFile != null){
+			outFile.delete();
+		}
 	}
 
 }
