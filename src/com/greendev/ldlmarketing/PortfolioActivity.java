@@ -43,10 +43,9 @@ public class PortfolioActivity extends Activity implements OnClickListener {
 
 		setContentView(R.layout.portfolio_layout);
 
-
 		// Buttons
 		View campaignsButton = findViewById(R.id.campaigns_button);
-		campaignsButton.setOnClickListener(this);
+		campaignsButton.setOnClickListener(this);  
 		((TextView) campaignsButton).setTypeface(font);
 
 		View pressButton = findViewById(R.id.press_button);
