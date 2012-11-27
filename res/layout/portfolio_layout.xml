@@ -16,119 +16,38 @@
 
         <Button
             android:id="@+id/campaigns_button"
-            android:layout_width="290dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/grey_button1"
-            android:drawableRight="@drawable/navigation_next_item"
-            android:gravity="left|center_vertical"
-            android:paddingLeft="10dp"
-            android:text="Campaigns"
-            android:textColor="@color/white"
-            android:textSize="20sp" />
-
-        <TextView
-            android:layout_width="290dp"
-            android:layout_height="1dp"
-            android:background="@color/grey" />
+            style="@style/Portfolio_Button"
+            android:text="Campaigns" />
 
         <Button
             android:id="@+id/press_button"
-            android:layout_width="290dp"
-            android:layout_height="50dp"
-            android:background="@drawable/grey_button1"
-            android:drawableRight="@drawable/navigation_next_item"
-            android:gravity="left|center_vertical"
-            android:paddingLeft="10dp"
-            android:text="Press"
-            android:textColor="@color/white"
-            android:textSize="20sp" />
-
-        <TextView
-            android:layout_width="290dp"
-            android:layout_height="1dp"
-            android:background="@color/grey" />
+            style="@style/Portfolio_Button"
+            android:text="Press" />
 
         <Button
             android:id="@+id/graphic_design_button"
-            android:layout_width="290dp"
-            android:layout_height="50dp"
-            android:background="@drawable/grey_button1"
-            android:drawableRight="@drawable/navigation_next_item"
-            android:gravity="left|center_vertical"
-            android:paddingLeft="10dp"
-            android:text="Graphic Design/Layouts"
-            android:textColor="@color/white"
-            android:textSize="20sp" />
-
-        <TextView
-            android:layout_width="290dp"
-            android:layout_height="1dp"
-            android:background="@color/grey" />
+            style="@style/Portfolio_Button"
+            android:text="Graphic Design/Layouts" />
 
         <Button
             android:id="@+id/websites_button"
-            android:layout_width="290dp"
-            android:layout_height="50dp"
-            android:background="@drawable/grey_button1"
-            android:drawableRight="@drawable/navigation_next_item"
-            android:gravity="left|center_vertical"
-            android:paddingLeft="10dp"
-            android:text="Websites"
-            android:textColor="@color/white"
-            android:textSize="20sp" />
-
-        <TextView
-            android:layout_width="290dp"
-            android:layout_height="1dp"
-            android:background="@color/grey" />
+            style="@style/Portfolio_Button"
+            android:text="Websites" />
 
         <Button
             android:id="@+id/digital_marketing_button"
-            android:layout_width="290dp"
-            android:layout_height="50dp"
-            android:background="@drawable/grey_button1"
-            android:drawableRight="@drawable/navigation_next_item"
-            android:gravity="left|center_vertical"
-            android:paddingLeft="10dp"
-            android:text="Digital Marketing"
-            android:textColor="@color/white"
-            android:textSize="20sp" />
-
-        <TextView
-            android:layout_width="290dp"
-            android:layout_height="1dp"
-            android:background="@color/grey" />
+            style="@style/Portfolio_Button"
+            android:text="Digital Marketing" />
 
         <Button
             android:id="@+id/packaging_button"
-            android:layout_width="290dp"
-            android:layout_height="50dp"
-            android:background="@drawable/grey_button1"
-            android:drawableRight="@drawable/navigation_next_item"
-            android:gravity="left|center_vertical"
-            android:paddingLeft="10dp"
-            android:text="Packaging"
-            android:textColor="@color/white"
-            android:textSize="20sp" />
-
-        <TextView
-            android:layout_width="290dp"
-            android:layout_height="1dp"
-            android:background="@color/grey" />
+            style="@style/Portfolio_Button"
+            android:text="Packaging" />
 
         <Button
             android:id="@+id/booth_designs_button"
-            android:layout_width="290dp"
-            android:layout_height="50dp"
-            android:background="@drawable/grey_button1"
-            android:drawableRight="@drawable/navigation_next_item"
-            android:gravity="left|center_vertical"
-            android:paddingLeft="10dp"
-            android:text="Booth Designs"
-            android:textColor="@color/white"
-            android:textSize="20sp" />
+            style="@style/Portfolio_Button"
+            android:text="Booth Designs" />
     </LinearLayout>
-    <!-- shadow tucked under title -->
 
 </RelativeLayout>

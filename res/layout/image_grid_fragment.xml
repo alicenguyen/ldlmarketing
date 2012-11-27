@@ -17,9 +17,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@drawable/background_white"
+    android:background="@color/darkgrey1"
     android:gravity="top"
-    android:orientation="vertical" >
+    android:orientation="vertical">
 
     <GridView
         xmlns:android="http://schemas.android.com/apk/res/android"

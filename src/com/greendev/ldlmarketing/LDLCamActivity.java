@@ -36,11 +36,17 @@ public class LDLCamActivity extends Activity implements OnClickListener {
 		// Custom Font
 		Typeface font = Typeface.createFromAsset(getAssets(), "Eurosti.TTF");
 
-		// Texts Views
+		// Texts Views II
 		TextView titleText1 = (TextView) findViewById(R.id.ldlcam_text1);
 		titleText1.setTypeface(font);
 		TextView titleText2 = (TextView) findViewById(R.id.ldlcam_text2);
 		titleText2.setTypeface(font);
+		
+		// Text View I
+		TextView buttontv1 = (TextView) findViewById(R.id.pick_image_button);
+		buttontv1.setTypeface(font);
+		TextView buttontv2 = (TextView) findViewById(R.id.from_camera_button);
+		buttontv2.setTypeface(font);
 
 		// Button View
 		Button pickButton = (Button) findViewById(R.id.pick_image_button);

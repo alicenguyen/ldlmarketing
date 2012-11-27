@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/background_black"
+    android:gravity="center|top"
+    android:orientation="vertical"
+    tools:context=".MainTabActivity" >
+
+    <TextView
+        android:id="@+id/home_title1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-12dp"
+        android:gravity="center"
+        android:text="LDL"
+        android:textColor="@color/pink"
+        android:textSize="210sp" />
+
+    <TextView
+        android:id="@+id/home_title2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:layout_marginTop="-40dp"
+        android:gravity="center"
+        android:text="Marketing Services"
+        android:textColor="@color/white"
+        android:textSize="50sp" />
+
+    <LinearLayout
+        android:id="@+id/buttons_background"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/button_about"
+            style="@style/HomeButton_xlarge"
+            android:text="About" />
+
+        <Button
+            android:id="@+id/button_clientdir"
+            style="@style/HomeButton_xlarge"
+            android:text="Client Directory" />
+
+        <Button
+            android:id="@+id/button_portfolio"
+            style="@style/HomeButton_xlarge"
+            android:text="Portfolio" />
+
+        <Button
+            android:id="@+id/button_services"
+            style="@style/HomeButton_xlarge"
+            android:text="Services" />
+
+        <Button
+            android:id="@+id/button_faqs"
+            style="@style/HomeButton_xlarge"
+            android:text="FAQs" />
+
+        <Button
+            android:id="@+id/button_contactus"
+            style="@style/HomeButton_xlarge"
+            android:text="Contact Us" />
+    </LinearLayout>
+
+</LinearLayout>

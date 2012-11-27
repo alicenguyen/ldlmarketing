@@ -890,6 +890,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int black=0x7f060032;
         public static final int custom_theme_color=0x7f060031;
         public static final int darkgrey=0x7f060034;
+        public static final int darkgrey1=0x7f060035;
         public static final int default_circle_indicator_fill_color=0x7f060020;
         public static final int default_circle_indicator_page_color=0x7f060021;
         public static final int default_circle_indicator_stroke_color=0x7f060022;
@@ -923,13 +924,13 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
  default highlight drawable colors 
          */
         public static final int feather_drawable_highlight_focus=0x7f060015;
-        public static final int feather_effect_text_color_fill_selector=0x7f060038;
-        public static final int feather_effect_text_color_stroke_selector=0x7f060039;
-        public static final int feather_infoscreen_button_textcolor_selector=0x7f06003a;
+        public static final int feather_effect_text_color_fill_selector=0x7f060039;
+        public static final int feather_effect_text_color_stroke_selector=0x7f06003a;
+        public static final int feather_infoscreen_button_textcolor_selector=0x7f06003b;
         /**  inline loading progress text color 
          */
         public static final int feather_inline_loading_color=0x7f060017;
-        public static final int feather_option_panel_text_selector=0x7f06003b;
+        public static final int feather_option_panel_text_selector=0x7f06003c;
         /**  option panel bottom line color 
          */
         public static final int feather_panel_bottom_line_color=0x7f060007;
@@ -943,23 +944,23 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int feather_rotate_highlight_stroke_color=0x7f060008;
         public static final int feather_shadow_black=0x7f060001;
         public static final int feather_shadow_white=0x7f060000;
-        public static final int feather_sticker_color_fill_selector=0x7f06003c;
-        public static final int feather_sticker_color_stroke_selector=0x7f06003d;
-        public static final int feather_stickers_pack_text_color_selector=0x7f06003e;
+        public static final int feather_sticker_color_fill_selector=0x7f06003d;
+        public static final int feather_sticker_color_stroke_selector=0x7f06003e;
+        public static final int feather_stickers_pack_text_color_selector=0x7f06003f;
         public static final int feather_text_color_primary=0x7f060002;
-        public static final int feather_text_color_primary_selector=0x7f06003f;
+        public static final int feather_text_color_primary_selector=0x7f060040;
         public static final int feather_text_color_secondary=0x7f060003;
         public static final int feather_text_color_tertiary=0x7f060004;
-        public static final int feather_text_fill_color_state=0x7f060040;
+        public static final int feather_text_fill_color_state=0x7f060041;
         public static final int grey=0x7f06002f;
-        public static final int grid_state_focused=0x7f060036;
+        public static final int grid_state_focused=0x7f060037;
         /**  image stuff 
          */
-        public static final int grid_state_pressed=0x7f060035;
+        public static final int grid_state_pressed=0x7f060036;
         public static final int light_pink=0x7f060033;
         public static final int lightpink=0x7f06002d;
         public static final int pink=0x7f06002c;
-        public static final int pressed_ldltheme=0x7f060037;
+        public static final int pressed_ldltheme=0x7f060038;
         public static final int tabDark=0x7f06002a;
         public static final int tabMedium=0x7f060029;
         public static final int tabTransparent=0x7f06002b;
@@ -972,8 +973,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int vpi__bright_foreground_holo_light=0x7f06001b;
         public static final int vpi__bright_foreground_inverse_holo_dark=0x7f06001e;
         public static final int vpi__bright_foreground_inverse_holo_light=0x7f06001f;
-        public static final int vpi__dark_theme=0x7f060041;
-        public static final int vpi__light_theme=0x7f060042;
+        public static final int vpi__dark_theme=0x7f060042;
+        public static final int vpi__light_theme=0x7f060043;
         public static final int white=0x7f06002e;
     }
     public static final class dimen {
@@ -1113,213 +1114,219 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int biopic2=0x7f02000b;
         public static final int biopic3=0x7f02000c;
         public static final int black_background=0x7f02000d;
-        public static final int button=0x7f02000e;
-        public static final int empty_photo=0x7f02000f;
-        public static final int feather_center_button_background=0x7f020010;
-        public static final int feather_center_button_background_normal=0x7f020011;
-        public static final int feather_center_button_background_pressed=0x7f020012;
-        public static final int feather_clear_btn=0x7f020013;
-        public static final int feather_clear_btn_pressed=0x7f020014;
-        public static final int feather_clear_button_selector=0x7f020015;
-        public static final int feather_color_mask_shape=0x7f020016;
-        public static final int feather_crop_arrow=0x7f020017;
-        public static final int feather_crop_arrow_selected=0x7f020018;
-        public static final int feather_crop_arrow_unselected=0x7f020019;
-        public static final int feather_crop_checkbox_selected=0x7f02001a;
-        public static final int feather_crop_checkbox_unselected=0x7f02001b;
-        public static final int feather_default_button_background=0x7f02001c;
-        public static final int feather_default_button_background_normal=0x7f02001d;
-        public static final int feather_default_button_background_pressed=0x7f02001e;
-        public static final int feather_default_glow=0x7f02001f;
-        public static final int feather_default_tool_background_normal=0x7f020020;
-        public static final int feather_default_tool_background_pressed=0x7f020021;
-        public static final int feather_default_tool_selector=0x7f020022;
-        public static final int feather_draw_panel_hline=0x7f020023;
-        public static final int feather_draw_rubber=0x7f020024;
-        public static final int feather_effect_thumb_selected_image=0x7f020025;
-        public static final int feather_external_filters_template=0x7f020026;
-        public static final int feather_external_filters_template_free=0x7f020027;
-        public static final int feather_external_filters_template_shadow=0x7f020028;
-        public static final int feather_film_center=0x7f020029;
-        public static final int feather_film_left=0x7f02002a;
-        public static final int feather_flip_horizontal=0x7f02002b;
-        public static final int feather_flip_vertical=0x7f02002c;
-        public static final int feather_getmore_image_bg=0x7f02002d;
-        public static final int feather_getmore_image_bg_normal=0x7f02002e;
-        public static final int feather_getmore_image_bg_pressed=0x7f02002f;
-        public static final int feather_getmore_layout_bg=0x7f020030;
-        public static final int feather_getmore_layout_bg_inverted=0x7f020031;
-        public static final int feather_hidden_edit_text=0x7f020032;
-        public static final int feather_hidden_textfield=0x7f020033;
-        public static final int feather_highlight_crop_handle=0x7f020034;
-        public static final int feather_highlight_delete_button=0x7f020035;
-        public static final int feather_horizontal_line=0x7f020036;
-        public static final int feather_icon=0x7f020037;
-        public static final int feather_icon_backlight_enhance=0x7f020038;
-        public static final int feather_icon_balance_enhance=0x7f020039;
-        public static final int feather_icon_enhance=0x7f02003a;
-        public static final int feather_icon_night_enhance=0x7f02003b;
-        public static final int feather_image_shadow=0x7f02003c;
-        public static final int feather_infoscreen_background=0x7f02003d;
-        public static final int feather_left_button_background=0x7f02003e;
-        public static final int feather_left_button_background_normal=0x7f02003f;
-        public static final int feather_left_button_background_pressed=0x7f020040;
-        public static final int feather_lens_button_background_normal=0x7f020041;
-        public static final int feather_lens_button_background_pressed=0x7f020042;
-        public static final int feather_lens_button_background_selector=0x7f020043;
-        public static final int feather_lens_normal=0x7f020044;
-        public static final int feather_loading_background=0x7f020045;
-        public static final int feather_main_image_background_repeater=0x7f020046;
-        public static final int feather_meme_button_bg=0x7f020047;
-        public static final int feather_more_btn=0x7f020048;
-        public static final int feather_more_btn_pressed=0x7f020049;
-        public static final int feather_more_button_selector=0x7f02004a;
-        public static final int feather_options_panel_background2=0x7f02004b;
-        public static final int feather_overscroll_edge=0x7f02004c;
-        public static final int feather_overscroll_glow=0x7f02004d;
-        public static final int feather_panel_bottom_indicator=0x7f02004e;
-        public static final int feather_panel_top_indicator=0x7f02004f;
-        public static final int feather_plugin_border_default_thumb=0x7f020050;
-        public static final int feather_plugin_filter_andy_thumb=0x7f020051;
-        public static final int feather_plugin_filter_aqua_thumb=0x7f020052;
-        public static final int feather_plugin_filter_bw_thumb=0x7f020053;
-        public static final int feather_plugin_filter_edgewood_thumb=0x7f020054;
-        public static final int feather_plugin_filter_joecool_thumb=0x7f020055;
-        public static final int feather_plugin_filter_purple_thumb=0x7f020056;
-        public static final int feather_plugin_filter_sancarmen_thumb=0x7f020057;
-        public static final int feather_plugin_filter_sepia_thumb=0x7f020058;
-        public static final int feather_plugin_filter_singe_thumb=0x7f020059;
-        public static final int feather_plugin_filter_softfocus_thumb=0x7f02005a;
-        public static final int feather_plugin_filter_thresh_thumb=0x7f02005b;
-        public static final int feather_plugin_filter_undefined_thumb=0x7f02005c;
-        public static final int feather_plugin_filter_vivid_thumb=0x7f02005d;
-        public static final int feather_resize_knob=0x7f02005e;
-        public static final int feather_ribbon_bg=0x7f02005f;
-        public static final int feather_right_button_background=0x7f020060;
-        public static final int feather_right_button_background_normal=0x7f020061;
-        public static final int feather_right_button_background_pressed=0x7f020062;
-        public static final int feather_rotate_left=0x7f020063;
-        public static final int feather_rotate_right=0x7f020064;
-        public static final int feather_rounded_black_shape=0x7f020065;
-        public static final int feather_shadow_down=0x7f020066;
-        public static final int feather_shadow_left=0x7f020067;
-        public static final int feather_shadow_right=0x7f020068;
-        public static final int feather_shadow_top=0x7f020069;
-        public static final int feather_shadow_up=0x7f02006a;
-        public static final int feather_spinner_white_16=0x7f02006b;
-        public static final int feather_spinner_white_76=0x7f02006c;
-        public static final int feather_sticker_pack_background=0x7f02006d;
-        public static final int feather_sticker_pack_background_free_more=0x7f02006e;
-        public static final int feather_sticker_pack_background_more=0x7f02006f;
-        public static final int feather_sticker_paper_center_1=0x7f020070;
-        public static final int feather_sticker_paper_center_2=0x7f020071;
-        public static final int feather_sticker_paper_left_edge=0x7f020072;
-        public static final int feather_stickers_big_right_paper=0x7f020073;
-        public static final int feather_stickers_panel_background_lower=0x7f020074;
-        public static final int feather_stickers_panel_background_upper=0x7f020075;
-        public static final int feather_straighten_knob=0x7f020076;
-        public static final int feather_tool_icon_adjust=0x7f020077;
-        public static final int feather_tool_icon_blemish=0x7f020078;
-        public static final int feather_tool_icon_borders=0x7f020079;
-        public static final int feather_tool_icon_brightness=0x7f02007a;
-        public static final int feather_tool_icon_contrast=0x7f02007b;
-        public static final int feather_tool_icon_crop=0x7f02007c;
-        public static final int feather_tool_icon_draw=0x7f02007d;
-        public static final int feather_tool_icon_effects=0x7f02007e;
-        public static final int feather_tool_icon_enhance=0x7f02007f;
-        public static final int feather_tool_icon_meme=0x7f020080;
-        public static final int feather_tool_icon_redeye=0x7f020081;
-        public static final int feather_tool_icon_saturation=0x7f020082;
-        public static final int feather_tool_icon_sharpen=0x7f020083;
-        public static final int feather_tool_icon_stickers=0x7f020084;
-        public static final int feather_tool_icon_temperature=0x7f020085;
-        public static final int feather_tool_icon_text=0x7f020086;
-        public static final int feather_tool_icon_whiten=0x7f020087;
-        public static final int feather_toolbar_background=0x7f020088;
-        public static final int feather_toolbar_button=0x7f020089;
-        public static final int feather_toolbar_button_normal=0x7f02008a;
-        public static final int feather_toolbar_button_pressed=0x7f02008b;
-        public static final int feather_top_success_checkmark=0x7f02008c;
-        public static final int feather_update_arrow=0x7f02008d;
-        public static final int feather_wheel_background_bottom=0x7f02008e;
-        public static final int feather_wheel_background_top=0x7f02008f;
-        public static final int feather_wheel_radio_background_shape=0x7f020090;
-        public static final int feather_workspace_indicator=0x7f020091;
-        public static final int feather_workspace_page_background_normal=0x7f020092;
-        public static final int feather_workspace_page_background_selected=0x7f020093;
-        public static final int frame1=0x7f020094;
-        public static final int frame2=0x7f020095;
-        public static final int gallery_portfolio_button=0x7f020096;
-        public static final int gallery_video_button=0x7f020097;
-        public static final int grey_button1=0x7f020098;
-        public static final int header_about=0x7f020099;
-        public static final int header_background=0x7f02009a;
-        public static final int home_normal=0x7f02009b;
-        public static final int home_selected=0x7f02009c;
-        public static final int ic_action_search=0x7f02009d;
-        public static final int ic_cam_s=0x7f02009e;
-        public static final int ic_cam_u=0x7f02009f;
-        public static final int ic_filters=0x7f0200a0;
-        public static final int ic_gallery_s=0x7f0200a1;
-        public static final int ic_gallery_u=0x7f0200a2;
-        public static final int ic_home_s=0x7f0200a3;
-        public static final int ic_home_u=0x7f0200a4;
-        public static final int ic_launcher=0x7f0200a5;
-        public static final int ic_stickers=0x7f0200a6;
-        public static final int ic_tweet_s=0x7f0200a7;
-        public static final int ic_tweet_u=0x7f0200a8;
-        public static final int list_focused_ldltheme=0x7f0200a9;
-        public static final int list_item_background=0x7f0200aa;
-        public static final int menu_dropdown_panel_ldltheme=0x7f0200ab;
-        public static final int menu_hardkey_panel_ldltheme=0x7f0200ac;
-        public static final int nav_shadow=0x7f0200ad;
-        public static final int navigation_next_item=0x7f0200ae;
-        public static final int photogrid_list_selector=0x7f0200af;
-        public static final int pressed_background_ldltheme=0x7f0200b0;
-        public static final int progress_bg_ldltheme=0x7f0200b1;
-        public static final int progress_horizontal_ldltheme=0x7f0200b2;
-        public static final int progress_primary_ldltheme=0x7f0200b3;
-        public static final int progress_secondary_ldltheme=0x7f0200b4;
-        public static final int sample1=0x7f0200b5;
-        public static final int search_normal=0x7f0200b6;
-        public static final int search_selected=0x7f0200b7;
-        public static final int selectable_background_ldltheme=0x7f0200b8;
-        public static final int spinner_ab_default_ldltheme=0x7f0200b9;
-        public static final int spinner_ab_disabled_ldltheme=0x7f0200ba;
-        public static final int spinner_ab_focused_ldltheme=0x7f0200bb;
-        public static final int spinner_ab_pressed_ldltheme=0x7f0200bc;
-        public static final int spinner_background_ab_ldltheme=0x7f0200bd;
-        public static final int splash=0x7f0200be;
-        public static final int tab_bg=0x7f0200bf;
-        public static final int tab_bg_selected=0x7f0200c0;
-        public static final int tab_bg_selector=0x7f0200c1;
-        public static final int tab_bg_unselected=0x7f0200c2;
-        public static final int tab_divider=0x7f0200c3;
-        public static final int tab_focus=0x7f0200c4;
-        public static final int tab_gallery=0x7f0200c5;
-        public static final int tab_home=0x7f0200c6;
-        public static final int tab_indicator=0x7f0200c7;
-        public static final int tab_indicator_ab_ldltheme=0x7f0200c8;
-        public static final int tab_ldlcam=0x7f0200c9;
-        public static final int tab_press=0x7f0200ca;
-        public static final int tab_search=0x7f0200cb;
-        public static final int tab_selected=0x7f0200cc;
-        public static final int tab_selected_focused_ldltheme=0x7f0200cd;
-        public static final int tab_selected_ldltheme=0x7f0200ce;
-        public static final int tab_selected_pressed_ldltheme=0x7f0200cf;
-        public static final int tab_text_selector=0x7f0200d0;
-        public static final int tab_tweet=0x7f0200d1;
-        public static final int tab_unselected=0x7f0200d2;
-        public static final int tab_unselected_focused_ldltheme=0x7f0200d3;
-        public static final int tab_unselected_pressed_ldltheme=0x7f0200d4;
-        public static final int video_icon=0x7f0200d5;
-        public static final int vpi__tab_indicator=0x7f0200d6;
-        public static final int vpi__tab_selected_focused_holo=0x7f0200d7;
-        public static final int vpi__tab_selected_holo=0x7f0200d8;
-        public static final int vpi__tab_selected_pressed_holo=0x7f0200d9;
-        public static final int vpi__tab_unselected_focused_holo=0x7f0200da;
-        public static final int vpi__tab_unselected_holo=0x7f0200db;
-        public static final int vpi__tab_unselected_pressed_holo=0x7f0200dc;
+        public static final int btn_default_disabled_focused_holo_dark=0x7f02000e;
+        public static final int btn_default_disabled_holo_dark=0x7f02000f;
+        public static final int btn_default_focused_holo_dark=0x7f020010;
+        public static final int btn_default_holo_dark=0x7f020011;
+        public static final int btn_default_normal_holo_dark=0x7f020012;
+        public static final int btn_default_pressed_holo_dark=0x7f020013;
+        public static final int button=0x7f020014;
+        public static final int empty_photo=0x7f020015;
+        public static final int feather_center_button_background=0x7f020016;
+        public static final int feather_center_button_background_normal=0x7f020017;
+        public static final int feather_center_button_background_pressed=0x7f020018;
+        public static final int feather_clear_btn=0x7f020019;
+        public static final int feather_clear_btn_pressed=0x7f02001a;
+        public static final int feather_clear_button_selector=0x7f02001b;
+        public static final int feather_color_mask_shape=0x7f02001c;
+        public static final int feather_crop_arrow=0x7f02001d;
+        public static final int feather_crop_arrow_selected=0x7f02001e;
+        public static final int feather_crop_arrow_unselected=0x7f02001f;
+        public static final int feather_crop_checkbox_selected=0x7f020020;
+        public static final int feather_crop_checkbox_unselected=0x7f020021;
+        public static final int feather_default_button_background=0x7f020022;
+        public static final int feather_default_button_background_normal=0x7f020023;
+        public static final int feather_default_button_background_pressed=0x7f020024;
+        public static final int feather_default_glow=0x7f020025;
+        public static final int feather_default_tool_background_normal=0x7f020026;
+        public static final int feather_default_tool_background_pressed=0x7f020027;
+        public static final int feather_default_tool_selector=0x7f020028;
+        public static final int feather_draw_panel_hline=0x7f020029;
+        public static final int feather_draw_rubber=0x7f02002a;
+        public static final int feather_effect_thumb_selected_image=0x7f02002b;
+        public static final int feather_external_filters_template=0x7f02002c;
+        public static final int feather_external_filters_template_free=0x7f02002d;
+        public static final int feather_external_filters_template_shadow=0x7f02002e;
+        public static final int feather_film_center=0x7f02002f;
+        public static final int feather_film_left=0x7f020030;
+        public static final int feather_flip_horizontal=0x7f020031;
+        public static final int feather_flip_vertical=0x7f020032;
+        public static final int feather_getmore_image_bg=0x7f020033;
+        public static final int feather_getmore_image_bg_normal=0x7f020034;
+        public static final int feather_getmore_image_bg_pressed=0x7f020035;
+        public static final int feather_getmore_layout_bg=0x7f020036;
+        public static final int feather_getmore_layout_bg_inverted=0x7f020037;
+        public static final int feather_hidden_edit_text=0x7f020038;
+        public static final int feather_hidden_textfield=0x7f020039;
+        public static final int feather_highlight_crop_handle=0x7f02003a;
+        public static final int feather_highlight_delete_button=0x7f02003b;
+        public static final int feather_horizontal_line=0x7f02003c;
+        public static final int feather_icon=0x7f02003d;
+        public static final int feather_icon_backlight_enhance=0x7f02003e;
+        public static final int feather_icon_balance_enhance=0x7f02003f;
+        public static final int feather_icon_enhance=0x7f020040;
+        public static final int feather_icon_night_enhance=0x7f020041;
+        public static final int feather_image_shadow=0x7f020042;
+        public static final int feather_infoscreen_background=0x7f020043;
+        public static final int feather_left_button_background=0x7f020044;
+        public static final int feather_left_button_background_normal=0x7f020045;
+        public static final int feather_left_button_background_pressed=0x7f020046;
+        public static final int feather_lens_button_background_normal=0x7f020047;
+        public static final int feather_lens_button_background_pressed=0x7f020048;
+        public static final int feather_lens_button_background_selector=0x7f020049;
+        public static final int feather_lens_normal=0x7f02004a;
+        public static final int feather_loading_background=0x7f02004b;
+        public static final int feather_main_image_background_repeater=0x7f02004c;
+        public static final int feather_meme_button_bg=0x7f02004d;
+        public static final int feather_more_btn=0x7f02004e;
+        public static final int feather_more_btn_pressed=0x7f02004f;
+        public static final int feather_more_button_selector=0x7f020050;
+        public static final int feather_options_panel_background2=0x7f020051;
+        public static final int feather_overscroll_edge=0x7f020052;
+        public static final int feather_overscroll_glow=0x7f020053;
+        public static final int feather_panel_bottom_indicator=0x7f020054;
+        public static final int feather_panel_top_indicator=0x7f020055;
+        public static final int feather_plugin_border_default_thumb=0x7f020056;
+        public static final int feather_plugin_filter_andy_thumb=0x7f020057;
+        public static final int feather_plugin_filter_aqua_thumb=0x7f020058;
+        public static final int feather_plugin_filter_bw_thumb=0x7f020059;
+        public static final int feather_plugin_filter_edgewood_thumb=0x7f02005a;
+        public static final int feather_plugin_filter_joecool_thumb=0x7f02005b;
+        public static final int feather_plugin_filter_purple_thumb=0x7f02005c;
+        public static final int feather_plugin_filter_sancarmen_thumb=0x7f02005d;
+        public static final int feather_plugin_filter_sepia_thumb=0x7f02005e;
+        public static final int feather_plugin_filter_singe_thumb=0x7f02005f;
+        public static final int feather_plugin_filter_softfocus_thumb=0x7f020060;
+        public static final int feather_plugin_filter_thresh_thumb=0x7f020061;
+        public static final int feather_plugin_filter_undefined_thumb=0x7f020062;
+        public static final int feather_plugin_filter_vivid_thumb=0x7f020063;
+        public static final int feather_resize_knob=0x7f020064;
+        public static final int feather_ribbon_bg=0x7f020065;
+        public static final int feather_right_button_background=0x7f020066;
+        public static final int feather_right_button_background_normal=0x7f020067;
+        public static final int feather_right_button_background_pressed=0x7f020068;
+        public static final int feather_rotate_left=0x7f020069;
+        public static final int feather_rotate_right=0x7f02006a;
+        public static final int feather_rounded_black_shape=0x7f02006b;
+        public static final int feather_shadow_down=0x7f02006c;
+        public static final int feather_shadow_left=0x7f02006d;
+        public static final int feather_shadow_right=0x7f02006e;
+        public static final int feather_shadow_top=0x7f02006f;
+        public static final int feather_shadow_up=0x7f020070;
+        public static final int feather_spinner_white_16=0x7f020071;
+        public static final int feather_spinner_white_76=0x7f020072;
+        public static final int feather_sticker_pack_background=0x7f020073;
+        public static final int feather_sticker_pack_background_free_more=0x7f020074;
+        public static final int feather_sticker_pack_background_more=0x7f020075;
+        public static final int feather_sticker_paper_center_1=0x7f020076;
+        public static final int feather_sticker_paper_center_2=0x7f020077;
+        public static final int feather_sticker_paper_left_edge=0x7f020078;
+        public static final int feather_stickers_big_right_paper=0x7f020079;
+        public static final int feather_stickers_panel_background_lower=0x7f02007a;
+        public static final int feather_stickers_panel_background_upper=0x7f02007b;
+        public static final int feather_straighten_knob=0x7f02007c;
+        public static final int feather_tool_icon_adjust=0x7f02007d;
+        public static final int feather_tool_icon_blemish=0x7f02007e;
+        public static final int feather_tool_icon_borders=0x7f02007f;
+        public static final int feather_tool_icon_brightness=0x7f020080;
+        public static final int feather_tool_icon_contrast=0x7f020081;
+        public static final int feather_tool_icon_crop=0x7f020082;
+        public static final int feather_tool_icon_draw=0x7f020083;
+        public static final int feather_tool_icon_effects=0x7f020084;
+        public static final int feather_tool_icon_enhance=0x7f020085;
+        public static final int feather_tool_icon_meme=0x7f020086;
+        public static final int feather_tool_icon_redeye=0x7f020087;
+        public static final int feather_tool_icon_saturation=0x7f020088;
+        public static final int feather_tool_icon_sharpen=0x7f020089;
+        public static final int feather_tool_icon_stickers=0x7f02008a;
+        public static final int feather_tool_icon_temperature=0x7f02008b;
+        public static final int feather_tool_icon_text=0x7f02008c;
+        public static final int feather_tool_icon_whiten=0x7f02008d;
+        public static final int feather_toolbar_background=0x7f02008e;
+        public static final int feather_toolbar_button=0x7f02008f;
+        public static final int feather_toolbar_button_normal=0x7f020090;
+        public static final int feather_toolbar_button_pressed=0x7f020091;
+        public static final int feather_top_success_checkmark=0x7f020092;
+        public static final int feather_update_arrow=0x7f020093;
+        public static final int feather_wheel_background_bottom=0x7f020094;
+        public static final int feather_wheel_background_top=0x7f020095;
+        public static final int feather_wheel_radio_background_shape=0x7f020096;
+        public static final int feather_workspace_indicator=0x7f020097;
+        public static final int feather_workspace_page_background_normal=0x7f020098;
+        public static final int feather_workspace_page_background_selected=0x7f020099;
+        public static final int frame1=0x7f02009a;
+        public static final int frame2=0x7f02009b;
+        public static final int gallery_portfolio_button=0x7f02009c;
+        public static final int gallery_video_button=0x7f02009d;
+        public static final int grey_button1=0x7f02009e;
+        public static final int header_about=0x7f02009f;
+        public static final int header_background=0x7f0200a0;
+        public static final int home_normal=0x7f0200a1;
+        public static final int home_selected=0x7f0200a2;
+        public static final int ic_action_search=0x7f0200a3;
+        public static final int ic_cam_s=0x7f0200a4;
+        public static final int ic_cam_u=0x7f0200a5;
+        public static final int ic_filters=0x7f0200a6;
+        public static final int ic_gallery_s=0x7f0200a7;
+        public static final int ic_gallery_u=0x7f0200a8;
+        public static final int ic_home_s=0x7f0200a9;
+        public static final int ic_home_u=0x7f0200aa;
+        public static final int ic_launcher=0x7f0200ab;
+        public static final int ic_stickers=0x7f0200ac;
+        public static final int ic_tweet_s=0x7f0200ad;
+        public static final int ic_tweet_u=0x7f0200ae;
+        public static final int list_focused_ldltheme=0x7f0200af;
+        public static final int list_item_background=0x7f0200b0;
+        public static final int menu_dropdown_panel_ldltheme=0x7f0200b1;
+        public static final int menu_hardkey_panel_ldltheme=0x7f0200b2;
+        public static final int nav_shadow=0x7f0200b3;
+        public static final int navigation_next_item=0x7f0200b4;
+        public static final int photogrid_list_selector=0x7f0200b5;
+        public static final int pressed_background_ldltheme=0x7f0200b6;
+        public static final int progress_bg_ldltheme=0x7f0200b7;
+        public static final int progress_horizontal_ldltheme=0x7f0200b8;
+        public static final int progress_primary_ldltheme=0x7f0200b9;
+        public static final int progress_secondary_ldltheme=0x7f0200ba;
+        public static final int sample1=0x7f0200bb;
+        public static final int search_normal=0x7f0200bc;
+        public static final int search_selected=0x7f0200bd;
+        public static final int selectable_background_ldltheme=0x7f0200be;
+        public static final int spinner_ab_default_ldltheme=0x7f0200bf;
+        public static final int spinner_ab_disabled_ldltheme=0x7f0200c0;
+        public static final int spinner_ab_focused_ldltheme=0x7f0200c1;
+        public static final int spinner_ab_pressed_ldltheme=0x7f0200c2;
+        public static final int spinner_background_ab_ldltheme=0x7f0200c3;
+        public static final int splash=0x7f0200c4;
+        public static final int tab_bg=0x7f0200c5;
+        public static final int tab_bg_selected=0x7f0200c6;
+        public static final int tab_bg_selector=0x7f0200c7;
+        public static final int tab_bg_unselected=0x7f0200c8;
+        public static final int tab_divider=0x7f0200c9;
+        public static final int tab_focus=0x7f0200ca;
+        public static final int tab_gallery=0x7f0200cb;
+        public static final int tab_home=0x7f0200cc;
+        public static final int tab_indicator=0x7f0200cd;
+        public static final int tab_indicator_ab_ldltheme=0x7f0200ce;
+        public static final int tab_ldlcam=0x7f0200cf;
+        public static final int tab_press=0x7f0200d0;
+        public static final int tab_search=0x7f0200d1;
+        public static final int tab_selected=0x7f0200d2;
+        public static final int tab_selected_focused_ldltheme=0x7f0200d3;
+        public static final int tab_selected_ldltheme=0x7f0200d4;
+        public static final int tab_selected_pressed_ldltheme=0x7f0200d5;
+        public static final int tab_text_selector=0x7f0200d6;
+        public static final int tab_tweet=0x7f0200d7;
+        public static final int tab_unselected=0x7f0200d8;
+        public static final int tab_unselected_focused_ldltheme=0x7f0200d9;
+        public static final int tab_unselected_pressed_ldltheme=0x7f0200da;
+        public static final int video_icon=0x7f0200db;
+        public static final int vpi__tab_indicator=0x7f0200dc;
+        public static final int vpi__tab_selected_focused_holo=0x7f0200dd;
+        public static final int vpi__tab_selected_holo=0x7f0200de;
+        public static final int vpi__tab_selected_pressed_holo=0x7f0200df;
+        public static final int vpi__tab_unselected_focused_holo=0x7f0200e0;
+        public static final int vpi__tab_unselected_holo=0x7f0200e1;
+        public static final int vpi__tab_unselected_pressed_holo=0x7f0200e2;
     }
     public static final class id {
         public static final int ListViewId=0x7f050099;
@@ -1831,6 +1838,9 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         /**  image stuff 
          */
         public static final int AppTheme_FullScreen=0x7f0b0053;
+        /**  Buttons 
+         */
+        public static final int ButtonLDLMarketing=0x7f0b005d;
         /**  style for the action bar tab text 
          */
         public static final int CustomTabTextStyle=0x7f0b0056;
@@ -1839,6 +1849,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
     <style name="CustomTheme" parent="android:style/Theme.Holo">
         <item name="android:actionBarStyle">@style/MyActionBar</item>
     </style>
+
+
+
+
+
     
  testing stuff 
          */
@@ -1856,7 +1871,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         
          */
         public static final int FeatherDefaultTheme=0x7f0b0000;
-        public static final int FeatherDefaultTheme_Custom=0x7f0b005e;
+        public static final int FeatherDefaultTheme_Custom=0x7f0b0065;
         public static final int FeatherEffectThumbText=0x7f0b000f;
         public static final int FeatherFilterPack=0x7f0b0037;
         public static final int FeatherHiddenEditText=0x7f0b0030;
@@ -1928,6 +1943,13 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int FeatherWheel=0x7f0b0032;
         public static final int FeatherWheelRadio=0x7f0b0033;
         public static final int FeatherWorkspaceContainer=0x7f0b0010;
+        /**  Home page buttons 
+         */
+        public static final int HomeButton_default=0x7f0b005f;
+        public static final int HomeButton_large=0x7f0b0060;
+        public static final int HomeButton_small=0x7f0b0062;
+        public static final int HomeButton_xlarge=0x7f0b0061;
+        public static final int ImageButtonLDLMarketing=0x7f0b005e;
         public static final int LargeTitleTheme=0x7f0b004b;
         public static final int LdlWhiteTheme=0x7f0b004f;
         public static final int ListItem=0x7f0b0051;
@@ -1939,6 +1961,9 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
          */
         public static final int MyActionBar=0x7f0b004d;
         public static final int PhotoGridLayout=0x7f0b0054;
+        /**  Portfolio buttons 
+         */
+        public static final int Portfolio_Button=0x7f0b0063;
         public static final int TextAppearance=0x7f0b003e;
         public static final int TextAppearance_Medium=0x7f0b0041;
         public static final int TextAppearance_TabPageIndicator=0x7f0b0048;
@@ -1964,10 +1989,15 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         <item name="android:textColor">@color/darkgrey</item>
     </style>
 
+
+
+
+
+
     
          */
         public static final int WindowTitleBackground=0x7f0b004e;
-        public static final int app_theme=0x7f0b005d;
+        public static final int app_theme=0x7f0b0064;
         public static final int ldltheme_DropDownListView=0x7f0b0059;
         public static final int ldltheme_DropDownNav=0x7f0b005a;
         public static final int ldltheme_PopupMenu=0x7f0b0058;
@@ -1979,6 +2009,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         <item name="android:backgroundSplit">@drawable/ab_bottom_solid_ldltheme</item>
         <item name="android:progressBarStyle">@style/ldltheme_ProgressBar</item>
     </style>
+
+
+
+
+
     
          */
         public static final int ldltheme_transparent_ActionBar=0x7f0b0057;
