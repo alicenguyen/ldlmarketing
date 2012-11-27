@@ -5,7 +5,7 @@
 
     <!-- need api 11 for action bar -->
     <uses-sdk
-        android:minSdkVersion="11"
+        android:minSdkVersion="8"
         android:targetSdkVersion="16" />
 
     <uses-permission android:name="android.permission.INTERNET" />

@@ -5,31 +5,29 @@
     <style name="LargeTitleTheme">
         <item name="android:windowTitleSize">40dip</item>
     </style>
+
     <!--
-         testing stuff
-    <style name="CustomTheme" parent="android:style/Theme.Holo">
-        <item name="android:actionBarStyle">@style/MyActionBar</item>
-    </style>
-    -->
-    <!-- testing stuff -->
+    ENABLE FOR API 11 ACTION BAR (1)
     <style name="CustomTheme" parent="@style/Theme.ldltheme">
         <item name="android:actionBarStyle">@style/MyActionBar</item>
         <item name="android:actionMenuTextColor">@color/white</item>
     </style>
-    <!-- style for the action bar backgrounds -->
+    -->
+    <!--
+    ENABLE FOR API 11 ACTION BAR (2)
     <style name="MyActionBar" parent="@android:style/Widget.Holo.ActionBar">
         <item name="android:background">@drawable/header_background</item>
         <item name="android:actionBarDivider">@color/darkgrey</item>
     </style>
+    -->
 
-    <!--
-         <style name="CustomTheme" parent="android:style/Theme">
+    <style name="CustomTheme" parent="android:style/Theme">
         <item name="android:windowTitleSize">75px</item>
         <item name="android:windowTitleBackgroundStyle">@style/WindowTitleBackground</item>
         <item name="android:windowBackground">@color/custom_theme_color</item>
         <item name="android:colorBackground">@color/custom_theme_color</item>
         <item name="android:textColor">@color/darkgrey</item>
-    </style>    -->
+    </style>
 
     <style name="WindowTitleBackground">
         <item name="android:background">@android:color/transparent</item>
@@ -65,7 +63,7 @@
         <item name="android:listSelector">@drawable/photogrid_list_selector</item>
     </style>
 
-    <!-- EXPERIMENTING -->
+    <!-- EXPERIMENTING / API 11 and above action bar -->
     <style name="Theme.ldltheme" parent="@android:style/Theme.Holo">
         <item name="android:actionBarItemBackground">@drawable/selectable_background_ldltheme</item>
         <item name="android:popupMenuStyle">@style/ldltheme_PopupMenu</item>
@@ -86,7 +84,7 @@
         <item name="android:backgroundStacked">@drawable/ab_stacked_solid_ldltheme</item>
         <item name="android:backgroundSplit">@drawable/ab_bottom_solid_ldltheme</item>
         <item name="android:progressBarStyle">@style/ldltheme_ProgressBar</item>
-    </style>
+    </style>
     -->
 
     <style name="ldltheme_transparent_ActionBar" parent="@android:style/Widget.Holo.Light.ActionBar">
@@ -187,8 +185,9 @@
         <item name="android:textColor">@color/white</item>
         <item name="android:textSize">20sp</item>
     </style>
-    
-<!--     Services
+
+    <!--
+         Services
     <style name="Services">
         <item> name=""</item>
         <item> name=""</item>
@@ -197,6 +196,7 @@
         <item> name=""</item>
         <item> name=""</item>
         <item> name=""</item>
-    </style> -->
+    </style>
+    -->
 
 </resources>
