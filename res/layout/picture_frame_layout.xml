@@ -12,7 +12,7 @@
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@+strings/share_string" />
+        android:text="@string/share_string" />
 
     <!--
          <Button
@@ -32,7 +32,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:text="@+strings/save_string" />
+        android:text="@string/save_string" />
 
     <ImageView
         android:id="@+id/imgView"
