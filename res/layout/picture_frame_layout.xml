@@ -6,44 +6,43 @@
     android:background="@drawable/background_black"
     android:gravity="top"
     android:orientation="vertical" >
-
-    <Button
-        android:id="@+id/share_button"
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
+
+    <RelativeLayout
+        android:id="@+id/button_layout"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/share_string" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true" >
 
-    <!--
-         <Button
-        android:id="@+id/buttonLoadPicture"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_weight="0"
-        android:text="Load Picture" >
-    </Button>
-    -->
+        <Button
+            android:id="@+id/share_button"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/share_string" />
+
+        <Button
+            android:id="@+id/save_button"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="@string/save_string" />
 
-    <Button
-        android:id="@+id/save_button"
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:text="@string/save_string" />
-
+    </RelativeLayout>
+
+
     <ImageView
         android:id="@+id/imgView"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/button1" />
-
+        android:layout_below="@+id/button_layout"
+        android:layout_above="@+id/horizontalScrollView1" />
+
     <HorizontalScrollView
         android:id="@+id/horizontalScrollView1"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
