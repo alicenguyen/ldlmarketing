@@ -4,12 +4,12 @@
 	android:layout_height="wrap_content" 
 	android:layout_width="fill_parent"
 	android:gravity="center_horizontal" 
-	android:background="@drawable/header_background">
+	android:background="@color/transparent">
 
 	<TextView 
 		android:id="@+id/title" 
 		android:gravity="center_vertical" 
-		android:textSize="40px"
+		android:textSize="42px"
 		android:layout_width="wrap_content"
 		android:textColor="#FFFFFF" 
 	    android:layout_height="match_parent"/>

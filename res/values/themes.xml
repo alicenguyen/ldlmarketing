@@ -1,4 +1,135 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <!-- Feather theme -->
     <style name="FeatherDefaultTheme.Custom" parent="FeatherDefaultTheme" />
+
+    <!-- Sherlock  Sample themes -->
+    <style name="Theme.Styled" parent="Theme.Sherlock.Light.DarkActionBar">
+        <item name="actionBarStyle">@style/Widget.Styled.ActionBar</item>
+        <item name="android:actionBarStyle">@style/Widget.Styled.ActionBar</item>
+        
+    </style>
+
+    <style name="Widget.Styled.ActionBar" parent="Widget.Sherlock.Light.ActionBar.Solid.Inverse">
+        <item name="background">@drawable/sherlock_bg_striped</item>
+        <item name="android:background">@drawable/sherlock_bg_striped</item>
+        <item name="backgroundSplit">@drawable/sherlock_bg_striped_split</item>
+        <item name="android:backgroundSplit">@drawable/sherlock_bg_striped_split</item>
+    </style>
+
+    <!-- Custom Sherlock themes -->
+    <style name="LDLTheme.pink" parent="Theme.Sherlock.Light.DarkActionBar">
+        <item name="actionBarStyle">@style/LDLTheme.pink.Widget</item>
+        <item name="android:actionBarStyle">@style/LDLTheme.pink.Widget</item>
+        <item name="actionBarTabStyle">@style/LDLActionBarTabStyle</item>
+    </style>
+
+    <style name="LDLTheme.pink.Widget" parent="Widget.Sherlock.ActionBar">
+        <item name="android:background">@drawable/ab_solid_ldltheme</item>
+        <item name="background">@drawable/ab_solid_ldltheme</item>
+        <item name="android:titleTextStyle">@style/LDLTheme.pink.ActionBar.Title</item>
+        <item name="android:showDividers">beginning</item>
+    <item name="android:divider">@color/darkgrey</item>
+
+        
+    </style>
+
+    <style name="LDLTheme.pink.ActionBar.Title" parent="TextAppearance.Sherlock.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="LDLActionBarTabStyle" parent="Widget.Sherlock.Light.ActionBar.TabBar">
+    <item name="android:background">@drawable/ab_transparent_ldltheme</item>
+   <item name="android:gravity">center</item>
+   <item name="android:layout_gravity">center</item>
+    <item name="android:paddingLeft">10dp</item>
+    <item name="android:paddingRight">10dp</item>
+</style>
+
+    <!-- etc -->
+    <style name="AppTheme" parent="android:Theme.Light" />
+
+    <style name="LargeTitleTheme">
+        <item name="android:windowTitleSize">40dip</item>
+    </style>
+    <!--
+    ENABLE FOR API 11 ACTION BAR (1)
+    <style name="CustomTheme" parent="@style/Theme.ldltheme">
+        <item name="android:actionBarStyle">@style/MyActionBar</item>
+        <item name="android:actionMenuTextColor">@color/white</item>
+    </style>
+    -->
+    <!--
+    ENABLE FOR API 11 ACTION BAR (2)
+    <style name="MyActionBar" parent="@android:style/Widget.Holo.ActionBar">
+        <item name="android:background">@drawable/header_background</item>
+        <item name="android:actionBarDivider">@color/darkgrey</item>
+    </style>
+    -->
+    <!-- and DISABLE THIS PART FOR API 11 ACTION BAR -->
+    <style name="CustomTheme" parent="android:style/Theme">
+        <item name="android:windowTitleSize">75px</item>
+        <item name="android:windowTitleBackgroundStyle">@style/WindowTitleBackground</item>
+        <item name="android:windowBackground">@color/custom_theme_color</item>
+        <item name="android:colorBackground">@color/custom_theme_color</item>
+        <item name="android:textColor">@color/darkgrey</item>
+    </style>
+    <!-- EXPERIMENTING / API 11 and up action bar -->
+    <style name="Theme.ldltheme" parent="@android:style/Theme.Holo">
+        <item name="android:actionBarItemBackground">@drawable/selectable_background_ldltheme</item>
+        <item name="android:popupMenuStyle">@style/ldltheme_PopupMenu</item>
+        <item name="android:dropDownListViewStyle">@style/ldltheme_DropDownListView</item>
+        <item name="android:actionDropDownStyle">@style/ldltheme_DropDownNav</item>
+        <item name="android:panelBackground">@drawable/menu_hardkey_panel_ldltheme</item>
+        <item name="android:actionBarTabTextStyle">@style/CustomTabTextStyle</item>
+    </style>
+
+    <!-- photo pages -->
+    <style name="AppTheme.FullScreen" parent="@android:style/Theme.Black.NoTitleBar.Fullscreen" />
+
+    <!-- style for the action bar tab text -->
+    <style name="CustomTabTextStyle" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <!--
+    <style name="ldltheme_solid_ActionBar" parent="@android:style/Widget.Holo.Light.ActionBar.Solid">
+        <item name="android:background">@drawable/ab_solid_ldltheme</item>
+        <item name="android:backgroundStacked">@drawable/ab_stacked_solid_ldltheme</item>
+        <item name="android:backgroundSplit">@drawable/ab_bottom_solid_ldltheme</item>
+        <item name="android:progressBarStyle">@style/ldltheme_ProgressBar</item>
+    </style>
+    -->
+
+    <style name="ldltheme_transparent_ActionBar" parent="@android:style/Widget.Holo.Light.ActionBar">
+        <item name="android:background">@drawable/ab_transparent_ldltheme</item>
+        <item name="android:progressBarStyle">@style/ldltheme_ProgressBar</item>
+    </style>
+
+    <style name="ldltheme_PopupMenu" parent="@android:style/Widget.Holo.Light.ListPopupWindow">
+        <item name="android:popupBackground">@drawable/menu_dropdown_panel_ldltheme</item>
+    </style>
+
+    <style name="ldltheme_DropDownListView" parent="@android:style/Widget.Holo.Light.ListView.DropDown">
+        <item name="android:listSelector">@drawable/selectable_background_ldltheme</item>
+    </style>
+
+    <style name="ldltheme_DropDownNav" parent="@android:style/Widget.Holo.Light.Spinner">
+        <item name="android:background">@drawable/spinner_background_ab_ldltheme</item>
+        <item name="android:popupBackground">@drawable/menu_dropdown_panel_ldltheme</item>
+        <item name="android:dropDownSelector">@drawable/selectable_background_ldltheme</item>
+    </style>
+
+    <style name="ldltheme_ProgressBar" parent="@android:style/Widget.Holo.Light.ProgressBar.Horizontal">
+        <item name="android:progressDrawable">@drawable/progress_horizontal_ldltheme</item>
+    </style>
+
+    <!-- this style is only referenced in a Light.DarkActionBar based theme -->
+    <style name="Theme.ldltheme.widget" parent="@android:style/Theme.Holo">
+        <item name="android:popupMenuStyle">@style/ldltheme_PopupMenu</item>
+        <item name="android:dropDownListViewStyle">@style/ldltheme_DropDownListView</item>
+    </style>
+
 </resources>

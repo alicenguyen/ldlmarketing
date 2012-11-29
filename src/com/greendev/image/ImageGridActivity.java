@@ -18,31 +18,24 @@
  *    StrictMode configurations
  */
 
-
 package com.greendev.image;
 
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.StrictMode;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
-import android.view.Window;
-import android.widget.TextView;
 
 import com.greendev.flickr.MyParcelableObjectArray;
 import com.greendev.ldlmarketing.BuildConfig;
-import com.greendev.ldlmarketing.R;
-import com.greendev.ldlmarketing.R.id;
-import com.greendev.ldlmarketing.R.layout;
+import com.greendev.ldlmarketing.LDLFragmentActivity;
 
 /**
  * Simple FragmentActivity to hold the main {@link ImageGridFragment} and not
  * much else.
  */
-public class ImageGridActivity extends FragmentActivity {
+public class ImageGridActivity extends LDLFragmentActivity {
 	private static final String TAG = "ImageGridActivity";
 	private static String[] TYPE_URL;
 	private static String[] TYPE_URL_THUMB;
@@ -58,9 +51,9 @@ public class ImageGridActivity extends FragmentActivity {
 
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		StrictMode.ThreadPolicy policy = new StrictMode.
-				ThreadPolicy.Builder().permitAll().build();
-				StrictMode.setThreadPolicy(policy);
+		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder()
+				.permitAll().build();
+		StrictMode.setThreadPolicy(policy);
 		/**
 		 * get the intent called from an Activity (eg. Portfolio.class or
 		 * PhotoActivity)
@@ -69,28 +62,20 @@ public class ImageGridActivity extends FragmentActivity {
 		Log.i("Intent from: ", intent.toString());
 		/** get the bundle from the intent **/
 		Bundle b = intent.getExtras();
-	
+
+		TITLE = b.getString("TITLE");
+
+		// set title in action bar
+		setActionBarTitle(TITLE);
 
 		// PhotoActivityGridFragment
 		key = b.getString("key");
 		if (key == null)
 			key = "hi";
 
-		TITLE = b.getString("TITLE");
-
 		if (BuildConfig.DEBUG) {
 			Utils.enableStrictMode();
 		}
-	
-		Typeface font = Typeface.createFromAsset(getAssets(), "Eurostib.TTF");
-
-		/* Custom title bar */
-//		requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
-//		setContentView(R.layout.about_layout);
-//		getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.title);
-//		TextView titleBar = (TextView) findViewById(R.id.title);
-//		titleBar.setTypeface(font);
-//		titleBar.setText(TITLE);
 
 		if (getSupportFragmentManager().findFragmentByTag(TAG) == null) {
 			final FragmentTransaction ft = getSupportFragmentManager()
@@ -102,35 +87,38 @@ public class ImageGridActivity extends FragmentActivity {
 			// PhotoActivityGridFragment
 			if (key.equals("PhotoActivityGridFragment")) {
 				TYPE_URL_THUMB = b.getStringArray("TYPE_URL_THUMB");
-				
+
 				/* Parcelable Objects from PhotoActivity */
 				setImgsParcel = b.getParcelable("SET_IMGS");
-				if (setImgsParcel != null){
+				if (setImgsParcel != null) {
 					setImgs = setImgsParcel.getArray();
-					if(setImgs == null) setImgs = Images.boothDesignsThumbUrls;}
-				else setImgs = Images.campaignsThumbUrls;
-				
+					if (setImgs == null)
+						setImgs = Images.boothDesignsThumbUrls;
+				} else
+					setImgs = Images.campaignsThumbUrls;
+
 				setThumbsParcel = b.getParcelable("SET_THUMBS");
-				if (setThumbsParcel != null){
+				if (setThumbsParcel != null) {
 					setThumbs = setThumbsParcel.getArray();
-					if(setThumbs == null) setThumbs = Images.boothDesignsThumbUrls;
-				}
-				else setThumbs = Images.campaignsThumbUrls;
-				
+					if (setThumbs == null)
+						setThumbs = Images.boothDesignsThumbUrls;
+				} else
+					setThumbs = Images.campaignsThumbUrls;
+
 				setDescsParcel = b.getParcelable("SET_DESCS");
-				if (setDescsParcel != null){
+				if (setDescsParcel != null) {
 					setDescs = setDescsParcel.getArray();
-					if(setDescs == null) setDescs = Images.boothDesignsThumbUrls;
-				}
-				else setDescs = Images.campaignsThumbUrls;
-				
-				
+					if (setDescs == null)
+						setDescs = Images.boothDesignsThumbUrls;
+				} else
+					setDescs = Images.campaignsThumbUrls;
+
 				/* test */
-				String[] test = (String[])setDescs[0];
-				for(int i = 0; i < test.length; i++){
-				Log.i("ImageGridActivity1: ", test[i].toString());
+				String[] test = (String[]) setDescs[0];
+				for (int i = 0; i < test.length; i++) {
+					Log.i("ImageGridActivity1: ", test[i].toString());
 				}
-				
+
 				ft.add(android.R.id.content, new PhotoActivityGridFragment(
 						this, ImageGridActivity.class, TYPE_URL_THUMB, setImgs,
 						setThumbs, setDescs), TAG);
@@ -138,12 +126,12 @@ public class ImageGridActivity extends FragmentActivity {
 				/** retrieve the string array extra passed */
 				TYPE_URL = b.getStringArray("TYPE_URL");
 				TYPE_URL_THUMB = b.getStringArray("TYPE_URL_THUMB");
-			
+
 				CAPTIONS = b.getStringArray("CAPTIONS");
-				
+
 				/* test */
 				Log.i("object2: ", TYPE_URL[0].toString());
-				
+
 				ft.add(android.R.id.content, new ImageGridFragment(this,
 						ImageDetailActivity.class, TYPE_URL, TYPE_URL_THUMB,
 						CAPTIONS), TAG);

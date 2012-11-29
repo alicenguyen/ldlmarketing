@@ -8,17 +8,12 @@ import android.view.Window;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
 
-public class ServicesActivity extends Activity implements OnClickListener {
+public class ServicesActivity extends LDLActivity implements OnClickListener {
 
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		// Custom Font
-		Typeface font = Typeface.createFromAsset(getAssets(), "Eurostib.TTF");
-
-		// Custom title bar
-	
 		setContentView(R.layout.services_layout);
 
 	}

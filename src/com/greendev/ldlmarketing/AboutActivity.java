@@ -1,9 +1,7 @@
 package com.greendev.ldlmarketing;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Context;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.v4.view.PagerAdapter;
@@ -16,40 +14,19 @@ import com.viewpagerindicator.LinePageIndicator;
 import com.viewpagerindicator.PageIndicator;
 
 @SuppressLint("ResourceAsColor")
-public class AboutActivity extends Activity {
+public class AboutActivity extends LDLActivity {
 	PageIndicator mIndicator;
-	Typeface font;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		// Custom Font
-		font = Typeface.createFromAsset(getAssets(), "Eurosti.TTF");
 		setContentView(R.layout.about_layout);
-
-		// customizing font in action bar
-		this.getActionBar().setDisplayShowCustomEnabled(true); // shows
-																// customized
-																// action bar
-		this.getActionBar().setDisplayShowTitleEnabled(false); // hides default
-																// title
-		// this.getActionBar().setIcon(null); // hides icon
-		LayoutInflater inflator = (LayoutInflater) this
-				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		View v = inflator.inflate(R.layout.title, null);
-		TextView title = ((TextView) v.findViewById(R.id.title));
-		title.setText(this.getTitle());
-		title.setTypeface(font);
-
-		// assign the view to the actionbar
-		this.getActionBar().setCustomView(v);
 
 		// page viewer
 		PageAdapter adapter = new PageAdapter();
 		ViewPager myPager = (ViewPager) findViewById(R.id.myfivepanelpager);
 		myPager.setAdapter(adapter);
 		myPager.setCurrentItem(0);
-		//
 
 		// Bind the title indicator to the adapter
 		LinePageIndicator lIndicator = (LinePageIndicator) findViewById(R.id.indicator);
@@ -130,11 +107,11 @@ public class AboutActivity extends Activity {
 					pos = (TextView) view.findViewById(R.id.position3);
 					break;
 				}
-				name.setTypeface(font);
+				name.setTypeface(fontreg);
 				name.setTextColor(R.color.pink);
 				name.setTextSize(22);
 
-				pos.setTypeface(font);
+				pos.setTypeface(fontreg);
 				pos.setTextColor(R.color.darkgrey);
 			}
 

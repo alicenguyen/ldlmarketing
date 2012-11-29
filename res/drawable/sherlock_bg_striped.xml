@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+   <!-- remember to include every rawable/sherlock_bg_striped_img files  -->
+<bitmap xmlns:android="http://schemas.android.com/apk/res/android"
+    android:src="@drawable/sherlock_bg_striped_img"
+    android:tileMode="repeat"
+    android:dither="true" />

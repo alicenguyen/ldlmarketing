@@ -43,7 +43,34 @@
             android:name=".AboutActivity"
             android:label="About"
             android:parentActivityName=".HomeActivity"
-            android:theme="@style/CustomTheme" >
+            android:theme="@style/LDLTheme.pink" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".HomeActivity" />
+        </activity>
+        <activity
+            android:name=".FAQActivity"
+            android:label="FAQ"
+            android:parentActivityName=".HomeActivity"
+            android:theme="@style/LDLTheme.pink" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".HomeActivity" />
+        </activity>
+         <activity
+            android:name=".ClientDirectoryActivity"
+            android:label="Client Directory"
+            android:parentActivityName=".HomeActivity"
+            android:theme="@style/LDLTheme.pink" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".HomeActivity" />
+        </activity>
+            <activity
+            android:name=".ContactActivity"
+            android:label="Contact Us"
+            android:parentActivityName=".HomeActivity"
+            android:theme="@style/LDLTheme.pink" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".HomeActivity" />
@@ -55,7 +82,9 @@
             android:name=".FrameActivity"
             android:theme="@android:style/Theme.Light.NoTitleBar" >
             <intent-filter>
-                <data android:scheme="ldlmarketing" android:host="path"/>
+                <data
+                    android:host="path"
+                    android:scheme="ldlmarketing" />
             </intent-filter>
         </activity>
         <activity
@@ -82,19 +111,20 @@
         <activity
             android:name=".GalleryActivity"
             android:label="LDL Gallery"
-            android:theme="@style/CustomTheme" >
+            android:theme="@style/LDLTheme.pink" >
         </activity>
         <activity
             android:name=".PressActivity"
             android:label="Press"
             android:parentActivityName=".HomeActivity"
-            android:theme="@style/CustomTheme" >
+            android:theme="@style/LDLTheme.pink" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".HomeActivity" />
         </activity>
 
-           <!--  android:theme="@android:style/Theme.Light.NoTitleBar" /> -->
+        <!-- android:theme="@android:style/Theme.Light.NoTitleBar" /> -->
+
 
         <!-- Alice's Twitter implementation -->
         <activity
@@ -117,42 +147,17 @@
             android:name=".YoutubeActivity"
             android:label="Videos"
             android:parentActivityName=".HomeActivity"
-            android:theme="@style/CustomTheme" />
+            android:theme="@style/LDLTheme.pink" />
         <activity
             android:name=".PhotoActivity"
-            android:theme="@style/CustomTheme" />
-        <activity
-            android:name=".ClientDirectoryActivity"
-            android:label="Client Directory"
-            android:parentActivityName=".HomeActivity"
-            android:theme="@style/CustomTheme" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".HomeActivity" />
-        </activity>
-        <activity
-            android:name=".ContactActivity"
-            android:label="Contact Us"
-            android:parentActivityName=".HomeActivity"
-            android:theme="@style/CustomTheme" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".HomeActivity" />
-        </activity>
-        <activity
-            android:name=".FAQActivity"
-            android:label="FAQ"
-            android:parentActivityName=".HomeActivity"
-            android:theme="@style/CustomTheme" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".HomeActivity" />
-        </activity>
+            android:theme="@style/LDLTheme.pink" />
+       
+    
         <activity
             android:name=".PortfolioActivity"
             android:label="Portfolio"
             android:parentActivityName=".HomeActivity"
-            android:theme="@style/CustomTheme" >
+            android:theme="@style/LDLTheme.pink" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".HomeActivity" />
@@ -161,7 +166,7 @@
             android:name=".ServicesActivity"
             android:label="Services"
             android:parentActivityName=".HomeActivity"
-            android:theme="@style/CustomTheme" >
+            android:theme="@style/LDLTheme.pink" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".HomeActivity" />
@@ -178,14 +183,14 @@
         <activity
             android:name="com.greendev.image.ImageGridActivity"
             android:parentActivityName=".HomeActivity"
-            android:theme="@style/CustomTheme" >
+            android:theme="@style/LDLTheme.pink" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".HomeActivity" />
         </activity>
         <activity
             android:name=".CampaignsGridActivity"
-            android:theme="@style/CustomTheme" >
+            android:theme="@style/LDLTheme.pink" >
         </activity>
     </application>
 

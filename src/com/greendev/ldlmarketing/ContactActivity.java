@@ -10,25 +10,12 @@ import android.view.Window;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
 
-public class ContactActivity extends Activity implements OnClickListener {
+public class ContactActivity extends LDLActivity implements OnClickListener {
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		// Custom Font
-		Typeface font = Typeface.createFromAsset(getAssets(), "Eurostib.TTF");
-
-		// customizing font in action bar
-		this.getActionBar().setDisplayShowCustomEnabled(true);
-		this.getActionBar().setDisplayShowTitleEnabled(false);
-		LayoutInflater inflator = (LayoutInflater)this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		View v = inflator.inflate(R.layout.title, null);
-		TextView title = ((TextView)v.findViewById(R.id.title));
-		title.setText(this.getTitle());
-		title.setTypeface(font);
-
 		setContentView(R.layout.contactus_layout);
-
 	}
 
 	@Override

@@ -23,7 +23,7 @@ import com.greendev.flickr.FlickrPhoto;
 import com.greendev.flickr.FlickrSet;
 import com.greendev.image.ImageGridActivity;
 
-public class PortfolioActivity extends Activity implements OnClickListener {
+public class PortfolioActivity extends LDLActivity implements OnClickListener {
 
 	private final String log_tag = "PortfolioActivity";
 	public String[] campImgs, campThumbs, campDesc;
@@ -37,40 +37,36 @@ public class PortfolioActivity extends Activity implements OnClickListener {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		// Custom Font
-		Typeface fontb = Typeface.createFromAsset(getAssets(), "Eurostib.TTF");
-		Typeface font = Typeface.createFromAsset(getAssets(), "Eurosti.TTF");
-
 		setContentView(R.layout.portfolio_layout);
 
 		// Buttons
 		View campaignsButton = findViewById(R.id.campaigns_button);
 		campaignsButton.setOnClickListener(this);  
-		((TextView) campaignsButton).setTypeface(font);
+		((TextView) campaignsButton).setTypeface(fontreg);
 
 		View pressButton = findViewById(R.id.press_button);
 		pressButton.setOnClickListener(this);
-		((TextView) pressButton).setTypeface(font);
+		((TextView) pressButton).setTypeface(fontreg);
 
 		View gdButton = findViewById(R.id.graphic_design_button);
 		gdButton.setOnClickListener(this);
-		((TextView) gdButton).setTypeface(font);
+		((TextView) gdButton).setTypeface(fontreg);
 
 		View websitesButton = findViewById(R.id.websites_button);
 		websitesButton.setOnClickListener(this);
-		((TextView) websitesButton).setTypeface(font);
+		((TextView) websitesButton).setTypeface(fontreg);
 
 		View dmButton = findViewById(R.id.digital_marketing_button);
 		dmButton.setOnClickListener(this);
-		((TextView) dmButton).setTypeface(font);
+		((TextView) dmButton).setTypeface(fontreg);
 
 		View packButton = findViewById(R.id.packaging_button);
 		packButton.setOnClickListener(this);
-		((TextView) packButton).setTypeface(font);
+		((TextView) packButton).setTypeface(fontreg);
 
 		View boothButton = findViewById(R.id.booth_designs_button);
 		boothButton.setOnClickListener(this);
-		((TextView) boothButton).setTypeface(font);
+		((TextView) boothButton).setTypeface(fontreg);
 		
 		/* Handles thread issue */
 		StrictMode.ThreadPolicy policy = new StrictMode.

@@ -14,7 +14,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class ClientDirectoryActivity extends Activity implements
+public class ClientDirectoryActivity extends LDLActivity implements
 		OnClickListener {
 	String[] names;
 	GridView gridView;
@@ -22,31 +22,13 @@ public class ClientDirectoryActivity extends Activity implements
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
-		// Custom Font
-		Typeface font = Typeface.createFromAsset(getAssets(), "Eurosti.TTF");
 		setContentView(R.layout.clientdir_layout);
-
-		// customizing font in action bar
-		this.getActionBar().setDisplayShowCustomEnabled(true);
-		this.getActionBar().setDisplayShowTitleEnabled(false);
-		LayoutInflater inflator = (LayoutInflater) this
-				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		View v = inflator.inflate(R.layout.title, null);
-		TextView title = ((TextView) v.findViewById(R.id.title));
-		title.setText(this.getTitle());
-		title.setTypeface(font);
-		// assign the view to the actionbar
-		this.getActionBar().setCustomView(v);
-
 		// List View
 		names = new String[] { "Triumph", "LBC", "Bench", "Holcim", "brieo",
 				"Bioessence", "Pasto", "zao", "Bounty Fresh Chicken" };
 		
 		gridView = (GridView) findViewById(R.id.gridView1);
-		 
 		gridView.setAdapter(new ImageAdapter(this));
- 
 	}
 
 	@Override
