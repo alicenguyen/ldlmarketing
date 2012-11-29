@@ -1265,8 +1265,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int feather_workspace_indicator=0x7f0200a1;
         public static final int feather_workspace_page_background_normal=0x7f0200a2;
         public static final int feather_workspace_page_background_selected=0x7f0200a3;
-        public static final int frame1=0x7f0200a4;
-        public static final int frame2=0x7f0200a5;
+        public static final int frame_1=0x7f0200a4;
+        public static final int frame_2=0x7f0200a5;
         public static final int gallery_portfolio_button=0x7f0200a6;
         public static final int gallery_video_button=0x7f0200a7;
         public static final int grey_button1=0x7f0200a8;
@@ -1340,8 +1340,9 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int vpi__tab_unselected_pressed_holo=0x7f0200ec;
     }
     public static final class id {
-        public static final int ListViewId=0x7f05009b;
+        public static final int ListViewId=0x7f05009f;
         public static final int RelativeLayout01=0x7f05005c;
+        public static final int RelativeLayout1=0x7f050087;
         public static final int a1=0x7f05001e;
         public static final int a2=0x7f050020;
         public static final int a3=0x7f050022;
@@ -1349,8 +1350,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int about_line1=0x7f050010;
         public static final int about_line2=0x7f050014;
         public static final int about_line3=0x7f050018;
-        public static final int action_add_item=0x7f0500a2;
-        public static final int avatar=0x7f050097;
+        public static final int action_add_item=0x7f0500a6;
+        public static final int avatar=0x7f05009b;
         public static final int aviary_infoscreen_submit=0x7f050049;
         public static final int aviary_logo=0x7f050065;
         public static final int background=0x7f05003c;
@@ -1361,7 +1362,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int bio_pic2=0x7f050011;
         public static final int bio_pic3=0x7f050015;
         public static final int blank=0x7f050037;
-        public static final int booth_designs_button=0x7f05008d;
+        public static final int booth_designs_button=0x7f050091;
         public static final int bottom=0x7f050003;
         public static final int bottombar_view_flipper=0x7f050054;
         public static final int button=0x7f050031;
@@ -1380,25 +1381,25 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int button_services=0x7f050079;
         public static final int button_videos=0x7f050071;
         public static final int buttons_background=0x7f050075;
-        public static final int campaigns_button=0x7f050087;
+        public static final int campaigns_button=0x7f05008b;
         public static final int cannister_container=0x7f05005f;
         public static final int clear_button_bottom=0x7f05005a;
         public static final int clear_button_top=0x7f050059;
-        public static final int clear_cache=0x7f0500a8;
+        public static final int clear_cache=0x7f0500ac;
         public static final int clientdir_item_image=0x7f050019;
         public static final int clientdir_item_label=0x7f05001a;
         public static final int color_mask=0x7f050032;
         public static final int container=0x7f050042;
         public static final int content=0x7f050007;
         public static final int crop_image_view=0x7f050036;
-        public static final int digital_marketing_button=0x7f05008b;
+        public static final int digital_marketing_button=0x7f05008f;
         public static final int disable_status=0x7f05003a;
         public static final int dragLayer=0x7f05004c;
         public static final int drawing_view_container=0x7f050051;
-        public static final int edit_cancel=0x7f0500a5;
-        public static final int edit_premium=0x7f0500a4;
-        public static final int edit_reset=0x7f0500a3;
-        public static final int edit_save=0x7f0500a6;
+        public static final int edit_cancel=0x7f0500a9;
+        public static final int edit_premium=0x7f0500a8;
+        public static final int edit_reset=0x7f0500a7;
+        public static final int edit_save=0x7f0500aa;
         public static final int egg_info_view=0x7f05003d;
         public static final int egg_view=0x7f05003f;
         public static final int faq1=0x7f05001d;
@@ -1410,7 +1411,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int from_camera_button=0x7f050084;
         public static final int gallery=0x7f05002c;
         public static final int gallery_color=0x7f050039;
-        public static final int graphic_design_button=0x7f050089;
+        public static final int graphic_design_button=0x7f05008d;
         public static final int gridView=0x7f05007f;
         public static final int gridView1=0x7f05001c;
         public static final int header=0x7f050008;
@@ -1419,7 +1420,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int home_title1=0x7f050073;
         public static final int home_title2=0x7f050074;
         public static final int horizontal=0x7f050005;
-        public static final int ic_launcher=0x7f050093;
+        public static final int horizontalScrollView1=0x7f05008a;
+        public static final int ic_launcher=0x7f050097;
         public static final int icon_big=0x7f050070;
         public static final int icon_small=0x7f05006e;
         public static final int image=0x7f050023;
@@ -1442,45 +1444,47 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int list=0x7f05002b;
         public static final int main_content=0x7f05004e;
         public static final int main_flipper=0x7f05004f;
-        public static final int mask=0x7f0500a1;
-        public static final int masked=0x7f0500a0;
-        public static final int menu_settings=0x7f0500a7;
-        public static final int message=0x7f050099;
-        public static final int mobile_twitter=0x7f05009a;
+        public static final int mask=0x7f0500a5;
+        public static final int masked=0x7f0500a4;
+        public static final int menu_settings=0x7f0500ab;
+        public static final int message=0x7f05009d;
+        public static final int mobile_twitter=0x7f05009e;
         public static final int myfivepanelpager=0x7f050009;
-        public static final int myvideoview=0x7f05009e;
+        public static final int myvideoview=0x7f0500a2;
         public static final int nonblank=0x7f050030;
         public static final int none=0x7f050000;
         public static final int overlay=0x7f050058;
-        public static final int packaging_button=0x7f05008c;
+        public static final int packaging_button=0x7f050090;
         public static final int pager=0x7f05007e;
         public static final int pick_image_button=0x7f050083;
         public static final int position1=0x7f05000f;
         public static final int position2=0x7f050013;
         public static final int position3=0x7f050017;
-        public static final int press_button=0x7f050088;
+        public static final int press_button=0x7f05008c;
         public static final int progress=0x7f050060;
         public static final int progress_text=0x7f050047;
         public static final int radio=0x7f050041;
         public static final int roll_open_container=0x7f05005d;
         public static final int rr=0x7f05000c;
         public static final int rubber=0x7f050033;
+        public static final int save_button=0x7f050089;
         public static final int shadow_up=0x7f050024;
+        public static final int share_button=0x7f050088;
         public static final int size_preview=0x7f05004a;
         public static final int size_preview_image=0x7f05004b;
         public static final int stickers_bottombar=0x7f050062;
         public static final int swipeview=0x7f050029;
         public static final int switcher=0x7f05005b;
-        public static final int tabsLayout=0x7f050095;
-        public static final int tabsText=0x7f050096;
+        public static final int tabsLayout=0x7f050099;
+        public static final int tabsText=0x7f05009a;
         public static final int text=0x7f050034;
         public static final int text01=0x7f050044;
-        public static final int textView1=0x7f05008f;
-        public static final int textView2=0x7f050090;
-        public static final int textView3=0x7f050091;
-        public static final int textView4=0x7f050092;
-        public static final int textView5=0x7f05008e;
-        public static final int title=0x7f050094;
+        public static final int textView1=0x7f050093;
+        public static final int textView2=0x7f050094;
+        public static final int textView3=0x7f050095;
+        public static final int textView4=0x7f050096;
+        public static final int textView5=0x7f050092;
+        public static final int title=0x7f050098;
         public static final int tool_image=0x7f05003e;
         public static final int tool_text=0x7f050040;
         public static final int toolbar=0x7f05004d;
@@ -1492,17 +1496,17 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int top_indicator_panel=0x7f05006a;
         public static final int top_shadow=0x7f05005e;
         public static final int triangle=0x7f050001;
-        public static final int tv_result=0x7f05009d;
-        public static final int tweet_button=0x7f05009c;
+        public static final int tv_result=0x7f0500a1;
+        public static final int tweet_button=0x7f0500a0;
         public static final int underline=0x7f050002;
         public static final int unused=0x7f050053;
         public static final int userVideoThumbImageView=0x7f050085;
         public static final int userVideoTitleTextView=0x7f050086;
-        public static final int username=0x7f050098;
+        public static final int username=0x7f05009c;
         public static final int version_text=0x7f050048;
         public static final int vertical=0x7f050006;
-        public static final int videosListView=0x7f05009f;
-        public static final int websites_button=0x7f05008a;
+        public static final int videosListView=0x7f0500a3;
+        public static final int websites_button=0x7f05008e;
         public static final int wheel=0x7f05006f;
         public static final int wheel_parent=0x7f05006d;
         public static final int wheel_radio=0x7f05006c;
@@ -1828,6 +1832,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int rotate=0x7f0c0019;
         public static final int saturation=0x7f0c0012;
         public static final int save=0x7f0c0011;
+        public static final int save_string=0x7f0c0087;
+        public static final int share_string=0x7f0c0086;
         public static final int sharpen=0x7f0c0054;
         public static final int square=0x7f0c0023;
         public static final int sticker_delete_message=0x7f0c004d;
@@ -1858,16 +1864,20 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         /**  style for the action bar tab text 
          */
         public static final int CustomTabTextStyle=0x7f0a0055;
-        /**  ENABLE FOR API 11 ACTION BAR (1)
+        /** 
+    ENABLE FOR API 11 ACTION BAR (1)
     <style name="CustomTheme" parent="@style/Theme.ldltheme">
         <item name="android:actionBarStyle">@style/MyActionBar</item>
         <item name="android:actionMenuTextColor">@color/white</item>
-    </style> 
- ENABLE FOR API 11 ACTION BAR (2)
+    </style>
+    
+
+    ENABLE FOR API 11 ACTION BAR (2)
     <style name="MyActionBar" parent="@android:style/Widget.Holo.ActionBar">
         <item name="android:background">@drawable/header_background</item>
         <item name="android:actionBarDivider">@color/darkgrey</item>
-    </style> 
+    </style>
+    
          */
         public static final int CustomTheme=0x7f0a004c;
         /**  main workspace 
@@ -1980,7 +1990,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int TextAppearance_ThumbText=0x7f0a0047;
         public static final int TextAppearance_Title=0x7f0a0044;
         public static final int Theme_PageIndicatorDefaults=0x7f0a0000;
-        /**  EXPERIMENTING / API 11 and above action bar
+        /**  EXPERIMENTING / API 11 and above action bar 
          */
         public static final int Theme_ldltheme=0x7f0a0054;
         /**  this style is only referenced in a Light.DarkActionBar based theme 
@@ -2002,6 +2012,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         <item name="android:backgroundSplit">@drawable/ab_bottom_solid_ldltheme</item>
         <item name="android:progressBarStyle">@style/ldltheme_ProgressBar</item>
     </style>
+
     
          */
         public static final int ldltheme_transparent_ActionBar=0x7f0a0056;

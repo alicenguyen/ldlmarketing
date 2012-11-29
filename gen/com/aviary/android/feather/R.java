@@ -413,8 +413,8 @@ public final class R {
 		public static final int toolbar_title = 0x7f050069;
 		public static final int version_text = 0x7f050048;
 		public static final int egg_view = 0x7f05003f;
-		public static final int mask = 0x7f0500a1;
-		public static final int edit_save = 0x7f0500a6;
+		public static final int mask = 0x7f0500a5;
+		public static final int edit_save = 0x7f0500aa;
 		public static final int text01 = 0x7f050044;
 		public static final int layout01 = 0x7f050043;
 		public static final int disable_status = 0x7f05003a;
@@ -450,7 +450,7 @@ public final class R {
 		public static final int overlay = 0x7f050058;
 		public static final int container = 0x7f050042;
 		public static final int horizontal = 0x7f050005;
-		public static final int edit_premium = 0x7f0500a4;
+		public static final int edit_premium = 0x7f0500a8;
 		public static final int aviary_infoscreen_submit = 0x7f050049;
 		public static final int image_container = 0x7f050050;
 		public static final int icon_small = 0x7f05006e;
@@ -463,7 +463,7 @@ public final class R {
 		public static final int cannister_container = 0x7f05005f;
 		public static final int workspace_container = 0x7f05002d;
 		public static final int switcher = 0x7f05005b;
-		public static final int edit_cancel = 0x7f0500a5;
+		public static final int edit_cancel = 0x7f0500a9;
 		public static final int main_content = 0x7f05004e;
 		public static final int lens_button = 0x7f050038;
 		public static final int toolbar_main_panel = 0x7f050064;
@@ -477,11 +477,11 @@ public final class R {
 		public static final int button_save = 0x7f050067;
 		public static final int invertCropArrow = 0x7f050035;
 		public static final int layout_loader = 0x7f050045;
-		public static final int masked = 0x7f0500a0;
+		public static final int masked = 0x7f0500a4;
 		public static final int stickers_bottombar = 0x7f050062;
 		public static final int drawing_view_container = 0x7f050051;
 		public static final int tool_text = 0x7f050040;
-		public static final int edit_reset = 0x7f0500a3;
+		public static final int edit_reset = 0x7f0500a7;
 		public static final int RelativeLayout01 = 0x7f05005c;
 		public static final int top_indicator_panel = 0x7f05006a;
 		public static final int dragLayer = 0x7f05004c;
