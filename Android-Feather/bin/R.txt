@@ -81,7 +81,7 @@ int attr shadowRadiusSmall 0x7f01000b
 int attr smallIndicatorColor 0x7f010024
 int attr smallTicks 0x7f010020
 int attr startPadding 0x7f010039
-int attr textAppearanceSmall 0x7f01001c
+int attr textAppearanceSmallFeather 0x7f01001c
 int attr textAppearanceThumbSmall 0x7f01001b
 int attr textSizeLarge 0x7f010011
 int attr textSizeMedium 0x7f010010
@@ -701,7 +701,7 @@ int styleable FeatherDefaultTheme_shadowDyMedium 13
 int styleable FeatherDefaultTheme_shadowDySmall 10
 int styleable FeatherDefaultTheme_shadowRadiusMedium 14
 int styleable FeatherDefaultTheme_shadowRadiusSmall 11
-int styleable FeatherDefaultTheme_textAppearanceSmall 28
+int styleable FeatherDefaultTheme_textAppearanceSmallFeather 28
 int styleable FeatherDefaultTheme_textAppearanceThumbSmall 27
 int styleable FeatherDefaultTheme_textSizeLarge 17
 int styleable FeatherDefaultTheme_textSizeMedium 16

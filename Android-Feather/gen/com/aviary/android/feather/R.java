@@ -490,7 +490,7 @@ containing a value of this type.
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int textAppearanceSmall=0x7f01001c;
+        public static int textAppearanceSmallFeather=0x7f01001c;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
@@ -1556,7 +1556,7 @@ containing a value of this type.
            <tr><td><code>{@link #FeatherDefaultTheme_shadowDySmall com.aviary.android.feather:shadowDySmall}</code></td><td></td></tr>
            <tr><td><code>{@link #FeatherDefaultTheme_shadowRadiusMedium com.aviary.android.feather:shadowRadiusMedium}</code></td><td></td></tr>
            <tr><td><code>{@link #FeatherDefaultTheme_shadowRadiusSmall com.aviary.android.feather:shadowRadiusSmall}</code></td><td></td></tr>
-           <tr><td><code>{@link #FeatherDefaultTheme_textAppearanceSmall com.aviary.android.feather:textAppearanceSmall}</code></td><td></td></tr>
+           <tr><td><code>{@link #FeatherDefaultTheme_textAppearanceSmallFeather com.aviary.android.feather:textAppearanceSmallFeather}</code></td><td></td></tr>
            <tr><td><code>{@link #FeatherDefaultTheme_textAppearanceThumbSmall com.aviary.android.feather:textAppearanceThumbSmall}</code></td><td></td></tr>
            <tr><td><code>{@link #FeatherDefaultTheme_textSizeLarge com.aviary.android.feather:textSizeLarge}</code></td><td></td></tr>
            <tr><td><code>{@link #FeatherDefaultTheme_textSizeMedium com.aviary.android.feather:textSizeMedium}</code></td><td></td></tr>
@@ -1586,7 +1586,7 @@ containing a value of this type.
            @see #FeatherDefaultTheme_shadowDySmall
            @see #FeatherDefaultTheme_shadowRadiusMedium
            @see #FeatherDefaultTheme_shadowRadiusSmall
-           @see #FeatherDefaultTheme_textAppearanceSmall
+           @see #FeatherDefaultTheme_textAppearanceSmallFeather
            @see #FeatherDefaultTheme_textAppearanceThumbSmall
            @see #FeatherDefaultTheme_textSizeLarge
            @see #FeatherDefaultTheme_textSizeMedium
@@ -1857,15 +1857,15 @@ containing a value of this type.
         */
         public static final int FeatherDefaultTheme_shadowRadiusSmall = 11;
         /**
-          <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#textAppearanceSmall}
+          <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#textAppearanceSmallFeather}
           attribute's value can be found in the {@link #FeatherDefaultTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name android:textAppearanceSmall
+          @attr name android:textAppearanceSmallFeather
         */
-        public static final int FeatherDefaultTheme_textAppearanceSmall = 28;
+        public static final int FeatherDefaultTheme_textAppearanceSmallFeather = 28;
         /**
           <p>This symbol is the offset where the {@link com.aviary.android.feather.R.attr#textAppearanceThumbSmall}
           attribute's value can be found in the {@link #FeatherDefaultTheme} array.
