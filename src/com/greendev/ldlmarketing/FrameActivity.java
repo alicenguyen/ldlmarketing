@@ -55,15 +55,23 @@ public class FrameActivity extends Activity implements OnClickListener {
 
 		Button frameB1 = (Button) findViewById(R.id.frame_b1);
 		frameB1.setOnClickListener(this);
+		//frameB1.setBackground((makeThumb(R.id.frame_b1)).mutate());
+		//makeThumb(frameB1, R.id.frame_b1);
 
 		Button frameB2 = (Button) findViewById(R.id.frame_b2);
 		frameB2.setOnClickListener(this);
+		//frameB2.setBackground((makeThumb(R.id.frame_b2)).mutate());
+		//makeThumb(frameB2, R.id.frame_b2);
 
 		Button frameB3 = (Button) findViewById(R.id.frame_b3);
 		frameB3.setOnClickListener(this);
+		//frameB3.setBackground((makeThumb(R.id.frame_b3)).mutate());
+		//makeThumb(frameB3, R.id.frame_b3);
 
 		Button frameB4 = (Button) findViewById(R.id.frame_b4);
 		frameB4.setOnClickListener(this);
+		//frameB4.setBackground((makeThumb(R.id.frame_b4)).mutate());
+		//makeThumb(frameB4, R.id.frame_b4);
 
 		intent = this.getIntent();
 
@@ -144,6 +152,19 @@ public class FrameActivity extends Activity implements OnClickListener {
 		}
 		
 		imgView.setImageBitmap(outpic);
+	}
+	
+	private void makeThumb(Button b, int frameIn){
+		
+		Drawable d = this.getResources().getDrawable(frameIn);
+		Rect bounds = new Rect(0, 0, 100, 100);
+		
+		b.setBackground(d);
+		//NinePatchDrawable frame = (NinePatchDrawable) d;
+		// Set its bound where you need
+		
+		//frame.setBounds(bounds);
+
 	}
 
 	private File savePhoto() {
