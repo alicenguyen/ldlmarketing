@@ -53,6 +53,18 @@ public class FrameActivity extends Activity implements OnClickListener {
 		Button saveButton = (Button) findViewById(R.id.save_button);
 		saveButton.setOnClickListener(this);
 
+		Button frameB1 = (Button) findViewById(R.id.frame_b1);
+		frameB1.setOnClickListener(this);
+
+		Button frameB2 = (Button) findViewById(R.id.frame_b2);
+		frameB2.setOnClickListener(this);
+
+		Button frameB3 = (Button) findViewById(R.id.frame_b3);
+		frameB3.setOnClickListener(this);
+
+		Button frameB4 = (Button) findViewById(R.id.frame_b4);
+		frameB4.setOnClickListener(this);
+
 		intent = this.getIntent();
 
 		if (intent.getData() != null) {
@@ -63,7 +75,7 @@ public class FrameActivity extends Activity implements OnClickListener {
 			this.picWidth = pic.getWidth();
 			this.picHeight = pic.getHeight();
 			// Load the image as a NinePatch drawable
-			int startFrame = R.drawable.frame_1;
+			int startFrame = -1;
 
 			setFrame(startFrame);
 		}
@@ -89,6 +101,22 @@ public class FrameActivity extends Activity implements OnClickListener {
 			savePhoto();
 			onDestroy();
 			break;
+
+		case R.id.frame_b1:
+			setFrame(R.drawable.frame_1);
+			break;
+			
+		case R.id.frame_b2:
+			setFrame(R.drawable.frame_2);
+			break;
+			
+		case R.id.frame_b3:
+			setFrame(R.drawable.frame_3);
+			break;
+			
+		case R.id.frame_b4:
+			setFrame(R.drawable.frame_4);
+			break;
 		}
 
 	}
@@ -98,22 +126,23 @@ public class FrameActivity extends Activity implements OnClickListener {
 		int width = picWidth + frameWidth;
 		int height = picHeight + frameHeight;
 
-		// Load the image as a NinePatch drawable
-		Drawable d = this.getResources().getDrawable(frame);
-
-		NinePatchDrawable npd = (NinePatchDrawable) d;
-		// Set its bound where you need
-		Rect npdBounds = new Rect(0, 0, width, height);
-		npd.setBounds(npdBounds);
-
 		// Finally draw on the canvas
-
 		this.outpic = Bitmap.createBitmap(width, height, Config.ARGB_8888);
 		Canvas comboImage = new Canvas(outpic);
 		// comboImage.drawBitmap(map, 0, 0, null);
-		npd.draw(comboImage);
 		comboImage.drawBitmap(pic, (frameWidth / 2), (frameHeight / 2), null);
 
+		if (frame != -1) {
+			// Load the image as a NinePatch drawable
+			Drawable d = this.getResources().getDrawable(frame);
+
+			NinePatchDrawable npd = (NinePatchDrawable) d;
+			// Set its bound where you need
+			Rect npdBounds = new Rect(0, 0, width, height);
+			npd.setBounds(npdBounds);
+			npd.draw(comboImage);
+		}
+		
 		imgView.setImageBitmap(outpic);
 	}
 
