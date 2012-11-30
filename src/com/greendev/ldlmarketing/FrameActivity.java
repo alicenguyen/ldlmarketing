@@ -53,6 +53,26 @@ public class FrameActivity extends Activity implements OnClickListener {
 		Button saveButton = (Button) findViewById(R.id.save_button);
 		saveButton.setOnClickListener(this);
 
+		Button frameB1 = (Button) findViewById(R.id.frame_b1);
+		frameB1.setOnClickListener(this);
+		//frameB1.setBackground((makeThumb(R.id.frame_b1)).mutate());
+		//makeThumb(frameB1, R.id.frame_b1);
+
+		Button frameB2 = (Button) findViewById(R.id.frame_b2);
+		frameB2.setOnClickListener(this);
+		//frameB2.setBackground((makeThumb(R.id.frame_b2)).mutate());
+		//makeThumb(frameB2, R.id.frame_b2);
+
+		Button frameB3 = (Button) findViewById(R.id.frame_b3);
+		frameB3.setOnClickListener(this);
+		//frameB3.setBackground((makeThumb(R.id.frame_b3)).mutate());
+		//makeThumb(frameB3, R.id.frame_b3);
+
+		Button frameB4 = (Button) findViewById(R.id.frame_b4);
+		frameB4.setOnClickListener(this);
+		//frameB4.setBackground((makeThumb(R.id.frame_b4)).mutate());
+		//makeThumb(frameB4, R.id.frame_b4);
+
 		intent = this.getIntent();
 
 		if (intent.getData() != null) {
@@ -63,7 +83,7 @@ public class FrameActivity extends Activity implements OnClickListener {
 			this.picWidth = pic.getWidth();
 			this.picHeight = pic.getHeight();
 			// Load the image as a NinePatch drawable
-			int startFrame = R.drawable.frame_1;
+			int startFrame = -1;
 
 			setFrame(startFrame);
 		}
@@ -89,6 +109,22 @@ public class FrameActivity extends Activity implements OnClickListener {
 			savePhoto();
 			onDestroy();
 			break;
+
+		case R.id.frame_b1:
+			setFrame(R.drawable.frame_1);
+			break;
+			
+		case R.id.frame_b2:
+			setFrame(R.drawable.frame_2);
+			break;
+			
+		case R.id.frame_b3:
+			setFrame(R.drawable.frame_3);
+			break;
+			
+		case R.id.frame_b4:
+			setFrame(R.drawable.frame_4);
+			break;
 		}
 
 	}
@@ -98,23 +134,37 @@ public class FrameActivity extends Activity implements OnClickListener {
 		int width = picWidth + frameWidth;
 		int height = picHeight + frameHeight;
 
-		// Load the image as a NinePatch drawable
-		Drawable d = this.getResources().getDrawable(frame);
-
-		NinePatchDrawable npd = (NinePatchDrawable) d;
-		// Set its bound where you need
-		Rect npdBounds = new Rect(0, 0, width, height);
-		npd.setBounds(npdBounds);
-
 		// Finally draw on the canvas
-
 		this.outpic = Bitmap.createBitmap(width, height, Config.ARGB_8888);
 		Canvas comboImage = new Canvas(outpic);
 		// comboImage.drawBitmap(map, 0, 0, null);
-		npd.draw(comboImage);
 		comboImage.drawBitmap(pic, (frameWidth / 2), (frameHeight / 2), null);
 
+		if (frame != -1) {
+			// Load the image as a NinePatch drawable
+			Drawable d = this.getResources().getDrawable(frame);
+
+			NinePatchDrawable npd = (NinePatchDrawable) d;
+			// Set its bound where you need
+			Rect npdBounds = new Rect(0, 0, width, height);
+			npd.setBounds(npdBounds);
+			npd.draw(comboImage);
+		}
+		
 		imgView.setImageBitmap(outpic);
+	}
+	
+	private void makeThumb(Button b, int frameIn){
+		
+		Drawable d = this.getResources().getDrawable(frameIn);
+		Rect bounds = new Rect(0, 0, 100, 100);
+		
+		b.setBackground(d);
+		//NinePatchDrawable frame = (NinePatchDrawable) d;
+		// Set its bound where you need
+		
+		//frame.setBounds(bounds);
+
 	}
 
 	private File savePhoto() {
