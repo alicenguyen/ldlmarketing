@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.greendev.ldlmarketing"
     android:versionCode="1"
@@ -5,7 +6,7 @@
 
     <!-- need api 11 for action bar -->
     <uses-sdk
-        android:minSdkVersion="8"
+        android:minSdkVersion="7"
         android:targetSdkVersion="16" />
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -44,9 +45,9 @@
             android:label="About"
             android:parentActivityName=".HomeActivity"
             android:theme="@style/LDLTheme.pink" >
-            <meta-data
+            <!-- <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".HomeActivity" />
+                android:value=".HomeActivity" /> -->
         </activity>
         <activity
             android:name=".FAQActivity"

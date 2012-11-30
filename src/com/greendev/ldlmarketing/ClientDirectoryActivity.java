@@ -2,6 +2,8 @@ package com.greendev.ldlmarketing;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -36,7 +38,6 @@ public class ClientDirectoryActivity extends LDLActivity implements
 				new Client(R.drawable.clientdir_pasto, NAMES[6], DESC[6]),
 				new Client(R.drawable.clientdir_zao, NAMES[7], DESC[7]),
 				new Client(R.drawable.clientdir_bountyfresh, NAMES[8], DESC[8]),
-
 		};
 
 		ClientAdapter adapter = new ClientAdapter(this,
@@ -45,11 +46,13 @@ public class ClientDirectoryActivity extends LDLActivity implements
 		listview.setAdapter(adapter);
 	}
 
-	@Override
-	public void onClick(View arg0) {
-		// TODO Auto-generated method stub
-
-	}
+//	@Override
+//	  protected void onListItemClick(ListView l, View v, int position, long id) {
+//		String url = URL[position];
+//		Uri uri = Uri.parse(url);
+//		 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+//		 startActivity(intent);
+//	  }
 
 	public class ClientAdapter extends ArrayAdapter<Client> {
 		Context context;
@@ -128,6 +131,12 @@ public class ClientDirectoryActivity extends LDLActivity implements
 	
 	private static String[] URL = new String[] {
 		"http://www.triumph.com/ph/en/index.html", "http://www.lbcexpress.com/US/Home", "http://www.bench.com.ph/","http://www.holcim.us/","https://www.brieo.com/","http://www.bioessence.ph/","https://plus.google.com/104262187216332462787/about?gl=us&hl=en","http://www.asiatatlerdining.com/philippines/zao","http://www.bountyfreshchicken.com/"};
+
+	@Override
+	public void onClick(View arg0) {
+		// TODO Auto-generated method stub
+		
+	}
 
 
 

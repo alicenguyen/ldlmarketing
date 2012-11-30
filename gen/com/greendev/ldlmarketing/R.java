@@ -2893,7 +2893,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int AppTheme_FullScreen=0x7f0b00ba;
         /**  Buttons 
          */
-        public static final int ButtonLDLMarketing=0x7f0b00a6;
+        public static final int ButtonLDLMarketing=0x7f0b00a8;
         /**  style for the action bar tab text 
          */
         public static final int CustomTabTextStyle=0x7f0b00bb;
@@ -2939,7 +2939,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int FeatherDefaultTheme=0x7f0b005d;
         /**  Feather theme 
          */
-        public static final int FeatherDefaultTheme_Custom=0x7f0b00af;
+        public static final int FeatherDefaultTheme_Custom=0x7f0b00b1;
         public static final int FeatherEffectThumbText=0x7f0b006c;
         public static final int FeatherFilterPack=0x7f0b0094;
         public static final int FeatherHiddenEditText=0x7f0b008d;
@@ -3013,29 +3013,49 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int FeatherWorkspaceContainer=0x7f0b006d;
         /**  Home page buttons 
          */
-        public static final int HomeButton_default=0x7f0b00a8;
-        public static final int HomeButton_large=0x7f0b00a9;
-        public static final int HomeButton_small=0x7f0b00ab;
-        public static final int HomeButton_xlarge=0x7f0b00aa;
-        public static final int ImageButtonLDLMarketing=0x7f0b00a7;
-        public static final int LDLActionBarTabStyle=0x7f0b00b5;
-        /**  Custom Sherlock themes 
+        public static final int HomeButton_default=0x7f0b00aa;
+        public static final int HomeButton_large=0x7f0b00ab;
+        public static final int HomeButton_small=0x7f0b00ad;
+        public static final int HomeButton_xlarge=0x7f0b00ac;
+        public static final int ImageButtonLDLMarketing=0x7f0b00a9;
+        public static final int LDLActionBarTabStyle=0x7f0b00a3;
+        /**   Custom Sherlock themes
          */
-        public static final int LDLTheme_pink=0x7f0b00b2;
-        public static final int LDLTheme_pink_ActionBar_Title=0x7f0b00b4;
-        public static final int LDLTheme_pink_Widget=0x7f0b00b3;
+        public static final int LDLTheme_pink=0x7f0b00b4;
+        /**  style for the action bar 
+         */
+        public static final int LDLTheme_pink_ActionBar=0x7f0b00b5;
+        /**      Custom Sherlock themes
+    <style name="LDLTheme.pink" parent="Theme.Sherlock.Light.DarkActionBar">
+        <item name="actionBarStyle">@style/LDLTheme.pink.ActionBar</item>
+        <item name="android:actionBarStyle">@style/LDLTheme.pink.ActionBar</item>
+        <item name="actionBarTabStyle">@style/LDLActionBarTabStyle</item>
+    </style>
+
+    style for the action bar
+    <style name="LDLTheme.pink.ActionBar" parent="Widget.Sherlock.ActionBar">
+        <item name="android:background">@drawable/ab_solid_ldltheme</item>
+        <item name="background">@drawable/ab_solid_ldltheme</item>
+        <item name="android:titleTextStyle">@style/LDLTheme.pink.ActionBar.Title</item>
+        <item name="android:showDividers">beginning</item>
+    <item name="android:divider">@color/darkgrey</item>
+
+        
+    </style> 
+         */
+        public static final int LDLTheme_pink_ActionBar_Title=0x7f0b00a2;
         public static final int LargeTitleTheme=0x7f0b00b7;
-        public static final int ListItem=0x7f0b00a4;
-        public static final int ListItemLabel=0x7f0b00a5;
+        public static final int ListItem=0x7f0b00a6;
+        public static final int ListItemLabel=0x7f0b00a7;
         /**  list stuff for 'Client Directory' 
          */
-        public static final int ListStyle=0x7f0b00a3;
+        public static final int ListStyle=0x7f0b00a5;
         /**  photo pages 
          */
-        public static final int PhotoGridLayout=0x7f0b00ad;
+        public static final int PhotoGridLayout=0x7f0b00af;
         /**  Portfolio buttons 
          */
-        public static final int Portfolio_Button=0x7f0b00ac;
+        public static final int Portfolio_Button=0x7f0b00ae;
         public static final int Sherlock___TextAppearance_Small=0x7f0b004a;
         public static final int Sherlock___Theme=0x7f0b004e;
         public static final int Sherlock___Theme_DarkActionBar=0x7f0b0050;
@@ -3085,7 +3105,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int Theme_Sherlock_NoActionBar=0x7f0b0055;
         /**  Sherlock  Sample themes 
          */
-        public static final int Theme_Styled=0x7f0b00b0;
+        public static final int Theme_Styled=0x7f0b00b2;
         /**  EXPERIMENTING / API 11 and up action bar 
          */
         public static final int Theme_ldltheme=0x7f0b00b9;
@@ -3140,10 +3160,10 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int Widget_Sherlock_SearchAutoCompleteTextView=0x7f0b0034;
         public static final int Widget_Sherlock_Spinner_DropDown_ActionBar=0x7f0b0024;
         public static final int Widget_Sherlock_TextView_SpinnerItem=0x7f0b0032;
-        public static final int Widget_Styled_ActionBar=0x7f0b00b1;
+        public static final int Widget_Styled_ActionBar=0x7f0b00b3;
         public static final int Widget_TabPageIndicator=0x7f0b005a;
-        public static final int WindowTitleBackground=0x7f0b00a2;
-        public static final int app_theme=0x7f0b00ae;
+        public static final int WindowTitleBackground=0x7f0b00a4;
+        public static final int app_theme=0x7f0b00b0;
         public static final int ldltheme_DropDownListView=0x7f0b00be;
         public static final int ldltheme_DropDownNav=0x7f0b00bf;
         public static final int ldltheme_PopupMenu=0x7f0b00bd;

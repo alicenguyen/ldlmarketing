@@ -18,21 +18,20 @@
         <item name="android:backgroundSplit">@drawable/sherlock_bg_striped_split</item>
     </style>
 
-    <!-- Custom Sherlock themes -->
+   <!--  Custom Sherlock themes-->
     <style name="LDLTheme.pink" parent="Theme.Sherlock.Light.DarkActionBar">
-        <item name="actionBarStyle">@style/LDLTheme.pink.Widget</item>
-        <item name="android:actionBarStyle">@style/LDLTheme.pink.Widget</item>
+        <item name="actionBarStyle">@style/LDLTheme.pink.ActionBar</item>
+        <item name="android:actionBarStyle">@style/LDLTheme.pink.ActionBar</item>
         <item name="actionBarTabStyle">@style/LDLActionBarTabStyle</item>
     </style>
 
-    <style name="LDLTheme.pink.Widget" parent="Widget.Sherlock.ActionBar">
+    <!-- style for the action bar -->
+    <style name="LDLTheme.pink.ActionBar" parent="Widget.Sherlock.ActionBar">
         <item name="android:background">@drawable/ab_solid_ldltheme</item>
         <item name="background">@drawable/ab_solid_ldltheme</item>
         <item name="android:titleTextStyle">@style/LDLTheme.pink.ActionBar.Title</item>
         <item name="android:showDividers">beginning</item>
     <item name="android:divider">@color/darkgrey</item>
-
-        
     </style>
 
     <style name="LDLTheme.pink.ActionBar.Title" parent="TextAppearance.Sherlock.Widget.ActionBar.Title">
@@ -46,7 +45,7 @@
    <item name="android:layout_gravity">center</item>
     <item name="android:paddingLeft">10dp</item>
     <item name="android:paddingRight">10dp</item>
-</style>
+</style> 
 
     <!-- etc -->
     <style name="AppTheme" parent="android:Theme.Light" />
