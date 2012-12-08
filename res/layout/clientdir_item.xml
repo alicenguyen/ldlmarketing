@@ -34,16 +34,20 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:ellipsize="marquee"
-            android:paddingBottom="15dp"
+            android:paddingBottom="2dp"
             android:singleLine="true"
-            android:text="My Application" />
+            android:text="My Application"
+             android:textColor="@color/blue"
+             android:textSize="18sp"/>
 
         <TextView
             android:id="@+id/desc_view"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:singleLine="false"
-            android:text="Simple application that shows how to use RelativeLayout" />
+            android:textColor="@color/darkgrey"
+            android:text="Simple application that shows how to use RelativeLayout" 
+            android:textSize="15sp"/>
     </LinearLayout>
 
 </RelativeLayout>
