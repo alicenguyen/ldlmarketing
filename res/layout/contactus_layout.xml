@@ -20,17 +20,7 @@
             android:orientation="vertical"
             android:padding="10dp" 
             >
-            
-            <TextView
-                android:id="@+id/ctitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:text="@string/contact_s"
-                android:textSize="25sp"
-                android:textStyle="bold"
-                android:textColor="@color/lightpink" />
-            
+
             <TextView
                 android:id="@+id/hotline_t"
                 android:layout_width="wrap_content"
