@@ -25,5 +25,12 @@
     <string name="faq_a3">Yes, it is possible to contract LDL on a per project basis but the client will reap more benefits under the retainer agreement.</string>
     <string name="share_string">Share&amp;Save</string>
     <string name="save_string">Save</string>
+    <string name="contact_s">Contact Us</string>
+    <string name="hotline_s">Hotline</string>
+    <string name="hotline_number">0915 912 2289</string>
+    <string name="email_s">Email</string>
+    <string name="email_add">info@leungdeleonmarketing.com</string>
+    <string name="address_s">Address</string>
+    <string name="address_full">Unit 1-A Edifice Studios, G.E.E. Building, 2301 Pasong Tamo Extension, Makati 1231</string>
 
 </resources>

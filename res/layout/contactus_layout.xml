@@ -6,13 +6,113 @@
     android:background="@drawable/background_white">
 
     <!-- The content -->
-
-    <LinearLayout
-        android:id="@+id/content"
+
+    <ScrollView
+        android:id="@+id/scrollView1"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_below="@+id/header" >
-    </LinearLayout>
+        android:layout_height="fill_parent">
+        <LinearLayout
+            android:id="@+id/content"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@+id/header"
+            android:animateLayoutChanges="true"
+            android:orientation="vertical"
+            android:padding="10dp" 
+            >
+            
+            <TextView
+                android:id="@+id/ctitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="@string/contact_s"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:textColor="@color/lightpink" />
+            
+            <TextView
+                android:id="@+id/hotline_t"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="3dp"
+                android:text="@string/hotline_s"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:textColor="@color/darkgrey" />
+            
+            <TextView
+                android:id="@+id/hotline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="15dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="5dp"
+                android:paddingTop="10dp"
+                android:text="@string/hotline_number"
+                android:textColor="@color/darkgrey" />
 
+            <!-- pink line -->
+
+            <ImageView
+                android:layout_width="350dp"
+                android:layout_height="1dp"
+                android:layout_gravity="center"
+                android:background="@color/lightpink" />
+
+            <TextView
+                android:id="@+id/email_t"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="3dp"
+                android:paddingTop="2dp"
+                android:text="@string/email_s"
+                android:textSize="17sp"
+                android:textStyle="bold" 
+                android:textColor="@color/darkgrey"/>
+
+            <TextView
+                android:id="@+id/email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="15dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="5dp"
+                android:paddingTop="10dp"
+                android:text="@string/email_add" 
+                android:textColor="@color/darkgrey"/>
+
+            <!-- pink line -->
+
+            <ImageView
+                android:layout_width="350dp"
+                android:layout_height="1dp"
+                android:layout_gravity="center"
+                android:background="@color/lightpink" />
+
+            <TextView
+                android:id="@+id/address_t"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="3dp"
+                android:paddingTop="2dp"
+                android:text="@string/address_s"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:textColor="@color/darkgrey" />
+
+            <TextView
+                android:id="@+id/address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="15dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="5dp"
+                android:paddingTop="10dp"
+                android:text="@string/address_full" 
+                android:textColor="@color/darkgrey"/>
+
+        </LinearLayout>
+    </ScrollView>
 
 </RelativeLayout>
