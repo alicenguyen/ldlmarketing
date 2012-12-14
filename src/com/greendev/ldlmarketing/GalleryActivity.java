@@ -140,10 +140,6 @@ public class GalleryActivity extends Activity implements OnClickListener {
 				setOfSetThumbs[i] = aSetOfThumbs;
 			}
 		}
-
-		Log.i("PhotoActivity->setThumbUrls: ", setsThumbUrls.length + "");
-		Log.i("PhotoActivity->setNames: ", setNames.length + "");
-
 	}
 
 	/*
@@ -156,7 +152,7 @@ public class GalleryActivity extends Activity implements OnClickListener {
 				|| setName.equals("websites")
 				|| setName.equals("digital marketing")
 				|| setName.equals("packaging")
-				|| setName.equals("booth designs");
+				|| setName.equals("booth");
 	}
 
 	@Override
@@ -172,11 +168,14 @@ public class GalleryActivity extends Activity implements OnClickListener {
 			Intent intent = new Intent(this, ImageGridActivity.class);
 			Bundle b = new Bundle();
 
+			b.putStringArray("SETS_NAMES", setNames);
 			b.putStringArray("TYPE_URL_THUMB", setsThumbUrls);
 			b.putStringArray("CAPTIONS", setsThumbUrls);
+			
+			/*  the key to enter the PhotoActivtityGridFragment*/
 			b.putString("key", "PhotoActivityGridFragment");
 			b.putString("TITLE", "LDL Gallery");
-
+			
 			b.putParcelable("SET_IMGS", new MyParcelableObjectArray(this,
 					setOfSetImgs));
 			b.putParcelable("SET_THUMBS", new MyParcelableObjectArray(this,

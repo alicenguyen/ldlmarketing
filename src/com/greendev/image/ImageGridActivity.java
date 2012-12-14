@@ -40,6 +40,7 @@ public class ImageGridActivity extends LDLFragmentActivity {
 	private static String[] TYPE_URL;
 	private static String[] TYPE_URL_THUMB;
 	private static String[] CAPTIONS;
+	private static String[] SETS_NAMES;
 	private static String TITLE;
 	private String key;
 	private MyParcelableObjectArray setImgsParcel;
@@ -54,18 +55,16 @@ public class ImageGridActivity extends LDLFragmentActivity {
 		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder()
 				.permitAll().build();
 		StrictMode.setThreadPolicy(policy);
-		/**
-		 * get the intent called from an Activity (eg. Portfolio.class or
-		 * PhotoActivity)
-		 **/
+		
+		 /* get the intent called from an Activity (eg. Portfolio.class or
+		    PhotoActivity)*/
 		Intent intent = getIntent();
-		Log.i("Intent from: ", intent.toString());
 		/** get the bundle from the intent **/
+		
 		Bundle b = intent.getExtras();
 
-		TITLE = b.getString("TITLE");
-
 		// set title in action bar
+		TITLE = b.getString("TITLE");
 		setActionBarTitle(TITLE);
 
 		// PhotoActivityGridFragment
@@ -80,14 +79,13 @@ public class ImageGridActivity extends LDLFragmentActivity {
 		if (getSupportFragmentManager().findFragmentByTag(TAG) == null) {
 			final FragmentTransaction ft = getSupportFragmentManager()
 					.beginTransaction();
-			// ft.add(android.R.id.content, new ImageGridFragment(this,
-			// ImageDetailActivity.class, TYPE_URL, TYPE_URL_THUMB), TAG);
 
 			// If calling this activity for the Gallery images then use
 			// PhotoActivityGridFragment
 			if (key.equals("PhotoActivityGridFragment")) {
 				TYPE_URL_THUMB = b.getStringArray("TYPE_URL_THUMB");
-
+				SETS_NAMES = b.getStringArray("SETS_NAMES");
+				
 				/* Parcelable Objects from PhotoActivity */
 				setImgsParcel = b.getParcelable("SET_IMGS");
 				if (setImgsParcel != null) {
@@ -112,25 +110,17 @@ public class ImageGridActivity extends LDLFragmentActivity {
 						setDescs = Images.boothDesignsThumbUrls;
 				} else
 					setDescs = Images.campaignsThumbUrls;
-
-				/* test */
-				String[] test = (String[]) setDescs[0];
-				for (int i = 0; i < test.length; i++) {
-					Log.i("ImageGridActivity1: ", test[i].toString());
-				}
+				
 
 				ft.add(android.R.id.content, new PhotoActivityGridFragment(
 						this, ImageGridActivity.class, TYPE_URL_THUMB, setImgs,
-						setThumbs, setDescs), TAG);
+						setThumbs, setDescs, SETS_NAMES), TAG);
 			} else {
 				/** retrieve the string array extra passed */
 				TYPE_URL = b.getStringArray("TYPE_URL");
 				TYPE_URL_THUMB = b.getStringArray("TYPE_URL_THUMB");
 
 				CAPTIONS = b.getStringArray("CAPTIONS");
-
-				/* test */
-				Log.i("object2: ", TYPE_URL[0].toString());
 
 				ft.add(android.R.id.content, new ImageGridFragment(this,
 						ImageDetailActivity.class, TYPE_URL, TYPE_URL_THUMB,

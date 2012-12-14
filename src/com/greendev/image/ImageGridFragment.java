@@ -21,14 +21,10 @@ import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.StrictMode;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
-import android.util.TypedValue;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -44,12 +40,6 @@ import android.widget.Toast;
 import com.greendev.image.ImageCache.ImageCacheParams;
 import com.greendev.ldlmarketing.BuildConfig;
 import com.greendev.ldlmarketing.R;
-import com.greendev.ldlmarketing.R.dimen;
-import com.greendev.ldlmarketing.R.drawable;
-import com.greendev.ldlmarketing.R.id;
-import com.greendev.ldlmarketing.R.layout;
-import com.greendev.ldlmarketing.R.menu;
-import com.greendev.ldlmarketing.R.string;
 
 /**
  * The main fragment that powers the ImageGridActivity screen. Fairly straight
@@ -66,12 +56,12 @@ public class ImageGridFragment extends Fragment implements
 
 	private int mImageThumbSize;
 	private int mImageThumbSpacing;
-	private ImageAdapter mAdapter;
+	protected ImageAdapter mAdapter;
 	protected ImageWorker mImageFetcher;
 	private Context context;
 	Class<?> detailClass;
 	private String[] typeUrls;
-	private String[] typeUrlsThumbs;
+	protected String[] typeUrlsThumbs; 
 	private String[] captions;
 
 	/**
@@ -351,7 +341,6 @@ public class ImageGridFragment extends Fragment implements
 
 			return imageView;
 		}
-
 		/**
 		 * Sets the item height. Useful for when we know the column width so the
 		 * height can be set to match.
@@ -363,7 +352,7 @@ public class ImageGridFragment extends Fragment implements
 				return;
 			}
 			mItemHeight = height;
-			mImageViewLayoutParams = new GridView.LayoutParams(
+			mImageViewLayoutParams = new GridView.LayoutParams( 
 					LayoutParams.MATCH_PARENT, mItemHeight);
 			((ImageResizer) mImageFetcher).setImageSize(height);
 			notifyDataSetChanged();
