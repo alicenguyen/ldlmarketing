@@ -4,7 +4,7 @@
     <color name="tabMedium">#2B2B2B</color>
     <color name="tabDark">#000000</color>
     <color name="tabTransparent">#10ffffff</color>
-    <color name="pink">#EC4FD5</color>
+
     <color name="lightpink">#F69CE7</color>
     <color name="white">#FFFFFF</color>
     <color name="grey">#ababab</color>
@@ -16,7 +16,12 @@
     <color name="darkgrey1">#0D0D0D</color>
     <color name="offwhite">#F4F4F4</color>
     <color name="blue">#59A1E3</color>
-
+    <color name="green">#679B00</color>
+    <color name="purple">#5F2580</color>
+    <color name="yellow">#FFC200</color>
+    <color name="red">#9E0016</color>
+    <color name="pink">#EC4FD5</color>
+    
     <!-- image stuff -->
     <color name="grid_state_pressed">#BB7dbcd3</color>
     <color name="grid_state_focused">#777dbcd3</color>
