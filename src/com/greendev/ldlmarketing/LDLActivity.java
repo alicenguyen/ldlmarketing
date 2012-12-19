@@ -23,6 +23,7 @@ public class LDLActivity extends SherlockActivity {
 	private final int BOTTOM = 0;
 	private boolean useLogo = false;
 	private boolean showHomeUp = false;
+	protected ActionBar ab;
   
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -32,21 +33,24 @@ public class LDLActivity extends SherlockActivity {
 		fontreg = Typeface.createFromAsset(getAssets(), "Eurosti.TTF");
 		fontbold = Typeface.createFromAsset(getAssets(), "Eurostib.TTF");
 
-        final ActionBar ab = getSupportActionBar();
+        ab = getSupportActionBar();
        
 		// padding around ic_launcher
 		//ItemView view = (ItemView) findViewById(android.R.id.home);
 		//((View) view).setPadding(LEFT, TOP, RIGHT, BOTTOM);
 
 		 // customizing font in action bar
-		 ab.setDisplayShowCustomEnabled(true);
-		 ab.setDisplayShowTitleEnabled(false);
+	 
+		ab.setDisplayShowTitleEnabled(false);
+        ab.setDisplayShowHomeEnabled(false);
+        ab.setDisplayShowCustomEnabled(true);
+        
 		 LayoutInflater inflator = (LayoutInflater) this
 		 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		 View v = inflator.inflate(R.layout.title, null);
 		 TextView title = ((TextView) v.findViewById(R.id.title));
 		 title.setText(this.getTitle());
-		 title.setTypeface(fontreg);
+		 title.setTypeface(fontbold);
 		 // assign the view to the actionbar
 		 ab.setCustomView(v);   
 	}

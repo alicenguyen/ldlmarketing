@@ -44,13 +44,13 @@
             android:theme="@android:style/Theme.Light.NoTitleBar" />
         <activity
             android:name=".AboutActivity"
-            android:label="About"
+            android:label="   About"
             android:parentActivityName=".HomeActivity"
             android:theme="@style/LDLTheme.pink" >
         </activity>
         <activity
             android:name=".FAQActivity"
-            android:label="FAQ"
+            android:label="   FAQ"
             android:parentActivityName=".HomeActivity"
             android:theme="@style/LDLTheme.pink" >
             <meta-data
@@ -59,7 +59,7 @@
         </activity>
         <activity
             android:name=".ClientDirectoryActivity"
-            android:label="Client Directory"
+            android:label="   Client Directory"
             android:parentActivityName=".HomeActivity"
             android:theme="@style/LDLTheme.pink" >
             <meta-data
@@ -68,7 +68,7 @@
         </activity>
         <activity
             android:name=".ContactActivity"
-            android:label="Contact Us"
+            android:label="   Contact Us"
             android:parentActivityName=".HomeActivity"
             android:theme="@style/LDLTheme.pink" >
             <meta-data
@@ -80,7 +80,8 @@
             android:label="LDL Cam" />
         <activity
             android:name=".FrameActivity"
-            android:theme="@android:style/Theme.Light.NoTitleBar" >
+            android:theme="@style/LDLTheme.pink"
+            android:label="   Frames" >
             <intent-filter>
                 <data
                     android:host="path"
@@ -110,13 +111,13 @@
 
         <activity
             android:name=".GalleryActivity"
-            android:label="LDL Gallery"
+            android:label="   LDL Gallery"
             android:screenOrientation="portrait"
             android:theme="@style/LDLTheme.pink" >
         </activity>
         <activity
             android:name=".PressActivity"
-            android:label="Press"
+            android:label="   Press"
             android:parentActivityName=".HomeActivity"
             android:theme="@style/LDLTheme.pink" >
             <meta-data
@@ -130,7 +131,7 @@
         <!-- Alice's Twitter implementation -->
         <activity
             android:name=".TwitterActivity2"
-            android:label="LDLTwitter"
+            android:label="   LDLTwitter"
             android:launchMode="singleInstance" >
 
             <!-- Used for OAuth callback -->
@@ -147,7 +148,7 @@
         </activity>
         <activity
             android:name=".YoutubeActivity"
-            android:label="Videos"
+            android:label="   Videos"
             android:parentActivityName=".HomeActivity"
             android:theme="@style/LDLTheme.pink" />
         <activity
@@ -155,7 +156,7 @@
             android:theme="@style/LDLTheme.pink" />
         <activity
             android:name=".PortfolioActivity"
-            android:label="Portfolio"
+            android:label="   Portfolio"
             android:parentActivityName=".HomeActivity"
             android:theme="@style/LDLTheme.pink" >
             <meta-data
@@ -164,7 +165,7 @@
         </activity>
         <activity
             android:name=".ServicesActivity"
-            android:label="Services"
+            android:label="   Services"
             android:parentActivityName=".HomeActivity"
             android:theme="@style/LDLTheme.pink" >
             <meta-data

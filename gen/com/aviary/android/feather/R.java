@@ -594,11 +594,11 @@ public final class R {
 		public static final int tool_image = 0x7f050079;
 		public static final int background = 0x7f050077;
 		public static final int feather_meme_dumb = 0x7f050091;
-		public static final int masked = 0x7f0500e7;
+		public static final int masked = 0x7f0500e5;
 		public static final int RelativeLayout01 = 0x7f050097;
 		public static final int container = 0x7f05007d;
 		public static final int switcher = 0x7f050096;
-		public static final int edit_reset = 0x7f0500ea;
+		public static final int edit_reset = 0x7f0500e8;
 		public static final int size_preview = 0x7f050085;
 		public static final int button1 = 0x7f050060;
 		public static final int size_preview_image = 0x7f050086;
@@ -607,7 +607,7 @@ public final class R {
 		public static final int nonblank = 0x7f05006b;
 		public static final int top_indicator_main = 0x7f0500a1;
 		public static final int clear_button_bottom = 0x7f050095;
-		public static final int edit_cancel = 0x7f0500ec;
+		public static final int edit_cancel = 0x7f0500ea;
 		public static final int unused = 0x7f05008e;
 		public static final int horizontal = 0x7f050015;
 		public static final int blank = 0x7f050072;
@@ -633,7 +633,7 @@ public final class R {
 		public static final int swipeview = 0x7f050064;
 		public static final int list = 0x7f050066;
 		public static final int home_small_progress = 0x7f050081;
-		public static final int edit_premium = 0x7f0500eb;
+		public static final int edit_premium = 0x7f0500e9;
 		public static final int toolbar_main_panel = 0x7f05009f;
 		public static final int shadow_up = 0x7f05005f;
 		public static final int roll_open_container = 0x7f050098;
@@ -643,14 +643,14 @@ public final class R {
 		public static final int button = 0x7f05006c;
 		public static final int wheel_radio = 0x7f0500a7;
 		public static final int main_flipper = 0x7f05008a;
-		public static final int edit_save = 0x7f0500ed;
+		public static final int edit_save = 0x7f0500eb;
 		public static final int aviary_infoscreen_submit = 0x7f050084;
 		public static final int invisible_text_2 = 0x7f050092;
 		public static final int workspace_container = 0x7f050068;
 		public static final int stickers_bottombar = 0x7f05009d;
 		public static final int button_save = 0x7f0500a2;
 		public static final int button3 = 0x7f050062;
-		public static final int mask = 0x7f0500e8;
+		public static final int mask = 0x7f0500e6;
 	}
 	public static final class drawable {
 		public static final int feather_workspace_page_background_normal = 0x7f020115;
@@ -699,11 +699,11 @@ public final class R {
 		public static final int feather_default_button_background = 0x7f02009f;
 		public static final int feather_plugin_filter_sepia_thumb = 0x7f0200db;
 		public static final int feather_tool_icon_redeye = 0x7f020104;
-		public static final int ic_filters = 0x7f020125;
+		public static final int ic_filters = 0x7f020126;
 		public static final int feather_plugin_filter_thresh_thumb = 0x7f0200de;
 		public static final int feather_plugin_filter_singe_thumb = 0x7f0200dc;
 		public static final int feather_rounded_black_shape = 0x7f0200e8;
-		public static final int ic_stickers = 0x7f02012b;
+		public static final int ic_stickers = 0x7f02012d;
 		public static final int feather_plugin_filter_sancarmen_thumb = 0x7f0200da;
 		public static final int feather_getmore_image_bg = 0x7f0200b0;
 		public static final int feather_tool_icon_meme = 0x7f020103;
@@ -735,7 +735,7 @@ public final class R {
 		public static final int feather_color_mask_shape = 0x7f020099;
 		public static final int ab_solid_feather_ldl = 0x7f020002;
 		public static final int feather_infoscreen_background = 0x7f0200c0;
-		public static final int xfeather_toolbar_background = 0x7f020168;
+		public static final int xfeather_toolbar_background = 0x7f02016a;
 		public static final int feather_film_left = 0x7f0200ad;
 		public static final int feather_workspace_indicator = 0x7f020114;
 		public static final int feather_shadow_up = 0x7f0200ed;
@@ -787,7 +787,7 @@ public final class R {
 		public static final int feather_options_panel_background2 = 0x7f0200ce;
 		public static final int feather_panel_top_indicator = 0x7f0200d2;
 		public static final int feather_ribbon_bg = 0x7f0200e2;
-		public static final int xfeather_tool_icon_enhance = 0x7f020167;
+		public static final int xfeather_tool_icon_enhance = 0x7f020169;
 		public static final int feather_crop_checkbox_selected = 0x7f02009d;
 		public static final int feather_plugin_filter_edgewood_thumb = 0x7f0200d7;
 		public static final int feather_overscroll_glow = 0x7f0200d0;

@@ -8,7 +8,6 @@
     <style name="Theme.Styled" parent="Theme.Sherlock.Light.DarkActionBar">
         <item name="actionBarStyle">@style/Widget.Styled.ActionBar</item>
         <item name="android:actionBarStyle">@style/Widget.Styled.ActionBar</item>
-        
     </style>
 
     <style name="Widget.Styled.ActionBar" parent="Widget.Sherlock.Light.ActionBar.Solid.Inverse">
@@ -16,13 +15,15 @@
         <item name="android:background">@drawable/sherlock_bg_striped</item>
         <item name="backgroundSplit">@drawable/sherlock_bg_striped_split</item>
         <item name="android:backgroundSplit">@drawable/sherlock_bg_striped_split</item>
+      
     </style>
 
-   <!--  Custom Sherlock themes-->
+    <!-- Custom Sherlock themes -->
     <style name="LDLTheme.pink" parent="Theme.Sherlock.Light.DarkActionBar">
         <item name="actionBarStyle">@style/LDLTheme.pink.ActionBar</item>
         <item name="android:actionBarStyle">@style/LDLTheme.pink.ActionBar</item>
-        <item name="actionBarTabStyle">@style/LDLActionBarTabStyle</item>
+        <!-- <item name="actionBarTabStyle">@style/LDLActionBarTabStyle</item> -->
+        <item name="android:actionBarTabStyle">@style/MyActionBarTabStyle</item>
     </style>
 
     <!-- style for the action bar -->
@@ -31,8 +32,11 @@
         <item name="background">@drawable/ab_solid_ldltheme</item>
         <item name="android:titleTextStyle">@style/LDLTheme.pink.ActionBar.Title</item>
         <item name="android:showDividers">beginning</item>
-    <item name="android:divider">@color/darkgrey</item>
+        <item name="android:divider">@color/darkgrey</item>
+        
     </style>
+
+
 
     <style name="LDLTheme.pink.ActionBar.Title" parent="TextAppearance.Sherlock.Widget.ActionBar.Title">
         <item name="android:textColor">@color/white</item>
@@ -40,12 +44,12 @@
     </style>
 
     <style name="LDLActionBarTabStyle" parent="Widget.Sherlock.Light.ActionBar.TabBar">
-    <item name="android:background">@drawable/ab_transparent_ldltheme</item>
-   <item name="android:gravity">center</item>
-   <item name="android:layout_gravity">center</item>
-    <item name="android:paddingLeft">10dp</item>
-    <item name="android:paddingRight">10dp</item>
-</style> 
+        <item name="android:background">@drawable/ab_transparent_ldltheme</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+    </style>
 
     <!-- etc -->
     <style name="AppTheme" parent="android:Theme.Light" />
@@ -58,14 +62,14 @@
     <style name="CustomTheme" parent="@style/Theme.ldltheme">
         <item name="android:actionBarStyle">@style/MyActionBar</item>
         <item name="android:actionMenuTextColor">@color/white</item>
-    </style>
+    </style>
     -->
     <!--
     ENABLE FOR API 11 ACTION BAR (2)
     <style name="MyActionBar" parent="@android:style/Widget.Holo.ActionBar">
         <item name="android:background">@drawable/header_background</item>
         <item name="android:actionBarDivider">@color/darkgrey</item>
-    </style>
+    </style>
     -->
     <!-- and DISABLE THIS PART FOR API 11 ACTION BAR -->
     <style name="CustomTheme" parent="android:style/Theme">
@@ -99,7 +103,7 @@
         <item name="android:backgroundStacked">@drawable/ab_stacked_solid_ldltheme</item>
         <item name="android:backgroundSplit">@drawable/ab_bottom_solid_ldltheme</item>
         <item name="android:progressBarStyle">@style/ldltheme_ProgressBar</item>
-    </style>
+    </style>
     -->
 
     <style name="ldltheme_transparent_ActionBar" parent="@android:style/Widget.Holo.Light.ActionBar">

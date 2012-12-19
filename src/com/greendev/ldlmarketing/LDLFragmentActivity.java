@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.SherlockFragmentActivity;
 
 public class LDLFragmentActivity extends SherlockFragmentActivity {
@@ -18,7 +19,8 @@ public class LDLFragmentActivity extends SherlockFragmentActivity {
 	private final int RIGHT = 10;
 	private final int BOTTOM = 0;
 	private TextView title;
-	private View v; 
+	private View v;
+	protected ActionBar ab;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -28,24 +30,23 @@ public class LDLFragmentActivity extends SherlockFragmentActivity {
 		fontreg = Typeface.createFromAsset(getAssets(), "Eurosti.TTF");
 		fontbold = Typeface.createFromAsset(getAssets(), "Eurostib.TTF");
 
-		// padding around ic_launcher
-		ImageView view = (ImageView) findViewById(android.R.id.home);
-		view.setPadding(LEFT, TOP, RIGHT, BOTTOM);
-
 		// customizing font in action bar
-		this.getActionBar().setDisplayShowCustomEnabled(true);
-		this.getActionBar().setDisplayShowTitleEnabled(false);
+		ab = getSupportActionBar();
+		ab.setDisplayShowTitleEnabled(false);
+		ab.setDisplayShowHomeEnabled(false);
+		ab.setDisplayShowCustomEnabled(true);
+		
 		LayoutInflater inflator = (LayoutInflater) this
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		v = inflator.inflate(R.layout.title, null);
 		title = ((TextView) v.findViewById(R.id.title));
 		title.setText(this.getTitle());
-		title.setTypeface(fontreg);
+		title.setTypeface(fontbold);
 		// assign the view to the actionbar
 		this.getActionBar().setCustomView(v);
 	}
-	
-	protected void setActionBarTitle(String name){
+
+	protected void setActionBarTitle(String name) {
 		title.setText(name);
 		this.getActionBar().setCustomView(v);
 	}

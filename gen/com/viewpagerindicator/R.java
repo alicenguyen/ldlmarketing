@@ -154,12 +154,12 @@ public final class R {
 		public static final int top = 0x7f050004;
 	}
 	public static final class drawable {
-		public static final int vpi__tab_selected_pressed_holo = 0x7f020163;
-		public static final int vpi__tab_unselected_holo = 0x7f020165;
-		public static final int vpi__tab_selected_holo = 0x7f020162;
-		public static final int vpi__tab_unselected_focused_holo = 0x7f020164;
-		public static final int vpi__tab_unselected_pressed_holo = 0x7f020166;
-		public static final int vpi__tab_indicator = 0x7f020160;
-		public static final int vpi__tab_selected_focused_holo = 0x7f020161;
+		public static final int vpi__tab_selected_pressed_holo = 0x7f020165;
+		public static final int vpi__tab_unselected_holo = 0x7f020167;
+		public static final int vpi__tab_selected_holo = 0x7f020164;
+		public static final int vpi__tab_unselected_focused_holo = 0x7f020166;
+		public static final int vpi__tab_unselected_pressed_holo = 0x7f020168;
+		public static final int vpi__tab_indicator = 0x7f020162;
+		public static final int vpi__tab_selected_focused_holo = 0x7f020163;
 	}
 }

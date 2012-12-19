@@ -6,6 +6,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import android.app.Activity;
+import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -25,9 +27,12 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.greendev.ldlmarketing.R;
+import com.actionbarsherlock.app.ActionBar;
+import com.actionbarsherlock.app.ActionBar.Tab;
+import com.actionbarsherlock.app.ActionBar.TabListener;
+import com.actionbarsherlock.view.Menu;
 
-public class FrameActivity extends Activity implements OnClickListener {
+public class FrameActivity extends LDLFragmentActivity implements OnClickListener, ActionBar.TabListener {
 
 	protected Uri outputUri;
 	private Intent intent;
@@ -47,31 +52,50 @@ public class FrameActivity extends Activity implements OnClickListener {
 		setContentView(R.layout.picture_frame_layout);
 		this.imgView = (ImageView) findViewById(R.id.imgView);
 
-		Button shareButton = (Button) findViewById(R.id.share_button);
-		shareButton.setOnClickListener(this);
+//		ab.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+//	
+//
+//		Tab newTab0 = ab.newTab();
+//    	newTab0.setText("1");
+//    	Tab newTab1 = ab.newTab();
+//    	newTab1.setText("2");
+//    	Tab newTab2 = ab.newTab();
+//    	newTab2.setText("3");
+//    	Tab newTab3 = ab.newTab();
+//    	newTab3.setText("4");
+//    	
+//    	
+//    	newTab0.setTabListener((TabListener) this);
+//    	newTab1.setTabListener((TabListener) this);
+//    	newTab2.setTabListener((TabListener) this);
+//    	newTab3.setTabListener((TabListener) this);
+//    	
+//    	
+//    	ab.addTab(newTab0);
+//    	ab.addTab(newTab1);
+//    	ab.addTab(newTab2);
+//    	ab.addTab(newTab3);
 
-		Button saveButton = (Button) findViewById(R.id.save_button);
-		saveButton.setOnClickListener(this);
 
 		Button frameB1 = (Button) findViewById(R.id.frame_b1);
 		frameB1.setOnClickListener(this);
-		//frameB1.setBackground((makeThumb(R.id.frame_b1)).mutate());
-		//makeThumb(frameB1, R.id.frame_b1);
+		// frameB1.setBackground((makeThumb(R.id.frame_b1)).mutate());
+		// makeThumb(frameB1, R.id.frame_b1);
 
 		Button frameB2 = (Button) findViewById(R.id.frame_b2);
 		frameB2.setOnClickListener(this);
-		//frameB2.setBackground((makeThumb(R.id.frame_b2)).mutate());
-		//makeThumb(frameB2, R.id.frame_b2);
+		// frameB2.setBackground((makeThumb(R.id.frame_b2)).mutate());
+		// makeThumb(frameB2, R.id.frame_b2);
 
 		Button frameB3 = (Button) findViewById(R.id.frame_b3);
 		frameB3.setOnClickListener(this);
-		//frameB3.setBackground((makeThumb(R.id.frame_b3)).mutate());
-		//makeThumb(frameB3, R.id.frame_b3);
+		// frameB3.setBackground((makeThumb(R.id.frame_b3)).mutate());
+		// makeThumb(frameB3, R.id.frame_b3);
 
 		Button frameB4 = (Button) findViewById(R.id.frame_b4);
 		frameB4.setOnClickListener(this);
-		//frameB4.setBackground((makeThumb(R.id.frame_b4)).mutate());
-		//makeThumb(frameB4, R.id.frame_b4);
+		// frameB4.setBackground((makeThumb(R.id.frame_b4)).mutate());
+		// makeThumb(frameB4, R.id.frame_b4);
 
 		intent = this.getIntent();
 
@@ -90,10 +114,18 @@ public class FrameActivity extends Activity implements OnClickListener {
 	}
 
 	@Override
-	public void onClick(View v) {
+	public boolean onCreateOptionsMenu(Menu menu) {
+		com.actionbarsherlock.view.MenuInflater inflater = getSupportMenuInflater();
+		inflater.inflate(R.menu.menu_frame_activity,
+				(com.actionbarsherlock.view.Menu) menu);
+		return super.onCreateOptionsMenu(menu);
+	}
 
-		switch (v.getId()) {
-		case R.id.share_button:
+	@Override
+	public boolean onOptionsItemSelected(
+			com.actionbarsherlock.view.MenuItem item) {
+		switch (item.getItemId()) {
+		case R.id.share_save:
 			File temp = savePhoto();
 			Intent share = new Intent(Intent.ACTION_SEND);
 			share.setType("image/jpeg");
@@ -103,25 +135,34 @@ public class FrameActivity extends Activity implements OnClickListener {
 			share.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(temp));
 			startActivity(Intent.createChooser(share, "Share using"));
 			onDestroy();
-			break;
+			return (true);
 
-		case R.id.save_button:
+		case R.id.save_option:
 			savePhoto();
 			onDestroy();
-			break;
+			return (true);
+		}
+
+		return (super.onOptionsItemSelected(item));
+	}
+
+	@Override
+	public void onClick(View v) {
+
+		switch (v.getId()) {
 
 		case R.id.frame_b1:
 			setFrame(R.drawable.frame_1);
 			break;
-			
+
 		case R.id.frame_b2:
 			setFrame(R.drawable.frame_2);
 			break;
-			
+
 		case R.id.frame_b3:
 			setFrame(R.drawable.frame_3);
 			break;
-			
+
 		case R.id.frame_b4:
 			setFrame(R.drawable.frame_4);
 			break;
@@ -150,20 +191,20 @@ public class FrameActivity extends Activity implements OnClickListener {
 			npd.setBounds(npdBounds);
 			npd.draw(comboImage);
 		}
-		
+
 		imgView.setImageBitmap(outpic);
 	}
-	
-	private void makeThumb(Button b, int frameIn){
-		
+
+	private void makeThumb(Button b, int frameIn) {
+
 		Drawable d = this.getResources().getDrawable(frameIn);
 		Rect bounds = new Rect(0, 0, 100, 100);
-		
+
 		b.setBackground(d);
-		//NinePatchDrawable frame = (NinePatchDrawable) d;
+		// NinePatchDrawable frame = (NinePatchDrawable) d;
 		// Set its bound where you need
-		
-		//frame.setBounds(bounds);
+
+		// frame.setBounds(bounds);
 
 	}
 
@@ -213,4 +254,26 @@ public class FrameActivity extends Activity implements OnClickListener {
 		super.onDestroy();
 	}
 
+	@Override
+	public void onTabSelected(Tab tab,
+			android.support.v4.app.FragmentTransaction ft) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onTabUnselected(Tab tab,
+			android.support.v4.app.FragmentTransaction ft) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onTabReselected(Tab tab,
+			android.support.v4.app.FragmentTransaction ft) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
 }

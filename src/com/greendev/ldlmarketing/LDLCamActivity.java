@@ -162,7 +162,7 @@ public class LDLCamActivity extends Activity implements OnClickListener {
 
 		// enable fast rendering preview
 		i.putExtra("effect-enable-fast-preview", true);
-		// i.putExtra("hide-exit-unsave-confirmation", false);
+	    i.putExtra("stickers-enable-external-pack", false);
 		startActivityForResult(i, RESULT_FRAME_IMAGE);
 		
 	}

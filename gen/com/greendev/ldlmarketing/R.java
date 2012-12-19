@@ -2188,77 +2188,79 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int ic_action_search=0x7f020122;
         public static final int ic_cam_s=0x7f020123;
         public static final int ic_cam_u=0x7f020124;
-        public static final int ic_filters=0x7f020125;
-        public static final int ic_gallery_s=0x7f020126;
-        public static final int ic_gallery_u=0x7f020127;
-        public static final int ic_home_s=0x7f020128;
-        public static final int ic_home_u=0x7f020129;
-        public static final int ic_launcher=0x7f02012a;
-        public static final int ic_stickers=0x7f02012b;
-        public static final int ic_tweet_s=0x7f02012c;
-        public static final int ic_tweet_u=0x7f02012d;
-        public static final int list_focused_ldltheme=0x7f02012e;
-        public static final int list_item_background=0x7f02012f;
-        public static final int menu_dropdown_panel_ldltheme=0x7f020130;
-        public static final int menu_hardkey_panel_ldltheme=0x7f020131;
-        public static final int nav_shadow=0x7f020132;
-        public static final int navigation_next_item=0x7f020133;
-        public static final int photogrid_list_selector=0x7f020134;
-        public static final int pressed_background_ldltheme=0x7f020135;
-        public static final int progress_bg_ldltheme=0x7f020136;
-        public static final int progress_horizontal_ldltheme=0x7f020137;
-        public static final int progress_primary_ldltheme=0x7f020138;
-        public static final int progress_secondary_ldltheme=0x7f020139;
-        public static final int sample1=0x7f02013a;
-        public static final int search_normal=0x7f02013b;
-        public static final int search_selected=0x7f02013c;
-        public static final int selectable_background_ldltheme=0x7f02013d;
-        public static final int sherlock_bg_striped=0x7f02013e;
-        public static final int sherlock_bg_striped_img=0x7f02013f;
-        public static final int sherlock_bg_striped_split=0x7f020140;
-        public static final int sherlock_bg_striped_split_img=0x7f020141;
-        public static final int spinner_ab_default_ldltheme=0x7f020142;
-        public static final int spinner_ab_disabled_ldltheme=0x7f020143;
-        public static final int spinner_ab_focused_ldltheme=0x7f020144;
-        public static final int spinner_ab_pressed_ldltheme=0x7f020145;
-        public static final int spinner_background_ab_ldltheme=0x7f020146;
-        public static final int splash=0x7f020147;
-        public static final int tab_bg=0x7f020148;
-        public static final int tab_bg_selected=0x7f020149;
-        public static final int tab_bg_selector=0x7f02014a;
-        public static final int tab_bg_unselected=0x7f02014b;
-        public static final int tab_divider=0x7f02014c;
-        public static final int tab_focus=0x7f02014d;
-        public static final int tab_gallery=0x7f02014e;
-        public static final int tab_home=0x7f02014f;
-        public static final int tab_indicator=0x7f020150;
-        public static final int tab_indicator_ab_ldltheme=0x7f020151;
-        public static final int tab_ldlcam=0x7f020152;
-        public static final int tab_press=0x7f020153;
-        public static final int tab_search=0x7f020154;
-        public static final int tab_selected=0x7f020155;
-        public static final int tab_selected_focused_ldltheme=0x7f020156;
-        public static final int tab_selected_ldltheme=0x7f020157;
-        public static final int tab_selected_pressed_ldltheme=0x7f020158;
-        public static final int tab_text_selector=0x7f020159;
-        public static final int tab_tweet=0x7f02015a;
-        public static final int tab_unselected=0x7f02015b;
-        public static final int tab_unselected_focused_ldltheme=0x7f02015c;
-        public static final int tab_unselected_pressed_ldltheme=0x7f02015d;
-        public static final int transgrad_bg=0x7f02015e;
-        public static final int video_icon=0x7f02015f;
-        public static final int vpi__tab_indicator=0x7f020160;
-        public static final int vpi__tab_selected_focused_holo=0x7f020161;
-        public static final int vpi__tab_selected_holo=0x7f020162;
-        public static final int vpi__tab_selected_pressed_holo=0x7f020163;
-        public static final int vpi__tab_unselected_focused_holo=0x7f020164;
-        public static final int vpi__tab_unselected_holo=0x7f020165;
-        public static final int vpi__tab_unselected_pressed_holo=0x7f020166;
-        public static final int xfeather_tool_icon_enhance=0x7f020167;
-        public static final int xfeather_toolbar_background=0x7f020168;
+        public static final int ic_device_access_storage=0x7f020125;
+        public static final int ic_filters=0x7f020126;
+        public static final int ic_gallery_s=0x7f020127;
+        public static final int ic_gallery_u=0x7f020128;
+        public static final int ic_home_s=0x7f020129;
+        public static final int ic_home_u=0x7f02012a;
+        public static final int ic_launcher=0x7f02012b;
+        public static final int ic_social_share=0x7f02012c;
+        public static final int ic_stickers=0x7f02012d;
+        public static final int ic_tweet_s=0x7f02012e;
+        public static final int ic_tweet_u=0x7f02012f;
+        public static final int list_focused_ldltheme=0x7f020130;
+        public static final int list_item_background=0x7f020131;
+        public static final int menu_dropdown_panel_ldltheme=0x7f020132;
+        public static final int menu_hardkey_panel_ldltheme=0x7f020133;
+        public static final int nav_shadow=0x7f020134;
+        public static final int navigation_next_item=0x7f020135;
+        public static final int photogrid_list_selector=0x7f020136;
+        public static final int pressed_background_ldltheme=0x7f020137;
+        public static final int progress_bg_ldltheme=0x7f020138;
+        public static final int progress_horizontal_ldltheme=0x7f020139;
+        public static final int progress_primary_ldltheme=0x7f02013a;
+        public static final int progress_secondary_ldltheme=0x7f02013b;
+        public static final int sample1=0x7f02013c;
+        public static final int search_normal=0x7f02013d;
+        public static final int search_selected=0x7f02013e;
+        public static final int selectable_background_ldltheme=0x7f02013f;
+        public static final int sherlock_bg_striped=0x7f020140;
+        public static final int sherlock_bg_striped_img=0x7f020141;
+        public static final int sherlock_bg_striped_split=0x7f020142;
+        public static final int sherlock_bg_striped_split_img=0x7f020143;
+        public static final int spinner_ab_default_ldltheme=0x7f020144;
+        public static final int spinner_ab_disabled_ldltheme=0x7f020145;
+        public static final int spinner_ab_focused_ldltheme=0x7f020146;
+        public static final int spinner_ab_pressed_ldltheme=0x7f020147;
+        public static final int spinner_background_ab_ldltheme=0x7f020148;
+        public static final int splash=0x7f020149;
+        public static final int tab_bg=0x7f02014a;
+        public static final int tab_bg_selected=0x7f02014b;
+        public static final int tab_bg_selector=0x7f02014c;
+        public static final int tab_bg_unselected=0x7f02014d;
+        public static final int tab_divider=0x7f02014e;
+        public static final int tab_focus=0x7f02014f;
+        public static final int tab_gallery=0x7f020150;
+        public static final int tab_home=0x7f020151;
+        public static final int tab_indicator=0x7f020152;
+        public static final int tab_indicator_ab_ldltheme=0x7f020153;
+        public static final int tab_ldlcam=0x7f020154;
+        public static final int tab_press=0x7f020155;
+        public static final int tab_search=0x7f020156;
+        public static final int tab_selected=0x7f020157;
+        public static final int tab_selected_focused_ldltheme=0x7f020158;
+        public static final int tab_selected_ldltheme=0x7f020159;
+        public static final int tab_selected_pressed_ldltheme=0x7f02015a;
+        public static final int tab_text_selector=0x7f02015b;
+        public static final int tab_tweet=0x7f02015c;
+        public static final int tab_unselected=0x7f02015d;
+        public static final int tab_unselected_focused_ldltheme=0x7f02015e;
+        public static final int tab_unselected_pressed_ldltheme=0x7f02015f;
+        public static final int transgrad_bg=0x7f020160;
+        public static final int video_icon=0x7f020161;
+        public static final int vpi__tab_indicator=0x7f020162;
+        public static final int vpi__tab_selected_focused_holo=0x7f020163;
+        public static final int vpi__tab_selected_holo=0x7f020164;
+        public static final int vpi__tab_selected_pressed_holo=0x7f020165;
+        public static final int vpi__tab_unselected_focused_holo=0x7f020166;
+        public static final int vpi__tab_unselected_holo=0x7f020167;
+        public static final int vpi__tab_unselected_pressed_holo=0x7f020168;
+        public static final int xfeather_tool_icon_enhance=0x7f020169;
+        public static final int xfeather_toolbar_background=0x7f02016a;
     }
     public static final class id {
-        public static final int ListViewId=0x7f0500e2;
+        public static final int ListViewId=0x7f0500e0;
         public static final int RelativeLayout01=0x7f050097;
         public static final int RelativeLayout1=0x7f0500c4;
         public static final int a1=0x7f050059;
@@ -2308,10 +2310,10 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int abs__title=0x7f050034;
         public static final int abs__titleDivider=0x7f050035;
         public static final int abs__up=0x7f050010;
-        public static final int action_add_item=0x7f0500e9;
+        public static final int action_add_item=0x7f0500e7;
         public static final int address=0x7f050057;
         public static final int address_t=0x7f050056;
-        public static final int avatar=0x7f0500de;
+        public static final int avatar=0x7f0500dc;
         public static final int aviary_infoscreen_submit=0x7f050084;
         public static final int aviary_logo=0x7f0500a0;
         public static final int background=0x7f050077;
@@ -2322,7 +2324,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int bio_pic2=0x7f050021;
         public static final int bio_pic3=0x7f050025;
         public static final int blank=0x7f050072;
-        public static final int booth_designs_button=0x7f0500d3;
+        public static final int booth_designs_button=0x7f0500d1;
         public static final int bottom=0x7f050003;
         public static final int bottombar_view_flipper=0x7f05008f;
         public static final int button=0x7f05006c;
@@ -2342,32 +2344,32 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int button_services=0x7f0500b4;
         public static final int button_videos=0x7f0500ac;
         public static final int buttons_background=0x7f0500b0;
-        public static final int campaigns_button=0x7f0500cd;
+        public static final int campaigns_button=0x7f0500cb;
         public static final int cannister_container=0x7f05009a;
         public static final int clear_button_bottom=0x7f050095;
         public static final int clear_button_top=0x7f050094;
-        public static final int clear_cache=0x7f0500ef;
+        public static final int clear_cache=0x7f0500ed;
         public static final int clientlistview=0x7f050050;
         public static final int color_mask=0x7f05006d;
         public static final int container=0x7f05007d;
         public static final int content=0x7f050017;
         public static final int crop_image_view=0x7f050071;
         public static final int desc_view=0x7f05004f;
-        public static final int digital_marketing_button=0x7f0500d1;
+        public static final int digital_marketing_button=0x7f0500cf;
         public static final int disableHome=0x7f05000e;
         public static final int disable_status=0x7f050075;
         public static final int dragLayer=0x7f050087;
         public static final int drawing_view_container=0x7f05008c;
-        public static final int edit_cancel=0x7f0500ec;
-        public static final int edit_premium=0x7f0500eb;
+        public static final int edit_cancel=0x7f0500ea;
+        public static final int edit_premium=0x7f0500e9;
         public static final int edit_query=0x7f050040;
-        public static final int edit_reset=0x7f0500ea;
-        public static final int edit_save=0x7f0500ed;
+        public static final int edit_reset=0x7f0500e8;
+        public static final int edit_save=0x7f0500eb;
         public static final int egg_info_view=0x7f050078;
         public static final int egg_view=0x7f05007a;
         public static final int email=0x7f050055;
         public static final int email_t=0x7f050054;
-        public static final int expandable_list=0x7f0500d9;
+        public static final int expandable_list=0x7f0500d7;
         public static final int faq1=0x7f050058;
         public static final int faq2=0x7f05005a;
         public static final int faq3=0x7f05005c;
@@ -2375,15 +2377,15 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int flipper=0x7f05009c;
         public static final int fragItem=0x7f0500bb;
         public static final int fragText=0x7f0500bc;
-        public static final int frame_b1=0x7f0500c9;
-        public static final int frame_b2=0x7f0500ca;
-        public static final int frame_b3=0x7f0500cb;
-        public static final int frame_b4=0x7f0500cc;
+        public static final int frame_b1=0x7f0500c7;
+        public static final int frame_b2=0x7f0500c8;
+        public static final int frame_b3=0x7f0500c9;
+        public static final int frame_b4=0x7f0500ca;
         public static final int frames_bg=0x7f050065;
         public static final int from_camera_button=0x7f0500c1;
         public static final int gallery=0x7f050067;
         public static final int gallery_color=0x7f050074;
-        public static final int graphic_design_button=0x7f0500cf;
+        public static final int graphic_design_button=0x7f0500cd;
         public static final int gridView=0x7f0500ba;
         public static final int header=0x7f050018;
         public static final int hidden=0x7f050076;
@@ -2392,10 +2394,10 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int home_title1=0x7f0500ae;
         public static final int home_title2=0x7f0500af;
         public static final int horizontal=0x7f050015;
-        public static final int horizontalScrollView1=0x7f0500c8;
+        public static final int horizontalScrollView1=0x7f0500c6;
         public static final int hotline=0x7f050053;
         public static final int hotline_t=0x7f050052;
-        public static final int ic_launcher=0x7f0500da;
+        public static final int ic_launcher=0x7f0500d8;
         public static final int icon=0x7f05004d;
         public static final int iconContain=0x7f05004c;
         public static final int icon_big=0x7f0500ab;
@@ -2411,7 +2413,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int invisible_text=0x7f05009e;
         public static final int invisible_text_1=0x7f050090;
         public static final int invisible_text_2=0x7f050092;
-        public static final int label=0x7f0500d4;
+        public static final int label=0x7f0500d2;
         public static final int layout01=0x7f05007e;
         public static final int layout_loader=0x7f050080;
         public static final int ldlcam_text1=0x7f0500be;
@@ -2419,41 +2421,41 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int lens_button=0x7f050073;
         public static final int list=0x7f050066;
         public static final int listMode=0x7f050007;
-        public static final int list_item=0x7f0500d7;
-        public static final int list_item_child=0x7f0500d5;
-        public static final int list_item_text_child=0x7f0500d6;
-        public static final int list_item_text_view=0x7f0500d8;
+        public static final int list_item=0x7f0500d5;
+        public static final int list_item_child=0x7f0500d3;
+        public static final int list_item_text_child=0x7f0500d4;
+        public static final int list_item_text_view=0x7f0500d6;
         public static final int main_content=0x7f050089;
         public static final int main_flipper=0x7f05008a;
-        public static final int mask=0x7f0500e8;
-        public static final int masked=0x7f0500e7;
-        public static final int menu_settings=0x7f0500ee;
-        public static final int message=0x7f0500e0;
-        public static final int mobile_twitter=0x7f0500e1;
+        public static final int mask=0x7f0500e6;
+        public static final int masked=0x7f0500e5;
+        public static final int menu_settings=0x7f0500ec;
+        public static final int message=0x7f0500de;
+        public static final int mobile_twitter=0x7f0500df;
         public static final int myfivepanelpager=0x7f050019;
-        public static final int myvideoview=0x7f0500e5;
+        public static final int myvideoview=0x7f0500e3;
         public static final int name_view=0x7f05004e;
         public static final int nonblank=0x7f05006b;
         public static final int none=0x7f050000;
         public static final int normal=0x7f050006;
         public static final int overlay=0x7f050093;
-        public static final int packaging_button=0x7f0500d2;
+        public static final int packaging_button=0x7f0500d0;
         public static final int pager=0x7f0500b9;
         public static final int pick_image_button=0x7f0500c0;
         public static final int position1=0x7f05001f;
         public static final int position2=0x7f050023;
         public static final int position3=0x7f050027;
-        public static final int press_button=0x7f0500ce;
+        public static final int press_button=0x7f0500cc;
         public static final int progress=0x7f05009b;
         public static final int progress_text=0x7f050082;
         public static final int radio=0x7f05007c;
         public static final int roll_open_container=0x7f050098;
         public static final int rr=0x7f05001c;
         public static final int rubber=0x7f05006e;
-        public static final int save_button=0x7f0500c7;
+        public static final int save_option=0x7f0500ef;
         public static final int scrollView1=0x7f050051;
         public static final int shadow_up=0x7f05005f;
-        public static final int share_button=0x7f0500c6;
+        public static final int share_save=0x7f0500ee;
         public static final int showCustom=0x7f05000d;
         public static final int showHome=0x7f05000a;
         public static final int showTitle=0x7f05000c;
@@ -2463,11 +2465,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int swipeview=0x7f050064;
         public static final int switcher=0x7f050096;
         public static final int tabMode=0x7f050008;
-        public static final int tabsLayout=0x7f0500dc;
-        public static final int tabsText=0x7f0500dd;
+        public static final int tabsLayout=0x7f0500da;
+        public static final int tabsText=0x7f0500db;
         public static final int text=0x7f05006f;
         public static final int text01=0x7f05007f;
-        public static final int title=0x7f0500db;
+        public static final int title=0x7f0500d9;
         public static final int tool_image=0x7f050079;
         public static final int tool_text=0x7f05007b;
         public static final int toolbar=0x7f050088;
@@ -2479,18 +2481,18 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int top_indicator_panel=0x7f0500a5;
         public static final int top_shadow=0x7f050099;
         public static final int triangle=0x7f050001;
-        public static final int tv_result=0x7f0500e4;
-        public static final int tweet_button=0x7f0500e3;
+        public static final int tv_result=0x7f0500e2;
+        public static final int tweet_button=0x7f0500e1;
         public static final int underline=0x7f050002;
         public static final int unused=0x7f05008e;
         public static final int useLogo=0x7f050009;
         public static final int userVideoThumbImageView=0x7f0500c2;
         public static final int userVideoTitleTextView=0x7f0500c3;
-        public static final int username=0x7f0500df;
+        public static final int username=0x7f0500dd;
         public static final int version_text=0x7f050083;
         public static final int vertical=0x7f050016;
-        public static final int videosListView=0x7f0500e6;
-        public static final int websites_button=0x7f0500d0;
+        public static final int videosListView=0x7f0500e4;
+        public static final int websites_button=0x7f0500ce;
         public static final int wheel=0x7f0500aa;
         public static final int wheel_parent=0x7f0500a8;
         public static final int wheel_radio=0x7f0500a7;
@@ -2716,6 +2718,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int feather_menu=0x7f0d0001;
         public static final int main=0x7f0d0002;
         public static final int main_menu=0x7f0d0003;
+        public static final int menu_frame_activity=0x7f0d0004;
     }
     public static final class string {
         /**  About Strings 
@@ -2922,22 +2925,23 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int Animations_iToast=0x7f0a00a1;
         /**  etc 
          */
-        public static final int AppTheme=0x7f0a00b6;
+        public static final int AppTheme=0x7f0a00b7;
         /**  photo pages 
          */
-        public static final int AppTheme_FullScreen=0x7f0a00ba;
+        public static final int AppTheme_FullScreen=0x7f0a00bb;
         /**  Buttons 
          */
-        public static final int ButtonLDLMarketing=0x7f0a00a8;
+        public static final int ButtonLDLMarketing=0x7f0a00a9;
         /**  style for the action bar tab text 
          */
-        public static final int CustomTabTextStyle=0x7f0a00bb;
+        public static final int CustomTabTextStyle=0x7f0a00bc;
         /** 
     ENABLE FOR API 11 ACTION BAR (1)
     <style name="CustomTheme" parent="@style/Theme.ldltheme">
         <item name="android:actionBarStyle">@style/MyActionBar</item>
         <item name="android:actionMenuTextColor">@color/white</item>
     </style>
+
 
 
 
@@ -2953,10 +2957,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 
 
 
+
     
  and DISABLE THIS PART FOR API 11 ACTION BAR 
          */
-        public static final int CustomTheme=0x7f0a00b8;
+        public static final int CustomTheme=0x7f0a00b9;
         public static final int DialogWindowTitle_Sherlock=0x7f0a003a;
         public static final int DialogWindowTitle_Sherlock_Light=0x7f0a003b;
         /**  main workspace 
@@ -2974,7 +2979,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int FeatherDefaultTheme=0x7f0a005d;
         /**  Feather theme 
          */
-        public static final int FeatherDefaultTheme_Custom=0x7f0a00b1;
+        public static final int FeatherDefaultTheme_Custom=0x7f0a00b2;
         public static final int FeatherEffectThumbText=0x7f0a006c;
         public static final int FeatherFilterPack=0x7f0a0094;
         public static final int FeatherHiddenEditText=0x7f0a008d;
@@ -3048,19 +3053,20 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int FeatherWorkspaceContainer=0x7f0a006d;
         /**  Home page buttons 
          */
-        public static final int HomeButton_default=0x7f0a00aa;
-        public static final int HomeButton_large=0x7f0a00ab;
-        public static final int HomeButton_small=0x7f0a00ad;
-        public static final int HomeButton_xlarge=0x7f0a00ac;
-        public static final int ImageButtonLDLMarketing=0x7f0a00a9;
+        public static final int HomeButton_default=0x7f0a00ab;
+        public static final int HomeButton_large=0x7f0a00ac;
+        public static final int HomeButton_small=0x7f0a00ae;
+        public static final int HomeButton_xlarge=0x7f0a00ad;
+        public static final int ImageButtonLDLMarketing=0x7f0a00aa;
         public static final int LDLActionBarTabStyle=0x7f0a00a3;
-        /**   Custom Sherlock themes
+        /**  Custom Sherlock themes 
          */
-        public static final int LDLTheme_pink=0x7f0a00b4;
+        public static final int LDLTheme_pink=0x7f0a00b5;
         /**  style for the action bar 
          */
-        public static final int LDLTheme_pink_ActionBar=0x7f0a00b5;
-        /**      Custom Sherlock themes
+        public static final int LDLTheme_pink_ActionBar=0x7f0a00b6;
+        /** 
+    Custom Sherlock themes
     <style name="LDLTheme.pink" parent="Theme.Sherlock.Light.DarkActionBar">
         <item name="actionBarStyle">@style/LDLTheme.pink.ActionBar</item>
         <item name="android:actionBarStyle">@style/LDLTheme.pink.ActionBar</item>
@@ -3076,21 +3082,25 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
     <item name="android:divider">@color/darkgrey</item>
 
         
-    </style> 
+    </style>
+    
          */
         public static final int LDLTheme_pink_ActionBar_Title=0x7f0a00a2;
-        public static final int LargeTitleTheme=0x7f0a00b7;
-        public static final int ListItem=0x7f0a00a6;
-        public static final int ListItemLabel=0x7f0a00a7;
+        public static final int LargeTitleTheme=0x7f0a00b8;
+        public static final int ListItem=0x7f0a00a7;
+        public static final int ListItemLabel=0x7f0a00a8;
         /**  list stuff for 'Client Directory' 
          */
-        public static final int ListStyle=0x7f0a00a5;
+        public static final int ListStyle=0x7f0a00a6;
+        /**  style for the tabs 
+         */
+        public static final int MyActionBarTabStyle=0x7f0a00a4;
         /**  photo pages 
          */
-        public static final int PhotoGridLayout=0x7f0a00af;
+        public static final int PhotoGridLayout=0x7f0a00b0;
         /**  Portfolio buttons 
          */
-        public static final int Portfolio_Button=0x7f0a00ae;
+        public static final int Portfolio_Button=0x7f0a00af;
         public static final int Sherlock___TextAppearance_Small=0x7f0a004e;
         public static final int Sherlock___Theme=0x7f0a0052;
         public static final int Sherlock___Theme_DarkActionBar=0x7f0a0054;
@@ -3140,13 +3150,13 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int Theme_Sherlock_NoActionBar=0x7f0a0059;
         /**  Sherlock  Sample themes 
          */
-        public static final int Theme_Styled=0x7f0a00b2;
+        public static final int Theme_Styled=0x7f0a00b3;
         /**  EXPERIMENTING / API 11 and up action bar 
          */
-        public static final int Theme_ldltheme=0x7f0a00b9;
+        public static final int Theme_ldltheme=0x7f0a00ba;
         /**  this style is only referenced in a Light.DarkActionBar based theme 
          */
-        public static final int Theme_ldltheme_widget=0x7f0a00c1;
+        public static final int Theme_ldltheme_widget=0x7f0a00c2;
         public static final int Widget=0x7f0a0001;
         public static final int Widget_IconPageIndicator=0x7f0a0004;
         public static final int Widget_Sherlock_ActionBar=0x7f0a0006;
@@ -3195,14 +3205,14 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int Widget_Sherlock_SearchAutoCompleteTextView=0x7f0a0038;
         public static final int Widget_Sherlock_Spinner_DropDown_ActionBar=0x7f0a0028;
         public static final int Widget_Sherlock_TextView_SpinnerItem=0x7f0a0036;
-        public static final int Widget_Styled_ActionBar=0x7f0a00b3;
+        public static final int Widget_Styled_ActionBar=0x7f0a00b4;
         public static final int Widget_TabPageIndicator=0x7f0a0002;
-        public static final int WindowTitleBackground=0x7f0a00a4;
-        public static final int app_theme=0x7f0a00b0;
-        public static final int ldltheme_DropDownListView=0x7f0a00be;
-        public static final int ldltheme_DropDownNav=0x7f0a00bf;
-        public static final int ldltheme_PopupMenu=0x7f0a00bd;
-        public static final int ldltheme_ProgressBar=0x7f0a00c0;
+        public static final int WindowTitleBackground=0x7f0a00a5;
+        public static final int app_theme=0x7f0a00b1;
+        public static final int ldltheme_DropDownListView=0x7f0a00bf;
+        public static final int ldltheme_DropDownNav=0x7f0a00c0;
+        public static final int ldltheme_PopupMenu=0x7f0a00be;
+        public static final int ldltheme_ProgressBar=0x7f0a00c1;
         /** 
     <style name="ldltheme_solid_ActionBar" parent="@android:style/Widget.Holo.Light.ActionBar.Solid">
         <item name="android:background">@drawable/ab_solid_ldltheme</item>
@@ -3211,9 +3221,10 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         <item name="android:progressBarStyle">@style/ldltheme_ProgressBar</item>
     </style>
 
+
     
          */
-        public static final int ldltheme_transparent_ActionBar=0x7f0a00bc;
+        public static final int ldltheme_transparent_ActionBar=0x7f0a00bd;
     }
     public static final class styleable {
         /** Attributes that can be used with a CellLayout.

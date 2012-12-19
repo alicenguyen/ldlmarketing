@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>    
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <item android:id="@+id/share_save"
+      android:title="Social Share" 
+    android:icon="@drawable/ic_social_share"   
+    android:showAsAction="ifRoom"/>
+  
+  <item android:id="@+id/save_option"
+    android:title="Save"
+    android:icon="@drawable/ic_device_access_storage"
+    android:showAsAction="ifRoom|withText"/>
+</menu>   
