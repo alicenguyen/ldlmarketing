@@ -2027,7 +2027,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int btn_default_disabled_focused_holo_dark=0x7f020081;
         public static final int btn_default_disabled_holo_dark=0x7f020082;
         public static final int btn_default_focused_holo_dark=0x7f020083;
-        public static final int btn_default_holo_dark=0x7f020084;
+        public static final int btn_default_holo_dark_selector=0x7f020084;
         public static final int btn_default_normal_holo_dark=0x7f020085;
         public static final int btn_default_normal_holo_light_green=0x7f020086;
         public static final int btn_default_normal_holo_light_red=0x7f020087;

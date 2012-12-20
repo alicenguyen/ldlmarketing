@@ -6,6 +6,8 @@ package com.greendev.ldlmarketing;
 
 import android.content.Context;
 import android.graphics.Typeface;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -34,13 +36,7 @@ public class LDLActivity extends SherlockActivity {
 		fontbold = Typeface.createFromAsset(getAssets(), "Eurostib.TTF");
 
         ab = getSupportActionBar();
-       
-		// padding around ic_launcher
-		//ItemView view = (ItemView) findViewById(android.R.id.home);
-		//((View) view).setPadding(LEFT, TOP, RIGHT, BOTTOM);
-
 		 // customizing font in action bar
-	 
 		ab.setDisplayShowTitleEnabled(false);
         ab.setDisplayShowHomeEnabled(false);
         ab.setDisplayShowCustomEnabled(true);
@@ -53,6 +49,17 @@ public class LDLActivity extends SherlockActivity {
 		 title.setTypeface(fontbold);
 		 // assign the view to the actionbar
 		 ab.setCustomView(v);   
+	}
+	
+	/*
+	 * Checks for internet connection
+	 */
+	public boolean isNetworkAvailable() {
+		ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+		NetworkInfo activeNetworkInfo = connectivityManager
+				.getActiveNetworkInfo();
+		return activeNetworkInfo != null
+				&& activeNetworkInfo.isConnectedOrConnecting();
 	}
 
 }

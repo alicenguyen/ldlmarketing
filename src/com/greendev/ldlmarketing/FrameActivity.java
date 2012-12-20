@@ -97,6 +97,7 @@ public class FrameActivity extends LDLFragmentActivity implements
 	public boolean onOptionsItemSelected(
 			com.actionbarsherlock.view.MenuItem item) {
 		switch (item.getItemId()) {
+		
 		case R.id.share_save:
 			File temp = savePhoto();
 			Intent share = new Intent(Intent.ACTION_SEND);
@@ -106,12 +107,12 @@ public class FrameActivity extends LDLFragmentActivity implements
 					"Just took this picture with LDL Marketing App! ");
 			share.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(temp));
 			startActivity(Intent.createChooser(share, "Share using"));
-			onDestroy();
+			//onDestroy();
 			return (true);
 
 		case R.id.save_option:
 			savePhoto();
-			// onDestroy();
+			 //onDestroy();
 			return (true);
 
 		}
@@ -120,7 +121,6 @@ public class FrameActivity extends LDLFragmentActivity implements
 
 	@Override
 	public void onClick(View v) {
-
 		switch (v.getId()) {
 
 		case R.id.frame_b1:

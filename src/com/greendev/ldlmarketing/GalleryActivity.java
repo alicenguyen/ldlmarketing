@@ -163,6 +163,7 @@ public class GalleryActivity extends Activity implements OnClickListener {
 		Toast toast = Toast.makeText(context, text, duration);
 
 		switch (v.getId()) {
+		
 		case R.id.button_photos:
 			if(isNetworkAvailable()){
 			Intent intent = new Intent(this, ImageGridActivity.class);

@@ -43,7 +43,7 @@
             android:layout_height="85dp"
             android:text="Pick an image"
             android:textSize="20sp" 
-            android:background="@drawable/btn_default_holo_dark"
+            android:background="@drawable/btn_default_holo_dark_selector"
             android:textColor="@color/white"/>
 
         <Button
@@ -52,7 +52,7 @@
             android:layout_height="85dp"
             android:text="From Camera"
             android:textSize="20sp" 
-             android:background="@drawable/btn_default_holo_dark"
+             android:background="@drawable/btn_default_holo_dark_selector"
              android:textColor="@color/white"/>
     </LinearLayout>
 

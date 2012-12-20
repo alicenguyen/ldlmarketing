@@ -2,10 +2,11 @@ package com.greendev.ldlmarketing;
 
 import android.content.Context;
 import android.graphics.Typeface;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.actionbarsherlock.app.ActionBar;
@@ -49,6 +50,17 @@ public class LDLFragmentActivity extends SherlockFragmentActivity {
 	protected void setActionBarTitle(String name) {
 		title.setText(name);
 		this.getActionBar().setCustomView(v);
+	}
+	
+	/*
+	 * Checks for internet connection
+	 */
+	public boolean isNetworkAvailable() {
+		ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+		NetworkInfo activeNetworkInfo = connectivityManager
+				.getActiveNetworkInfo();
+		return activeNetworkInfo != null
+				&& activeNetworkInfo.isConnectedOrConnecting();
 	}
 
 }

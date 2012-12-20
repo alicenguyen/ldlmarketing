@@ -532,7 +532,7 @@ int drawable black_background 0x7f020080
 int drawable btn_default_disabled_focused_holo_dark 0x7f020081
 int drawable btn_default_disabled_holo_dark 0x7f020082
 int drawable btn_default_focused_holo_dark 0x7f020083
-int drawable btn_default_holo_dark 0x7f020084
+int drawable btn_default_holo_dark_selector 0x7f020084
 int drawable btn_default_normal_holo_dark 0x7f020085
 int drawable btn_default_normal_holo_light_green 0x7f020086
 int drawable btn_default_normal_holo_light_red 0x7f020087

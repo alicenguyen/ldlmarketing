@@ -25,7 +25,8 @@
         <com.greendev.youtube.VideosListView
             android:id="@+id/videosListView"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent" />
+            android:layout_height="fill_parent"
+            android:listSelector="@drawable/btn_default_holo_dark_selector" />
     </LinearLayout>
 
 </RelativeLayout>
