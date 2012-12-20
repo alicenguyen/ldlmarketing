@@ -33,7 +33,7 @@ import com.greendev.youtube.VideosListView;
  * 
  * @author Alice Nguyen Credit -- paul.blundell
  */
-public class YoutubeActivity extends Activity implements VideoClickListener {
+public class YoutubeActivity extends LDLActivity implements VideoClickListener {
 	// A reference to our list that will hold the video details
 	private VideosListView listView;
 	private TextView videoTitle;
@@ -46,20 +46,9 @@ public class YoutubeActivity extends Activity implements VideoClickListener {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		// Custom Font
-		Typeface fontB = Typeface.createFromAsset(getAssets(), "Eurostib.TTF");
-		font = Typeface.createFromAsset(getAssets(), "Eurostib.TTF");
-
 		setContentView(R.layout.youtube_layout);
 		// customizing font in action bar
-		this.getActionBar().setDisplayShowCustomEnabled(true);
-		this.getActionBar().setDisplayShowTitleEnabled(false);
-		LayoutInflater inflator = (LayoutInflater) this
-				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		View v = inflator.inflate(R.layout.title, null);
-		TextView title = ((TextView) v.findViewById(R.id.title));
-		title.setText(this.getTitle());
-		title.setTypeface(font);
+
 
 		listView = (VideosListView) findViewById(R.id.videosListView);
 

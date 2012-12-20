@@ -316,6 +316,7 @@ public class PhotoActivityGridFragment extends Fragment implements
 			}
 
 			ImageView imageView;
+			/* The infamous album label */
 			TextView textView;
 			if (convertView == null) { // if it's not recycled, instantiate and
 										// initialize
@@ -329,8 +330,8 @@ public class PhotoActivityGridFragment extends Fragment implements
 
 				imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
 				gridView.setLayoutParams(mImageViewLayoutParams);
-				// imageView.setLayoutParams(mImageViewLayoutParams);
-
+				
+				
 				textView = (TextView) gridView.findViewById(R.id.fragText);
 				textView.setText(setsNames[position - mNumColumns]);
 			} else { // Otherwise re-use the converted view

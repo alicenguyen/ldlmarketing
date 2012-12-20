@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.content.res.AssetManager;
 
@@ -62,7 +63,7 @@ public class VideosAdapter extends BaseAdapter {
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
-		 Typeface font = Typeface.createFromAsset(context.getAssets(), "Eurosti.TTF");
+		 Typeface font = Typeface.createFromAsset(context.getAssets(), "Roboto-Regular.ttf");
 		// If convertView wasn't null it means we have already set it to our
 		// list_item_user_video so no need to do it again
 		if (convertView == null) {
@@ -76,6 +77,7 @@ public class VideosAdapter extends BaseAdapter {
 		// http://blog.blundell-apps.com/imageview-with-loading-spinner/
 		UrlImageView thumb = (UrlImageView) convertView
 				.findViewById(R.id.userVideoThumbImageView);
+		
 
 		TextView title = (TextView) convertView
 				.findViewById(R.id.userVideoTitleTextView);
