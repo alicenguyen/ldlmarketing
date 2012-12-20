@@ -4,7 +4,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="#141414"
-    android:gravity="top"
+    android:gravity="center"
     android:orientation="vertical" >
 
     <RelativeLayout
@@ -18,40 +18,84 @@
     <HorizontalScrollView
         android:id="@+id/horizontalScrollView1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="70dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
+        android:layout_gravity="center"
+        android:background="@drawable/ab_solid_ldl_feather"
+        android:cacheColorHint="@color/pink"
         android:clickable="true" >
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
             android:orientation="horizontal" >
 
             <Button
                 android:id="@+id/frame_b1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Frame1" />
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/btn_default_holo_dark"
+                android:text="Frame1"
+                android:textColor="@color/white" />
 
             <Button
                 android:id="@+id/frame_b2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Frame2" />
+                android:layout_marginRight="10dp"
+                android:background="@drawable/btn_default_holo_dark"
+                android:text="Frame2"
+                android:textColor="@color/white" />
 
             <Button
                 android:id="@+id/frame_b3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Frame3" />
+                android:layout_marginRight="10dp"
+                android:background="@drawable/btn_default_holo_dark"
+                android:text="Frame3"
+                android:textColor="@color/white" />
 
             <Button
                 android:id="@+id/frame_b4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Frame4" />
+                android:layout_marginRight="10dp"
+                android:background="@drawable/btn_default_holo_dark"
+                android:text="Frame4"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/frame_b5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/btn_default_holo_dark"
+                android:text="Frame5"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/frame_b6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/btn_default_holo_dark"
+                android:text="Frame6"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/frame_b7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/btn_default_holo_dark"
+                android:text="Frame7"
+                android:textColor="@color/white" />
         </LinearLayout>
     </HorizontalScrollView>
 
@@ -62,5 +106,23 @@
         android:layout_above="@+id/horizontalScrollView1"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/button_layout" />
+
+    <ImageView
+        android:id="@+id/shadow_up"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/imgView"
+        android:layout_weight="0"
+        android:scaleType="fitXY"
+        android:src="@drawable/feather_shadow_down" />
+
+    <ImageView
+        android:id="@+id/shadow_up"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/imgView"
+        android:layout_weight="0"
+        android:scaleType="fitXY"
+        android:src="@drawable/feather_shadow_up" />
 
 </RelativeLayout>

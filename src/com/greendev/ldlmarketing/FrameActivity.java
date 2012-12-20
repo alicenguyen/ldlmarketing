@@ -5,9 +5,6 @@ import java.io.FileOutputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import android.app.Activity;
-import android.app.Fragment;
-import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -29,10 +26,10 @@ import android.widget.Toast;
 
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.ActionBar.Tab;
-import com.actionbarsherlock.app.ActionBar.TabListener;
 import com.actionbarsherlock.view.Menu;
 
-public class FrameActivity extends LDLFragmentActivity implements OnClickListener, ActionBar.TabListener {
+public class FrameActivity extends LDLFragmentActivity implements
+		OnClickListener, ActionBar.TabListener {
 
 	protected Uri outputUri;
 	private Intent intent;
@@ -51,31 +48,6 @@ public class FrameActivity extends LDLFragmentActivity implements OnClickListene
 		context = getApplicationContext();
 		setContentView(R.layout.picture_frame_layout);
 		this.imgView = (ImageView) findViewById(R.id.imgView);
-
-//		ab.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
-//	
-//
-//		Tab newTab0 = ab.newTab();
-//    	newTab0.setText("1");
-//    	Tab newTab1 = ab.newTab();
-//    	newTab1.setText("2");
-//    	Tab newTab2 = ab.newTab();
-//    	newTab2.setText("3");
-//    	Tab newTab3 = ab.newTab();
-//    	newTab3.setText("4");
-//    	
-//    	
-//    	newTab0.setTabListener((TabListener) this);
-//    	newTab1.setTabListener((TabListener) this);
-//    	newTab2.setTabListener((TabListener) this);
-//    	newTab3.setTabListener((TabListener) this);
-//    	
-//    	
-//    	ab.addTab(newTab0);
-//    	ab.addTab(newTab1);
-//    	ab.addTab(newTab2);
-//    	ab.addTab(newTab3);
-
 
 		Button frameB1 = (Button) findViewById(R.id.frame_b1);
 		frameB1.setOnClickListener(this);
@@ -139,10 +111,10 @@ public class FrameActivity extends LDLFragmentActivity implements OnClickListene
 
 		case R.id.save_option:
 			savePhoto();
-			onDestroy();
+			// onDestroy();
 			return (true);
-		}
 
+		}
 		return (super.onOptionsItemSelected(item));
 	}
 
@@ -219,7 +191,7 @@ public class FrameActivity extends LDLFragmentActivity implements OnClickListene
 
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyymmddhhmmss");
 		String date = dateFormat.format(new Date());
-		String photoFile = "Picture_" + date + ".jpg";
+		String photoFile = "ldl_" + date + ".jpg";
 
 		String filename = pictureFileDir.getPath() + File.separator + photoFile;
 
@@ -234,8 +206,8 @@ public class FrameActivity extends LDLFragmentActivity implements OnClickListene
 			MediaStore.Images.Media.insertImage(getContentResolver(),
 					pictureFile.getAbsolutePath(), pictureFile.getName(),
 					pictureFile.getName());
-			Toast.makeText(context, "New Image saved:" + photoFile,
-					Toast.LENGTH_LONG).show();
+			Toast.makeText(context, "Saved " + photoFile, Toast.LENGTH_LONG)
+					.show();
 		} catch (Exception error) {
 			Toast.makeText(context, "Image could not be saved.",
 					Toast.LENGTH_LONG).show();
@@ -258,22 +230,21 @@ public class FrameActivity extends LDLFragmentActivity implements OnClickListene
 	public void onTabSelected(Tab tab,
 			android.support.v4.app.FragmentTransaction ft) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void onTabUnselected(Tab tab,
 			android.support.v4.app.FragmentTransaction ft) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void onTabReselected(Tab tab,
 			android.support.v4.app.FragmentTransaction ft) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
-	
 }

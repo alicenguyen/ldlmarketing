@@ -23,7 +23,7 @@
         <item name="actionBarStyle">@style/LDLTheme.pink.ActionBar</item>
         <item name="android:actionBarStyle">@style/LDLTheme.pink.ActionBar</item>
         <!-- <item name="actionBarTabStyle">@style/LDLActionBarTabStyle</item> -->
-        <item name="android:actionBarTabStyle">@style/MyActionBarTabStyle</item>
+     <!--    <item name="android:actionBarTabStyle">@style/MyActionBarTabStyle</item> -->
     </style>
 
     <!-- style for the action bar -->
@@ -33,6 +33,7 @@
         <item name="android:titleTextStyle">@style/LDLTheme.pink.ActionBar.Title</item>
         <item name="android:showDividers">beginning</item>
         <item name="android:divider">@color/darkgrey</item>
+        
         
     </style>
 
