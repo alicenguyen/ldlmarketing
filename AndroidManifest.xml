@@ -46,7 +46,8 @@
             android:name=".AboutActivity"
             android:label="   About"
             android:parentActivityName=".HomeActivity"
-            android:theme="@style/LDLTheme.pink" >
+            android:theme="@style/LDLTheme.pink" 
+             android:screenOrientation="portrait">
         </activity>
         <activity
             android:name=".FAQActivity"
@@ -119,7 +120,8 @@
             android:name=".PressActivity"
             android:label="   Press"
             android:parentActivityName=".HomeActivity"
-            android:theme="@style/LDLTheme.pink" >
+            android:theme="@style/LDLTheme.pink" 
+             android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".HomeActivity" />
@@ -153,7 +155,8 @@
             android:theme="@style/LDLTheme.pink" />
         <activity
             android:name=".PhotoActivity"
-            android:theme="@style/LDLTheme.pink" />
+            android:theme="@style/LDLTheme.pink" 
+             android:screenOrientation="portrait"/>
         <activity
             android:name=".PortfolioActivity"
             android:label="   Portfolio"

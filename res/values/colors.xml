@@ -26,5 +26,7 @@
     <color name="grid_state_pressed">#BB7dbcd3</color>
     <color name="grid_state_focused">#777dbcd3</color>
     <color name="pressed_ldltheme">#CCec4fd4</color>
+    
+    <color name="transparent_gray">#80dbdbdb</color>
 
 </resources>

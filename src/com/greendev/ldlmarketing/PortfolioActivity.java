@@ -36,11 +36,6 @@ public class PortfolioActivity extends LDLActivity implements OnClickListener {
 	public String[] packImgs, packThumbs, packDesc;
 	public String[] boothImgs, boothThumbs, boothDesc;
 
-	Context context = getApplicationContext();
-	CharSequence text = "Oops! We need internet connection to access this page!";
-	int duration = Toast.LENGTH_LONG;
-	Toast toast = Toast.makeText(context, text, duration);
-
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -80,11 +75,9 @@ public class PortfolioActivity extends LDLActivity implements OnClickListener {
 				.permitAll().build();
 		StrictMode.setThreadPolicy(policy);
 
-		/* internert service check */
-		if (isNetworkAvailable()) {
-			// Start fetching sets from Flickr
-			new Thread(new FetchSetsTask(responseHandler)).start();
-		}
+		// Start fetching sets from Flickr
+		new Thread(new FetchSetsTask(responseHandler)).start();
+
 	}
 
 	Handler response = new Handler() {
@@ -204,6 +197,12 @@ public class PortfolioActivity extends LDLActivity implements OnClickListener {
 
 	@Override
 	public void onClick(View v) {
+		/* internert service check */
+		Context context = getApplicationContext();
+		CharSequence text = "Oops! We need internet connection to access this page!";
+		int duration = Toast.LENGTH_LONG;
+		Toast toast = Toast.makeText(context, text, duration);
+
 		try {
 			if (isNetworkAvailable()) {
 				Intent i = new Intent(this, ImageGridActivity.class);
@@ -262,12 +261,6 @@ public class PortfolioActivity extends LDLActivity implements OnClickListener {
 
 				}
 				i.putExtras(b);
-
-				/* internert service check */
-				Context context = getApplicationContext();
-				CharSequence text = "Oops! We need internet connection to access this page!";
-				int duration = Toast.LENGTH_LONG;
-				Toast toast = Toast.makeText(context, text, duration);
 
 				startActivity(i);
 			}

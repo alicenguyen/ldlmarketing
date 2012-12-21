@@ -28,7 +28,7 @@
                 android:padding="3dp"
                 android:text="@string/faq_q1"
                 android:textColor="@color/blue"
-                android:textSize="17sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -40,7 +40,8 @@
                 android:paddingRight="5dp"
                 android:paddingTop="10dp"
                 android:text="@string/faq_a1"
-                android:textColor="@color/darkgrey" />
+                android:textColor="@color/darkgrey"
+                android:textSize="14sp" />
 
             <!-- pink line -->
 
@@ -58,7 +59,7 @@
                 android:paddingTop="2dp"
                 android:text="@string/faq_q2"
                 android:textColor="@color/blue"
-                android:textSize="17sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -70,7 +71,8 @@
                 android:paddingRight="5dp"
                 android:paddingTop="10dp"
                 android:text="@string/faq_a2"
-                android:textColor="@color/darkgrey" />
+                android:textColor="@color/darkgrey"
+                android:textSize="14sp" />
 
             <!-- pink line -->
 
@@ -88,7 +90,7 @@
                 android:paddingTop="2dp"
                 android:text="@string/faq_q3"
                 android:textColor="@color/blue"
-                android:textSize="17sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -100,7 +102,9 @@
                 android:paddingRight="5dp"
                 android:paddingTop="10dp"
                 android:text="@string/faq_a3"
-                android:textColor="@color/darkgrey" />
+                android:textColor="@color/darkgrey"
+                android:textSize="14sp" />
         </LinearLayout>
     </ScrollView>
+
 </RelativeLayout>

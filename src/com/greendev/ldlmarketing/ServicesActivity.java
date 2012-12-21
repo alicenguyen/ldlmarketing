@@ -7,9 +7,9 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.ExpandableListView;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -24,6 +24,9 @@ public class ServicesActivity extends LDLActivity {
 		setContentView(R.layout.services_layout);
 
 		mExpandableList = (ExpandableListView) findViewById(R.id.expandable_list);
+		
+		mExpandableList.setChildDivider(getResources().getDrawable(R.color.transparent));  
+		//mExpandableList.setGroupIndicator(null);
 
 		ArrayList<Parent> arrayParents = new ArrayList<Parent>();
 		ArrayList<String> arrayChildren;
@@ -52,7 +55,7 @@ public class ServicesActivity extends LDLActivity {
 					arrayChildren.add(marketingChildNames1[i]);
 					parent.setArrayChildren((arrayChildren));
 				}
-			} else if (count == 1) {
+			} else if (count == 1) { 
 				parent = new Parent();
 				parent.setTitle(parentNames[1]);
 				for (int i = 0; i < digitalChildNames2.length; i++) {
@@ -79,7 +82,7 @@ public class ServicesActivity extends LDLActivity {
 		// sets the adapter that provides data to the list.
 		mExpandableList.setAdapter(new MyCustomAdapter(ServicesActivity.this,
 				arrayParents));
-
+		mExpandableList.setGroupIndicator(getResources().getDrawable(R.drawable.services_group_selector));
 
 	}
 
@@ -165,12 +168,18 @@ public class ServicesActivity extends LDLActivity {
 				view = inflater.inflate(R.layout.services_item_parent,
 						viewGroup, false);
 			}
+//			if(getChildrenCount(i) > 0){
+//				ImageView indic = (ImageView) view.findViewById(R.layout.indic);
+//				indic.setImageDrawable(R.drawable.ic_expand);
+//			}
 
 
 			TextView textView = (TextView) view
 					.findViewById(R.id.list_item_text_view);
 			// "i" is the position of the parent/group in the list
 			textView.setText(getGroup(i).toString());
+			textView.setTypeface(fontbold);
+			
 
 			// return the entire view
 			return view;
@@ -191,7 +200,8 @@ public class ServicesActivity extends LDLActivity {
 			// "i" is the position of the parent/group in the list and
 			// "i1" is the position of the child
 			textView.setText(mParent.get(i).getArrayChildren().get(i1));
-
+			textView.setTypeface(fontreg);
+			
 			if (getChildrenCount(i) == 0) {
 				view.setVisibility(View.INVISIBLE);
 			}

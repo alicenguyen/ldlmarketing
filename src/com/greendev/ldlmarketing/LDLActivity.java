@@ -19,12 +19,7 @@ import com.actionbarsherlock.app.SherlockActivity;
 public class LDLActivity extends SherlockActivity {
 	protected Typeface fontreg;
 	protected Typeface fontbold;
-	private final int LEFT = 7;
-	private final int TOP = 0;
-	private final int RIGHT = 10;
-	private final int BOTTOM = 0;
-	private boolean useLogo = false;
-	private boolean showHomeUp = false;
+	protected Typeface fontRob;
 	protected ActionBar ab;
 
 	@Override
@@ -34,6 +29,7 @@ public class LDLActivity extends SherlockActivity {
 		// fonts
 		fontreg = Typeface.createFromAsset(getAssets(), "Eurosti.TTF");
 		fontbold = Typeface.createFromAsset(getAssets(), "Eurostib.TTF");
+		fontRob = Typeface.createFromAsset(getAssets(), "Roboto-Regular.ttf");
 
 		ab = getSupportActionBar();
 		// customizing font in action bar
