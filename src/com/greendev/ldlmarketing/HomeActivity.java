@@ -7,6 +7,7 @@ import android.graphics.Typeface;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -82,12 +83,15 @@ public class HomeActivity extends Activity implements OnClickListener {
 			break;
 
 		case R.id.button_portfolio:
-			if (!isNetworkAvailable()) {
+			try {
+				if (isNetworkAvailable()) {
+					Intent b = new Intent(this, PortfolioActivity.class);
+					startActivity(b);
+				} else
+					toast.show();
+			} catch (Exception e) {
 				toast.show();
-			} else {
-
-				Intent b = new Intent(this, PortfolioActivity.class);
-				startActivity(b);
+				Log.e("HOMEACTIVITY", "portfolio error");
 			}
 			break;
 

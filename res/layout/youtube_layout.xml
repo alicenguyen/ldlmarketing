@@ -26,7 +26,9 @@
             android:id="@+id/videosListView"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:listSelector="@drawable/btn_default_holo_dark_selector" />
+            android:listSelector="@drawable/btn_default_holo_dark_selector" 
+            android:divider="@color/light_pink"
+            android:dividerHeight="1px"/>
     </LinearLayout>
 
 </RelativeLayout>

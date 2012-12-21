@@ -46,11 +46,13 @@ public class FetchSetsTask implements Runnable {
 						new InputStreamReader(inputstream));
 				StringBuilder stringbuilder = new StringBuilder();
 				String currentline = null;
+				
 				try {
 					while ((currentline = bufferedreader.readLine()) != null) {
 						stringbuilder.append(currentline + "\n");
 					}
 				} catch (IOException e) {
+					Log.e("FlickrSetFetchTask", "error_A");
 					e.printStackTrace();
 				}
 				String result = stringbuilder.toString();

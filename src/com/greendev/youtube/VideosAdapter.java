@@ -70,7 +70,7 @@ public class VideosAdapter extends BaseAdapter {
 			// This is the layout we are using for each row in our list
 			// anything you declare in this layout can then be referenced below
 			convertView = mInflater
-					.inflate(R.layout.list_item_user_video, null);
+					.inflate(R.layout.youtube_list_item_user_video, null);  
 		}
 		// We are using a custom imageview so that we can load images using urls
 		// For further explanation see:

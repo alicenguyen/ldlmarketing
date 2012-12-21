@@ -52,12 +52,12 @@ public class GalleryActivity extends Activity implements OnClickListener {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		StrictMode.ThreadPolicy policy = new StrictMode.
-				ThreadPolicy.Builder().permitAll().build();
-				StrictMode.setThreadPolicy(policy);
-				
+		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder()
+				.permitAll().build();
+		StrictMode.setThreadPolicy(policy);
+
 		setContentView(R.layout.gallery_layout);
-		
+
 		// Photos button
 		View photoButton = findViewById(R.id.button_photos);
 		photoButton.setOnClickListener(this);
@@ -151,8 +151,7 @@ public class GalleryActivity extends Activity implements OnClickListener {
 				|| setName.equals("graphic designs")
 				|| setName.equals("websites")
 				|| setName.equals("digital marketing")
-				|| setName.equals("packaging")
-				|| setName.equals("booth");
+				|| setName.equals("packaging") || setName.equals("booth");
 	}
 
 	@Override
@@ -162,40 +161,49 @@ public class GalleryActivity extends Activity implements OnClickListener {
 		int duration = Toast.LENGTH_LONG;
 		Toast toast = Toast.makeText(context, text, duration);
 
-		switch (v.getId()) {
-		
-		case R.id.button_photos:
-			if(isNetworkAvailable()){
-			Intent intent = new Intent(this, ImageGridActivity.class);
-			Bundle b = new Bundle();
+		try {
+			switch (v.getId()) {
+			case R.id.button_photos:
+				if (isNetworkAvailable()) {
+					Intent intent = new Intent(this, ImageGridActivity.class);
+					Bundle b = new Bundle();
 
-			b.putStringArray("SETS_NAMES", setNames);
-			b.putStringArray("TYPE_URL_THUMB", setsThumbUrls);
-			b.putStringArray("CAPTIONS", setsThumbUrls);
-			
-			/*  the key to enter the PhotoActivtityGridFragment*/
-			b.putString("key", "PhotoActivityGridFragment");
-			b.putString("TITLE", "LDL Gallery");
-			
-			b.putParcelable("SET_IMGS", new MyParcelableObjectArray(this,
-					setOfSetImgs));
-			b.putParcelable("SET_THUMBS", new MyParcelableObjectArray(this,
-					setOfSetDescs));
-			b.putParcelable("SET_DESCS", new MyParcelableObjectArray(this,
-					setOfSetThumbs));
+					b.putStringArray("SETS_NAMES", setNames);
+					b.putStringArray("TYPE_URL_THUMB", setsThumbUrls);
+					b.putStringArray("CAPTIONS", setsThumbUrls);
 
-			intent.putExtras(b);
-			startActivity(intent);
-			} else toast.show();
-				
-			break;
+					/* the key to enter the PhotoActivtityGridFragment */
+					b.putString("key", "PhotoActivityGridFragment");
+					b.putString("TITLE", "LDL Gallery");
 
-		case R.id.button_videos:
-			if(isNetworkAvailable()){
-			Intent c = new Intent(this, YoutubeActivity.class);
-			startActivity(c);} else toast.show();
-			break;
+					b.putParcelable("SET_IMGS", new MyParcelableObjectArray(
+							this, setOfSetImgs));
+					b.putParcelable("SET_THUMBS", new MyParcelableObjectArray(
+							this, setOfSetDescs));
+					b.putParcelable("SET_DESCS", new MyParcelableObjectArray(
+							this, setOfSetThumbs));
 
+					intent.putExtras(b);
+
+					startActivity(intent);
+
+				} else
+					toast.show();
+
+				break;
+
+			case R.id.button_videos:
+				if (isNetworkAvailable()) {
+					Intent c = new Intent(this, YoutubeActivity.class);
+					startActivity(c);
+				} else
+					toast.show();
+				break;
+
+			}
+		} catch (Exception e) {
+			toast.show();
+			Log.e("GALLERYACTIVITY", "can't start activity ImageGridActivity");
 		}
 	}
 

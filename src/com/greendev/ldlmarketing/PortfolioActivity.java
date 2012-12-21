@@ -6,6 +6,7 @@ package com.greendev.ldlmarketing;
  */
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -16,6 +17,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.greendev.flickr.FetchSetsTask;
 import com.greendev.flickr.FlickrLibrary;
@@ -33,6 +35,11 @@ public class PortfolioActivity extends LDLActivity implements OnClickListener {
 	public String[] dmImgs, dmThumbs, dmDesc;
 	public String[] packImgs, packThumbs, packDesc;
 	public String[] boothImgs, boothThumbs, boothDesc;
+
+	Context context = getApplicationContext();
+	CharSequence text = "Oops! We need internet connection to access this page!";
+	int duration = Toast.LENGTH_LONG;
+	Toast toast = Toast.makeText(context, text, duration);
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -73,8 +80,11 @@ public class PortfolioActivity extends LDLActivity implements OnClickListener {
 				.permitAll().build();
 		StrictMode.setThreadPolicy(policy);
 
-		// Start fetching sets from Flickr
-		new Thread(new FetchSetsTask(responseHandler)).start();
+		/* internert service check */
+		if (isNetworkAvailable()) {
+			// Start fetching sets from Flickr
+			new Thread(new FetchSetsTask(responseHandler)).start();
+		}
 	}
 
 	Handler response = new Handler() {
@@ -194,64 +204,77 @@ public class PortfolioActivity extends LDLActivity implements OnClickListener {
 
 	@Override
 	public void onClick(View v) {
-		if (isNetworkAvailable()) {
-			Intent i = new Intent(this, ImageGridActivity.class);
-			Bundle b = new Bundle();
+		try {
+			if (isNetworkAvailable()) {
+				Intent i = new Intent(this, ImageGridActivity.class);
+				Bundle b = new Bundle();
 
-			switch (v.getId()) {
-			case R.id.campaigns_button:
-				b.putStringArray("TYPE_URL", campImgs);
-				b.putStringArray("TYPE_URL_THUMB", campThumbs);
-				// test
-				b.putStringArray("CAPTIONS", campDesc);
-				b.putString("TITLE", "Campaigns");
-				break;
-			case R.id.press_button:
-				b.putStringArray("TYPE_URL", pressImgs);
-				b.putStringArray("TYPE_URL_THUMB", pressThumbs);
-				// test
-				b.putStringArray("CAPTIONS", pressDesc);
-				b.putString("TITLE", "Press");
-				break;
-			case R.id.graphic_design_button:
-				b.putStringArray("TYPE_URL", gdImgs);
-				b.putStringArray("TYPE_URL_THUMB", gdThumbs);
-				// test
-				b.putStringArray("CAPTIONS", gdDesc);
-				b.putString("TITLE", "Graphic Designs");
-				break;
-			case R.id.websites_button:
-				b.putStringArray("TYPE_URL", webImgs);
-				b.putStringArray("TYPE_URL_THUMB", webThumbs);
-				// test
-				b.putStringArray("CAPTIONS", webDesc);
-				b.putString("TITLE", "Websites");
-				break;
-			case R.id.digital_marketing_button:
-				b.putStringArray("TYPE_URL", dmImgs);
-				b.putStringArray("TYPE_URL_THUMB", dmThumbs);
-				// test
-				b.putStringArray("CAPTIONS", dmDesc);
-				b.putString("TITLE", "Digital Marketing");
-				break;
-			case R.id.packaging_button:
-				b.putStringArray("TYPE_URL", packImgs);
-				b.putStringArray("TYPE_URL_THUMB", packThumbs);
-				// test
-				b.putStringArray("CAPTIONS", packDesc);
-				b.putString("TITLE", "Packaging");
-				break;
-			case R.id.booth_designs_button:
-				b.putStringArray("TYPE_URL", boothImgs);
-				b.putStringArray("TYPE_URL_THUMB", boothThumbs);
-				// test
-				b.putStringArray("CAPTIONS", boothDesc);
-				b.putString("TITLE", "Booth Designs");
-				break;
+				switch (v.getId()) {
+				case R.id.campaigns_button:
+					b.putStringArray("TYPE_URL", campImgs);
+					b.putStringArray("TYPE_URL_THUMB", campThumbs);
+					// test
+					b.putStringArray("CAPTIONS", campDesc);
+					b.putString("TITLE", "Campaigns");
+					break;
+				case R.id.press_button:
+					b.putStringArray("TYPE_URL", pressImgs);
+					b.putStringArray("TYPE_URL_THUMB", pressThumbs);
+					// test
+					b.putStringArray("CAPTIONS", pressDesc);
+					b.putString("TITLE", "Press");
+					break;
+				case R.id.graphic_design_button:
+					b.putStringArray("TYPE_URL", gdImgs);
+					b.putStringArray("TYPE_URL_THUMB", gdThumbs);
+					// test
+					b.putStringArray("CAPTIONS", gdDesc);
+					b.putString("TITLE", "Graphic Designs");
+					break;
+				case R.id.websites_button:
+					b.putStringArray("TYPE_URL", webImgs);
+					b.putStringArray("TYPE_URL_THUMB", webThumbs);
+					// test
+					b.putStringArray("CAPTIONS", webDesc);
+					b.putString("TITLE", "Websites");
+					break;
+				case R.id.digital_marketing_button:
+					b.putStringArray("TYPE_URL", dmImgs);
+					b.putStringArray("TYPE_URL_THUMB", dmThumbs);
+					// test
+					b.putStringArray("CAPTIONS", dmDesc);
+					b.putString("TITLE", "Digital Marketing");
+					break;
+				case R.id.packaging_button:
+					b.putStringArray("TYPE_URL", packImgs);
+					b.putStringArray("TYPE_URL_THUMB", packThumbs);
+					// test
+					b.putStringArray("CAPTIONS", packDesc);
+					b.putString("TITLE", "Packaging");
+					break;
+				case R.id.booth_designs_button:
+					b.putStringArray("TYPE_URL", boothImgs);
+					b.putStringArray("TYPE_URL_THUMB", boothThumbs);
+					// test
+					b.putStringArray("CAPTIONS", boothDesc);
+					b.putString("TITLE", "Booth Designs");
+					break;
 
+				}
+				i.putExtras(b);
+
+				/* internert service check */
+				Context context = getApplicationContext();
+				CharSequence text = "Oops! We need internet connection to access this page!";
+				int duration = Toast.LENGTH_LONG;
+				Toast toast = Toast.makeText(context, text, duration);
+
+				startActivity(i);
 			}
-			i.putExtras(b);
-			startActivity(i);
+		} catch (Exception e) {
+			toast.show();
+			Log.e("PORTFOLIOACTIVITY", "can't start activity ImageGridActivity");
 		}
+
 	}
 }

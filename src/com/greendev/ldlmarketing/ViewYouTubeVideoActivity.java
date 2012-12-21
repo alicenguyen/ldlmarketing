@@ -17,7 +17,7 @@ public class ViewYouTubeVideoActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.video_view_layout);
+		setContentView(R.layout.youtube_video_view_layout);
 
 		Bundle extras = getIntent().getExtras();
 		if (extras == null) {
@@ -25,22 +25,6 @@ public class ViewYouTubeVideoActivity extends Activity {
 		} 
 		String url = extras.getString("videoUrl");
 		System.out.println("" + url);
-		
-/*		// method 1 -- embedded version of videoplay
-		String videoUrl = getUrlVideoRTSP(url);
-		System.out.println("url-- " + videoUrl);
-		System.out.println("url rtsp-- " + Uri.parse(videoUrl));
-		myVideoView = (VideoView) findViewById(R.id.myvideoview);
-		myVideoView.setVideoURI(Uri.parse(videoUrl));	
-		MediaController mc = new MediaController(this);
-		myVideoView.setMediaController(mc);
-		myVideoView.requestFocus();
-		myVideoView.start();
-		mc.show();*/
-		
-/*		// method 2 -- plays with default youtube player. NOT WANTED!
-		Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-		startActivity(i);*/
 	}
 	
 

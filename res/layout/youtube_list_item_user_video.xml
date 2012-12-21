@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal" >
+
+    <!-- for youtube page -->
+
+    <com.greendev.youtube.UrlImageView
+        android:id="@+id/userVideoThumbImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_marginTop="3dp"
+         android:layout_marginBottom="3dp"
+        android:contentDescription="YouTube video thumbnail"
+        android:src="@drawable/video_icon" />
+
+    <TextView
+        android:id="@+id/userVideoTitleTextView"
+        style="@style/ListStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Video Title Not Found"
+        android:textColor="#f2f2f2"
+        android:textSize="12sp" />
+
+</LinearLayout>

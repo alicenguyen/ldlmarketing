@@ -85,6 +85,7 @@ public class ImageGridFragment extends Fragment implements
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		try{
 				
 		setHasOptionsMenu(true); // true
 
@@ -109,6 +110,9 @@ public class ImageGridFragment extends Fragment implements
 		mImageFetcher.addImageCache(
 				((FragmentActivity) context).getSupportFragmentManager(),
 				cacheParams);
+		} catch(Exception e){
+			Log.e(TAG, "error in onCreate()");
+		}
 	}
 
 	@Override

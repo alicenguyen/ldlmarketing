@@ -2441,7 +2441,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int message=0x7f0500e1;
         public static final int mobile_twitter=0x7f0500e2;
         public static final int myfivepanelpager=0x7f050019;
-        public static final int myvideoview=0x7f0500e6;
+        public static final int myvideoview=0x7f0500e7;
         public static final int name_view=0x7f05004e;
         public static final int nonblank=0x7f05006b;
         public static final int none=0x7f050000;
@@ -2499,7 +2499,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int username=0x7f0500e0;
         public static final int version_text=0x7f050083;
         public static final int vertical=0x7f050016;
-        public static final int videosListView=0x7f0500e7;
+        public static final int videosListView=0x7f0500e6;
         public static final int websites_button=0x7f0500d1;
         public static final int wheel=0x7f0500aa;
         public static final int wheel_parent=0x7f0500a8;
@@ -2717,9 +2717,10 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int twitter2_layout=0x7f03006d;
         public static final int twitter3_layout=0x7f03006e;
         public static final int twitter_layout=0x7f03006f;
-        public static final int video_view_layout=0x7f030070;
-        public static final int viewpager=0x7f030071;
-        public static final int youtube_layout=0x7f030072;
+        public static final int viewpager=0x7f030070;
+        public static final int youtube_layout=0x7f030071;
+        public static final int youtube_list_item_user_video=0x7f030072;
+        public static final int youtube_video_view_layout=0x7f030073;
     }
     public static final class menu {
         public static final int activity_layout_changes=0x7f0d0000;

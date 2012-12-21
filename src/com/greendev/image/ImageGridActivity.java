@@ -55,12 +55,14 @@ public class ImageGridActivity extends LDLFragmentActivity {
 		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder()
 				.permitAll().build();
 		StrictMode.setThreadPolicy(policy);
-		
-		 /* get the intent called from an Activity (eg. Portfolio.class or
-		    PhotoActivity)*/
+
+		/*
+		 * get the intent called from an Activity (eg. Portfolio.class or
+		 * PhotoActivity)
+		 */
 		Intent intent = getIntent();
 		/** get the bundle from the intent **/
-		
+
 		Bundle b = intent.getExtras();
 
 		// set title in action bar
@@ -76,57 +78,63 @@ public class ImageGridActivity extends LDLFragmentActivity {
 			Utils.enableStrictMode();
 		}
 
-		if (getSupportFragmentManager().findFragmentByTag(TAG) == null) {
-			final FragmentTransaction ft = getSupportFragmentManager()
-					.beginTransaction();
+		try {
+			if (getSupportFragmentManager().findFragmentByTag(TAG) == null) {
+				final FragmentTransaction ft = getSupportFragmentManager()
+						.beginTransaction();
 
-			// If calling this activity for the Gallery images then use
-			// PhotoActivityGridFragment
-			if (key.equals("PhotoActivityGridFragment")) {
-				TYPE_URL_THUMB = b.getStringArray("TYPE_URL_THUMB");
-				SETS_NAMES = b.getStringArray("SETS_NAMES");
-				
-				/* Parcelable Objects from PhotoActivity */
-				setImgsParcel = b.getParcelable("SET_IMGS");
-				if (setImgsParcel != null) {
-					setImgs = setImgsParcel.getArray();
-					if (setImgs == null)
-						setImgs = Images.boothDesignsThumbUrls;
-				} else
-					setImgs = Images.campaignsThumbUrls;
+				// If calling this activity for the Gallery images then use
+				// PhotoActivityGridFragment
+				if (key.equals("PhotoActivityGridFragment")) {
+					TYPE_URL_THUMB = b.getStringArray("TYPE_URL_THUMB");
+					SETS_NAMES = b.getStringArray("SETS_NAMES");
 
-				setThumbsParcel = b.getParcelable("SET_THUMBS");
-				if (setThumbsParcel != null) {
-					setThumbs = setThumbsParcel.getArray();
-					if (setThumbs == null)
-						setThumbs = Images.boothDesignsThumbUrls;
-				} else
-					setThumbs = Images.campaignsThumbUrls;
+					/* Parcelable Objects from PhotoActivity */
+					setImgsParcel = b.getParcelable("SET_IMGS");
+					if (setImgsParcel != null) {
+						setImgs = setImgsParcel.getArray();
+						if (setImgs == null)
+							setImgs = Images.boothDesignsThumbUrls;
+					} else
+						setImgs = Images.campaignsThumbUrls;
 
-				setDescsParcel = b.getParcelable("SET_DESCS");
-				if (setDescsParcel != null) {
-					setDescs = setDescsParcel.getArray();
-					if (setDescs == null)
-						setDescs = Images.boothDesignsThumbUrls;
-				} else
-					setDescs = Images.campaignsThumbUrls;
-				
+					setThumbsParcel = b.getParcelable("SET_THUMBS");
+					if (setThumbsParcel != null) {
+						setThumbs = setThumbsParcel.getArray();
+						if (setThumbs == null)
+							setThumbs = Images.boothDesignsThumbUrls;
+					} else
+						setThumbs = Images.campaignsThumbUrls;
 
-				ft.add(android.R.id.content, new PhotoActivityGridFragment(
-						this, ImageGridActivity.class, TYPE_URL_THUMB, setImgs,
-						setThumbs, setDescs, SETS_NAMES), TAG);
-			} else {
-				/** retrieve the string array extra passed */
-				TYPE_URL = b.getStringArray("TYPE_URL");
-				TYPE_URL_THUMB = b.getStringArray("TYPE_URL_THUMB");
+					setDescsParcel = b.getParcelable("SET_DESCS");
+					if (setDescsParcel != null) {
+						setDescs = setDescsParcel.getArray();
+						if (setDescs == null)
+							setDescs = Images.boothDesignsThumbUrls;
+					} else
+						setDescs = Images.campaignsThumbUrls;
 
-				CAPTIONS = b.getStringArray("CAPTIONS");
+					ft.add(android.R.id.content, new PhotoActivityGridFragment(
+							this, ImageGridActivity.class, TYPE_URL_THUMB,
+							setImgs, setThumbs, setDescs, SETS_NAMES), TAG);
+				} else {
+					/** retrieve the string array extra passed */
+					TYPE_URL = b.getStringArray("TYPE_URL");
+					TYPE_URL_THUMB = b.getStringArray("TYPE_URL_THUMB");
 
-				ft.add(android.R.id.content, new ImageGridFragment(this,
-						ImageDetailActivity.class, TYPE_URL, TYPE_URL_THUMB,
-						CAPTIONS), TAG);
+					CAPTIONS = b.getStringArray("CAPTIONS");
+
+					ft.add(android.R.id.content, new ImageGridFragment(this,
+							ImageDetailActivity.class, TYPE_URL,
+							TYPE_URL_THUMB, CAPTIONS), TAG);
+				}
+				ft.commit();
 			}
-			ft.commit();
+
+		} catch (Exception e) {
+			Log.e(TAG, e.toString());
+
 		}
+
 	}
 }
