@@ -1,19 +1,19 @@
 /*
  * AVIARY API TERMS OF USE
  * Full Legal Agreement
- * The following terms and conditions and the terms and conditions at http://www.aviary.com/terms (collectively, the “Terms”) govern your use of any and all data, text, software, tools, documents and other materials associated with the application programming interface offered by Aviary, Inc. (the "API"). By clicking on the “Accept” button, OR BY USING OR ACCESSING ANY PORTION OF THE API, you or the entity or company that you represent are unconditionally agreeing to be bound by the terms, including those available by hyperlink from within this document, and are becoming a party to the Terms. Your continued use of the API shall also constitute assent to the Terms. If you do not unconditionally agree to all of the Terms, DO NOT USE OR ACCESS ANY PORTION OF THE API. If the terms set out herein are considered an offer, acceptance is expressly limited to these terms. IF YOU DO NOT AGREE TO THE TERMS, YOU MAY NOT USE THE API, IN WHOLE OR IN PART.
+ * The following terms and conditions and the terms and conditions at http://www.aviary.com/terms (collectively, the â€œTermsâ€�) govern your use of any and all data, text, software, tools, documents and other materials associated with the application programming interface offered by Aviary, Inc. (the "API"). By clicking on the â€œAcceptâ€� button, OR BY USING OR ACCESSING ANY PORTION OF THE API, you or the entity or company that you represent are unconditionally agreeing to be bound by the terms, including those available by hyperlink from within this document, and are becoming a party to the Terms. Your continued use of the API shall also constitute assent to the Terms. If you do not unconditionally agree to all of the Terms, DO NOT USE OR ACCESS ANY PORTION OF THE API. If the terms set out herein are considered an offer, acceptance is expressly limited to these terms. IF YOU DO NOT AGREE TO THE TERMS, YOU MAY NOT USE THE API, IN WHOLE OR IN PART.
  * 
  * Human-Friendly Summary
  * If you use the API, you automatically agree to these Terms of Service. Don't use our API if you don't agree with this document!
  * 1.	 GRANT OF LICENSE.
- * Subject to your ("Licensee") full compliance with all of Terms of this agreement ("Agreement"), Aviary, Inc. ("Aviary") grants Licensee a non-exclusive, revocable, nonsublicensable, nontransferable license to download and use the API solely to embed a launchable Aviary application within Licensee’s mobile or website application (“App”) and to access data from Aviary in connection with such application. Licensee may not install or use the API for any other purpose without Aviary's prior written consent.
+ * Subject to your ("Licensee") full compliance with all of Terms of this agreement ("Agreement"), Aviary, Inc. ("Aviary") grants Licensee a non-exclusive, revocable, nonsublicensable, nontransferable license to download and use the API solely to embed a launchable Aviary application within Licenseeâ€™s mobile or website application (â€œAppâ€�) and to access data from Aviary in connection with such application. Licensee may not install or use the API for any other purpose without Aviary's prior written consent.
  * 
  * Licensee shall not use the API in connection with or to promote any products, services, or materials that constitute, promote or are used primarily for the purpose of dealing in: spyware, adware, or other malicious programs or code, counterfeit goods, items subject to U.S. embargo, unsolicited mass distribution of email ("spam"), multi-level marketing proposals, hate materials, hacking/surveillance/interception/descrambling equipment, libelous, defamatory, obscene, pornographic, abusive or otherwise offensive content, prostitution, body parts and bodily fluids, stolen products and items used for theft, fireworks, explosives, and hazardous materials, government IDs, police items, gambling, professional services regulated by state licensing regimes, non-transferable items such as airline tickets or event tickets, weapons and accessories.
  * 
  * Use Aviary the way it's intended (as a photo-enhancement service), or get our permission first.
  * If your service does anything illegal or potentially offensive, we don't want Aviary to be in your app. Nothing personal - it just reflects badly on our brand.
  * 2.	 BRANDING.
- * Licensee agrees to the following: (a) on every App page that makes use of the Aviary API, Licensee shall display an Aviary logo crediting Aviary only in accordance with the branding instructions available at [www.aviary.com/branding]; (b) it shall maintain a clickable link to the following location [www.aviary.com/api-info], prominently in the licensee App whenever the API is displayed to the end user. (c) it may not otherwise use the Aviary logo without specific written permission from Aviary; and (d) any use of the Aviary logo on an App page shall be less prominent than the logo or mark that primarily describes the Licensee website, and Licensee’s use of the Aviary logo shall not imply any endorsement of the Licensee website by Aviary.
+ * Licensee agrees to the following: (a) on every App page that makes use of the Aviary API, Licensee shall display an Aviary logo crediting Aviary only in accordance with the branding instructions available at [www.aviary.com/branding]; (b) it shall maintain a clickable link to the following location [www.aviary.com/api-info], prominently in the licensee App whenever the API is displayed to the end user. (c) it may not otherwise use the Aviary logo without specific written permission from Aviary; and (d) any use of the Aviary logo on an App page shall be less prominent than the logo or mark that primarily describes the Licensee website, and Licenseeâ€™s use of the Aviary logo shall not imply any endorsement of the Licensee website by Aviary.
  * 
  * (a) Don't remove or obscure the Aviary logo in the editor.
  * (b) Don't remove or obscure the link to Aviary's mobile info. We link the Aviary logo to this info so you don't need to add anything extra to your app.
@@ -29,7 +29,7 @@
  * (i) Please don't break our API down and redistribute it without our consent.
  * (ii) Please don't agree to use our API if you are not the party using it. If you are a developer building the API into a third party app, please have your client review these terms, as they have to agree to them before they can use the API.
  * 5.	 MODIFICATIONS TO THIS AGREEMENT.
- * Aviary reserves the right, in its sole discretion to modify this Agreement at any time by posting a notice to Aviary.com. You shall be responsible for reviewing and becoming familiar with any such modification. Such modifications are effective upon first posting or notification and use of the Aviary API by Licensee following any such notification constitutes Licensee’s acceptance of the terms and conditions of this Agreement as modified.
+ * Aviary reserves the right, in its sole discretion to modify this Agreement at any time by posting a notice to Aviary.com. You shall be responsible for reviewing and becoming familiar with any such modification. Such modifications are effective upon first posting or notification and use of the Aviary API by Licensee following any such notification constitutes Licenseeâ€™s acceptance of the terms and conditions of this Agreement as modified.
  * 
  * We may update this agreement from time to time, as needed. We don't anticipate any major changes, just tweaks to the legalese to reflect any new feature updates or material changes to how the API is offered. While we will make a good faith effort to notify everyone when these terms update with posts on our blog, etc... it's your responsibility to keep up-to-date with these terms on a regular basis. We'll post the last-update date at the bottom of the agreement to make it easier to know if the terms have changed.
  * 6.	 WARRANTY DISCLAIMER.
@@ -103,8 +103,10 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
+import android.graphics.ColorMatrixColorFilter;
 import android.graphics.Bitmap.CompressFormat;
 import android.graphics.ColorFilter;
+import android.graphics.drawable.NinePatchDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -131,6 +133,8 @@ import android.widget.TextView;
 import android.widget.ToggleButton;
 import android.widget.ViewAnimator;
 import android.widget.ViewFlipper;
+
+import com.aviary.android.feather.R;
 import com.aviary.android.feather.FilterManager.FeatherContext;
 import com.aviary.android.feather.FilterManager.OnBitmapChangeListener;
 import com.aviary.android.feather.FilterManager.OnToolListener;
@@ -190,7 +194,7 @@ public class FeatherActivity extends MonitoredActivity implements OnToolbarClick
 	/** The Constant ALERT_DOWNLOAD_ERROR. */
 	private static final int ALERT_DOWNLOAD_ERROR = 1;
 
-	/** The Constant ALERT_REVERT_IMAGE. */
+	/** The Constant ALERT_REVERT_IMAGE. */  
 	private static final int ALERT_REVERT_IMAGE = 2;
 
 	static {
@@ -489,7 +493,7 @@ public class FeatherActivity extends MonitoredActivity implements OnToolbarClick
 		mFilterManager = null;
 	}
 	
-	@Override
+	@Override 
 	protected void onPause() {
 		super.onPause();
 		// here we tweak the default android animation between activities
@@ -502,12 +506,20 @@ public class FeatherActivity extends MonitoredActivity implements OnToolbarClick
 	 */
 	@SuppressWarnings("deprecation")
 	private void initializeUI() {
+		//to do
+		
+		
 		// forcing a horizontal repeatable background
-		findViewById( R.id.workspace_container ).setBackgroundDrawable(
-				new RepeatableHorizontalDrawable( getResources(), R.drawable.feather_toolbar_background ) );
+//		findViewById( R.id.workspace_container ).setBackgroundDrawable( 
+//				new RepeatableHorizontalDrawable( getResources(), R.drawable.feather_ldl_toolbar_background_bottom) );
+//
+//		findViewById( R.id.toolbar ).setBackground( R.drawable.feather_toolbar_background  );
+		
+//		// forcing a horizontal repeatable background 
+//		findViewById( R.id.workspace_container ).setBackground( R.drawable.ab_transparent_feather );
+//
+//		findViewById( R.id.toolbar ).setBackground(R.drawable.ab_transparent_feather  );
 
-		findViewById( R.id.toolbar ).setBackgroundDrawable(
-				new RepeatableHorizontalDrawable( getResources(), R.drawable.feather_toolbar_background ) );
 
 		// register the toolbar listeners
 		mToolbar.setOnToolbarClickListener( this );
@@ -654,9 +666,9 @@ public class FeatherActivity extends MonitoredActivity implements OnToolbarClick
 		} else {
 			return false;
 		}
-	}
+	} 
 
-	/*
+	/*  
 	 * (non-Javadoc)
 	 * 
 	 * @see android.app.Activity#onOptionsItemSelected(android.view.MenuItem)
@@ -1799,12 +1811,15 @@ public class FeatherActivity extends MonitoredActivity implements OnToolbarClick
 		 *           the view
 		 */
 		private void loadEgg( int position, final ViewGroup view ) {
+			/** The white color filter. */
+			ColorMatrixColorFilter whiteColorFilter = new ColorMatrixColorFilter( new float[] {
+				1, 0, 0, 0, 255, 0, 1, 0, 0, 255, 0, 0, 1, 0, 255, 0, 0, 0, 1, 0, } );
+			
 			EffectEntry entry = getItem( position );
 			final WorkspaceToolViewHolder holder = (WorkspaceToolViewHolder) view.getTag();
 			holder.image.setImageDrawable( new ToolIconsDrawable( getResources(), entry.iconResourceId ) );
 			holder.text.setText( entry.labelResourceId );
 			holder.image.setTag( entry );
-
 			holder.image.setOnClickListener( new OnClickListener() {
 
 				@Override

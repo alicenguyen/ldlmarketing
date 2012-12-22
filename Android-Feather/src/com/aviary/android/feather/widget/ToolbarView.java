@@ -1,6 +1,7 @@
 package com.aviary.android.feather.widget;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.os.Handler;
 import android.os.Message;
 import android.util.AttributeSet;
@@ -93,6 +94,8 @@ public class ToolbarView extends ViewFlipper implements ViewFactory {
 
 	/** The Constant MSG_SHOW_CHILD. */
 	private static final int MSG_SHOW_CHILD = 1;
+	
+
 
 	/** The m handler. */
 	private Handler mHandler = new Handler() {
@@ -191,10 +194,13 @@ public class ToolbarView extends ViewFlipper implements ViewFactory {
 	@Override
 	protected void onFinishInflate() {
 		super.onFinishInflate();
+		
+	
 
 		mApplyButton = (Button) findViewById( R.id.toolbar_content_panel ).findViewById( R.id.button_apply );
 		mSaveButton = (Button) findViewById( R.id.toolbar_main_panel ).findViewById( R.id.button_save );
 		mTitleText = (TextSwitcher) findViewById( R.id.toolbar_title );
+
 		mTitleText.setFactory( this );
 		mAviaryLogo = (TextView) findViewById( R.id.aviary_logo );
 		
@@ -319,7 +325,9 @@ public class ToolbarView extends ViewFlipper implements ViewFactory {
 			mTitleText.setOutAnimation( outAnimation );
 		} else {
 			setTitle( value );
+			
 		}
+
 	}
 
 	/**

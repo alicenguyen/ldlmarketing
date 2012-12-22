@@ -31,16 +31,18 @@ public class ButtonCustomFont extends Button {
 
 		TypedArray array = ctx.obtainStyledAttributes( attrs, R.styleable.TextViewCustomFont );
 		String font = array.getString( R.styleable.TextViewCustomFont_font );
-
 		setCustomFont( font );
 		array.recycle();
 	}
 
-	protected void setCustomFont( String fontname ) {
+	protected void setCustomFont( String fontname ) { 
 		if ( null != fontname ) {
 			try {
-				Typeface font = TypefaceUtils.createFromAsset( getContext().getAssets(), fontname );
+//				Typeface font = TypefaceUtils.createFromAsset( getContext().getAssets(), fontname );
+				Typeface font = Typeface.createFromAsset(getContext().getAssets(), "Eurostib.TTF");	// included this for our own custom font
 				setTypeface( font );
+				setTextColor(getContext().getResources().getColor(R.color.white));
+				
 			} catch ( Throwable t ) {}
 		}
 	}

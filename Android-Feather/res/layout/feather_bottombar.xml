@@ -35,7 +35,8 @@
             android:layout_marginBottom="0dp"
             android:gravity="top"
             android:orientation="vertical"
-            android:weightSum="1" >
+            android:weightSum="1"
+            android:background="@drawable/ab_solid_feather_ldl" >
 
             <com.aviary.android.feather.widget.wp.Workspace
                 android:id="@+id/workspace"

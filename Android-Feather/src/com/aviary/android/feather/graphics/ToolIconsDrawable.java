@@ -9,6 +9,8 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.StateListDrawable;
 
+import com.aviary.android.feather.R;
+
 /**
  * The Class ToolIconsDrawable.
  */
@@ -19,8 +21,12 @@ public class ToolIconsDrawable extends StateListDrawable {
 
 	/** The white color filter. */
 	ColorMatrixColorFilter whiteColorFilter = new ColorMatrixColorFilter( new float[] {
-		1, 0, 0, 0, 255, 0, 1, 0, 0, 255, 0, 0, 1, 0, 255, 0, 0, 0, 1, 0, } );
+		1, 0, 0, 0, 236, 
+		0, 1, 0, 0, 79, 
+		0, 0, 1, 0, 213, 
+		0, 0, 0, 1, 0, } );
 
+	int pink;
 	/**
 	 * Instantiates a new tool icons drawable.
 	 * 
@@ -32,6 +38,9 @@ public class ToolIconsDrawable extends StateListDrawable {
 	public ToolIconsDrawable( Resources res, int resId ) {
 		super();
 		mDrawable = res.getDrawable( resId );
+		pink = res.getColor(R.color.pink);
+		
+	
 	}
 
 	/*
@@ -76,7 +85,9 @@ public class ToolIconsDrawable extends StateListDrawable {
 	public void draw( Canvas canvas ) {
 		if ( mDrawable != null ) {
 			mDrawable.draw( canvas );
+			
 		}
+	
 	}
 
 	/*
@@ -107,10 +118,11 @@ public class ToolIconsDrawable extends StateListDrawable {
 	@Override
 	public void setColorFilter( ColorFilter cf ) {
 		if ( mDrawable != null ) {
-			mDrawable.setColorFilter( cf );
+			mDrawable.setColorFilter(cf );
 		}
 		invalidateSelf();
 	}
+
 
 	/*
 	 * (non-Javadoc)
@@ -148,9 +160,12 @@ public class ToolIconsDrawable extends StateListDrawable {
 	public void setPressed( boolean value ) {
 		if ( value ) {
 			setColorFilter( whiteColorFilter );
+
 		} else {
 			setColorFilter( null );
 		}
 		mPressed = value;
 	}
+	
+
 }

@@ -4,7 +4,8 @@
     style="@style/FeatherToolbar"
     android:layout_width="fill_parent"
     android:layout_gravity="center"
-    android:gravity="center" >
+    android:gravity="center" 
+    android:background="@drawable/ab_solid_feather_pink">
 
     <RelativeLayout
         android:id="@+id/toolbar_main_panel"

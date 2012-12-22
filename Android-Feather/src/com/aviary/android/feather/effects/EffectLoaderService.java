@@ -3,6 +3,7 @@ package com.aviary.android.feather.effects;
 import java.io.IOException;
 import com.aviary.android.feather.R;
 import com.aviary.android.feather.library.content.EffectEntry;
+import com.aviary.android.feather.library.content.FeatherIntent;
 import com.aviary.android.feather.library.filters.FilterLoaderFactory;
 import com.aviary.android.feather.library.filters.FilterLoaderFactory.Filters;
 import com.aviary.android.feather.library.log.LoggerFactory;
@@ -74,9 +75,9 @@ public class EffectLoaderService extends EffectContextService {
 				//panel = new EffectsPanel( context, FeatherIntent.PluginType.TYPE_FILTER );
 				break;
 
-			//case BORDERS:
-			//	panel = new EffectsPanel( context, FeatherIntent.PluginType.TYPE_BORDER );
-			//	break;
+//			case BORDERS:
+//				panel = new EffectsPanel( context, FeatherIntent.PluginType.TYPE_BORDER );
+//				break;
 
 			case CROP:
 				panel = new CropPanel( context );
@@ -98,9 +99,9 @@ public class EffectLoaderService extends EffectContextService {
 				panel = new DrawingPanel( context );
 				break;
 
-			case STICKERS:
+			/*case STICKERS:
 				panel = new StickersPanel( context );
-				break;
+				break;*/
 
 			case TEXT:
 				panel = new TextPanel( context );
@@ -126,7 +127,7 @@ public class EffectLoaderService extends EffectContextService {
 			new EffectEntry( FilterLoaderFactory.Filters.ENHANCE, R.drawable.feather_tool_icon_enhance, R.string.enhance ),
 			new EffectEntry( FilterLoaderFactory.Filters.EFFECTS, R.drawable.feather_tool_icon_effects, R.string.effects ),
 			/*new EffectEntry( FilterLoaderFactory.Filters.BORDERS, R.drawable.feather_tool_icon_borders, R.string.feather_borders ),*/
-			new EffectEntry( FilterLoaderFactory.Filters.STICKERS, R.drawable.feather_tool_icon_stickers, R.string.stickers ),
+			//new EffectEntry( FilterLoaderFactory.Filters.STICKERS, R.drawable.feather_tool_icon_stickers, R.string.stickers ),
 			new EffectEntry( FilterLoaderFactory.Filters.ADJUST, R.drawable.feather_tool_icon_adjust, R.string.adjust ),
 			new EffectEntry( FilterLoaderFactory.Filters.CROP, R.drawable.feather_tool_icon_crop, R.string.crop ),
 			new EffectEntry( FilterLoaderFactory.Filters.BRIGHTNESS, R.drawable.feather_tool_icon_brightness, R.string.brightness ),

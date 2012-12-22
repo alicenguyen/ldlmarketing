@@ -30,7 +30,7 @@ public class TextViewCustomFont extends TextView {
 	private void setCustomFont( Context ctx, AttributeSet attrs ) {
 
 		TypedArray array = ctx.obtainStyledAttributes( attrs, R.styleable.TextViewCustomFont );
-		String font = array.getString( R.styleable.TextViewCustomFont_font );
+		String font = array.getString( R.styleable.TextViewCustomFont_font ); 
 		setCustomFont( font );
 		array.recycle();
 	}
@@ -38,7 +38,8 @@ public class TextViewCustomFont extends TextView {
 	protected void setCustomFont( String fontname ) {
 		if ( null != fontname ) {
 			try {
-				Typeface font = TypefaceUtils.createFromAsset( getContext().getAssets(), fontname );
+//				Typeface font = TypefaceUtils.createFromAsset( getContext().getAssets(), fontname );
+				Typeface font = Typeface.createFromAsset(getContext().getAssets(), "Eurostib.TTF");	// included this for our own custom font
 				setTypeface( font );
 			} catch ( Throwable t ) {}
 		}

@@ -5,7 +5,7 @@
         <item name="android:textColorPrimary">@color/feather_text_color_primary_selector</item>
         <item name="android:textColorSecondary">@color/feather_text_color_secondary</item>
         <item name="android:textColorTertiary">@color/feather_text_color_tertiary</item>
-        <item name="android:textColorPrimaryInverse">@android:color/white</item>
+        <item name="android:textColorPrimaryInverse">@android:color/white</item> 
         <item name="android:windowBackground">@android:color/background_dark</item>
         <item name="android:textAppearanceLarge">@style/TextAppearance.Title</item>
           <!-- had to include "Feather" to avoid name confliction with ActionBarSherlock library -->
@@ -86,30 +86,32 @@
         <item name="android:paddingRight">0dp</item>
         <item name="android:paddingTop">0dp</item>
         <item name="android:paddingBottom">0dp</item>
+   
     </style>
 
+    
     <style name="FeatherToolbarTitle">
         <item name="android:ellipsize">end</item>
         <item name="android:background">@android:color/transparent</item>
         <item name="android:shadowDx">?attr/shadowDxSmall</item>
         <item name="android:shadowDy">?attr/shadowDySmall</item>
         <item name="android:shadowRadius">?attr/shadowRadiusSmall</item>
-        <item name="android:shadowColor">?attr/shadowColorPrimary</item>
+       <!--  <item name="android:shadowColor">?attr/shadowColorPrimary</item>  -->
         <item name="android:textAppearance">?android:attr/textAppearanceLarge</item>
         <item name="font">?attr/toolbarTitleFontFamily</item>
     </style>
 
     <style name="FeatherToolbarButton">
-        <item name="android:background">@drawable/feather_toolbar_button</item>
+        <item name="android:background">@drawable/ab_solid_feather_button</item>
         <item name="android:paddingRight">15dp</item>
         <item name="android:paddingLeft">15dp</item>
         <item name="android:shadowDx">?attr/shadowDxSmall</item>
         <item name="android:shadowDy">?attr/shadowDySmall</item>
         <item name="android:shadowRadius">?attr/shadowRadiusSmall</item>
-        <item name="android:shadowColor">?attr/shadowColorPrimary</item>
+      <!-- <item name="android:shadowColor">?attr/shadowColorPrimary</item>  --> 
         <item name="android:gravity">center</item>
         <item name="android:textAppearance">?android:attr/textAppearanceLarge</item>
-        <item name="android:textStyle">bold</item>
+   		<item name="android:textColor">@color/white</item>
         <item name="font">?attr/toolbarButtonFontFamily</item>
     </style>
 
