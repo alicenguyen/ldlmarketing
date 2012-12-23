@@ -4,7 +4,6 @@
     android:versionCode="1"
     android:versionName="1.0" >
 
-    <!-- need api 11 for action bar -->
     <uses-sdk
         android:minSdkVersion="7"
         android:targetSdkVersion="16" />
@@ -12,7 +11,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
@@ -20,7 +19,6 @@
     <application
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:screenOrientation="portrait"
         android:theme="@android:style/Theme.Light" >
         <activity
             android:name=".MainTabActivity"
@@ -46,8 +44,8 @@
             android:name=".AboutActivity"
             android:label="   About"
             android:parentActivityName=".HomeActivity"
-            android:theme="@style/LDLTheme.pink" 
-             android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:theme="@style/LDLTheme.pink" >
         </activity>
         <activity
             android:name=".FAQActivity"
@@ -78,11 +76,13 @@
         </activity>
         <activity
             android:name=".LDLCamActivity"
-            android:label="LDL Cam" />
+            android:label="LDL Cam"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".FrameActivity"
-            android:theme="@style/LDLTheme.pink"
-            android:label="   Frames" >
+            android:label="   Frames"
+            android:screenOrientation="portrait"
+            android:theme="@style/LDLTheme.pink" >
             <intent-filter>
                 <data
                     android:host="path"
@@ -91,10 +91,10 @@
         </activity>
         <activity
             android:name="com.aviary.android.feather.FeatherActivity"
-            android:configChanges="orientation|keyboardHidden"
+            android:configChanges="orientation|keyboardHidden|screenSize"
             android:hardwareAccelerated="true"
             android:largeHeap="true"
-            android:screenOrientation="unspecified"
+            android:screenOrientation="portrait"
             android:theme="@style/FeatherDefaultTheme.Custom" />
 
         <receiver
@@ -120,8 +120,8 @@
             android:name=".PressActivity"
             android:label="   Press"
             android:parentActivityName=".HomeActivity"
-            android:theme="@style/LDLTheme.pink" 
-             android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:theme="@style/LDLTheme.pink" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".HomeActivity" />
@@ -155,8 +155,8 @@
             android:theme="@style/LDLTheme.pink" />
         <activity
             android:name=".PhotoActivity"
-            android:theme="@style/LDLTheme.pink" 
-             android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:theme="@style/LDLTheme.pink" />
         <activity
             android:name=".PortfolioActivity"
             android:label="   Portfolio"

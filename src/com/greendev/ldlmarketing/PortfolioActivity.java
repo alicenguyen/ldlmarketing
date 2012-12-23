@@ -206,6 +206,7 @@ public class PortfolioActivity extends LDLActivity implements OnClickListener {
 		try {
 			if (isNetworkAvailable()) {
 				Intent i = new Intent(this, ImageGridActivity.class);
+				//i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
 				Bundle b = new Bundle();
 
 				switch (v.getId()) {

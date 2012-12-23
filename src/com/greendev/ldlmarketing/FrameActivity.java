@@ -7,6 +7,7 @@ import java.util.Date;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
 import android.graphics.BitmapFactory;
@@ -27,9 +28,10 @@ import android.widget.Toast;
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.ActionBar.Tab;
 import com.actionbarsherlock.view.Menu;
+import com.aviary.android.feather.FeatherActivity;
 
 public class FrameActivity extends LDLFragmentActivity implements
-		OnClickListener, ActionBar.TabListener {
+		OnClickListener {
 
 	protected Uri outputUri;
 	private Intent intent;
@@ -42,32 +44,42 @@ public class FrameActivity extends LDLFragmentActivity implements
 	private ImageView imgView;
 	private Context context;
 
+	protected String _path;
+	protected String _output;
+	protected File outFile;
+	private static final int RESULT_FRAME_IMAGE = 1;
+
 	public void onCreate(Bundle savedInstanceState) {
 
 		super.onCreate(savedInstanceState);
 		context = getApplicationContext();
 		setContentView(R.layout.picture_frame_layout);
 		this.imgView = (ImageView) findViewById(R.id.imgView);
+		_output = "output.jpg";
 
 		Button frameB1 = (Button) findViewById(R.id.frame_b1);
 		frameB1.setOnClickListener(this);
-		// frameB1.setBackground((makeThumb(R.id.frame_b1)).mutate());
-		// makeThumb(frameB1, R.id.frame_b1);
 
 		Button frameB2 = (Button) findViewById(R.id.frame_b2);
 		frameB2.setOnClickListener(this);
-		// frameB2.setBackground((makeThumb(R.id.frame_b2)).mutate());
-		// makeThumb(frameB2, R.id.frame_b2);
 
 		Button frameB3 = (Button) findViewById(R.id.frame_b3);
 		frameB3.setOnClickListener(this);
-		// frameB3.setBackground((makeThumb(R.id.frame_b3)).mutate());
-		// makeThumb(frameB3, R.id.frame_b3);
 
 		Button frameB4 = (Button) findViewById(R.id.frame_b4);
 		frameB4.setOnClickListener(this);
-		// frameB4.setBackground((makeThumb(R.id.frame_b4)).mutate());
-		// makeThumb(frameB4, R.id.frame_b4);
+
+		Button frameB5 = (Button) findViewById(R.id.frame_b5);
+		frameB5.setOnClickListener(this);
+
+		Button frameB6 = (Button) findViewById(R.id.frame_b6);
+		frameB6.setOnClickListener(this);
+
+		Button frameB7 = (Button) findViewById(R.id.frame_b7);
+		frameB7.setOnClickListener(this);
+
+		Button frameB8 = (Button) findViewById(R.id.frame_b8);
+		frameB8.setOnClickListener(this);
 
 		intent = this.getIntent();
 
@@ -97,7 +109,7 @@ public class FrameActivity extends LDLFragmentActivity implements
 	public boolean onOptionsItemSelected(
 			com.actionbarsherlock.view.MenuItem item) {
 		switch (item.getItemId()) {
-		
+
 		case R.id.share_save:
 			File temp = savePhoto();
 			Intent share = new Intent(Intent.ACTION_SEND);
@@ -107,16 +119,21 @@ public class FrameActivity extends LDLFragmentActivity implements
 					"Just took this picture with LDL Marketing App! ");
 			share.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(temp));
 			startActivity(Intent.createChooser(share, "Share using"));
-			//onDestroy();
+			// onDestroy();
 			return (true);
 
 		case R.id.save_option:
 			savePhoto();
-			 //onDestroy();
+			// onDestroy();
 			return (true);
 
 		}
 		return (super.onOptionsItemSelected(item));
+	}
+
+	@Override
+	public void onConfigurationChanged(Configuration newConfig) {
+		super.onConfigurationChanged(newConfig);
 	}
 
 	@Override
@@ -137,6 +154,22 @@ public class FrameActivity extends LDLFragmentActivity implements
 
 		case R.id.frame_b4:
 			setFrame(R.drawable.frame_4);
+			break;
+
+		case R.id.frame_b5:
+			setFrame(R.drawable.frame_5);
+			break;
+
+		case R.id.frame_b6:
+			setFrame(R.drawable.frame_6);
+			break;
+
+		case R.id.frame_b7:
+			setFrame(R.drawable.frame_7);
+			break;
+
+		case R.id.frame_b8:
+			setFrame(R.drawable.frame_8);
 			break;
 		}
 
@@ -227,24 +260,72 @@ public class FrameActivity extends LDLFragmentActivity implements
 	}
 
 	@Override
-	public void onTabSelected(Tab tab,
-			android.support.v4.app.FragmentTransaction ft) {
-		// TODO Auto-generated method stub
-
+	public void onBackPressed() {
+		photoEditor(outputUri);
 	}
 
+	private void photoEditor(Uri photo) {
+
+		File path = getFilesDir();
+		outFile = new File(path, _output);
+		
+		if(outFile == null){
+			outFile.delete();
+		}
+		
+		Intent i = new Intent(this, FeatherActivity.class);
+		// set the source image uri
+		i.setData(photo);
+		// pass the required api key ( http://developers.aviary.com/ )
+		i.putExtra("API_KEY", "68bceceb1");
+		// pass the uri of the destination image file (optional)
+		// This will be the same uri you will receive in the
+		// onActivityResult
+		i.putExtra("output", Uri.parse("file://"+ outFile.getAbsolutePath()));
+		// format of the destination image (optional)
+		// newIntent.putExtra( "output-format",
+		// Bitmap.CompressFormat.JPEG.name() );
+		// output format quality (optional)
+		i.putExtra("output-quality", 85);
+		// you can force feather to display only a certain tools
+		// newIntent.putExtra( "tools-list", new String[]{"ADJUST",
+		// "BRIGHTNESS"
+		// } );
+
+		// enable fast rendering preview
+		i.putExtra("effect-enable-external-pack", false);
+		i.putExtra("effect-enable-borders", false);
+		i.putExtra("effect-enable-fast-preview", true);
+		i.putExtra("stickers-enable-external-pack", false);
+		startActivityForResult(i, RESULT_FRAME_IMAGE);
+
+	}
+	
 	@Override
-	public void onTabUnselected(Tab tab,
-			android.support.v4.app.FragmentTransaction ft) {
-		// TODO Auto-generated method stub
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		super.onActivityResult(requestCode, resultCode, data);
 
+		if (resultCode == RESULT_OK) {
+			switch (requestCode) {
+				
+			case RESULT_FRAME_IMAGE:
+				Intent j = new Intent(this, FrameActivity.class);
+				j.setData(Uri.parse(outFile.getAbsolutePath()));
+				startActivity(j);
+				break;
+
+			default:
+				break;
+			}
+		}
+	}
+	
+	public void onDestory(){
+		super.onDestroy();
+		if(outFile != null){
+			outFile.delete();
+		}
 	}
 
-	@Override
-	public void onTabReselected(Tab tab,
-			android.support.v4.app.FragmentTransaction ft) {
-		// TODO Auto-generated method stub
-
-	}
-
+	
 }

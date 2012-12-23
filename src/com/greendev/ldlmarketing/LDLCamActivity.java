@@ -4,12 +4,11 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-import com.aviary.android.feather.FeatherActivity;
-import com.greendev.ldlmarketing.R;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
@@ -17,6 +16,8 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.aviary.android.feather.FeatherActivity;
 
 public class LDLCamActivity extends Activity implements OnClickListener {
 	private static final int RESULT_LOAD_IMAGE = 1;
@@ -104,7 +105,6 @@ public class LDLCamActivity extends Activity implements OnClickListener {
 				break;
 
 			case RESULT_CAMERA_IMAGE:
-
 				Uri cameraImage = null;
 				if (data != null) {
 					cameraImage = data.getData();
@@ -119,17 +119,20 @@ public class LDLCamActivity extends Activity implements OnClickListener {
 				break;
 				
 			case RESULT_FRAME_IMAGE:
-
 				Intent j = new Intent(this, FrameActivity.class);
 				j.setData(Uri.parse(outFile.getAbsolutePath()));
 				startActivity(j);
-				
 				break;
 
 			default:
 				break;
 			}
 		}
+	}
+	
+	@Override
+	public void onConfigurationChanged(Configuration newConfig) {
+	    super.onConfigurationChanged(newConfig);
 	}
 
 	private void photoEditor(Uri photo) {
@@ -149,7 +152,7 @@ public class LDLCamActivity extends Activity implements OnClickListener {
 		// pass the uri of the destination image file (optional)
 		// This will be the same uri you will receive in the
 		// onActivityResult
-		i.putExtra("output", Uri.parse(outFile.getAbsolutePath()));
+		i.putExtra("output", Uri.parse("file://"+ outFile.getAbsolutePath()));
 		// format of the destination image (optional)
 		// newIntent.putExtra( "output-format",
 		// Bitmap.CompressFormat.JPEG.name() );
@@ -161,6 +164,8 @@ public class LDLCamActivity extends Activity implements OnClickListener {
 		// } );
 
 		// enable fast rendering preview
+		i.putExtra("effect-enable-external-pack", false);
+		i.putExtra("effect-enable-borders", false);
 		i.putExtra("effect-enable-fast-preview", true);
 	    i.putExtra("stickers-enable-external-pack", false);
 		startActivityForResult(i, RESULT_FRAME_IMAGE);

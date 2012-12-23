@@ -39,76 +39,76 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="10dp"
-                android:background="@drawable/btn_default_holo_dark_selector"
-                android:text="Frame1"
-                android:textColor="@color/white" />
+                android:background="@drawable/ic_frame_1" />
 
             <Button
                 android:id="@+id/frame_b2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
                 android:layout_marginRight="10dp"
-                android:background="@drawable/btn_default_holo_dark_selector"
-                android:text="Frame2"
-                android:textColor="@color/white" />
+                android:background="@drawable/ic_frame_2" />
 
             <Button
                 android:id="@+id/frame_b3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
                 android:layout_marginRight="10dp"
-                android:background="@drawable/btn_default_holo_dark_selector"
-                android:text="Frame3"
-                android:textColor="@color/white" />
+                android:background="@drawable/ic_frame_3" />
 
             <Button
                 android:id="@+id/frame_b4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
                 android:layout_marginRight="10dp"
-                android:background="@drawable/btn_default_holo_dark_selector"
-                android:text="Frame4"
-                android:textColor="@color/white" />
+                android:background="@drawable/ic_frame_4" />
 
             <Button
                 android:id="@+id/frame_b5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
                 android:layout_marginRight="10dp"
-                android:background="@drawable/btn_default_holo_dark_selector"
-                android:text="Frame5"
-                android:textColor="@color/white" />
+                android:background="@drawable/ic_frame_5" />
 
             <Button
                 android:id="@+id/frame_b6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
                 android:layout_marginRight="10dp"
-                android:background="@drawable/btn_default_holo_dark_selector"
-                android:text="Frame6"
-                android:textColor="@color/white" />
+                android:background="@drawable/ic_frame_6" />
 
             <Button
                 android:id="@+id/frame_b7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
                 android:layout_marginRight="10dp"
-                android:background="@drawable/btn_default_holo_dark_selector"
-                android:text="Frame7"
-                android:textColor="@color/white" />
+                android:background="@drawable/ic_frame_7" />
+
+            <Button
+                android:id="@+id/frame_b8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/ic_frame_8" />
         </LinearLayout>
     </HorizontalScrollView>
 
     <ImageView
         android:id="@+id/imgView"
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/horizontalScrollView1"
-        android:layout_alignParentLeft="true"
+    
         android:layout_below="@+id/button_layout" />
 
     <ImageView
-        android:id="@+id/shadow_up"
+        android:id="@+id/shadow_down"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignTop="@id/imgView"
