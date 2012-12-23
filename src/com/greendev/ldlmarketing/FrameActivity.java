@@ -119,11 +119,14 @@ public class FrameActivity extends LDLFragmentActivity implements
 					"Just took this picture with LDL Marketing App! ");
 			share.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(temp));
 			startActivity(Intent.createChooser(share, "Share using"));
+			
+			finish();
 			// onDestroy();
 			return (true);
 
 		case R.id.save_option:
 			savePhoto();
+			finish();
 			// onDestroy();
 			return (true);
 
@@ -262,6 +265,7 @@ public class FrameActivity extends LDLFragmentActivity implements
 	@Override
 	public void onBackPressed() {
 		photoEditor(outputUri);
+		
 	}
 
 	private void photoEditor(Uri photo) {
@@ -297,8 +301,9 @@ public class FrameActivity extends LDLFragmentActivity implements
 		i.putExtra("effect-enable-borders", false);
 		i.putExtra("effect-enable-fast-preview", true);
 		i.putExtra("stickers-enable-external-pack", false);
+		
 		startActivityForResult(i, RESULT_FRAME_IMAGE);
-
+		finish();
 	}
 	
 	@Override
@@ -311,6 +316,7 @@ public class FrameActivity extends LDLFragmentActivity implements
 			case RESULT_FRAME_IMAGE:
 				Intent j = new Intent(this, FrameActivity.class);
 				j.setData(Uri.parse(outFile.getAbsolutePath()));
+		
 				startActivity(j);
 				break;
 
