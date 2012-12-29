@@ -6,6 +6,8 @@ public class FlickrLibrary implements Serializable {
 	private FlickrPhoto[] photos;
 	private FlickrSet[] set;
 	
+
+	
 	/*
 	 * Constructor -- FlickrPhoto
 	 */

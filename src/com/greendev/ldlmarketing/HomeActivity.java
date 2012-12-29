@@ -1,5 +1,7 @@
 package com.greendev.ldlmarketing;
 
+import com.greendev.flickr.FlickrSetsLibrary;
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -55,6 +57,12 @@ public class HomeActivity extends Activity implements OnClickListener {
 		View contactUsButton = findViewById(R.id.button_contactus);
 		contactUsButton.setOnClickListener(this);
 		((TextView) contactUsButton).setTypeface(font);
+		
+		FlickrSetsLibrary lib = FlickrSetsLibrary.getInstance();
+		
+		Log.i("HomeActivity", "before: "+lib.a);
+		lib.a = "bye"; 
+		Log.i("HomeActivity", "after: "+lib.a);
 	}
 
 	@Override

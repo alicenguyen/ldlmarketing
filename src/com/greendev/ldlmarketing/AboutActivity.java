@@ -6,10 +6,12 @@ import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
 
+import com.greendev.flickr.FlickrSetsLibrary;
 import com.viewpagerindicator.LinePageIndicator;
 import com.viewpagerindicator.PageIndicator;
 
@@ -32,6 +34,12 @@ public class AboutActivity extends LDLActivity {
 		LinePageIndicator lIndicator = (LinePageIndicator) findViewById(R.id.indicator);
 		mIndicator = lIndicator;
 		mIndicator.setViewPager(myPager);
+		
+		
+		FlickrSetsLibrary setslib = FlickrSetsLibrary.getInstance();
+		
+		
+
 
 	}
 
