@@ -16,6 +16,8 @@
 
 package com.greendev.image;
 
+import static android.app.Activity.RESULT_CANCELED;
+import static android.app.Activity.RESULT_OK;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
@@ -26,11 +28,16 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.TransitionDrawable;
 import android.support.v4.app.FragmentManager;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
+import android.widget.LinearLayout.LayoutParams;
 
 
 
+import java.io.IOException;
 import java.lang.ref.WeakReference;
+import java.net.MalformedURLException;
 
 import com.greendev.ldlmarketing.BuildConfig;
 
@@ -60,6 +67,8 @@ public abstract class ImageWorker {
 
     protected ImageWorker(Context context) {
         mResources = context.getResources();
+        
+
     }
 
     /**
@@ -98,6 +107,8 @@ public abstract class ImageWorker {
             // for more info on what was changed.
             task.executeOnExecutor(AsyncTask.DUAL_THREAD_EXECUTOR, data);
         }
+        
+     
     }
 
     /**
@@ -108,6 +119,13 @@ public abstract class ImageWorker {
     public void setLoadingImage(Bitmap bitmap) {
         mLoadingBitmap = bitmap;
     }
+    
+    /**
+     * Set placeholder bitmap that shows when the the background thread is running.
+     * I just added this one!!!
+     * @param bitmap
+     */
+
 
     /**
      * Set placeholder bitmap that shows when the the background thread is running.

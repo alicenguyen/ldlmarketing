@@ -75,7 +75,7 @@ public class PortfolioActivity extends LDLActivity implements OnClickListener {
 	public void onClick(View v) {
 		/* internert service check */
 		Context context = getApplicationContext();
-		CharSequence noServiceText = "Please wait a moment and try again.";
+		CharSequence noServiceText = "No internet connection.";
 		CharSequence badServiceText = "Please wait a moment and try again.";
 		int duration = Toast.LENGTH_LONG;
 		Toast toast1 = Toast.makeText(context, noServiceText, duration);
@@ -83,7 +83,6 @@ public class PortfolioActivity extends LDLActivity implements OnClickListener {
 		badService = false;
 
 		try {
-
 			Intent i = new Intent(this, ImageGridActivity.class);
 			Bundle b = new Bundle();
 
@@ -154,24 +153,16 @@ public class PortfolioActivity extends LDLActivity implements OnClickListener {
 				// throw toast if user has low service.
 				checkThumbs(lib.boothThumbs);
 				break;
-
 			}
 			i.putExtras(b);
 
-			if (badService == false) {
-				if (isNetworkAvailable()) {
-					startActivity(i);
-				} else {
-					toast1.show();
-				}
-			} else {
-				toast2.show();
-			}
+			if (badService == false) {startActivity(i);}
+			else {toast1.show();}
 
-		} catch (Exception e) {
+		}catch(Exception e) {
 			toast1.show();
 			Log.e("PORTFOLIOACTIVITY", "can't start activity ImageGridActivity");
-		}
+		};
 
 	}
 
@@ -181,8 +172,8 @@ public class PortfolioActivity extends LDLActivity implements OnClickListener {
 			Log.i("PortfolioActivity", thumbs.toString()
 					+ " thumbails are null");
 			badService = true;
-		}
-		else badService = false;
+		} else
+			badService = false;
 	}
 
 }

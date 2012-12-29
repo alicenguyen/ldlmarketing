@@ -92,11 +92,11 @@ public class HomeActivity extends Activity implements OnClickListener {
 
 		case R.id.button_portfolio:
 			try {
-				if (isNetworkAvailable()) {
+//				if (isNetworkAvailable()) {
 					Intent b = new Intent(this, PortfolioActivity.class);
 					startActivity(b);
-				} else
-					toast.show();
+//				} else
+//					toast.show();
 			} catch (Exception e) {
 				toast.show();
 				Log.e("HOMEACTIVITY", "portfolio error");

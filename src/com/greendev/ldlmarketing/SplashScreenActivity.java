@@ -48,28 +48,27 @@ public class SplashScreenActivity extends Activity {
 				.permitAll().build();
 		StrictMode.setThreadPolicy(policy);
 	    
-	    // flickr prep
-		// Start fetching sets from Flickr
-		new Thread(new FetchSetsTask(responseHandler)).start();
+//	    /* flickr prep */
+//		// Start fetching sets from Flickr
+//		new Thread(new FetchSetsTask(responseHandler)).start();
 	}
-	
-
-	Handler responseHandler = new Handler() {
-		@Override
-		public void handleMessage(Message msg) {
-				prepSets(msg);
-			
-		};
-	};
-	
-	private void prepSets(Message msg){
-		FlickrLibrary lib = (FlickrLibrary) msg.getData().get(
-				FetchSetsTask.LIBRARY);
-		
-		FlickrSetsLibrary setslib = FlickrSetsLibrary.getInstance();
-		setslib.setFlickrSets(lib.fetchSets());
-		setslib.createUrlPortfolio();
-		setslib.createUrlGallery();
-		
-	}
+//	
+//
+//	Handler responseHandler = new Handler() {
+//		@Override
+//		public void handleMessage(Message msg) {
+//				prepSets(msg);
+//			
+//		};
+//	};
+//	
+//	private void prepSets(Message msg){
+//		FlickrLibrary lib = (FlickrLibrary) msg.getData().get(
+//				FetchSetsTask.LIBRARY);
+//		
+//		FlickrSetsLibrary setslib = FlickrSetsLibrary.getInstance();
+//		setslib.setFlickrSets(lib.fetchSets());
+//		setslib.createUrlPortfolio();
+//		setslib.createUrlGallery();
+//	}
 }

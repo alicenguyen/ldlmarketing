@@ -86,7 +86,7 @@ public class GalleryActivity extends Activity implements OnClickListener {
 	public void onClick(View v) {
 		/* internert service check */
 		Context context = getApplicationContext();
-		CharSequence noServiceText = "Oops! We need internet connection to access this page!";
+		CharSequence noServiceText = "No internet connection.";
 		CharSequence badServiceText = "Please wait a moment and try again.";
 		int duration = Toast.LENGTH_LONG;
 		Toast toast1 = Toast.makeText(context, noServiceText, duration);

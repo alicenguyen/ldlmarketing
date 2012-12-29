@@ -1,8 +1,8 @@
 package com.greendev.ldlmarketing;
 
 import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -12,6 +12,8 @@ import android.content.res.Configuration;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -23,16 +25,16 @@ public class LDLCamActivity extends Activity implements OnClickListener {
 	private static final int RESULT_LOAD_IMAGE = 1;
 	private static final int RESULT_CAMERA_IMAGE = 2;
 	private static final int RESULT_FRAME_IMAGE = 3;
-	protected String _path;
 	protected String _output;
 	protected File outFile;
+	protected File path;
+	private Uri imageFileUri;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.ldlcam_layout);
 
-		_path = "temp.jpg";
 		_output = "output.jpg";
 		// Custom Font
 		Typeface font = Typeface.createFromAsset(getAssets(), "Eurosti.TTF");
@@ -42,7 +44,7 @@ public class LDLCamActivity extends Activity implements OnClickListener {
 		titleText1.setTypeface(font);
 		TextView titleText2 = (TextView) findViewById(R.id.ldlcam_text2);
 		titleText2.setTypeface(font);
-		
+
 		// Text View I
 		TextView buttontv1 = (TextView) findViewById(R.id.pick_image_button);
 		buttontv1.setTypeface(font);
@@ -64,28 +66,21 @@ public class LDLCamActivity extends Activity implements OnClickListener {
 
 		// from gallery button
 		case R.id.pick_image_button:
-			Intent photoIntent = new Intent(Intent.ACTION_PICK, 
-					android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+			Intent photoIntent = new Intent(Intent.ACTION_PICK,
+					MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
 
 			startActivityForResult(photoIntent, RESULT_LOAD_IMAGE);
 			break;
 
 		// from camera button
 		case R.id.from_camera_button:
-			Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
-			try {
-				FileOutputStream fos = openFileOutput(_path, Context.MODE_WORLD_WRITEABLE);
+			Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 
-				fos.close();
-				File path = getFilesDir();
-				File file = new File(path, _path);
-				Uri uri = Uri.fromFile(file);
-				cameraIntent.putExtra(android.provider.MediaStore.EXTRA_OUTPUT,	uri);
+				imageFileUri = getOutputImageFileUri(this);
+				cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, imageFileUri);
 
 				startActivityForResult(cameraIntent, RESULT_CAMERA_IMAGE);
-			} catch (IOException ie) {
 
-			}
 			break;
 		}
 	}
@@ -109,15 +104,16 @@ public class LDLCamActivity extends Activity implements OnClickListener {
 				if (data != null) {
 					cameraImage = data.getData();
 				} else {
-					File path = getFilesDir();
+					/*File path = getFilesDir();
 
 					File file = new File(path, _path);
-					cameraImage = Uri.fromFile(file);
+					cameraImage = Uri.fromFile(file);*/
+					cameraImage = imageFileUri;
 				}
 
 				photoEditor(cameraImage);
 				break;
-				
+
 			case RESULT_FRAME_IMAGE:
 				Intent j = new Intent(this, FrameActivity.class);
 				j.setData(Uri.parse(outFile.getAbsolutePath()));
@@ -129,18 +125,18 @@ public class LDLCamActivity extends Activity implements OnClickListener {
 			}
 		}
 	}
-	
+
 	@Override
 	public void onConfigurationChanged(Configuration newConfig) {
-	    super.onConfigurationChanged(newConfig);
+		super.onConfigurationChanged(newConfig);
 	}
 
 	private void photoEditor(Uri photo) {
 
 		File path = getFilesDir();
 		outFile = new File(path, _output);
-		
-		if(outFile != null){
+
+		if (outFile != null) {
 			outFile.delete();
 		}
 
@@ -152,7 +148,7 @@ public class LDLCamActivity extends Activity implements OnClickListener {
 		// pass the uri of the destination image file (optional)
 		// This will be the same uri you will receive in the
 		// onActivityResult
-		i.putExtra("output", Uri.parse("file://"+ outFile.getAbsolutePath()));
+		i.putExtra("output", Uri.parse("file://" + outFile.getAbsolutePath()));
 		// format of the destination image (optional)
 		// newIntent.putExtra( "output-format",
 		// Bitmap.CompressFormat.JPEG.name() );
@@ -167,14 +163,49 @@ public class LDLCamActivity extends Activity implements OnClickListener {
 		i.putExtra("effect-enable-external-pack", false);
 		i.putExtra("effect-enable-borders", false);
 		i.putExtra("effect-enable-fast-preview", true);
-	    i.putExtra("stickers-enable-external-pack", false);
+		i.putExtra("stickers-enable-external-pack", false);
 		startActivityForResult(i, RESULT_FRAME_IMAGE);
-		
+
 	}
-	
-	public void onDestory(){
+
+	private static String getTempDirectoryPath(Context ctx) {
+		File cache;
+
+		// SD Card Mounted
+		if (Environment.getExternalStorageState().equals(
+				Environment.MEDIA_MOUNTED)) {
+			cache = new File(Environment.getExternalStorageDirectory()
+					.getAbsolutePath()
+					+ "/Android/data/"
+					+ ctx.getPackageName() + "/cache/");
+		}
+		// Use internal storage
+		else {
+			cache = ctx.getCacheDir();
+		}
+
+		// Create the cache directory if it doesn't exist
+		if (!cache.exists()) {
+			cache.mkdirs();
+		}
+
+		return cache.getAbsolutePath();
+	}
+
+	public static Uri getOutputImageFileUri(Context ctx) {
+
+		String tstamp = new SimpleDateFormat("yyyyMMdd_HHmmss")
+				.format(new Date());
+		File file = new File(getTempDirectoryPath(ctx), "IMG_" + tstamp
+				+ ".jpg");
+
+		return Uri.fromFile(file);
+
+	}
+
+	public void onDestory() {
 		super.onDestroy();
-		if(outFile != null){
+		if (outFile != null) {
 			outFile.delete();
 		}
 	}
