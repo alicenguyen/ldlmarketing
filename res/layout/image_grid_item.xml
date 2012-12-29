@@ -16,6 +16,7 @@
         android:layout_height="fill_parent" />
 
     <LinearLayout
+        android:id="@+id/blackShadow"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_gravity="bottom"
@@ -26,10 +27,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
             android:gravity="left"
-            android:text="Hello World2!"
             android:textColor="@color/white"
             android:textSize="15sp" />
+
     </LinearLayout>
 
 </FrameLayout>

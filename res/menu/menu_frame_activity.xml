@@ -7,8 +7,13 @@
         android:showAsAction="ifRoom|withText"
         android:title="Share"/>
     <item
+        android:id="@+id/cancel"
+        android:icon="@drawable/ic_cancel"
+        android:showAsAction="ifRoom|withText"
+        android:title="Cancel"/>
+    <item
         android:id="@+id/save_option"
         android:icon="@drawable/ic_accept"
         android:showAsAction="ifRoom|withText"
         android:title="Save"/>
-</menu>
+</menu>

@@ -179,14 +179,14 @@ public final class R {
 		public static final int feather_loading_view = 0x7f03003c;
 	}
 	public static final class id {
-		public static final int edit_premium = 0x7f0500f4;
+		public static final int edit_premium = 0x7f0500f6;
 		public static final int invisible_text_2 = 0x7f050097;
 		public static final int gallery = 0x7f05006c;
 		public static final int layout_loader = 0x7f050085;
 		public static final int text = 0x7f050074;
 		public static final int button2 = 0x7f050066;
 		public static final int top_indicator_main = 0x7f0500a6;
-		public static final int edit_cancel = 0x7f0500f5;
+		public static final int edit_cancel = 0x7f0500f7;
 		public static final int drawing_view_container = 0x7f050091;
 		public static final int top_indicator_panel = 0x7f0500aa;
 		public static final int tool_text = 0x7f050080;
@@ -194,8 +194,8 @@ public final class R {
 		public static final int wheel_radio = 0x7f0500ac;
 		public static final int size_preview_image = 0x7f05008b;
 		public static final int dragLayer = 0x7f05008c;
-		public static final int masked = 0x7f0500f0;
-		public static final int mask = 0x7f0500f1;
+		public static final int masked = 0x7f0500f2;
+		public static final int mask = 0x7f0500f3;
 		public static final int aviary_infoscreen_submit = 0x7f050089;
 		public static final int main_content = 0x7f05008e;
 		public static final int crop_image_view = 0x7f050076;
@@ -234,7 +234,7 @@ public final class R {
 		public static final int gallery_color = 0x7f050079;
 		public static final int wheel_parent = 0x7f0500ad;
 		public static final int lens_button = 0x7f050078;
-		public static final int edit_reset = 0x7f0500f3;
+		public static final int edit_reset = 0x7f0500f5;
 		public static final int container = 0x7f050082;
 		public static final int image_container = 0x7f050090;
 		public static final int text01 = 0x7f050084;
@@ -246,7 +246,7 @@ public final class R {
 		public static final int egg_view = 0x7f05007f;
 		public static final int radio = 0x7f050081;
 		public static final int toolbar_main_panel = 0x7f0500a4;
-		public static final int edit_save = 0x7f0500f6;
+		public static final int edit_save = 0x7f0500f8;
 		public static final int wheel = 0x7f0500af;
 		public static final int layout01 = 0x7f050083;
 		public static final int clear_button_bottom = 0x7f05009a;

@@ -35,6 +35,7 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.greendev.image.ImageCache.ImageCacheParams;
@@ -105,7 +106,7 @@ public class ImageGridFragment extends Fragment implements
 		// The ImageFetcher takes care of loading images into our ImageView
 		// children asynchronously
 		mImageFetcher = new ImageFetcher(context, mImageThumbSize);
-		mImageFetcher.setLoadingImage(R.drawable.empty_photo);  
+		//mImageFetcher.setLoadingImage(R.drawable.empty_photo);  
 		
 		mImageFetcher.addImageCache(
 				((FragmentActivity) context).getSupportFragmentManager(),
@@ -310,6 +311,11 @@ public class ImageGridFragment extends Fragment implements
 		 */
 		@Override
 		public View getView(int position, View convertView, ViewGroup container) {
+			LayoutInflater inflater = (LayoutInflater) context
+					.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
+			View gridView;
+
 			// First check if this is the top row
 			if (position < mNumColumns) {
 				if (convertView == null) {
@@ -321,29 +327,47 @@ public class ImageGridFragment extends Fragment implements
 				return convertView;
 			}
 
-			// Now handle the main ImageView thumbnails
 			ImageView imageView;
+			/* The infamous album label */
+			//TextView textView;
 			if (convertView == null) { // if it's not recycled, instantiate and
 										// initialize
-				imageView = new ImageView(mContext);
+				gridView = new View(mContext);
+				// get layout from mobile.xml
+				gridView = (View) inflater.inflate(R.layout.image_grid_item,
+						null);
+				View blackShadow = gridView.findViewById(R.id.blackShadow);
+				blackShadow.setVisibility(ImageView.GONE);
+				
+				imageView = (ImageView) gridView.findViewById(R.id.fragItem);
+				mImageFetcher.loadImage(typeUrlsThumbs[position - mNumColumns],
+						imageView);
+
 				imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-				imageView.setLayoutParams(mImageViewLayoutParams);
+				gridView.setLayoutParams(mImageViewLayoutParams);
+				
+				
+//				textView = (TextView) gridView.findViewById(R.id.fragText);
+//				textView.setText(setsNames[position - mNumColumns]);
 			} else { // Otherwise re-use the converted view
-				imageView = (ImageView) convertView;
+				// imageView = (ImageView) convertView;
+				gridView = (View) convertView;
+				
+				imageView = (ImageView) gridView.findViewById(R.id.fragItem);
+				mImageFetcher.loadImage(typeUrlsThumbs[position - mNumColumns],
+						imageView);
+				
+//				textView = (TextView) gridView.findViewById(R.id.fragText);
+//				textView.setText(setsNames[position - mNumColumns]);
 			}
 
 			// Check the height matches our calculated column width
-			if (imageView.getLayoutParams().height != mItemHeight) {
-				imageView.setLayoutParams(mImageViewLayoutParams);
+			if (gridView.getLayoutParams().height != mItemHeight) {
+				gridView.setLayoutParams(mImageViewLayoutParams);
+				// imageView.setLayoutParams(mImageViewLayoutParams);
 			}
 
-			// Finally load the image asynchronously into the ImageView, this
-			// also takes care of
-			// setting a placeholder image while the background thread runs
-			mImageFetcher.loadImage(typeUrlsThumbs[position - mNumColumns],
-					imageView);
-
-			return imageView;
+			return (View) gridView;
 		}
 		/**
 		 * Sets the item height. Useful for when we know the column width so the

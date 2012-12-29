@@ -94,7 +94,7 @@ public class PhotoActivityGridFragment extends Fragment implements
 		// The ImageFetcher takes care of loading images into our ImageView
 		// children asynchronously
 		mImageFetcher = new ImageFetcher(context, mImageThumbSize);
-		mImageFetcher.setLoadingImage(R.drawable.empty_photo);
+		//mImageFetcher.setLoadingImage(R.drawable.empty_photo);
 		mImageFetcher.addImageCache(
 				((FragmentActivity) context).getSupportFragmentManager(),
 				cacheParams);

@@ -57,6 +57,9 @@ public class FrameActivity extends LDLFragmentActivity implements
 		this.imgView = (ImageView) findViewById(R.id.imgView);
 		_output = "output.jpg";
 
+		Button frameB0 = (Button) findViewById(R.id.frame_b0);
+		frameB0.setOnClickListener(this);
+
 		Button frameB1 = (Button) findViewById(R.id.frame_b1);
 		frameB1.setOnClickListener(this);
 
@@ -119,18 +122,20 @@ public class FrameActivity extends LDLFragmentActivity implements
 					"Just took this picture with LDL Marketing App! ");
 			share.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(temp));
 			startActivity(Intent.createChooser(share, "Share using"));
-			
+
 			finish();
-			// onDestroy();
 			return (true);
 
 		case R.id.save_option:
 			savePhoto();
 			finish();
-			// onDestroy();
 			return (true);
 
+		case R.id.cancel:
+			finish();
+			return (true);
 		}
+
 		return (super.onOptionsItemSelected(item));
 	}
 
@@ -142,6 +147,11 @@ public class FrameActivity extends LDLFragmentActivity implements
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
+
+		case R.id.frame_b0:
+			int startFrame = -1;
+			setFrame(startFrame);
+			break;
 
 		case R.id.frame_b1:
 			setFrame(R.drawable.frame_1);
@@ -209,11 +219,6 @@ public class FrameActivity extends LDLFragmentActivity implements
 		Rect bounds = new Rect(0, 0, 100, 100);
 
 		b.setBackground(d);
-		// NinePatchDrawable frame = (NinePatchDrawable) d;
-		// Set its bound where you need
-
-		// frame.setBounds(bounds);
-
 	}
 
 	private File savePhoto() {
@@ -265,18 +270,18 @@ public class FrameActivity extends LDLFragmentActivity implements
 	@Override
 	public void onBackPressed() {
 		photoEditor(outputUri);
-		
+
 	}
 
 	private void photoEditor(Uri photo) {
 
 		File path = getFilesDir();
 		outFile = new File(path, _output);
-		
-		if(outFile == null){
+
+		if (outFile == null) {
 			outFile.delete();
 		}
-		
+
 		Intent i = new Intent(this, FeatherActivity.class);
 		// set the source image uri
 		i.setData(photo);
@@ -285,7 +290,7 @@ public class FrameActivity extends LDLFragmentActivity implements
 		// pass the uri of the destination image file (optional)
 		// This will be the same uri you will receive in the
 		// onActivityResult
-		i.putExtra("output", Uri.parse("file://"+ outFile.getAbsolutePath()));
+		i.putExtra("output", Uri.parse("file://" + outFile.getAbsolutePath()));
 		// format of the destination image (optional)
 		// newIntent.putExtra( "output-format",
 		// Bitmap.CompressFormat.JPEG.name() );
@@ -301,22 +306,21 @@ public class FrameActivity extends LDLFragmentActivity implements
 		i.putExtra("effect-enable-borders", false);
 		i.putExtra("effect-enable-fast-preview", true);
 		i.putExtra("stickers-enable-external-pack", false);
-		
+
 		startActivityForResult(i, RESULT_FRAME_IMAGE);
-		finish();
 	}
-	
+
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
 
 		if (resultCode == RESULT_OK) {
 			switch (requestCode) {
-				
+
 			case RESULT_FRAME_IMAGE:
 				Intent j = new Intent(this, FrameActivity.class);
 				j.setData(Uri.parse(outFile.getAbsolutePath()));
-		
+
 				startActivity(j);
 				break;
 
@@ -324,14 +328,13 @@ public class FrameActivity extends LDLFragmentActivity implements
 				break;
 			}
 		}
+		finish();
 	}
-	
-	public void onDestory(){
+
+	public void onDestory() {
 		super.onDestroy();
-		if(outFile != null){
+		if (outFile != null) {
 			outFile.delete();
 		}
 	}
-
-	
 }
