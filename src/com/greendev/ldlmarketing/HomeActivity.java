@@ -60,9 +60,6 @@ public class HomeActivity extends Activity implements OnClickListener {
 		
 		FlickrSetsLibrary lib = FlickrSetsLibrary.getInstance();
 		
-		Log.i("HomeActivity", "before: "+lib.a);
-		lib.a = "bye"; 
-		Log.i("HomeActivity", "after: "+lib.a);
 	}
 
 	@Override

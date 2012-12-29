@@ -23,6 +23,7 @@
         <activity
             android:name=".MainTabActivity"
             android:label="@string/title_activity_main"
+            android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Light.NoTitleBar" >
             <data
                 android:host="callback"
@@ -30,6 +31,7 @@
         </activity>
         <activity
             android:name=".SplashScreenActivity"
+            android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Light.NoTitleBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -39,6 +41,7 @@
         </activity>
         <activity
             android:name=".HomeActivity"
+            android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
         <activity
             android:name=".AboutActivity"
@@ -54,12 +57,14 @@
             android:theme="@style/LDLTheme.pink" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
+                android:screenOrientation="portrait"
                 android:value=".HomeActivity" />
         </activity>
         <activity
             android:name=".ClientDirectoryActivity"
             android:label="   Client Directory"
             android:parentActivityName=".HomeActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/LDLTheme.pink" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -69,6 +74,7 @@
             android:name=".ContactActivity"
             android:label="   Contact Us"
             android:parentActivityName=".HomeActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/LDLTheme.pink" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -152,7 +158,8 @@
             android:name=".YoutubeActivity"
             android:label="   Videos"
             android:parentActivityName=".HomeActivity"
-            android:theme="@style/LDLTheme.pink" />
+            android:theme="@style/LDLTheme.pink" 
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".PhotoActivity"
             android:screenOrientation="portrait"
@@ -161,7 +168,8 @@
             android:name=".PortfolioActivity"
             android:label="   Portfolio"
             android:parentActivityName=".HomeActivity"
-            android:theme="@style/LDLTheme.pink" >
+            android:theme="@style/LDLTheme.pink" 
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".HomeActivity" />
@@ -170,7 +178,8 @@
             android:name=".ServicesActivity"
             android:label="   Services"
             android:parentActivityName=".HomeActivity"
-            android:theme="@style/LDLTheme.pink" >
+            android:theme="@style/LDLTheme.pink"
+            android:screenOrientation="portrait" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".HomeActivity" />

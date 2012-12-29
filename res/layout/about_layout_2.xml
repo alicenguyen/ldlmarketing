@@ -27,6 +27,7 @@
             android:id="@+id/bio_name2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
             android:layout_toRightOf="@id/bio_pic2"
             android:paddingTop="120dp"
             android:text="Theresa Leung" />

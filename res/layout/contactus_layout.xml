@@ -2,15 +2,16 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:gravity="top" 
-    android:background="@drawable/background_white">
+    android:background="@drawable/background_white"
+    android:gravity="top" >
 
     <!-- The content -->
-
+
     <ScrollView
         android:id="@+id/scrollView1"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
+        android:layout_height="fill_parent" >
+
         <LinearLayout
             android:id="@+id/content"
             android:layout_width="fill_parent"
@@ -18,29 +19,28 @@
             android:layout_below="@+id/header"
             android:animateLayoutChanges="true"
             android:orientation="vertical"
-            android:padding="10dp" 
-            >
+            android:padding="10dp" >
 
             <TextView
-                android:id="@+id/hotline_t"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="3dp"
-                android:text="@string/hotline_s"
+                android:paddingTop="2dp"
+                android:text="Website"
+                android:textColor="@color/darkgrey"
                 android:textSize="17sp"
-                android:textStyle="bold"
-                android:textColor="@color/darkgrey" />
-            
+                android:textStyle="bold" />
+
             <TextView
-                android:id="@+id/hotline"
+                android:id="@+id/website_link"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:autoLink="web"
                 android:paddingBottom="15dp"
                 android:paddingLeft="15dp"
                 android:paddingRight="5dp"
                 android:paddingTop="10dp"
-                android:text="@string/hotline_number"
-                android:textColor="@color/darkgrey" />
+                android:text="www.leungdeleonmarketing.com" />
 
             <!-- pink line -->
 
@@ -57,20 +57,51 @@
                 android:padding="3dp"
                 android:paddingTop="2dp"
                 android:text="@string/email_s"
+                android:textColor="@color/darkgrey"
                 android:textSize="17sp"
-                android:textStyle="bold" 
-                android:textColor="@color/darkgrey"/>
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/email"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:autoLink="email"
                 android:paddingBottom="15dp"
                 android:paddingLeft="15dp"
                 android:paddingRight="5dp"
                 android:paddingTop="10dp"
-                android:text="@string/email_add" 
-                android:textColor="@color/darkgrey"/>
+                android:text="@string/email_add"
+                android:textColor="@color/darkgrey" />
+
+            <!-- pink line -->
+
+            <ImageView
+                android:layout_width="350dp"
+                android:layout_height="1dp"
+                android:layout_gravity="center"
+                android:background="@color/lightpink" />
+
+            <TextView
+                android:id="@+id/hotline_t"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="3dp"
+                android:text="@string/hotline_s"
+                android:textColor="@color/darkgrey"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/hotline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:autoLink="phone"
+                android:paddingBottom="15dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="5dp"
+                android:paddingTop="10dp"
+                android:text="@string/hotline_number"
+                android:textColor="@color/darkgrey" />
 
             <!-- pink line -->
 
@@ -87,21 +118,109 @@
                 android:padding="3dp"
                 android:paddingTop="2dp"
                 android:text="@string/address_s"
+                android:textColor="@color/darkgrey"
                 android:textSize="17sp"
-                android:textStyle="bold"
-                android:textColor="@color/darkgrey" />
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/address"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:autoLink="map"
                 android:paddingBottom="15dp"
                 android:paddingLeft="15dp"
                 android:paddingRight="5dp"
                 android:paddingTop="10dp"
-                android:text="@string/address_full" 
-                android:textColor="@color/darkgrey"/>
+                android:text="@string/address_full"
+                android:textColor="@color/darkgrey" />
 
+            <!-- pink line -->
+
+            <ImageView
+                android:layout_width="350dp"
+                android:layout_height="1dp"
+                android:layout_gravity="center"
+                android:background="@color/lightpink" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="3dp"
+                android:paddingTop="2dp"
+                android:text="Connect with us"
+                android:textColor="@color/darkgrey"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <!-- Social netowrk images -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:paddingBottom="15dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="5dp"
+                android:paddingTop="10dp" >
+
+                <ImageView        
+                    android:id="@+id/fb_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="7dp"
+                    android:background="@drawable/ic_facebook"
+                    android:clickable="true" />
+
+                <ImageView
+                    android:id="@+id/twitter_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="7dp"
+                    android:background="@drawable/ic_twitter"
+                    android:clickable="true"
+                    android:paddingRight="15dp" />
+
+                <ImageView
+                    android:id="@+id/blogspot_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="7dp"
+                    android:background="@drawable/ic_blogspot"
+                    android:clickable="true"
+                    android:paddingRight="15dp" />
+
+                <ImageView
+                    android:id="@+id/youtube_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_youtube"
+                    android:clickable="true" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:autoLink="email"
+                android:paddingBottom="7dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="5dp"
+                android:paddingTop="10dp"
+                android:text="Eavesdrop on us: Girl Talk by LDL"
+                android:textColor="@color/darkgrey"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:id="@+id/blogspot_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginRight="7dp"
+                android:background="@drawable/ic_blogspot"
+                android:clickable="true"
+                android:paddingRight="15dp" />
         </LinearLayout>
     </ScrollView>
 

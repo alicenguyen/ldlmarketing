@@ -95,8 +95,6 @@ public class ClientDirectoryActivity extends LDLActivity implements
 			holder.txtDESC.setText(client.DESC);
 			holder.txtDESC.setTypeface(fontreg);
 			holder.imgIcon.setImageResource(client.icon);
-			
-			
 
 			return row;
 		}
@@ -121,20 +119,20 @@ public class ClientDirectoryActivity extends LDLActivity implements
 		TextView txtDESC;
 	}
 
-	private static String[] NAMES = new String[] { "Triumph", "LBC", "Bench",
+	private static String[] NAMES = new String[] { "Triumph", "LBC", "bench/",
 			"Holcim", "brieo", "Bioessence", "Pasto", "zao",
 			"Bounty Fresh Chicken" };
 
 	private static String[] DESC = new String[] {
 			"Triumph today enjoys a presence in over 120 countries all across the world. For its brands Triumph, sloggi, Valisere, the company develops, produces and sells underwear, lingerie, and swimwear, fusing excelling quality in workmanship, unrivaled fit and the latest in fashionable design.",
-			"One of the pioneers in the field, LBC is continuously innovating ways to send and receive remittances anytime, anywhere in the Philippines.  To date, LBC’s Remittance Service remains to be the safest and the fastest in the country.",
+			"One of the pioneers in the field, LBC is continuously innovating ways to send and receive remittances anytime, anywhere in the Philippines.",
 			"A fashion brand that offers premium quality products at affordable prices. bench/ opened up as a small store selling men's t-shirts. The company has now grown to include a ladies' line, underwear, fragrances, housewares, snacks and other lifestyle products. The company's growth can be attributed to their use of celebrity endorsers, television commercials and giant billboards along the busy streets of the metro.",
 			"Holcim (US) Inc. is one of the largest manufacturers and suppliers of cement and mineral components in the United States.",
-			"Brieo, a product of Brieo Digital Media Group, Inc., is what we would like to call \"community-buyin\"",
+			"Brieo, a product of Brieo Digital Media Group, Inc., is what we would like to call \"community-buyin\".",
 			"Bioessence Beauty Spa offers skin care and slimming services. Started in 1994 in Davao City with a three-bed clinic (Two for Facial and one for massage) . The founder aimed high and dreamed big-that BIOESSENCE become well known and be one of the leaders in the beauty, health and fitness industry.",
 			"This Italian restaurant is in the heart of busy, upscale Global City and perfect for sundowners (beer and a motley of cocktails rule) with friends after work. It has an appealing red and black colour scheme and the table layout/seating arrangement make it comfortable for family dinners. The staff are quick on the mark, gracious and deftly clear up questions on menu items.",
-			"Zao is a bright, sleek and casually lively place where food is the main attraction. Vietnamese restaurants aren’t very common in the metro, and this level of authentic Vietnamese cooking is hard to come by. The food is good and easy on the wallet.",
-			"Bounty Fresh – Asia’s Best This is not just a slogan for a marketing gimmick. This is simply a statement of fact. Winner of numerous prestigious national awards in the poultry and livestock industry for the past several years, from product quality excellence all the way to consumer services, the Bounty Fresh Group upped the ante and bested the leading and world renowned poultry and livestock companies in Asia and won the 2009 Best Poultry and Livestock Company Award at the 2009 Asian Livestock Industry Awards held in Kuala Lumpur, Malaysia, in the categories of Technological Excellence, Food Safety, Marketing Excellence and Industry Leadership." };
+			"Zao is a bright, sleek and casually lively place where food is the main attraction. Vietnamese restaurants aren't very common in the metro, and this level of authentic Vietnamese cooking is hard to come by. The food is good and easy on the wallet.",
+			"The first large-scale broiler farm to use environmentally controlled houses in the Philippines." };
 
 	private static String[] URL = new String[] {
 			"http://www.triumph.com/ph/en/index.html",
