@@ -35,6 +35,7 @@ public class PortfolioActivity extends LDLActivity implements OnClickListener {
 	public String[] dmImgs, dmThumbs, dmDesc;
 	public String[] packImgs, packThumbs, packDesc;
 	public String[] boothImgs, boothThumbs, boothDesc;
+	boolean badService = false;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -192,6 +193,7 @@ public class PortfolioActivity extends LDLActivity implements OnClickListener {
 			} else {
 				continue;
 			}
+
 		}
 	}
 
@@ -199,76 +201,121 @@ public class PortfolioActivity extends LDLActivity implements OnClickListener {
 	public void onClick(View v) {
 		/* internert service check */
 		Context context = getApplicationContext();
-		CharSequence text = "Oops! We need internet connection to access this page!";
+		CharSequence noServiceText = "Oops! We need internet connection to access this page!";
+		CharSequence badServiceText = "Please wait a moment and try again.";
 		int duration = Toast.LENGTH_LONG;
-		Toast toast = Toast.makeText(context, text, duration);
+		Toast toast1 = Toast.makeText(context, noServiceText, duration);
+		Toast toast2 = Toast.makeText(context, badServiceText, duration);
+		badService = false;
 
 		try {
-			if (isNetworkAvailable()) {
-				Intent i = new Intent(this, ImageGridActivity.class);
-				//i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-				Bundle b = new Bundle();
 
-				switch (v.getId()) {
-				case R.id.campaigns_button:
-					b.putStringArray("TYPE_URL", campImgs);
-					b.putStringArray("TYPE_URL_THUMB", campThumbs);
-					// test
-					b.putStringArray("CAPTIONS", campDesc);
-					b.putString("TITLE", "Campaigns");
-					break;
-				case R.id.press_button:
-					b.putStringArray("TYPE_URL", pressImgs);
-					b.putStringArray("TYPE_URL_THUMB", pressThumbs);
-					// test
-					b.putStringArray("CAPTIONS", pressDesc);
-					b.putString("TITLE", "Press");
-					break;
-				case R.id.graphic_design_button:
-					b.putStringArray("TYPE_URL", gdImgs);
-					b.putStringArray("TYPE_URL_THUMB", gdThumbs);
-					// test
-					b.putStringArray("CAPTIONS", gdDesc);
-					b.putString("TITLE", "Graphic Designs");
-					break;
-				case R.id.websites_button:
-					b.putStringArray("TYPE_URL", webImgs);
-					b.putStringArray("TYPE_URL_THUMB", webThumbs);
-					// test
-					b.putStringArray("CAPTIONS", webDesc);
-					b.putString("TITLE", "Websites");
-					break;
-				case R.id.digital_marketing_button:
-					b.putStringArray("TYPE_URL", dmImgs);
-					b.putStringArray("TYPE_URL_THUMB", dmThumbs);
-					// test
-					b.putStringArray("CAPTIONS", dmDesc);
-					b.putString("TITLE", "Digital Marketing");
-					break;
-				case R.id.packaging_button:
-					b.putStringArray("TYPE_URL", packImgs);
-					b.putStringArray("TYPE_URL_THUMB", packThumbs);
-					// test
-					b.putStringArray("CAPTIONS", packDesc);
-					b.putString("TITLE", "Packaging");
-					break;
-				case R.id.booth_designs_button:
-					b.putStringArray("TYPE_URL", boothImgs);
-					b.putStringArray("TYPE_URL_THUMB", boothThumbs);
-					// test
-					b.putStringArray("CAPTIONS", boothDesc);
-					b.putString("TITLE", "Booth Designs");
-					break;
+			Intent i = new Intent(this, ImageGridActivity.class);
+			// i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK |
+			// Intent.FLAG_ACTIVITY_NEW_TASK);
+			Bundle b = new Bundle();
 
-				}
-				i.putExtras(b);
+			switch (v.getId()) {
+			case R.id.campaigns_button:
+				b.putStringArray("TYPE_URL", campImgs);
+				b.putStringArray("TYPE_URL_THUMB", campThumbs);
+				// test
+				b.putStringArray("CAPTIONS", campDesc);
+				b.putString("TITLE", "Campaigns");
 
-				startActivity(i);
+				// throw toast if user has low service.
+				checkThumbs(campThumbs);
+
+				break;
+			case R.id.press_button:
+				b.putStringArray("TYPE_URL", pressImgs);
+				b.putStringArray("TYPE_URL_THUMB", pressThumbs);
+				// test
+				b.putStringArray("CAPTIONS", pressDesc);
+				b.putString("TITLE", "Press");
+
+				// throw toast if user has low service.
+				checkThumbs(pressThumbs);
+				break;
+			case R.id.graphic_design_button:
+				b.putStringArray("TYPE_URL", gdImgs);
+				b.putStringArray("TYPE_URL_THUMB", gdThumbs);
+				// test
+				b.putStringArray("CAPTIONS", gdDesc);
+				b.putString("TITLE", "Graphic Designs");
+
+				// throw toast if user has low service.
+				checkThumbs(gdThumbs);
+				break;
+			case R.id.websites_button:
+				b.putStringArray("TYPE_URL", webImgs);
+				b.putStringArray("TYPE_URL_THUMB", webThumbs);
+				// test
+				b.putStringArray("CAPTIONS", webDesc);
+				b.putString("TITLE", "Websites");
+
+				// throw toast if user has low service.
+				checkThumbs(webThumbs);
+				break;
+			case R.id.digital_marketing_button:
+				b.putStringArray("TYPE_URL", dmImgs);
+				b.putStringArray("TYPE_URL_THUMB", dmThumbs);
+				// test
+				b.putStringArray("CAPTIONS", dmDesc);
+				b.putString("TITLE", "Digital Marketing");
+				// throw toast if user has low service.
+
+				// throw toast if user has low service.
+				checkThumbs(dmThumbs);
+				break;
+			case R.id.packaging_button:
+				b.putStringArray("TYPE_URL", packImgs);
+				b.putStringArray("TYPE_URL_THUMB", packThumbs);
+				// test
+				b.putStringArray("CAPTIONS", packDesc);
+				b.putString("TITLE", "Packaging");
+
+				// throw toast if user has low service.
+				checkThumbs(packThumbs);
+				break;
+			case R.id.booth_designs_button:
+				b.putStringArray("TYPE_URL", boothImgs);
+				b.putStringArray("TYPE_URL_THUMB", boothThumbs);
+				// test
+				b.putStringArray("CAPTIONS", boothDesc);
+				b.putString("TITLE", "Booth Designs");
+
+				// throw toast if user has low service.
+				checkThumbs(boothThumbs);
+				break;
+
 			}
+			i.putExtras(b);
+
+			if (badService == false) {
+				if (isNetworkAvailable()) {
+					startActivity(i);
+				} else {
+					toast1.show();
+				}
+			} else {
+				toast2.show();
+			}
+
 		} catch (Exception e) {
-			toast.show();
+			toast1.show();
 			Log.e("PORTFOLIOACTIVITY", "can't start activity ImageGridActivity");
 		}
 
 	}
+
+	private void checkThumbs(String[] thumbs) {
+		// throw toast if user has low service.
+		if (thumbs == null) {
+			Log.i("PortfolioActivity", thumbs.toString()
+					+ " thumbails are null");
+			badService = true;
+		}
+	}
+
 }

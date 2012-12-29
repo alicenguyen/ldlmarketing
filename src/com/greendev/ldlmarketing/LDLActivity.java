@@ -52,14 +52,10 @@ public class LDLActivity extends SherlockActivity {
 	 */
 	public boolean isNetworkAvailable() {
 		ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-		NetworkInfo mobile = connectivityManager
-				.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
-		NetworkInfo wifi = connectivityManager
-				.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
-
-		if (wifi != null || mobile != null)
-			return true;
-		return false;
+		NetworkInfo activeNetworkInfo = connectivityManager
+				.getActiveNetworkInfo();
+		return activeNetworkInfo != null
+				&& activeNetworkInfo.isConnectedOrConnecting();
 	}
 
 }

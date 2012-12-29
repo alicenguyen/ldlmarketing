@@ -156,10 +156,13 @@ public class GalleryActivity extends Activity implements OnClickListener {
 
 	@Override
 	public void onClick(View v) {
+		/* internert service check */
 		Context context = getApplicationContext();
-		CharSequence text = "Oops! We need internet connection to access this page!";
+		CharSequence noServiceText = "Oops! We need internet connection to access this page!";
+		CharSequence badServiceText = "Please wait a moment and try again.";
 		int duration = Toast.LENGTH_LONG;
-		Toast toast = Toast.makeText(context, text, duration);
+		Toast toast1 = Toast.makeText(context, noServiceText, duration);
+		Toast toast2 = Toast.makeText(context, badServiceText, duration);
 
 		try {
 			switch (v.getId()) {
@@ -182,13 +185,17 @@ public class GalleryActivity extends Activity implements OnClickListener {
 							this, setOfSetDescs));
 					b.putParcelable("SET_DESCS", new MyParcelableObjectArray(
 							this, setOfSetThumbs));
-
 					intent.putExtras(b);
 
-					startActivity(intent);
+					/* checking if thumbs are null from low service */
+					if (setsThumbUrls != null) {
+						startActivity(intent);
+					} else {
+						toast2.show();
+					}
 
 				} else
-					toast.show();
+					toast1.show();
 
 				break;
 
@@ -197,12 +204,12 @@ public class GalleryActivity extends Activity implements OnClickListener {
 					Intent c = new Intent(this, YoutubeActivity.class);
 					startActivity(c);
 				} else
-					toast.show();
+					toast1.show();
 				break;
 
 			}
 		} catch (Exception e) {
-			toast.show();
+			toast1.show();
 			Log.e("GALLERYACTIVITY", "can't start activity ImageGridActivity");
 		}
 	}
