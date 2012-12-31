@@ -200,7 +200,7 @@ public class ServicesActivity extends LDLActivity {
 			// "i" is the position of the parent/group in the list and
 			// "i1" is the position of the child
 			textView.setText(mParent.get(i).getArrayChildren().get(i1));
-			textView.setTypeface(fontreg);
+			//textView.setTypeface(fontreg);
 			
 			if (getChildrenCount(i) == 0) {
 				view.setVisibility(View.INVISIBLE);

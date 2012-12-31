@@ -337,7 +337,7 @@ public class ImageGridFragment extends Fragment implements
 				gridView = (View) inflater.inflate(R.layout.image_grid_item,
 						null);
 				View blackShadow = gridView.findViewById(R.id.blackShadow);
-				blackShadow.setVisibility(ImageView.GONE);
+				blackShadow.setVisibility(ImageView.GONE); 
 				
 				imageView = (ImageView) gridView.findViewById(R.id.fragItem);
 				mImageFetcher.loadImage(typeUrlsThumbs[position - mNumColumns],

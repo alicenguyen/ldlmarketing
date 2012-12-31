@@ -35,12 +35,6 @@ public class AboutActivity extends LDLActivity {
 		mIndicator = lIndicator;
 		mIndicator.setViewPager(myPager);
 		
-		
-		FlickrSetsLibrary setslib = FlickrSetsLibrary.getInstance();
-		
-		
-
-
 	}
 
 	private class PageAdapter extends PagerAdapter {

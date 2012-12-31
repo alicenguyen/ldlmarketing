@@ -24,6 +24,9 @@ public class ContactActivity extends LDLActivity implements OnClickListener {
 
 		View ytButton = findViewById(R.id.youtube_button);
 		ytButton.setOnClickListener(this);
+		
+		View blogGtButton = findViewById(R.id.blogspot_button);
+		blogGtButton.setOnClickListener(this);
 	}
 
 	@Override
@@ -51,6 +54,12 @@ public class ContactActivity extends LDLActivity implements OnClickListener {
 			Intent viewYt = new Intent("android.intent.action.VIEW",
 					Uri.parse("http://m.youtube.com/user/LDLmarketing"));
 			startActivity(viewYt);
+			break;
+			
+		case R.id.blogspot_gt_button:
+			Intent viewBsGt = new Intent("android.intent.action.VIEW",
+					Uri.parse("http://girltalkbyldl.blogspot.com/"));
+			startActivity(viewBsGt);
 			break;
 		}
 	}

@@ -93,7 +93,7 @@ public class ClientDirectoryActivity extends LDLActivity implements
 			holder.txtName.setTypeface(fontbold);
 			
 			holder.txtDESC.setText(client.DESC);
-			holder.txtDESC.setTypeface(fontreg);
+			//holder.txtDESC.setTypeface(fontreg);
 			holder.imgIcon.setImageResource(client.icon);
 
 			return row;

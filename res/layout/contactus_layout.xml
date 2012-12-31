@@ -157,70 +157,74 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_gravity="center_horizontal"
-                android:gravity="center"
-                android:paddingBottom="15dp"
-                android:paddingLeft="15dp"
-                android:paddingRight="5dp"
-                android:paddingTop="10dp" >
+                android:orientation="vertical"
+                android:gravity="center_vertical" >
 
-                <ImageView        
-                    android:id="@+id/fb_button"
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center"
+                    android:paddingBottom="15dp"                
+                    android:paddingTop="10dp" >
+
+                    <ImageView
+                        android:id="@+id/fb_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="7dp"
+                     
+                        android:background="@drawable/ic_facebook"
+                        android:clickable="true" />
+
+                    <ImageView
+                        android:id="@+id/twitter_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="7dp"
+                        android:background="@drawable/ic_twitter"
+                        android:clickable="true"
+                        android:paddingRight="15dp" />
+
+                    <ImageView
+                        android:id="@+id/blogspot_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="7dp"
+                        android:background="@drawable/ic_blogspot"
+                        android:clickable="true"
+                        android:paddingRight="15dp" />
+
+                    <ImageView
+                        android:id="@+id/youtube_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/ic_youtube"
+                        android:clickable="true" />
+                </LinearLayout>
+
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="7dp"
-                    android:background="@drawable/ic_facebook"
-                    android:clickable="true" />
+                    android:layout_gravity="center"
+                    android:autoLink="email"
+                    android:paddingBottom="7dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="5dp"
+                    android:paddingTop="5dp"
+                    android:text="Eavesdrop on us: Girl Talk by LDL"
+                    android:textColor="@color/darkgrey"
+                    android:textSize="12sp" />
 
                 <ImageView
-                    android:id="@+id/twitter_button"
+                    android:id="@+id/blogspot_gt_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="7dp"
-                    android:background="@drawable/ic_twitter"
-                    android:clickable="true"
-                    android:paddingRight="15dp" />
-
-                <ImageView
-                    android:id="@+id/blogspot_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="7dp"
+                    android:layout_gravity="center"
                     android:background="@drawable/ic_blogspot"
                     android:clickable="true"
-                    android:paddingRight="15dp" />
-
-                <ImageView
-                    android:id="@+id/youtube_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/ic_youtube"
-                    android:clickable="true" />
+                     />
             </LinearLayout>
-
-            <TextView
-                android:id="@+id/email"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:autoLink="email"
-                android:paddingBottom="7dp"
-                android:paddingLeft="15dp"
-                android:paddingRight="5dp"
-                android:paddingTop="10dp"
-                android:text="Eavesdrop on us: Girl Talk by LDL"
-                android:textColor="@color/darkgrey"
-                android:textSize="12sp" />
-
-            <ImageView
-                android:id="@+id/blogspot_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginRight="7dp"
-                android:background="@drawable/ic_blogspot"
-                android:clickable="true"
-                android:paddingRight="15dp" />
         </LinearLayout>
     </ScrollView>
 

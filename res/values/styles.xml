@@ -79,7 +79,7 @@
     <!-- Home page buttons -->
     <style name="HomeButton_default">
         <item name="android:layout_width">300dp</item>
-        <item name="android:layout_height">55dp</item>
+        <item name="android:layout_height">53dp</item>
         <item name="android:textSize">20sp</item>
         <item name="android:background">@drawable/btn_default_holo_dark_selector</item>
         <item name="android:drawableRight">@drawable/navigation_next_item</item>
