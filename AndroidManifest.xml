@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.greendev.ldlmarketing"
     android:versionCode="1"
-    android:versionName="1.0" >
+    android:versionName="added thread/20mbdisk/75%heap" >
 
     <uses-sdk
         android:minSdkVersion="7"
@@ -20,6 +20,8 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@android:style/Theme.Light" >
+        
+  			<service android:name="FlickrStartService"></service>
         <activity
             android:name=".MainTabActivity"
             android:label="@string/title_activity_main"

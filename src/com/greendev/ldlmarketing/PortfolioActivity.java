@@ -66,11 +66,8 @@ public class PortfolioActivity extends LDLActivity implements OnClickListener {
 		boothButton.setOnClickListener(this);
 		((TextView) boothButton).setTypeface(fontreg);
 
-		/* get the flickr data that's loaded from SplashScreen Activity */
-		lib = FlickrSetsLibrary.getInstance();
-
 	}
-
+	
 	@Override
 	public void onClick(View v) {
 		/* internert service check */
@@ -156,13 +153,17 @@ public class PortfolioActivity extends LDLActivity implements OnClickListener {
 			}
 			i.putExtras(b);
 
-			if (badService == false) {startActivity(i);}
-			else {toast1.show();}
+			if (badService == true) {
+				toast1.show();
+			} else {
+				startActivity(i);
+			}
 
-		}catch(Exception e) {
+		} catch (Exception e) {
 			toast1.show();
 			Log.e("PORTFOLIOACTIVITY", "can't start activity ImageGridActivity");
-		};
+		}
+		;
 
 	}
 

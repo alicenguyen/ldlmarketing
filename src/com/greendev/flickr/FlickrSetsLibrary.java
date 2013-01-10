@@ -1,5 +1,9 @@
 package com.greendev.flickr;
 
+/**
+ * This library stores data from Flickr that was retrieved from the start of 
+ * app.
+ */
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,8 +30,7 @@ public class FlickrSetsLibrary {
 	public static String[] setNames;
 	public static String[] setsThumbUrls;
 		
-	private FlickrSetsLibrary() {
-	}
+	private FlickrSetsLibrary() {}
 
 	public static FlickrSetsLibrary getInstance() {
 		if (instance == null) {
@@ -210,5 +213,8 @@ public class FlickrSetsLibrary {
 				|| setName.equals("packaging") || setName.equals("booth");
 	}
 	
-	
+	public boolean isEmpty(){
+		if (fSets.length > 0) return false; 
+		else return true;
+	}
 }

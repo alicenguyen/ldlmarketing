@@ -46,7 +46,7 @@ public class FetchSetsTask implements Runnable {
 						new InputStreamReader(inputstream));
 				StringBuilder stringbuilder = new StringBuilder();
 				String currentline = null;
-				
+
 				try {
 					while ((currentline = bufferedreader.readLine()) != null) {
 						stringbuilder.append(currentline + "\n");
@@ -83,11 +83,16 @@ public class FetchSetsTask implements Runnable {
 					// Activity
 					Bundle data = new Bundle();
 					data.putSerializable(LIBRARY, lib);
+					
 					// Send the Bundle of data (our Library) back to the handler
 					// (our Activity)
-					Message msg = Message.obtain();
-					msg.setData(data);
-					replyTo.sendMessage(msg);
+					if (!Thread.interrupted() && replyTo != null) {
+						Message msg = Message.obtain();
+						msg.setData(data);
+						// notify the user interface that the download is ready
+						replyTo.sendMessage(msg);
+					}
+
 				} catch (Exception e) {
 					Log.e(TAG,
 							"Error in creating FlickrLibrary, packing/serializing/sending Bundle "

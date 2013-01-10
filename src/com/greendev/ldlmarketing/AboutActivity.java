@@ -2,13 +2,16 @@ package com.greendev.ldlmarketing;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.graphics.Point;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
+import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.greendev.flickr.FlickrSetsLibrary;
@@ -118,6 +121,7 @@ public class AboutActivity extends LDLActivity {
 			}
 
 			((ViewPager) collection).addView(view, 0);
+	
 			return view;
 		}
 

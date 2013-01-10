@@ -1,51 +1,60 @@
 package com.greendev.ldlmarketing;
 
-
 import com.greendev.flickr.FetchSetsTask;
 import com.greendev.flickr.FlickrLibrary;
 import com.greendev.flickr.FlickrSetsLibrary;
+import com.greendev.flickr.FlickrStartService;
 
 import android.app.TabActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.os.Messenger;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TabHost;
 import android.widget.TextView;
+import android.widget.Toast;
 
-
-public class MainTabActivity extends TabActivity { 
+public class MainTabActivity extends TabActivity {
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
 		setTabs();
-	    /* flickr prep */
+		/* flickr prep */
 		// Start fetching sets from Flickr
 		new Thread(new FetchSetsTask(responseHandler)).start();
+
+		// Intent intent = new Intent(this, FlickrStartService.class);
+		// Messenger msg = new Messenger(handler);
+		// intent.putExtra("MESSENGER", msg);
+		// startService(intent);
 	}
-	
 
 	Handler responseHandler = new Handler() {
 		@Override
 		public void handleMessage(Message msg) {
-				prepSets(msg);
-			
+			prepSets(msg);
 		};
 	};
-	
-	private void prepSets(Message msg){
-		FlickrLibrary lib = (FlickrLibrary) msg.getData().get(
+
+	private void prepSets(Message msg) {
+		final FlickrLibrary lib = (FlickrLibrary) msg.getData().get(
 				FetchSetsTask.LIBRARY);
-		
-		FlickrSetsLibrary setslib = FlickrSetsLibrary.getInstance();
-		setslib.setFlickrSets(lib.fetchSets());
-		setslib.createUrlPortfolio();
-		setslib.createUrlGallery();
+
+		final FlickrSetsLibrary setslib = FlickrSetsLibrary.getInstance();
+		new Thread(new Runnable() {
+			public void run() {
+
+				setslib.setFlickrSets(lib.fetchSets());
+				setslib.createUrlPortfolio();
+				setslib.createUrlGallery();
+			}
+		}).start();
 	}
 
 	private void setTabs() {
@@ -59,7 +68,7 @@ public class MainTabActivity extends TabActivity {
 		Intent intent = new Intent(this, c);
 
 		TabHost tabHost = getTabHost();
-	
+
 		TabHost.TabSpec spec = tabHost.newTabSpec("tab" + labelId);
 
 		View tabIndicator = LayoutInflater.from(this).inflate(

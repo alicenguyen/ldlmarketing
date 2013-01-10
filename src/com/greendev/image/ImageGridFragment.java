@@ -101,7 +101,7 @@ public class ImageGridFragment extends Fragment implements
 				IMAGE_CACHE_DIR);
 
 		// Set memory cache to 25% of mem class
-		cacheParams.setMemCacheSizePercent(context, 0.25f);
+		cacheParams.setMemCacheSizePercent(context, 0.75f);
 
 		// The ImageFetcher takes care of loading images into our ImageView
 		// children asynchronously
@@ -188,7 +188,7 @@ public class ImageGridFragment extends Fragment implements
 	public void onPause() {
 		super.onPause();
 		mImageFetcher.setExitTasksEarly(true);
-		//mImageFetcher.flushCache();   
+		mImageFetcher.flushCache();   
 	}
 
 	@Override

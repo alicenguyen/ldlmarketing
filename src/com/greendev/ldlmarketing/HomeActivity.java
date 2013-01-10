@@ -1,7 +1,5 @@
 package com.greendev.ldlmarketing;
 
-import com.greendev.flickr.FlickrSetsLibrary;
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -10,7 +8,6 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
@@ -58,8 +55,6 @@ public class HomeActivity extends Activity implements OnClickListener {
 		contactUsButton.setOnClickListener(this);
 		((TextView) contactUsButton).setTypeface(font);
 		
-		FlickrSetsLibrary lib = FlickrSetsLibrary.getInstance();
-		
 	}
 
 	@Override
@@ -89,11 +84,8 @@ public class HomeActivity extends Activity implements OnClickListener {
 
 		case R.id.button_portfolio:
 			try {
-//				if (isNetworkAvailable()) {
-					Intent b = new Intent(this, PortfolioActivity.class);
-					startActivity(b);
-//				} else
-//					toast.show();
+				Intent b = new Intent(this, PortfolioActivity.class);
+				startActivity(b);
 			} catch (Exception e) {
 				toast.show();
 				Log.e("HOMEACTIVITY", "portfolio error");

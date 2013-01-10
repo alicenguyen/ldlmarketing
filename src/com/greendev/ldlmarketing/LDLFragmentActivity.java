@@ -44,12 +44,12 @@ public class LDLFragmentActivity extends SherlockFragmentActivity {
 		title.setText(this.getTitle());
 		title.setTypeface(fontbold);
 		// assign the view to the actionbar
-		this.getActionBar().setCustomView(v);
+		ab.setCustomView(v);
 	}
 
 	protected void setActionBarTitle(String name) {
 		title.setText(name);
-		this.getActionBar().setCustomView(v);
+		ab.setCustomView(v);
 	}
 	
 	/*

@@ -1,5 +1,7 @@
 package com.greendev.flickr;
 
+import android.util.DisplayMetrics;
+
 /**
  * Fickr image sizes.
  * 
@@ -36,12 +38,13 @@ public class FlickrPhoto {
 
 	public String makeURL() {
 		return "http://farm" + farm + ".static.flickr.com/" + server + "/" + id
-				+ "_" + secret + "_z.jpg";
+				+ "_" + secret + "_z.jpg"; //z
 	}
 
 	public String makeThumbURL() {
+
 		return "http://farm" + farm + ".static.flickr.com/" + server + "/" + id
-				+ "_" + secret + "_n.jpg";  // 
+				+ "_" + secret + "_n.jpg";  //n 
 	}
 	
 	public String getTitle() {

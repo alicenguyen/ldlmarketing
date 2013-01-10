@@ -48,10 +48,10 @@ public class ImageCache {
     private static final String TAG = "ImageCache";
 
     // Default memory cache size
-    private static final int DEFAULT_MEM_CACHE_SIZE = 1024 * 1024 * 16; // 5MB
+    private static final int DEFAULT_MEM_CACHE_SIZE = 1024 * 1024 * 5; // 5MB
 
     // Default disk cache size
-    private static final int DEFAULT_DISK_CACHE_SIZE = 1024 * 1024 * 85; // 10MB
+    private static final int DEFAULT_DISK_CACHE_SIZE = 1024 * 1024 * 20; // 10MB
 
     // Compression settings when writing images to disk cache
     private static final CompressFormat DEFAULT_COMPRESS_FORMAT = CompressFormat.JPEG;
@@ -62,7 +62,7 @@ public class ImageCache {
     private static final boolean DEFAULT_MEM_CACHE_ENABLED = true;
     private static final boolean DEFAULT_DISK_CACHE_ENABLED = true;
     private static final boolean DEFAULT_CLEAR_DISK_CACHE_ON_START = false;
-    private static final boolean DEFAULT_INIT_DISK_CACHE_ON_CREATE = false;
+    private static final boolean DEFAULT_INIT_DISK_CACHE_ON_CREATE = false;   
 
     private DiskLruCache mDiskLruCache;
     private LruCache<String, Bitmap> mMemoryCache;
@@ -402,6 +402,7 @@ public class ImageCache {
                         + "between 0.05 and 0.8 (inclusive)");
             }
             memCacheSize = Math.round(percent * getMemoryClass(context) * 1024 * 1024);
+            Log.i("******ImageCache*******", memCacheSize + " ");  // DEBUGGING OUTPUT
         }
 
         private static int getMemoryClass(Context context) {
