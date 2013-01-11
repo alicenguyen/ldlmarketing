@@ -86,7 +86,7 @@ public class LDLCamActivity extends Activity implements OnClickListener {
 	}
 
 	@Override
-	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+	protected void onActivityResult(int requestCode, int resultCode, final Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
 
 		if (resultCode == RESULT_OK) {
@@ -94,8 +94,16 @@ public class LDLCamActivity extends Activity implements OnClickListener {
 
 			case RESULT_LOAD_IMAGE:
 				if (data != null) {
-					Uri selectedImage = data.getData();
-					photoEditor(selectedImage);
+					/*Uri selectedImage = data.getData();
+					photoEditor(selectedImage);*/
+					
+					// performing task on a separate thread.
+					new Thread(new Runnable() {
+				        public void run() {
+				            Uri selectedImage = data.getData();
+				            photoEditor(selectedImage);
+				        }
+				    }).start();
 				}
 				break;
 

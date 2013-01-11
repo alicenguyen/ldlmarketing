@@ -45,11 +45,9 @@ public class MainTabActivity extends TabActivity {
 	private void prepSets(Message msg) {
 		final FlickrLibrary lib = (FlickrLibrary) msg.getData().get(
 				FetchSetsTask.LIBRARY);
-
 		final FlickrSetsLibrary setslib = FlickrSetsLibrary.getInstance();
 		new Thread(new Runnable() {
 			public void run() {
-
 				setslib.setFlickrSets(lib.fetchSets());
 				setslib.createUrlPortfolio();
 				setslib.createUrlGallery();
