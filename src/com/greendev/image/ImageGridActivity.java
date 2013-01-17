@@ -66,7 +66,7 @@ public class ImageGridActivity extends LDLFragmentActivity {
 
 		// set title in action bar
 		TITLE = b.getString("TITLE");
-		setActionBarTitle("  "+TITLE);
+		setActionBarTitle(TITLE);
 
 		// PhotoActivityGridFragment
 		key = b.getString("key");

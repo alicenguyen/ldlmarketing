@@ -5,24 +5,15 @@ package com.greendev.ldlmarketing;
  *    - (FIXED) NetworkOnMainThreadException throw when thread isn't handled.
  */
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
-import android.os.StrictMode;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.greendev.flickr.FetchSetsTask;
-import com.greendev.flickr.FlickrLibrary;
-import com.greendev.flickr.FlickrPhoto;
-import com.greendev.flickr.FlickrSet;
 import com.greendev.flickr.FlickrSetsLibrary;
 import com.greendev.image.ImageGridActivity;
 

@@ -206,6 +206,7 @@ public class FlickrSetsLibrary {
 	 * is not; is a gallery set.
 	 */
 	private boolean isPortfolioSet(String setName) {
+		setName.toLowerCase().trim();
 		return setName.equals("campaigns") || setName.equals("press")
 				|| setName.equals("graphic designs")
 				|| setName.equals("websites")

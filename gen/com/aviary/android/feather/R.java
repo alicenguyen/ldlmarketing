@@ -98,7 +98,7 @@ public final class R {
 		public static final int feather_icon_backlight_enhance = 0x7f0200be;
 		public static final int feather_highlight_delete_button = 0x7f0200bb;
 		public static final int feather_more_button_selector = 0x7f0200d0;
-		public static final int ic_stickers = 0x7f020142;
+		public static final int ic_stickers = 0x7f020143;
 		public static final int feather_toolbar_background = 0x7f02010e;
 		public static final int feather_right_button_background_normal = 0x7f0200e7;
 		public static final int aviary_logo_small = 0x7f020079;
@@ -123,7 +123,7 @@ public final class R {
 		public static final int feather_infoscreen_background = 0x7f0200c3;
 		public static final int feather_workspace_page_background_selected = 0x7f020119;
 		public static final int feather_icon_balance_enhance = 0x7f0200bf;
-		public static final int xfeather_toolbar_background = 0x7f020181;
+		public static final int xfeather_toolbar_background = 0x7f020182;
 		public static final int feather_crop_checkbox_unselected = 0x7f0200a1;
 		public static final int feather_default_glow = 0x7f0200a5;
 		public static final int feather_panel_top_indicator = 0x7f0200d5;
@@ -153,7 +153,7 @@ public final class R {
 		public static final int feather_getmore_layout_bg = 0x7f0200b6;
 		public static final int feather_plugin_filter_thresh_thumb = 0x7f0200e1;
 		public static final int feather_shadow_down = 0x7f0200ec;
-		public static final int xfeather_tool_icon_enhance = 0x7f020180;
+		public static final int xfeather_tool_icon_enhance = 0x7f020181;
 		public static final int feather_color_mask_shape = 0x7f02009c;
 		public static final int feather_center_button_background_normal = 0x7f020097;
 		public static final int feather_flip_vertical = 0x7f0200b2;
