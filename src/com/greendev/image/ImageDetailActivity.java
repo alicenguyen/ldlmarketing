@@ -67,9 +67,6 @@ public class ImageDetailActivity extends FragmentActivity implements
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
-				
-	
 		// / Bundle from ImageGridFragmenton
 		// ItemClick(AdapterView<?> parent, View v, int position, long id)
 				
@@ -165,7 +162,6 @@ public class ImageDetailActivity extends FragmentActivity implements
 		if (extraCurrentItem != -1) {
 			mPager.setCurrentItem(extraCurrentItem);
 		}
-
 		imageCaption = (TextView) findViewById(R.id.image_caption);
 	}
 
@@ -238,7 +234,6 @@ public class ImageDetailActivity extends FragmentActivity implements
 
 		@Override
 		public Fragment getItem(int position) {
-
 			fragment = ImageDetailFragment
 					.newInstance(URLS[position], CAPTIONS[position]);
 			return fragment;

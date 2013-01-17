@@ -16,26 +16,19 @@
 
 package com.greendev.image;
 
-import android.content.Context;
+import android.content.res.Configuration;
+import android.graphics.Matrix;
 import android.os.Bundle;
-import android.os.StrictMode;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.ViewGroup.LayoutParams;
 import android.view.ViewGroup;
-import android.widget.AbsListView;
-import android.widget.BaseAdapter;
-import android.widget.FrameLayout;
-import android.widget.GridView;
-import android.widget.ImageView;
+import android.widget.ImageView.ScaleType;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.greendev.ldlmarketing.R;
-import com.greendev.ldlmarketing.R.id;
-import com.greendev.ldlmarketing.R.layout;
 
 /**
  * This fragment will populate the children of the ViewPager from
@@ -44,7 +37,7 @@ import com.greendev.ldlmarketing.R.layout;
 public class ImageDetailFragment extends Fragment {
 	private static final String IMAGE_DATA_EXTRA = "extra_image_data";
 	private String mImageUrl;
-	private ImageView mImageView;
+	private TouchImageView mImageView;
 	private ImageFetcher mImageFetcher;
 	private TextView imageCaptionView;
 	private String captionStr;
@@ -93,18 +86,18 @@ public class ImageDetailFragment extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-
 		// Inflate and locate the main ImageView
 		final View v = inflater.inflate(R.layout.image_detail_fragment,
 				container, false);
 		this.v = v;
-		mImageView = (ImageView) v.findViewById(R.id.imageView);
-
+		mImageView = (TouchImageView) v.findViewById(R.id.imageView);
+		mImageView.setMaxZoom(4f);
 		/* image caption set up -- (1) */
 		imageCaptionView = (TextView) v.findViewById(R.id.image_caption);
 
 		return v;
 	}
+	
 
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState) {
@@ -121,7 +114,6 @@ public class ImageDetailFragment extends Fragment {
 			/* image description dialog -- (2) */
 			imageCaptionView.setText(captionStr);
 			imageCaptionView.setVisibility(1);
-
 		}
 
 		// Pass clicks on the ImageView to the parent activity to handle
