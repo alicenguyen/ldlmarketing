@@ -233,7 +233,7 @@ public class FrameActivity extends LDLFragmentActivity implements
 	}
 
 	private File savePhoto() {
-		File pictureFileDir = Environment.getExternalStorageDirectory();
+		File pictureFileDir = new File(Environment.getExternalStorageDirectory()+"/LDLMarketing");
 
 		if (!pictureFileDir.exists() && !pictureFileDir.mkdirs()) {
 			Toast.makeText(context, "Can't create directory to save image.",
