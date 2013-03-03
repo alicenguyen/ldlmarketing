@@ -18,7 +18,7 @@ import com.greendev.flickr.FlickrSetsLibrary;
 import com.viewpagerindicator.LinePageIndicator;
 import com.viewpagerindicator.PageIndicator;
 
-@SuppressLint("ResourceAsColor")
+//@SuppressLint("ResourceAsColor")
 public class AboutActivity extends LDLActivity {
 	PageIndicator mIndicator;
 
@@ -77,7 +77,6 @@ public class AboutActivity extends LDLActivity {
 			switch (position) {
 			case 0:
 				bio = (TextView) view.findViewById(R.id.about_line0);
-
 				break;
 			case 1:
 				bio = (TextView) view.findViewById(R.id.about_line1);
@@ -93,7 +92,7 @@ public class AboutActivity extends LDLActivity {
 				break;
 			}
 			// bio.setTypeface(font);
-			bio.setTextColor(R.color.darkgrey);
+			//bio.setTextColor(R.color.black);
 			// bio.setTextSize(50);
 
 			if (position > 0) {
@@ -117,7 +116,7 @@ public class AboutActivity extends LDLActivity {
 				name.setTextSize(22);
 
 				pos.setTypeface(fontreg);
-				pos.setTextColor(R.color.darkgrey);
+				pos.setTextColor(R.color.black);
 			}
 
 			((ViewPager) collection).addView(view, 0);

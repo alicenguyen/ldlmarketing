@@ -32,12 +32,12 @@ public class SplashScreenActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {  
 	    super.onCreate(savedInstanceState);
 	    setContentView(R.layout.splashscreen_layout);
-		Typeface fontbold = Typeface.createFromAsset(getAssets(), "Eurostib.TTF");
+		Typeface font = Typeface.createFromAsset(getAssets(), "Eurosti.TTF");
 		TextView text1 = (TextView) findViewById(R.id.text_ldl);
-		text1.setTypeface(fontbold);
+		text1.setTypeface(font);
 		
 		TextView text2 = (TextView) findViewById(R.id.text_services);
-		text2.setTypeface(fontbold);
+		text2.setTypeface(font);
 	 
         TimerTask task = new TimerTask()
         {
@@ -55,28 +55,6 @@ public class SplashScreenActivity extends Activity {
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder()
                             .permitAll().build();
             StrictMode.setThreadPolicy(policy);
-        
-//      /* flickr prep */
-//          // Start fetching sets from Flickr
-//          new Thread(new FetchSetsTask(responseHandler)).start();
     }
-//  
-//
-//  Handler responseHandler = new Handler() {
-//          @Override
-//          public void handleMessage(Message msg) {
-//                          prepSets(msg);
-//                  
-//          };
-//  };
-//  
-//  private void prepSets(Message msg){
-//          FlickrLibrary lib = (FlickrLibrary) msg.getData().get(
-//                          FetchSetsTask.LIBRARY);
-//          
-//          FlickrSetsLibrary setslib = FlickrSetsLibrary.getInstance();
-//          setslib.setFlickrSets(lib.fetchSets());
-//          setslib.createUrlPortfolio();
-//          setslib.createUrlGallery();
-//  }
+
 }

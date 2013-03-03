@@ -9,7 +9,7 @@
         android:id="@+id/expandable_list"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:listSelector="@android:color/transparent"
+        android:listSelector="@android:color/transparent" 
         android:transcriptMode="alwaysScroll" 
         android:divider="@color/light_pink"
         android:dividerHeight="1px"/>

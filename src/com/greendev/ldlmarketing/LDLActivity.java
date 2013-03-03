@@ -32,6 +32,7 @@ public class LDLActivity extends SherlockActivity {
 		fontRob = Typeface.createFromAsset(getAssets(), "Roboto-Regular.ttf");
 
 		ab = getSupportActionBar();
+		
 		// customizing font in action bar
 		ab.setDisplayShowTitleEnabled(false);
 		ab.setDisplayShowHomeEnabled(false);
@@ -42,7 +43,8 @@ public class LDLActivity extends SherlockActivity {
 		View v = inflator.inflate(R.layout.title, null);
 		TextView title = ((TextView) v.findViewById(R.id.title));
 		title.setText(this.getTitle());
-		title.setTypeface(fontbold);
+		title.setTypeface(fontreg);
+		
 		// assign the view to the actionbar
 		ab.setCustomView(v);
 	}

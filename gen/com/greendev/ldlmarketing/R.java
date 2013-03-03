@@ -2988,11 +2988,6 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         <item name="android:actionBarStyle">@style/MyActionBar</item>
         <item name="android:actionMenuTextColor">@color/white</item>
     </style>
-
-
-
-
-
     
 
     ENABLE FOR API 11 ACTION BAR (2)
@@ -3000,11 +2995,6 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         <item name="android:background">@drawable/header_background</item>
         <item name="android:actionBarDivider">@color/darkgrey</item>
     </style>
-
-
-
-
-
     
  and DISABLE THIS PART FOR API 11 ACTION BAR 
          */
@@ -3269,8 +3259,6 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         <item name="android:backgroundSplit">@drawable/ab_bottom_solid_ldltheme</item>
         <item name="android:progressBarStyle">@style/ldltheme_ProgressBar</item>
     </style>
-
-
     
          */
         public static final int ldltheme_transparent_ActionBar=0x7f0b00bd;

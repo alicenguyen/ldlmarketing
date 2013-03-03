@@ -37,8 +37,6 @@
         
     </style>
 
-
-
     <style name="LDLTheme.pink.ActionBar.Title" parent="TextAppearance.Sherlock.Widget.ActionBar.Title">
         <item name="android:textColor">@color/white</item>
         <item name="android:textSize">20sp</item>
@@ -63,14 +61,14 @@
     <style name="CustomTheme" parent="@style/Theme.ldltheme">
         <item name="android:actionBarStyle">@style/MyActionBar</item>
         <item name="android:actionMenuTextColor">@color/white</item>
-    </style>
+    </style>
     -->
     <!--
     ENABLE FOR API 11 ACTION BAR (2)
     <style name="MyActionBar" parent="@android:style/Widget.Holo.ActionBar">
         <item name="android:background">@drawable/header_background</item>
         <item name="android:actionBarDivider">@color/darkgrey</item>
-    </style>
+    </style>
     -->
     <!-- and DISABLE THIS PART FOR API 11 ACTION BAR -->
     <style name="CustomTheme" parent="android:style/Theme">
@@ -104,7 +102,7 @@
         <item name="android:backgroundStacked">@drawable/ab_stacked_solid_ldltheme</item>
         <item name="android:backgroundSplit">@drawable/ab_bottom_solid_ldltheme</item>
         <item name="android:progressBarStyle">@style/ldltheme_ProgressBar</item>
-    </style>
+    </style>
     -->
 
     <style name="ldltheme_transparent_ActionBar" parent="@android:style/Widget.Holo.Light.ActionBar">

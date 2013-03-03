@@ -138,18 +138,4 @@
         <item name="android:drawSelectorOnTop">true</item>
         <item name="android:listSelector">@drawable/photogrid_list_selector</item>
     </style>
-
-    <!--
-         Services
-    <style name="Services">
-        <item> name=""</item>
-        <item> name=""</item>
-        <item> name=""</item>
-        <item> name=""</item>
-        <item> name=""</item>
-        <item> name=""</item>
-        <item> name=""</item>
-    </style>
-    -->
-
 </resources>

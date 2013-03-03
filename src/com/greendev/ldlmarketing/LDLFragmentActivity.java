@@ -42,7 +42,7 @@ public class LDLFragmentActivity extends SherlockFragmentActivity {
 		v = inflator.inflate(R.layout.title, null);
 		title = ((TextView) v.findViewById(R.id.title));
 		title.setText(this.getTitle());
-		title.setTypeface(fontbold);
+		title.setTypeface(fontreg);
 		// assign the view to the actionbar
 		ab.setCustomView(v);
 	}

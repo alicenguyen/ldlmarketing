@@ -27,7 +27,7 @@
             android:paddingTop="10dp"
             android:scrollbars="vertical"
             android:text="@string/about_s0"
-            android:textColor="@color/darkgrey"
+            android:textColor="@color/black"
             android:textSize="15sp" />
     </ScrollView>
 

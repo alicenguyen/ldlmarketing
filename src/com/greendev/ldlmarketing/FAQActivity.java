@@ -33,19 +33,19 @@ public class FAQActivity extends LDLActivity implements OnClickListener {
 		a3.setVisibility(View.GONE);
 		flag3 = false;
 		
-		q1.setTypeface(fontbold);
-		q1.setTextSize(20);
-		q2.setTypeface(fontbold);
-		q2.setTextSize(20);
-		q3.setTypeface(fontbold);
-		q3.setTextSize(20);
-		
-		//a1.setTypeface(fontreg);
-		a1.setTextSize(18);
-		//a2.setTypeface(fontreg);
-		a2.setTextSize(18);
-		//a3.setTypeface(fontreg);
-		a3.setTextSize(18);
+//		q1.setTypeface(fontbold);
+//		q1.setTextSize(20);
+//		q2.setTypeface(fontbold);
+//		q2.setTextSize(20);
+//		q3.setTypeface(fontbold);
+//		q3.setTextSize(20);
+//		
+//		//a1.setTypeface(fontreg);
+//		a1.setTextSize(18);
+//		//a2.setTypeface(fontreg);
+//		a2.setTextSize(18);
+//		//a3.setTypeface(fontreg);
+//		a3.setTextSize(18);
 	}
     
 	@Override

@@ -178,7 +178,7 @@ public class ServicesActivity extends LDLActivity {
 					.findViewById(R.id.list_item_text_view);
 			// "i" is the position of the parent/group in the list
 			textView.setText(getGroup(i).toString());
-			textView.setTypeface(fontbold);
+			//textView.setTypeface(fontbold);
 			
 
 			// return the entire view

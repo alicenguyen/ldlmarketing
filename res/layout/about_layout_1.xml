@@ -67,8 +67,7 @@
             android:layout_gravity="left"
             android:gravity="left"
             android:padding="15dp"
-            android:text="@string/about_s1"
-            android:textColor="@color/darkgrey" />
+            android:text="@string/about_s1" />
     </ScrollView>
 
 </LinearLayout>

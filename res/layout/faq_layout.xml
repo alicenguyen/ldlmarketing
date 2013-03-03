@@ -27,7 +27,7 @@
                 android:layout_height="wrap_content"
                 android:padding="3dp"
                 android:text="@string/faq_q1"
-                android:textColor="@color/blue"
+                android:textColor="@color/darkgrey"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -40,8 +40,7 @@
                 android:paddingRight="5dp"
                 android:paddingTop="10dp"
                 android:text="@string/faq_a1"
-                android:textColor="@color/darkgrey"
-                android:textSize="14sp" />
+                android:textColor="@color/darkgrey" />
 
             <!-- pink line -->
 
@@ -58,7 +57,7 @@
                 android:padding="3dp"
                 android:paddingTop="2dp"
                 android:text="@string/faq_q2"
-                android:textColor="@color/blue"
+                android:textColor="@color/darkgrey"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -71,8 +70,7 @@
                 android:paddingRight="5dp"
                 android:paddingTop="10dp"
                 android:text="@string/faq_a2"
-                android:textColor="@color/darkgrey"
-                android:textSize="14sp" />
+                android:textColor="@color/darkgrey" />
 
             <!-- pink line -->
 
@@ -89,7 +87,7 @@
                 android:padding="3dp"
                 android:paddingTop="2dp"
                 android:text="@string/faq_q3"
-                android:textColor="@color/blue"
+                android:textColor="@color/darkgrey"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -102,8 +100,7 @@
                 android:paddingRight="5dp"
                 android:paddingTop="10dp"
                 android:text="@string/faq_a3"
-                android:textColor="@color/darkgrey"
-                android:textSize="14sp" />
+                android:textColor="@color/darkgrey" />
         </LinearLayout>
     </ScrollView>
 
