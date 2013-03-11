@@ -34,7 +34,7 @@ public class LDLCamActivity extends Activity implements OnClickListener {
 	protected String _output;
 	protected File outFile;
 	protected File path;
-	//private Uri imageFileUri;
+	// private Uri imageFileUri;
 	private Uri mImageCaptureUri;
 	private Uri mImageCaptureUri_samsung;
 
@@ -105,23 +105,20 @@ public class LDLCamActivity extends Activity implements OnClickListener {
 					e.printStackTrace();
 				}
 			} else {
-				new AlertDialog.Builder(this)
-						.setMessage(
-								"External Storeage (SD Card) is required.\n\nCurrent state: "
-										+ storageState).setCancelable(true)
-						.create().show();
-				
-				/*
-				 * Intent cameraIntent = new
-				 * Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-				 * 
-				 * try { imageFileUri = getOutputImageFileUri(this); } catch
-				 * (IOException e) { 
-				 * e.printStackTrace(); }
-				 * cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, imageFileUri);
-				 * 
-				 * startActivityForResult(cameraIntent, RESULT_CAMERA_IMAGE);
-				 */
+//				new AlertDialog.Builder(this)
+//						.setMessage(
+//								"External Storeage (SD Card) is required.\n\nCurrent state: "
+//										+ storageState).setCancelable(true)
+//						.create().show();
+//
+				Intent cameraIntent = new Intent(
+						MediaStore.ACTION_IMAGE_CAPTURE);
+
+				mImageCaptureUri = ImageServices.getOutputImageFileUri(this);
+				cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, mImageCaptureUri);
+
+				startActivityForResult(cameraIntent, RESULT_CAMERA_IMAGE);
+
 			}
 
 			break;
@@ -152,190 +149,122 @@ public class LDLCamActivity extends Activity implements OnClickListener {
 			case RESULT_CAMERA_IMAGE:
 				Log.i("TAG", "Inside PICK_FROM_CAMERA");
 
-                // Final Code As Below
-                try {
-                    Log.i("TAG", "inside Samsung Phones");
-                    String[] projection = {
-                            MediaStore.Images.Thumbnails._ID, // The columns we want
-                            MediaStore.Images.Thumbnails.IMAGE_ID,
-                            MediaStore.Images.Thumbnails.KIND,
-                            MediaStore.Images.Thumbnails.DATA };
-                    String selection = MediaStore.Images.Thumbnails.KIND + "=" + // Select
-                                                                                    // only
-                                                                                    // mini's
-                            MediaStore.Images.Thumbnails.MINI_KIND;
-
-                    String sort = MediaStore.Images.Thumbnails._ID + " DESC";
-
-                    // At the moment, this is a bit of a hack, as I'm returning ALL
-                    // images, and just taking the latest one. There is a better way
-                    // to narrow this down I think with a WHERE clause which is
-                    // currently the selection variable
-                    Cursor myCursor = getContentResolver().query(
-                            MediaStore.Images.Thumbnails.EXTERNAL_CONTENT_URI,
-                            projection, selection, null, sort);
-
-                    long imageId = 0l;
-                    long thumbnailImageId = 0l;
-                    String thumbnailPath = "";
-
-                    try {
-                        myCursor.moveToFirst();
-                        imageId = myCursor
-                                .getLong(myCursor
-                                        .getColumnIndexOrThrow(MediaStore.Images.Thumbnails.IMAGE_ID));
-                        thumbnailImageId = myCursor
-                                .getLong(myCursor
-                                        .getColumnIndexOrThrow(MediaStore.Images.Thumbnails._ID));
-                        thumbnailPath = myCursor
-                                .getString(myCursor
-                                        .getColumnIndexOrThrow(MediaStore.Images.Thumbnails.DATA));
-                    } finally {
-                        // myCursor.close();
-                    }
-
-                    // Create new Cursor to obtain the file Path for the large image
-
-                    String[] largeFileProjection = {
-                            MediaStore.Images.ImageColumns._ID,
-                            MediaStore.Images.ImageColumns.DATA };
-
-                    String largeFileSort = MediaStore.Images.ImageColumns._ID
-                            + " DESC";
-                    myCursor = getContentResolver().query(
-                            MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
-                            largeFileProjection, null, null, largeFileSort);
-                    String largeImagePath = "";
-
-                    try {
-                        myCursor.moveToFirst();
-
-                        // This will actually give yo uthe file path location of the
-                        // image.
-                        largeImagePath = myCursor
-                                .getString(myCursor
-                                        .getColumnIndexOrThrow(MediaStore.Images.ImageColumns.DATA));
-                        mImageCaptureUri_samsung = Uri.fromFile(new File(
-                                largeImagePath));
-                        mImageCaptureUri = null;
-                    } finally {
-                        // myCursor.close();
-                    }
-
-                    // These are the two URI's you'll be interested in. They give
-                    // you a
-                    // handle to the actual images
-                    Uri uriLargeImage = Uri.withAppendedPath(
-                            MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
-                            String.valueOf(imageId));
-                    Uri uriThumbnailImage = Uri.withAppendedPath(
-                            MediaStore.Images.Thumbnails.EXTERNAL_CONTENT_URI,
-                            String.valueOf(thumbnailImageId));
-
-                    // I've left out the remaining code, as all I do is assign the
-                    // URI's
-                    // to my own objects anyways...
-                } catch (Exception e) {
-                    mImageCaptureUri_samsung = null;
-                    Log.i("TAG",
-                            "inside catch Samsung Phones exception " + e.toString());
-
-                }
-
-                try {
-                    Log.i("TAG",
-                            "URI Samsung:" + mImageCaptureUri_samsung.getPath());
-
-                } catch (Exception e) {
-                    Log.i("TAG", "Excfeption inside Samsung URI :" + e.toString());
-                }
-
-                try {
-
-                    Log.i("TAG", "URI Normal:" + mImageCaptureUri.getPath());
-                } catch (Exception e) {
-                    Log.i("TAG", "Excfeption inside Normal URI :" + e.toString());
-                }
-
-				
-				/*String[] projection = {
-						MediaStore.Images.Thumbnails._ID, // The columns we want
-						MediaStore.Images.Thumbnails.IMAGE_ID,
-						MediaStore.Images.Thumbnails.KIND,
-						MediaStore.Images.Thumbnails.DATA };
-				String selection = MediaStore.Images.Thumbnails.KIND + "="
-						+ MediaStore.Images.Thumbnails.MINI_KIND;
-
-				String sort = MediaStore.Images.Thumbnails._ID + " DESC";
-
-				Cursor myCursor = getContentResolver().query(
-						MediaStore.Images.Thumbnails.EXTERNAL_CONTENT_URI,
-						projection, selection, null, sort);
-
-				long imageId = 0l;
-				long thumbnailImageId = 0l;
-				String thumbnailPath = "";
-
+				// Final Code As Below
 				try {
-					myCursor.moveToFirst();
-					imageId = myCursor
-							.getLong(myCursor
-									.getColumnIndexOrThrow(MediaStore.Images.Thumbnails.IMAGE_ID));
-					thumbnailImageId = myCursor
-							.getLong(myCursor
-									.getColumnIndexOrThrow(MediaStore.Images.Thumbnails._ID));
-					thumbnailPath = myCursor
-							.getString(myCursor
-									.getColumnIndexOrThrow(MediaStore.Images.Thumbnails.DATA));
-				} finally {
-					myCursor.close();
+					Log.i("TAG", "inside Samsung Phones");
+					String[] projection = {
+							MediaStore.Images.Thumbnails._ID, // The columns we
+																// want
+							MediaStore.Images.Thumbnails.IMAGE_ID,
+							MediaStore.Images.Thumbnails.KIND,
+							MediaStore.Images.Thumbnails.DATA };
+					String selection = MediaStore.Images.Thumbnails.KIND + "=" + // Select
+																					// only
+																					// mini's
+							MediaStore.Images.Thumbnails.MINI_KIND;
+
+					String sort = MediaStore.Images.Thumbnails._ID + " DESC";
+
+					// At the moment, this is a bit of a hack, as I'm returning
+					// ALL
+					// images, and just taking the latest one. There is a better
+					// way
+					// to narrow this down I think with a WHERE clause which is
+					// currently the selection variable
+					Cursor myCursor = getContentResolver().query(
+							MediaStore.Images.Thumbnails.EXTERNAL_CONTENT_URI,
+							projection, selection, null, sort);
+
+					long imageId = 0l;
+					long thumbnailImageId = 0l;
+					String thumbnailPath = "";
+
+					try {
+						myCursor.moveToFirst();
+						imageId = myCursor
+								.getLong(myCursor
+										.getColumnIndexOrThrow(MediaStore.Images.Thumbnails.IMAGE_ID));
+						thumbnailImageId = myCursor
+								.getLong(myCursor
+										.getColumnIndexOrThrow(MediaStore.Images.Thumbnails._ID));
+						thumbnailPath = myCursor
+								.getString(myCursor
+										.getColumnIndexOrThrow(MediaStore.Images.Thumbnails.DATA));
+					} finally {
+						// myCursor.close();
+					}
+
+					// Create new Cursor to obtain the file Path for the large
+					// image
+
+					String[] largeFileProjection = {
+							MediaStore.Images.ImageColumns._ID,
+							MediaStore.Images.ImageColumns.DATA };
+
+					String largeFileSort = MediaStore.Images.ImageColumns._ID
+							+ " DESC";
+					myCursor = getContentResolver().query(
+							MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
+							largeFileProjection, null, null, largeFileSort);
+					String largeImagePath = "";
+
+					try {
+						myCursor.moveToFirst();
+
+						// This will actually give yo uthe file path location of
+						// the
+						// image.
+						largeImagePath = myCursor
+								.getString(myCursor
+										.getColumnIndexOrThrow(MediaStore.Images.ImageColumns.DATA));
+						mImageCaptureUri_samsung = Uri.fromFile(new File(
+								largeImagePath));
+						// mImageCaptureUri = null;
+					} finally {
+						// myCursor.close();
+					}
+
+					// These are the two URI's you'll be interested in. They
+					// give
+					// you a
+					// handle to the actual images
+					Uri uriLargeImage = Uri.withAppendedPath(
+							MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
+							String.valueOf(imageId));
+					Uri uriThumbnailImage = Uri.withAppendedPath(
+							MediaStore.Images.Thumbnails.EXTERNAL_CONTENT_URI,
+							String.valueOf(thumbnailImageId));
+
+					// I've left out the remaining code, as all I do is assign
+					// the
+					// URI's
+					// to my own objects anyways...
+				} catch (Exception e) {
+					mImageCaptureUri_samsung = null;
+					Log.i("TAG",
+							"inside catch Samsung Phones exception "
+									+ e.toString());
+
 				}
 
-				// Create new Cursor to obtain the file Path for the large image
+				try {
+					Log.i("TAG",
+							"URI Samsung:" + mImageCaptureUri_samsung.getPath());
 
-				String[] largeFileProjection = {
-						MediaStore.Images.ImageColumns._ID,
-						MediaStore.Images.ImageColumns.DATA };
-
-				String largeFileSort = MediaStore.Images.ImageColumns._ID
-						+ " DESC";
-				myCursor = getContentResolver().query(
-						MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
-						largeFileProjection, null, null, largeFileSort);
-				String largeImagePath = "";
+				} catch (Exception e) {
+					Log.i("TAG",
+							"Excfeption inside Samsung URI :" + e.toString());
+				}
 
 				try {
-					myCursor.moveToFirst();
 
-					// This will actually give you the file path location of the
-					// image.
-					largeImagePath = myCursor
-							.getString(myCursor
-									.getColumnIndexOrThrow(MediaStore.Images.ImageColumns.DATA));
-				} finally {
-					myCursor.close();
+					Log.i("TAG", "URI Normal:" + mImageCaptureUri.getPath());
+				} catch (Exception e) {
+					Log.i("TAG",
+							"Excfeption inside Normal URI :" + e.toString());
 				}
-				// These are the two URI's you'll be interested in. They give
-				// you a handle to the actual images
-				Uri uriLargeImage = Uri.withAppendedPath(
-						MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
-						String.valueOf(imageId));
-				Uri uriThumbnailImage = Uri.withAppendedPath(
-						MediaStore.Images.Thumbnails.EXTERNAL_CONTENT_URI,
-						String.valueOf(thumbnailImageId));*/
 
-				/*
-				 * 
-				 * Uri cameraImage = null; if (data != null) { cameraImage =
-				 * data.getData(); } else { /* File path = getFilesDir();
-				 * 
-				 * File file = new File(path, _path); cameraImage =
-				 * Uri.fromFile(file);
-				 * 
-				 * cameraImage = imageFileUri; }
-				 */
-
-				photoEditor(mImageCaptureUri_samsung);
+				photoEditor(mImageCaptureUri);
 				break;
 
 			case RESULT_FRAME_IMAGE:
@@ -437,4 +366,44 @@ public class LDLCamActivity extends Activity implements OnClickListener {
 		}
 	}
 
+}
+
+
+class ImageServices {
+
+	private static String getTempDirectoryPath(Context ctx) {
+		File cache;
+
+		// SD Card Mounted
+		if (Environment.getExternalStorageState().equals(
+				Environment.MEDIA_MOUNTED)) {
+			cache = new File(Environment.getExternalStorageDirectory()
+					.getAbsolutePath()
+					+ "/Android/data/"
+					+ ctx.getPackageName() + "/cache/");
+		}
+		// Use internal storage
+		else {
+			cache = ctx.getCacheDir();
+		}
+
+		// Create the cache directory if it doesn't exist
+		if (!cache.exists()) {
+			cache.mkdirs();
+		}
+
+		return cache.getAbsolutePath();
+	}
+
+	public static Uri getOutputImageFileUri(Context ctx) {
+		// TODO: check the presence of SDCard
+
+		String tstamp = new SimpleDateFormat("yyyyMMdd_HHmmss")
+				.format(new Date());
+		File file = new File(getTempDirectoryPath(ctx), "IMG_" + tstamp
+				+ ".jpg");
+
+		return Uri.fromFile(file);
+
+	}
 }
