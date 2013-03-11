@@ -14,6 +14,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
@@ -24,19 +26,26 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.aviary.android.feather.FeatherActivity;
 
 public class LDLCamActivity extends Activity implements OnClickListener {
 	private static final int RESULT_LOAD_IMAGE = 1;
 	private static final int RESULT_CAMERA_IMAGE = 2;
-	private static final int RESULT_FRAME_IMAGE = 3;
+	private static final int RESULT_SAMSUNG_IMAGE = 3;
+	private static final int RESULT_FRAME_IMAGE = 4;
 	protected String _output;
 	protected File outFile;
 	protected File path;
 	// private Uri imageFileUri;
 	private Uri mImageCaptureUri;
 	private Uri mImageCaptureUri_samsung;
+	String largeImagePath = "";
+	Uri uriLargeImage;
+	Uri uriThumbnailImage;
+	Cursor myCursor;
+	Bitmap thumbnail = null;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -65,7 +74,23 @@ public class LDLCamActivity extends Activity implements OnClickListener {
 
 		Button cameraButton = (Button) findViewById(R.id.from_camera_button);
 		cameraButton.setOnClickListener(this);
+
+		if (savedInstanceState != null) {
+			String fileUri = savedInstanceState.getString("file-uri");
+			if (!fileUri.equals(""))
+				mImageCaptureUri = Uri.parse(fileUri);
+		}
 	}
+
+	@Override
+	protected void onSaveInstanceState(Bundle outState) {
+		super.onSaveInstanceState(outState);
+		if (mImageCaptureUri == null) {
+			outState.putString("file-uri", "");
+		} else {
+			outState.putString("file-uri", mImageCaptureUri.toString());
+		}
+	};
 
 	@SuppressLint("WorldWriteableFiles")
 	@Override
@@ -83,44 +108,65 @@ public class LDLCamActivity extends Activity implements OnClickListener {
 		// from camera button
 		case R.id.from_camera_button:
 
-			String storageState = Environment.getExternalStorageState();
+			String BX1 = android.os.Build.MODEL;
 
-			if (storageState.equals(Environment.MEDIA_MOUNTED)) {
-				Intent cameraIntent = new Intent(
-						MediaStore.ACTION_IMAGE_CAPTURE);
+			if (BX1.equals("SCH-I535")) {
+				Toast.makeText(getApplicationContext(), "Device man" + BX1,
+						Toast.LENGTH_LONG).show();
+				Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+				mImageCaptureUri = ImageServices.getOutputImageFileUri(this);
+				intent.putExtra(MediaStore.EXTRA_OUTPUT, mImageCaptureUri);
 
-				String filename = System.currentTimeMillis() + ".jpg";
-				ContentValues values = new ContentValues();
-				values.put(MediaStore.Images.Media.TITLE, filename);
-				mImageCaptureUri = getContentResolver().insert(
-						MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values);
+				startActivityForResult(intent, RESULT_SAMSUNG_IMAGE);
 
-				cameraIntent.putExtra(android.provider.MediaStore.EXTRA_OUTPUT,
-						mImageCaptureUri);
+			} else {
+				// Intent cameraIntent = new
+				// Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+				// startActivityForResult(cameraIntent, CAMERA_PIC_REQUEST);
 
-				try {
+				String storageState = Environment.getExternalStorageState();
+
+				if (storageState.equals(Environment.MEDIA_MOUNTED)) {
+					Intent cameraIntent = new Intent(
+							MediaStore.ACTION_IMAGE_CAPTURE);
+
+					String filename = System.currentTimeMillis() + ".jpg";
+					ContentValues values = new ContentValues();
+					values.put(MediaStore.Images.Media.TITLE, filename);
+					mImageCaptureUri = getContentResolver().insert(
+							MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
+							values);
+
+					cameraIntent.putExtra(
+							android.provider.MediaStore.EXTRA_OUTPUT,
+							mImageCaptureUri);
+
+					try {
+
+						startActivityForResult(cameraIntent,
+								RESULT_CAMERA_IMAGE);
+					} catch (ActivityNotFoundException e) {
+						e.printStackTrace();
+					}
+				} else {
+					// new AlertDialog.Builder(this)
+					// .setMessage(
+					// "External Storeage (SD Card) is required.\n\nCurrent state: "
+					// + storageState).setCancelable(true)
+					// .create().show();
+					//
+					Intent cameraIntent = new Intent(
+							MediaStore.ACTION_IMAGE_CAPTURE);
+
+					mImageCaptureUri = ImageServices
+							.getOutputImageFileUri(this);
+					cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT,
+							mImageCaptureUri);
 
 					startActivityForResult(cameraIntent, RESULT_CAMERA_IMAGE);
-				} catch (ActivityNotFoundException e) {
-					e.printStackTrace();
+
 				}
-			} else {
-//				new AlertDialog.Builder(this)
-//						.setMessage(
-//								"External Storeage (SD Card) is required.\n\nCurrent state: "
-//										+ storageState).setCancelable(true)
-//						.create().show();
-//
-				Intent cameraIntent = new Intent(
-						MediaStore.ACTION_IMAGE_CAPTURE);
-
-				mImageCaptureUri = ImageServices.getOutputImageFileUri(this);
-				cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, mImageCaptureUri);
-
-				startActivityForResult(cameraIntent, RESULT_CAMERA_IMAGE);
-
 			}
-
 			break;
 		}
 	}
@@ -267,6 +313,115 @@ public class LDLCamActivity extends Activity implements OnClickListener {
 				photoEditor(mImageCaptureUri);
 				break;
 
+			case RESULT_SAMSUNG_IMAGE:
+
+				// Describe the columns you'd like to have returned. Selecting
+				// from the Thumbnails location gives you both the Thumbnail
+				// Image ID, as well as the original image ID
+				String[] projection = {
+						MediaStore.Images.Thumbnails._ID, // The columns we want
+						MediaStore.Images.Thumbnails.IMAGE_ID,
+						MediaStore.Images.Thumbnails.KIND,
+						MediaStore.Images.Thumbnails.DATA };
+				String selection = MediaStore.Images.Thumbnails.KIND + "=" + // Select
+																				// only
+																				// mini's
+						MediaStore.Images.Thumbnails.MINI_KIND;
+
+				String sort = MediaStore.Images.Thumbnails._ID + " DESC";
+
+				// At the moment, this is a bit of a hack, as I'm returning ALL
+				// images, and just taking the latest one. There is a better way
+				// to narrow this down I think with a WHERE clause which is
+				// currently the selection variable
+				myCursor = getContentResolver().query(
+						MediaStore.Images.Thumbnails.EXTERNAL_CONTENT_URI,
+						projection, selection, null, sort);
+
+				long imageId = 0l;
+				long thumbnailImageId = 0l;
+				String thumbnailPath = "";
+
+				try {
+
+					myCursor.moveToFirst();
+					imageId = myCursor
+							.getLong(myCursor
+									.getColumnIndexOrThrow(MediaStore.Images.Thumbnails.IMAGE_ID));
+					thumbnailImageId = myCursor
+							.getLong(myCursor
+									.getColumnIndexOrThrow(MediaStore.Images.Thumbnails._ID));
+					thumbnailPath = myCursor
+							.getString(myCursor
+									.getColumnIndexOrThrow(MediaStore.Images.Thumbnails.DATA));
+				} finally {
+					myCursor.close();
+				}
+
+				// Create new Cursor to obtain the file Path for the large image
+
+				String[] largeFileProjection = {
+						MediaStore.Images.ImageColumns._ID,
+						MediaStore.Images.ImageColumns.DATA };
+
+				String largeFileSort = MediaStore.Images.ImageColumns._ID
+						+ " DESC";
+				myCursor = this.getContentResolver().query(
+						MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
+						largeFileProjection, null, null, largeFileSort);
+				largeImagePath = "";
+
+				try {
+					myCursor.moveToFirst();
+
+					// This will actually give yo uthe file path location of the
+					// image.
+					largeImagePath = myCursor
+							.getString(myCursor
+									.getColumnIndexOrThrow(MediaStore.Images.ImageColumns.DATA));
+				} finally {
+					myCursor.close();
+				}
+				// These are the two URI's you'll be interested in. They give
+				// you a handle to the actual images
+				uriLargeImage = Uri.withAppendedPath(
+						MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
+						String.valueOf(imageId));
+				uriThumbnailImage = Uri.withAppendedPath(
+						MediaStore.Images.Thumbnails.EXTERNAL_CONTENT_URI,
+						String.valueOf(thumbnailImageId));
+
+				// I've left out the remaining code, as all I do is assign the
+				// URI's to my own objects anyways...
+				// Toast.makeText(this, ""+largeImagePath,
+				// Toast.LENGTH_LONG).show();
+				// Toast.makeText(this, ""+uriLargeImage,
+				// Toast.LENGTH_LONG).show();
+				// Toast.makeText(this, ""+uriThumbnailImage,
+				// Toast.LENGTH_LONG).show();
+
+				// if (largeImagePath != null) {
+				// Toast.makeText(this, "LARGE YES" + largeImagePath,
+				// Toast.LENGTH_LONG).show();
+				//
+				// BitmapFactory.Options opts = new BitmapFactory.Options();
+				// opts.inSampleSize = OG;
+				// // thumbnail = (BitmapFactory.decodeFile(picturePath));
+				// thumbnail = BitmapFactory
+				// .decodeFile((largeImagePath), opts);
+				// System.gc();
+				// if (thumbnail != null) {
+				// Toast.makeText(this, "Try Without Saved Instance",
+				// Toast.LENGTH_LONG).show();
+				// // imageCam(thumbnail);
+				// }
+				//
+				// }
+
+				photoEditor(uriLargeImage);
+
+				break;
+
 			case RESULT_FRAME_IMAGE:
 				Intent j = new Intent(this, FrameActivity.class);
 				j.setData(Uri.parse(outFile.getAbsolutePath()));
@@ -368,7 +523,6 @@ public class LDLCamActivity extends Activity implements OnClickListener {
 
 }
 
-
 class ImageServices {
 
 	private static String getTempDirectoryPath(Context ctx) {
@@ -402,7 +556,12 @@ class ImageServices {
 				.format(new Date());
 		File file = new File(getTempDirectoryPath(ctx), "IMG_" + tstamp
 				+ ".jpg");
-
+		try {
+			file.createNewFile();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return Uri.fromFile(file);
 
 	}
